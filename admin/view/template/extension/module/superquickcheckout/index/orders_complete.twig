@@ -1,0 +1,123 @@
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="text-left" style="width:50px;">ID</th> 
+                <th class="text-left hidden-xs">{{ column_store }}</th>
+                <th class="text-left">{{ column_customer }}</th>
+                <th class="text-left" style="width:250px;">{{ column_product }}</th>
+                <th class="text-left hidden-xs hidden-sm" style="min-width:200px">{{ column_customer_comment }}</th>
+                {% if privacy_policy %}
+                  <th class="text-left hidden-xs" style="width:80px">{{ text_privacy_policy }}</th>
+                {% endif %}
+                <th class="text-left hidden-xs" style="width:110px">{{ column_date_created }}</th>
+                <th class="text-right" style="width:170px">{{ column_action }}</th>
+            </tr>
+        </thead>
+        <tbody id="superquickcheckout_fulfilled_orders">
+        </tbody>
+    </table>
+    <div id="superquickcheckout_fulfilled_orders_pagination"></div>
+</div>
+<style type="text/css">
+.table thead > tr > th {
+  text-align: center;
+  vertical-align: middle;
+  background: #ebebeb;
+}
+.table tbody > tr > td {
+  vertical-align: top;
+  padding: 7px 6px;
+}
+.row-margin + .row-margin {
+  margin-top: 4px;
+}
+.fa-fw {
+    width: 1.4em;
+}
+</style>
+<script type="text/javascript">
+  (function($) {
+    var fulfilledOrdersPage = 1;
+    var listFulfilledOrders = function(page) {
+        $.ajax({
+          url : '{{ orders_fulfilled }}'.replace('{page}', page ? page : fulfilledOrdersPage),
+          dataType : 'json',
+          beforeSend : function() {
+            $('#superquickcheckout_fulfilled_orders_pagination').empty();
+            $('#superquickcheckout_fulfilled_orders').html('<tr><td colspan="10" class="text-center"><i class="fa fa-circle-o-notch fa-spin"></i>&nbsp;{{ text_loading }}</td></tr>');
+          },
+          success : function(data) {
+            var html = '';
+
+            if (data.orders.length) {
+              for (var i in data.orders) {
+                var row = data.orders[i];
+
+                html += '<tr>';
+                html += '<td class="text-left">' + row.superquickcheckout_order_id + '</td>';
+                html += '<td class="text-left hidden-xs">' + row.store + '</td>';
+                html += '<td class="text-left">';
+                html += '<div class="row-margin"><i class="fa fa-user fa-fw"></i> ' + row.name + '</div>';
+                html += '<div class="row-margin"><i class="fa fa-envelope-o fa-fw"></i> ' + row.email + '</div>';
+                html += '<div class="row-margin"><i class="fa fa-phone fa-fw"></i> ' + row.telephone + '</div>';
+                html += '</td>';
+                html += '<td class="text-left hidden-xs">';
+                if (row.products.length) {
+                  for (var y in row.products) {
+                    var product = row.products[y];
+                    html += '<div class="row-margin">';
+                    html += '<a target="_blank" href="' + product.url + '">' +product.name + '</a>';
+
+                    if (product.options.length) {
+                      html += '<div style="font-size:12px;">';
+                      for (var x in product.options) {
+                        var option = product.options[x];
+                        if (x > 0) {
+                          html += '<br>';
+                        }
+                        html += '&nbsp;&nbsp;&nbsp;' + option['name'] + ': ' + option['value'];
+                      }
+                      html += '</div>';
+                    }
+                    html += '</div>';
+                  }
+                }
+                html += '</td>';
+                html += '<td class="text-left hidden-xs hidden-sm">' + row.comment + '</td>';
+                {% if privacy_policy %}
+                html += '<td class="text-center hidden-xs">' + row.privacy_policy + '</td>';
+                {% endif %}
+                html += '<td class="text-center">' + row.date_created + '</td>';
+                html += '<td class="text-right">';
+
+                html += '<a target="_blank" href="' + row.url_order + '" class="btn btn-info"><i class="fa fa-eye"></i> {{ button_view_order }}</a> ';
+
+                html += ' <a class="btn btn-danger" href="' + row.url_delete + '" role="delete-button" data-confirm="{{ text_confirm_delete }}" data-toggle="tooltip" title="{{ button_delete }}"><i class="fa fa-trash"></i></a>';
+                html += '</td>';
+                html += '</tr>';
+              }
+            } else {
+              html += '<tr>';
+              html += '<td class="text-center" colspan="9">{{ text_no_orders }}</td>';
+              html += '</tr>';
+            }
+
+            $('#superquickcheckout_fulfilled_orders').html(html);
+            
+            $('#superquickcheckout_fulfilled_orders_pagination').html(data.pagination).find('a[href]').each(function(index,element) {
+              $(this).click(function(e) {
+                e.preventDefault();
+
+                fulfilledOrdersPage = isNaN($(this).attr('href')) ? 1 : $(this).attr('href');
+
+                listFulfilledOrders(fulfilledOrdersPage);
+              })
+            });
+          }
+        });
+    }
+
+    listFulfilledOrders(fulfilledOrdersPage);
+  })(jQuery);
+</script>

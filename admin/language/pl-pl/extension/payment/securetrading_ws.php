@@ -1,0 +1,108 @@
+<?php
+$_['heading_title']                              = 'Bezpieczna internetowa usługa handlowa';
+
+$_['tab_settings']                               = 'Ustawienia';
+$_['tab_myst']                                   = 'MyST';
+
+$_['text_securetrading_ws']                      = '<a href="http://www.securetradingfs.com/partner/open-cart/" target="_blank"><img src="view/image/payment/secure_trading.png" alt="Secure Trading" title="Secure Trading" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_extension']                             = 'Rozszerzenia';
+$_['text_all_geo_zones']                         = 'Wszystkie strefy geograficzne';
+$_['text_process_immediately']                   = 'Przetwórz natychmiast';
+$_['text_wait_x_days']                           = 'Poczekaj % dni';
+$_['text_wait']                                  = 'Proszę czekać.';
+$_['text_authorisation_reversed']                = 'Autoryzacja została pomyślnie odwrócona';
+$_['text_refund_issued']                         = 'Zwrócono koszty zwrotu';
+$_['text_success']                               = 'Sukces: Zmodyfikowałeś moduł Secure Web Service !';
+$_['text_pending_settlement']                    = 'Oczekiwanie na rozstrzygnięcie';
+$_['text_manual_settlement']                     = 'Rozliczenie ręczne';
+$_['text_suspended']                             = 'Zawieszony';
+$_['text_cancelled']                             = 'Anulowany';
+$_['text_settling']                              = 'Utknięcie';
+$_['text_settled']                               = 'Osiadły';
+$_['text_no_transactions']                       = 'Brak transakcji do wyświetlenia';
+$_['text_ok']                                    = 'Ok';
+$_['text_denied']                                = 'Odmówiono';
+$_['text_pending_settlement_manually_overriden'] = 'Oczekujące rozliczenie zostanie ręcznie zmienione';
+$_['text_pending_suspended']                     = 'Zawieszony';
+$_['text_pending_settled']                       = 'Osiadły';
+$_['text_payment_info']                          = 'Informacje o płatności';
+$_['text_release_status']                        = 'Płatność została zwolniona';
+$_['text_void_status']                           = 'Odwrócenie autoryzacji';
+$_['text_rebate_status']                         = 'Płatność rabatowana';
+$_['text_order_ref']                             = 'Zamów ref';
+$_['text_order_total']                           = 'Suma autoryzowana';
+$_['text_total_released']                        = 'Łącznie wydane';
+$_['text_transactions']                          = 'Transakcje';
+$_['text_column_amount']                         = 'Ilość';
+$_['text_column_type']                           = 'Rodzaj';
+$_['text_column_created']                        = 'Stworzony';
+$_['text_release_ok']                            = 'Wydanie się powiodło';
+$_['text_release_ok_order']                      = 'Wydanie zakończyło się sukcesem, status zamówienia zaktualizowany do sukcesu - rozliczony';
+$_['text_rebate_ok']                             = 'Rabat zakończył się sukcesem';
+$_['text_rebate_ok_order']                       = 'Rabat zakończył się sukcesem, status zamówienia zaktualizowano do rabatu';
+$_['text_void_ok']                               = 'Void powiodło się, status zamówienia zaktualizowany do unieważnionego';
+$_['text_confirm_void']                          = 'Czy na pewno chcesz cofnąć autoryzację?';
+$_['text_confirm_release']                       = 'Czy na pewno chcesz zwolnić płatność?';
+$_['text_confirm_rebate']                        = 'Czy na pewno chcesz obniżyć kwotę płatności?';
+
+$_['entry_site_reference']                       = 'Odniesienie do strony';
+$_['entry_username']                             = 'Nazwa Użytkownika';
+$_['entry_password']                             = 'Hasło';
+$_['entry_csv_username']                         = 'Nazwa użytkownika CSV';
+$_['entry_csv_password']                         = 'Hasło CSV';
+$_['entry_3d_secure']                            = 'Użyj 3D Secure';
+$_['entry_cards_accepted']                       = 'Zaakceptowane karty';
+$_['entry_order_status']                         = 'Status zamówienia';
+$_['entry_failed_order_status']                  = 'Nieudany status zamówienia';
+$_['entry_declined_order_status']                = 'Status odrzuconego zamówienia';
+$_['entry_refunded_order_status']                = 'Status zwrotu pieniędzy';
+
+$_['entry_authorisation_reversed_order_status']  = 'Autoryzacja odwróciła status zamówienia';
+$_['entry_settle_status']                        = 'Status rozliczenia';
+$_['entry_settle_due_date']                      = 'Termin rozliczenia';
+$_['entry_geo_zone']                             = 'Strefa geograficzna';
+$_['entry_sort_order']                           = 'Porządek sortowania';
+$_['entry_status']                               = 'Status';
+$_['entry_total']                                = 'Całkowity';
+$_['entry_reverse_authorisation']                = 'Odwrócenie autoryzacji:';
+$_['entry_refunded']                             = 'Zwrócono:';
+$_['entry_refund']                               = 'Zwrot kosztów (%s):';
+$_['entry_currency']                             = 'Waluta';
+$_['entry_status_code']                          = 'Kod błędu';
+$_['entry_payment_type']                         = 'Typ płatności';
+$_['entry_request']                              = 'Żądanie';
+$_['entry_date_from']                            = 'Data, od';
+$_['entry_date_to']                              = 'Data To';
+$_['entry_hour']                                 = 'Godzina';
+$_['entry_minute']                               = 'Minuta';
+
+$_['column_order_id']                            = 'ID zamówienia';
+$_['column_transaction_reference']               = 'Odwołanie do transakcji';
+$_['column_customer']                            = 'Klient';
+$_['column_total']                               = 'Całkowity';
+$_['column_currency']                            = 'Waluta';
+$_['column_settle_status']                       = 'Ustaw status';
+$_['column_status']                              = 'Status';
+$_['column_type']                                = 'Rodzaj';
+$_['column_payment_type']                        = 'Typ płatności';
+
+$_['error_permission']                           = 'Nie masz uprawnień do modyfikowania tego modułu';
+$_['error_site_reference']                       = 'Wymagane jest odniesienie do strony';
+$_['error_cards_accepted']                       = 'Akceptowane karty są wymagane';
+$_['error_username']                             = 'Wymagana jest nazwa użytkownika';
+$_['error_password']                             = 'Wymagane jest hasło';
+$_['error_connection']                           = 'Nie można połączyć się z bezpiecznym transakcją';
+$_['error_data_missing']                         = 'Brak danych';
+
+$_['help_refund']                                = 'Proszę podać kropkę dziesiętną i dziesiętną część kwoty';
+$_['help_csv_username']                          = 'Nazwa użytkownika usługi pobierania transakcji';
+$_['help_csv_password']                          = 'Hasło usługi pobierania transakcji';
+$_['help_total']                                 = 'Całkowita suma transakcji zamówienia musi osiągnąć, zanim ta metoda płatności stanie się aktywna';
+
+$_['button_reverse_authorisation']               = 'Odwrócenie autoryzacji';
+$_['button_refund']                              = 'Zwrot';
+$_['button_show']                                = 'Pokazać';
+$_['button_download']                            = 'Pobieranie';
+$_['button_release']                             = 'Wydanie';
+$_['button_rebate']                              = 'Rabat /zwrot pieniędzy';
+$_['button_void']                                = 'Odwrócenie autoryzacji';

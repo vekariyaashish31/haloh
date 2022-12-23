@@ -1,0 +1,42 @@
+2021-11-15 3:08:39 - PHP Notice:  Undefined index: product_id in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 15
+2021-11-15 3:08:39 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/op278x9/public_html/catalog/controller/startup/error.php:34) in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 21
+2021-11-15 3:12:38 - PHP Notice:  Undefined index: product_id in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 15
+2021-11-15 3:12:38 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/op278x9/public_html/catalog/controller/startup/error.php:34) in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 21
+2021-11-15 3:13:41 - PHP Notice:  Undefined index: product_id in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 15
+2021-11-15 3:13:41 - PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/op278x9/public_html/catalog/controller/startup/error.php:34) in /home/op278x9/public_html/system/storage/modification/catalog/controller/product/product.php on line 21
+2021-11-15 3:46:10 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/checkout.php on line 111
+2021-11-15 3:46:10 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/checkout.php on line 113
+2021-11-15 3:46:11 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/login.php on line 19
+2021-11-15 3:46:11 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/register.php on line 15
+2021-11-15 3:46:11 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/guest.php on line 15
+2021-11-15 3:46:18 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-15 3:46:25 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-15 3:46:26 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-15 3:46:39 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-15 3:46:50 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/checkout.php on line 111
+2021-11-15 3:46:50 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/checkout.php on line 113
+2021-11-15 3:46:50 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-15 3:46:51 - PHP Notice:  Undefined offset: 18 in /home/op278x9/public_html/catalog/controller/extension/step2.php on line 43
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 205
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 205
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 205
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2021-11-25 8:39:58 - PHP Notice:  A non well formed numeric value encountered in /home/op278x9/public_html/admin/controller/extension/module/multiimageuploader.php on line 308
+2022-02-17 14:14:28 - PHP Notice:  Undefined index: title in /www/wwwroot/finebuy.com/catalog/model/extension/module/superquickcheckout.php on line 302
+2022-02-17 14:14:38 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 26
+2022-02-17 14:14:53 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 55
+2022-02-17 14:14:53 - PHP Warning:  is_dir(): open_basedir restriction in effect. File(/www/wwwroot/storage) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 63
+2022-02-17 14:15:36 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 55
+2022-02-17 14:15:36 - PHP Warning:  is_dir(): open_basedir restriction in effect. File(/www/wwwroot/storage) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 63
+2022-02-17 14:15:38 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 55
+2022-02-17 14:15:38 - PHP Warning:  is_dir(): open_basedir restriction in effect. File(/www/wwwroot/storage) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 63
+2022-02-17 14:15:40 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 26
+2022-02-17 14:15:51 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 55
+2022-02-17 14:15:51 - PHP Warning:  is_dir(): open_basedir restriction in effect. File(/www/wwwroot/storage) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 63
+2022-02-17 14:16:01 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 55
+2022-02-17 14:16:01 - PHP Warning:  is_dir(): open_basedir restriction in effect. File(/www/wwwroot/storage/storage) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 63
+2022-02-17 14:16:32 - PHP Warning:  realpath(): open_basedir restriction in effect. File(/www/wwwroot) is not within the allowed path(s): (/www/wwwroot/finebuy.com/:/tmp/) in /www/wwwroot/finebuy.com/admin/controller/common/security.php on line 26

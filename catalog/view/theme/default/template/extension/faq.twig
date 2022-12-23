@@ -1,0 +1,119 @@
+<style>
+   .panel-group .panel {
+   border:none;
+   box-shadow:none;
+   margin-bottom:10px;
+   }
+   .panel-group{
+   margin-bottom:10px;
+   }
+   .panel-default > .panel-heading {
+   padding: 10px 15px;
+   color: #212121;
+   background-color: #FAFAFA;
+   border:1px solid #ddd;
+   box-shadow:0 1px 1px rgba(0, 0, 0, 0.05);
+   border-radius:3px;
+   }
+   .panel-group.demo .panel-heading{
+   border-bottom:1px solid #ddd;
+   }
+   .panel-title {
+   font-size: 16px;
+   }
+   .panel-title > a {
+   display: block;
+   text-decoration: none;
+   }
+   .more-less {
+   float: right;
+   color: #212121;
+   font-size:20px;
+   font-weight:bold;
+   }
+   .panel-body p{
+	   margin:0;
+   }
+   .panel-group.demo .panel-body {
+   border-left: 1px solid #ddd;
+   border-right: 1px solid #ddd;
+   border-bottom: 1px solid #ddd;
+   border-top:none;
+   border-radius:0 0 3px 3px;
+   }
+</style>
+{{ header }}
+<div class="container">
+   <ul class="breadcrumb">
+     {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+   </ul>
+   <div class="row">
+      {{ column_left }}
+      {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+      <div id="content" class="{{ class }}">
+         {{ content_top }}	
+         <h1>{{ heading_title }}</h1>
+		  <div class="myGroup">
+		 {% for faq_group in faq_groups %}
+         <div class="panel-group demo"  id="accordion{{ faq_group.faqgroup_id }}" role="tablist" aria-multiselectable="true">
+            
+            <h3>{{ faq_group.title }}</h3>
+				{% for faqs_data in faq_group.faqs_datas %}
+				<div class="panel panel-default">
+				   <div class="panel-heading" role="tab" id="headingOne">
+					  <h4 class="panel-title">
+						 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ faqs_data.faq_id }}" aria-expanded="true" aria-controls="collapseOne">
+						 <i class="more-less fa fa-angle-right"></i>
+						 {{ faqs_data.name }}
+						 </a>
+					  </h4>
+				   </div>
+				   <div id="{{ faqs_data.faq_id }}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					  <div class="panel-body">
+						 {{ faqs_data.description }}
+					  </div>
+				   </div>
+				</div>
+            {% endfor %}
+         </div>
+		{% endfor %}
+        </div>
+      </div>
+	  {% if pagination_status %}
+	  <div class="row">
+        <div class="col-sm-6 text-left">{{ pagination }}</div>
+        <div class="col-sm-6 text-right">{{ results }}</div>
+      </div>
+	  {% endif %}
+      {{ content_bottom }}
+   </div>
+   {{ column_right }}
+</div>
+
+<script>
+var $myGroup = $('.myGroup');
+$myGroup.on('show.bs.collapse','.collapse', function() {
+$myGroup.find('.collapse.in').collapse('hide');
+});
+
+
+function toggleIcon(e) {
+        $(e.target)
+            .prev('.panel-heading')
+            .find(".more-less")
+            .toggleClass('fa-angle-right fa-angle-down');
+    }
+    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
+    $('.panel-group').on('shown.bs.collapse', toggleIcon);
+
+
+</script>	
+{{ footer }}	

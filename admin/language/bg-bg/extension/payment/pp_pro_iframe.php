@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					 = 'PayPal Pro iFrame';
+
+// Text
+$_['text_extension']                 = 'Разширения';
+$_['text_success']					 = 'Успех: Вие сте променили PayPal Pro iFrame account details!';
+$_['text_edit']                      = 'Редактиране на PayPal Pro iFrame';
+$_['text_pp_pro_iframe']			 = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			 = 'упълномощаване';
+$_['text_sale']						 = 'продажба';
+$_['text_payment_info']				 = 'Информация за плащане';
+$_['text_capture_status']			 = 'Състоянието на улавянето';
+$_['text_amount_auth']				 = 'Разрешена сума';
+$_['text_amount_captured']			 = 'Записана сума';
+$_['text_amount_refunded']			 = 'Сумата, възстановена';
+$_['text_capture_amount']			 = 'Размер на улавянето';
+$_['text_complete_capture']			 = 'Пълно залавяне';
+$_['text_transactions']				 = 'Сделки';
+$_['text_complete']					 = 'пълен';
+$_['text_confirm_void']				 = 'Ако сте анулирани, не можете да улавяте допълнителни средства';
+$_['text_view']						 = 'изглед';
+$_['text_refund']					 = 'Възстановяване';
+$_['text_resend']					 = 'Повторно изпращане';
+$_['text_reauthorise']				 = 'Reauthorise';
+$_['text_reauthorised']				 = 'Транзакцията бе потвърдена';
+$_['text_transaction']				 = 'транзакция';
+$_['text_product_lines']			 = 'Продуктови линии';
+$_['text_ebay_txn_id']				 = 'идент. № на транзакцията';
+$_['text_name']						 = 'име';
+$_['text_qty']						 = 'количество';
+$_['text_price']					 = 'Цена';
+$_['text_number']					 = 'номер';
+$_['text_coupon_id']				 = 'Идентификационен номер на купона';
+$_['text_coupon_amount']			 = 'Сума на купона';
+$_['text_coupon_currency']			 = 'Валута на купона';
+$_['text_loyalty_disc_amt']			 = 'Размер на диска за лоялност';
+$_['text_loyalty_currency']			 = 'Валута на картата за лоялност';
+$_['text_options_name']				 = 'Име на опциите';
+$_['text_tax_amt']					 = 'Размер на данъка';
+$_['text_currency_code']			 = 'Валутен код';
+$_['text_amount']					 = 'Количество';
+$_['text_gift_msg']					 = 'Подаръчно съобщение';
+$_['text_gift_receipt']				 = 'Подаръчен бон';
+$_['text_gift_wrap_name']			 = 'Име на опаковката на подаръка';
+$_['text_gift_wrap_amt']			 = 'Опаковка за подаръци';
+$_['text_buyer_email_market']		 = 'Имейл на купувач за маркетинг';
+$_['text_survey_question']			 = 'Въпрос на проучването';
+$_['text_survey_chosen']			 = 'Избран е избор на изследване';
+$_['text_receiver_business']		 = 'Приемник бизнес';
+$_['text_receiver_email']			 = 'Получател имейл';
+$_['text_receiver_id']				 = 'Идент. № на получателя';
+$_['text_buyer_email']				 = 'Имейл на купувача';
+$_['text_payer_id']					 = 'Идентификационен номер на платеца';
+$_['text_payer_status']				 = 'Статус на платеца';
+$_['text_country_code']				 = 'Код на държавата';
+$_['text_payer_business']			 = 'Платежен бизнес';
+$_['text_payer_salute']				 = 'Поздравител на платеца';
+$_['text_payer_firstname']			 = 'Името на платеца';
+$_['text_payer_middlename']			 = 'Средно име на платеца';
+$_['text_payer_lastname']			 = 'Фамилия на платеца';
+$_['text_payer_suffix']				 = 'Суфикс на платеца';
+$_['text_address_owner']			 = 'Собственик на адрес';
+$_['text_address_status']			 = 'Състояние на адреса';
+$_['text_ship_sec_name']			 = 'Кораб до вторично име';
+$_['text_ship_name']				 = 'Кораб за име';
+$_['text_ship_street1']				 = 'Кораб на адрес 1';
+$_['text_ship_street2']				 = 'Кораб на адрес 2';
+$_['text_ship_city']				 = 'Кораб в града';
+$_['text_ship_state']				 = 'Кораб до държавата';
+$_['text_ship_zip']					 = 'Изпратете до ZIP';
+$_['text_ship_country']				 = 'Код на кораба за държава';
+$_['text_ship_phone']				 = 'Изпратете до телефонния номер';
+$_['text_ship_sec_add1']			 = 'Кораб до вторичен адрес 1';
+$_['text_ship_sec_add2']			 = 'Кораб до вторичен адрес 2';
+$_['text_ship_sec_city']			 = 'Корабът до вторичния град';
+$_['text_ship_sec_state']			 = 'Кораб в вторична държава';
+$_['text_ship_sec_zip']				 = 'Кораб до втори пощенски код';
+$_['text_ship_sec_country']			 = 'Корабът към вторичния код на държавата';
+$_['text_ship_sec_phone']			 = 'Кораб до второстепенния телефон';
+$_['text_trans_id']					 = 'номер на транзакцията';
+$_['text_receipt_id']				 = 'Идент. № на получателя';
+$_['text_parent_trans_id']			 = 'Идент. № на транзакцията';
+$_['text_trans_type']				 = 'Тип транзакция';
+$_['text_payment_type']				 = 'Вид плащане';
+$_['text_order_time']				 = 'Поръчайте време';
+$_['text_fee_amount']				 = 'Сума на таксата';
+$_['text_settle_amount']			 = 'Уреждане на сумата';
+$_['text_tax_amount']				 = 'Размер на данъка';
+$_['text_exchange']					 = 'Валутен курс';
+$_['text_payment_status']			 = 'Статус на плащането';
+$_['text_pending_reason']			 = 'В очакване на причина';
+$_['text_reason_code']				 = 'Код на причините';
+$_['text_protect_elig']				 = 'Защита за допустимост';
+$_['text_protect_elig_type']		 = 'Тип на допустимост за защита';
+$_['text_store_id']					 = 'ID на магазина';
+$_['text_terminal_id']				 = 'Идентификационен номер на терминала';
+$_['text_invoice_number']			 = 'Номер на фактура';
+$_['text_custom']					 = 'Персонализиран';
+$_['text_note']						 = 'Забележка';
+$_['text_sales_tax']				 = 'Данък върху продажбите';
+$_['text_buyer_id']					 = 'Идентификатор на купувача';
+$_['text_close_date']				 = 'Краен срок';
+$_['text_multi_item']				 = 'Много елементи';
+$_['text_sub_amt']					 = 'Сума на абонамента';
+$_['text_sub_period']				 = 'Период на абонамента';
+$_['text_redirect']					 = 'Пренасочване';
+$_['text_iframe']					 = 'Iframe';
+$_['help_checkout_method']			 = 'Моля, използвайте метода за пренасочване, ако нямате инсталиран SSL или ако нямате опция Pay with PayPal, която е деактивирана на хостващата ви платежна страница.';
+$_['help_debug']					 = 'Записва допълнителна информация.';
+
+// Column
+$_['column_trans_id']				 = 'номер на транзакцията';
+$_['column_amount']					 = 'Количество';
+$_['column_type']					 = 'Вид плащане';
+$_['column_status']					 = 'Статус';
+$_['column_pending_reason']			 = 'В очакване на причина';
+$_['column_date_added']				 = 'Създаден';
+$_['column_action']					 = 'действие';
+
+// Tab
+$_['tab_settings']					 = 'Настройки';
+$_['tab_order_status']				 = 'Статус на поръчките';
+$_['tab_checkout_customisation']	 = 'Персонализиране на поръчката';
+
+// Entry
+$_['entry_username']				 = 'API потребителско име';
+$_['entry_password']				 = 'API парола';
+$_['entry_signature']				 = 'API Подпис';
+$_['entry_test']					 = 'Тестов режим';
+$_['entry_total']					 = 'Обща сума';
+$_['entry_order_status']			 = 'Статус на поръчката:';
+$_['entry_geo_zone']				 = 'Гео Зона:';
+$_['entry_status']					 = 'Статус:';
+$_['entry_sort_order']				 = 'Сортиране на поръчката:';
+$_['entry_transaction_method']		 = 'Метод на транзакция:';
+$_['entry_transaction_id']			 = 'номер на транзакцията';
+$_['entry_full_refund']				 = 'Пълно възстановяване';
+$_['entry_amount']					 = 'Количество';
+$_['entry_message']					 = 'съобщение';
+$_['entry_ipn_url']					 = 'IPN URL адрес:';
+$_['entry_checkout_method']			 = 'Метод на плащане:';
+$_['entry_debug']					 = 'Режим на отстраняване:';
+$_['entry_canceled_reversal_status'] = 'Отменено състояние на обръщане:';
+$_['entry_completed_status']		 = 'Завършен статус:';
+$_['entry_denied_status']			 = 'Отказ статус:';
+$_['entry_expired_status']			 = 'Изтекъл статус:';
+$_['entry_failed_status']			 = 'Неуспешно състояние:';
+$_['entry_pending_status']			 = 'Чакащо състояние:';
+$_['entry_processed_status']		 = 'Обработен статус:';
+$_['entry_refunded_status']			 = 'Възстановено състояние:';
+$_['entry_reversed_status']			 = 'Обърнат Състояние:';
+$_['entry_voided_status']			 = 'Състояние без статус:';
+
+// Help
+$_['help_test']						 = 'Използвайте сървъра за живи сървъри или тест (sandbox) за обработка на транзакции? Тестът може да не успее в Internet Explorer';
+$_['help_total']					 = 'Общата сума на поръчката трябва да бъде достигната преди извършването на този начин на плащане';
+
+// Button
+$_['button_refund']					 = 'Възстановяване';
+$_['button_void']					 = 'празнота';
+$_['button_capture']				 = 'Улавяне';
+$_['button_reauthorise']			 = 'Reauthorise';
+
+// Error
+$_['error_permission']				 = 'Предупреждение: Нямате разрешение да променяте плащането PayPal Website Payment Pro iFrame (UK) !';
+$_['error_sig']						 = 'Изисква се подписване!';
+$_['error_user']					 = 'Потребителят е задължителен!';
+$_['error_password']				 = 'Необходима е парола!';
+$_['error_timeout']					 = 'Искането е изтекло';
+$_['error_transaction_missing']		 = 'Транзакцията не можа да бъде намерена';
+$_['error_missing_data']			 = 'Липсва информация';
+$_['error_general']					 = 'имаше грешка';
+$_['error_capture']				     = 'Въведете сума за улавяне';

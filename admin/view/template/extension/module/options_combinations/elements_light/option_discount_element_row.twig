@@ -1,0 +1,24 @@
+{% spaceless %}
+
+<tr id="discount_row_{{ option_combination_row }}_{{ count_discounts }}">
+    <td>
+        <select name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][customer_group_id]" class="form-control discount-row-customer-group-select">
+            <option value="" >All customer groups</option>
+        {% for customer_group in customer_groups %}
+            {%  if customer_group.customer_group_id == discount.customer_group_id %}
+                <option value="{{ customer_group.customer_group_id }}" selected >{{ customer_group.name|escape }}</option>
+            {% else %}
+                <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name|escape }}</option>
+            {% endif %}
+        {% endfor %}
+            <option value="remove" >Remove</option>
+        </select>
+    </td>
+    <td><input type="text" name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][quantity]" value="{{ discount.quantity }}" placeholder="{{ entry_quantity }}" class="form-control" /></td>
+    <td><input type="text" name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][priority]" value="{{discount.priority }}" placeholder="{{ entry_priority }}" class="form-control" /></td>
+    <td><input type="text" name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][price]" value="{{ discount.price }}" placeholder="{{ entry_price }}" class="form-control" /></td>
+    <td><div class="input-group date"><input type="text" name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][date_start]" value="{{ discount.date_start }}" placeholder="{{ entry_date_start }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>
+    <td><div class="input-group date"><input type="text" name="options_combinations[{{ option_combination_row }}][option_discount][{{ count_discounts }}][date_end]" value="{{ discount.date_end }}" placeholder="{{ entry_date_end }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>
+</tr>
+
+{% endspaceless %}

@@ -1,0 +1,256 @@
+{% set moduleName = 'digitcart_price_text' %}
+{{ header }}{{ column_left }}
+<div id="content">
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="pull-right">
+				<button type="submit" form="form-{{ moduleName|replace ({'_':'-'})}}" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
+				<button id="apply" data-toggle="tooltip" data-loading-text="<i class='fa fa-spin fa-cog'></i>" title="" class="btn btn-success" data-original-title="{{ button_save_stay }}"><i class="fa fa-save"></i></button>
+				<a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+			</div>
+			<h1>{{ heading_title }}</h1>
+			<ul class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+					<li><a href="{{ breadcrumb['href'] }}">{{ breadcrumb['text'] }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+		{% if error_warning %}
+			<div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		{% endif %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+			</div>
+			<div class="panel-body">
+				<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-{{ moduleName|replace ({'_':'-'})}}" class="form-horizontal">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#tab-general">{{ tab_general }}</a></li>
+						<li><a data-toggle="tab" href="#tab-products">{{ tab_products }}</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab-general">
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="input-{{ moduleName|replace ({'_':'-'})}}-status">{{ entry_status }}</label>
+								<div class="col-sm-10">
+									<select name="module_{{ moduleName }}_status" id="input-{{ moduleName|replace ({'_':'-'})}}-status" class="form-control">
+										{% if module_digitcart_price_text_status %}
+											<option value="1" selected="selected">{{ text_enabled }}</option>
+											<option value="0">{{ text_disabled }}</option>
+										{% else %}
+											<option value="1">{{ text_enabled }}</option>
+											<option value="0" selected="selected">{{ text_disabled }}</option>
+										{% endif %}
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" for="input-{{ moduleName|replace ({'_':'-'})}}-text-position">{{ entry_text_position }}</label>
+								<div class="col-sm-10">
+									<select name="module_{{ moduleName }}_text_position" id="input-{{ moduleName|replace ({'_':'-'})}}-text-position" class="form-control">
+										<option value="before" {{ module_digitcart_price_text_text_position == 'before' ? 'selected="selected"' : '' }}>{{ text_before_price }}</option>
+										<option value="replace" {{ module_digitcart_price_text_text_position == 'replace' ? 'selected="selected"' : '' }}>{{ text_replace_price }}</option>
+										<option value="after" {{ module_digitcart_price_text_text_position == 'after' ? 'selected="selected"' : '' }}>{{ text_after_price }}</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">{{ entry_text_out_of_stock }}</label>
+								<div class="col-sm-10">
+									{% for language in languages %}
+										<div class="input-group">
+											<span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+											<input 
+												name="module_{{ moduleName }}_for_out_of_stock[{{ language.language_id }}]"
+												value="{{ module_digitcart_price_text_for_out_of_stock[language.language_id] ? module_digitcart_price_text_for_out_of_stock[language.language_id] : '' }}" 
+												placeholder="{{ entry_text_out_of_stock }}" 
+												class="pre-editor form-control" 
+												type="text"
+											/>
+											<span data-toggle="tooltip" title="{{ text_editor }}" class="input-group-addon btn call-editor"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab-products">
+							<div class="table-responsive">
+								<table class="table">
+									<thead>
+										<th>{{ text_product_name }}</th>
+										<th>{{ text_text }}</th>
+										<th>{{ text_date_modified }}</th>
+										<th>{{ text_delete }}</th>
+									</thead>
+									<tbody>
+										{% if products %}
+											{% for product in products%}
+												<tr class="product-tr">
+													<td>{{ product.name }}</td>
+													<td>
+														{% for language in languages %}
+															<div class="input-group">
+																<span class="input-group-addon"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /></span>
+																<input 
+																	name="manual_products[update][{{ product.product_id }}][{{ language.language_id }}]"
+																	value="{{ product.languages[language.language_id] ? product.languages[language.language_id] : '' }}" 
+																	placeholder="" 
+																	class="pre-editor form-control" 
+																	type="text"
+																/>
+																<span data-toggle="tooltip" title="{{ text_editor }}" class="input-group-addon btn call-editor"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+															</div>
+														{% endfor %}
+													</td>
+													<td>{{ product.date_added }}</td>
+													<td><a data-product-id="{{ product.product_id }}" class="btn btn-danger btn-delete" onclick="removeText(this)" data-toggle="tooltip" title="{{ text_delete }}"><i class="fa fa-trash"></i></a></td>
+												</tr>
+											{% endfor %}
+										{% else %}
+											<tr><td>{{ text_empty }}</td></tr>
+										{% endif %}
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+.nav-tabs { border-bottom: 2px solid #DDD; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+.nav-tabs > li > a { border: none; color: #666; }
+.nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+.nav-tabs > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+.nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+body{ background: #EDECEC;}
+.nav-tabs li a:focus {outline: none;}
+.product-tr td {
+	opacity: 1;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	transition: 0.3s all;
+}
+.blured td:not(.not-blured) {
+  opacity: 0.2;
+}
+.jqte .jqte_tool .jqte_tool_label {
+  display: inline-block;
+  height: auto;
+  line-height: normal;
+  vertical-align: middle;
+}
+.jqte_toolbar {
+  border-color: #ccc;
+}
+.jqte_editor, .jqte_source {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  min-height: 40px;
+}
+.jqte_toolbar div {
+  z-index: 999;
+}
+.input-group {
+  margin-bottom: 10px;
+}
+.jqte .jqte_editor * {
+  font-family: inherit;
+}
+.jqte {
+  border-color: #ccc;
+  border-radius: 0;
+  border-width: 1px 0 0;
+  box-shadow: none;
+  line-height: normal;
+  margin: 0;
+  overflow: visible;
+}
+</style>
+<script>
+	$('body').on('click', '#apply', function(){
+		$.ajax({
+			type: 'post',
+			url: $('form').attr('action') + '&save',
+			data: $('form').serialize(),
+			beforeSend: function() {
+				$('form').fadeTo('slow', 0.3);
+				$('#apply').button('loading');
+				$('#dc-admin-notification').remove();
+			},
+			complete: function() {
+				$('form').fadeTo('slow', 1);
+				$('#apply').button('reset');
+			},
+			success: function(response) {
+				$('body').append('<p id="dc-admin-notification" class="alert alert-success" style="position: fixed; z-index: 999; bottom: 0px; right: 0px; left: 0px; margin: auto; display: inline-block; width: 200px; text-align: center;">{{ text_saved }}</p>');
+				$('#form-{{ moduleName|replace ({'_':'-'})}}').load('index.php?route=extension/module/digitcart_price_text&user_token={{ user_token }} #form-{{ moduleName|replace ({'_':'-'})}} > *', function(){
+					DCactivePreviousTab();
+					implementEditor();
+					$('#dc-admin-notification').fadeOut();
+				});
+			}
+		});
+	});
+	DCactivePreviousTab();
+	function DCactivePreviousTab(){
+		if (typeof(Storage) !== "undefined") {
+			$('.nav-tabs a').on('click', function(){
+				localStorage.setItem("digitcart-price-list-active-tab", $(this).attr('href'));
+			});
+			if(localStorage.getItem("digitcart-price-list-active-tab")){
+				$('.nav-tabs a[href="' + localStorage.getItem("digitcart-price-list-active-tab") + '"]').trigger('click');
+			}
+		}
+	}
+	function removeText(div){
+		if($(div).hasClass('btn-delete')){
+			$(div)
+			.removeClass('btn-delete btn-danger')
+			.addClass('btn-undo btn-info')
+			.html('<i class="fa fa-undo"></i>')
+			.attr('data-original-title', '{{ text_undo }}')
+			.after('<input type="hidden" class="input-delete" name="manual_products[delete][]" value="' + $(div).attr('data-product-id') + '">')
+			.parent()
+			.addClass('not-blured')
+			.parents('.product-tr')
+			.addClass('blured');
+		} else if ($(div).hasClass('btn-undo')){
+			$(div)
+			.addClass('btn-delete btn-danger')
+			.removeClass('btn-undo btn-info')
+			.html('<i class="fa fa-trash"></i>')
+			.attr('data-original-title', '{{ text_delete }}')
+			.parent()
+			.removeClass('not-blured')
+			.parents('.product-tr')
+			.removeClass('blured')
+			.find('.input-delete')
+			.remove();
+		}
+	}
+	implementEditor();
+	function implementEditor(){
+		if(jQuery().jqte){
+			$(".call-editor").on('click', function(){
+				var target = $(this).parent().find('.pre-editor');
+				if(target.hasClass('editored')){
+					target.removeClass('editored').jqte({"status" : false});
+				} else {
+					target.addClass('editored').jqte({"status" : true})
+				}
+			});
+		}
+	}
+</script>
+{{ footer }}

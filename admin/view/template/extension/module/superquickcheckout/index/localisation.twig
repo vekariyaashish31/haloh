@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-sm-2">
+        <ul class="nav nav-pills nav-stacked" role="persist-tabs">
+            {% for language in languages %}
+                <li><a href="#tab-localisation-{{ language.language_id }}" data-toggle="tab"><img src="language/{{ language.code }}/{{ language.code }}.png" alt="{{ language.name }}" /> {{ language.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-sm-10">
+        <div class="tab-content">
+            {% for language in languages %}
+                <div class="tab-pane" id="tab-localisation-{{ language.language_id }}">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-widget-heading-{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_widget_heading }}">{{ entry_widget_heading }}</span></label>
+                        <div class="col-sm-10">
+                            <input id="input-widget-heading-{{ language.language_id }}" name="module_superquickcheckout_widget_heading[{{ language.language_id }}]" value="{{ widget_heading[language.language_id] }}" class="form-control" placeholder="{{ placeholder_widget_heading }}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-form-html-{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_form_html }}">{{ entry_form_html }}</span></label>
+                        <div class="col-sm-10">
+                            <textarea id="input-form-html-{{ language.language_id }}" name="module_superquickcheckout_form_html[{{ language.language_id }}]" data-toggle="summernote" data-lang="{{ summernote }}">{{ form_html[language.language_id] }}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-email-subject-{{ language.language_id }}">{{ entry_email_subject }}</label>
+                        <div class="col-sm-10">
+                            <input id="input-email-subject-{{ language.language_id }}" name="module_superquickcheckout_email_subject[{{ language.language_id }}]" value="{{ email_subject[language.language_id] }}" class="form-control" placeholder="{{ placeholder_email_subject }}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="input-email-html-{{ language.language_id }}"><span data-toggle="tooltip" title="{{ help_email_html }}">{{ entry_email_html }}</span></label>
+                        <div class="col-sm-10">
+                            <textarea id="input-email-html-{{ language.language_id }}" name="module_superquickcheckout_email_html[{{ language.language_id }}]" data-toggle="summernote" data-lang="{{ summernote }}">{{ email_html[language.language_id] }}</textarea>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

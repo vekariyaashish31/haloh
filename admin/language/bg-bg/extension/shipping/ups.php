@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'Разширения';
+$_['text_success']                 = 'Успех: Вие сте променили доставката на UPS!';
+$_['text_edit']                    = 'Редактиране на доставката на UPS';
+$_['text_regular_daily_pickup']    = 'Редовно ежедневно приемане';
+$_['text_daily_pickup']            = 'Ежедневно приемане';
+$_['text_customer_counter']        = 'Брояч на клиенти';
+$_['text_one_time_pickup']         = 'One Time Pickup';
+$_['text_on_call_air_pickup']      = 'При приемане на въздушен разговор';
+$_['text_letter_center']           = 'Писмо център';
+$_['text_air_service_center']      = 'Център за въздушни услуги';
+$_['text_suggested_retail_rates']  = 'Предлагани цени на дребно (UPS Магазин)';
+$_['text_package']                 = 'Пакет';
+$_['text_ups_letter']              = 'Писмо на UPS';
+$_['text_ups_tube']                = 'UPS Tube';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'Кутия за UPS 25 кг';
+$_['text_ups_10kg_box']            = 'Кутия от UPS 10 кг';
+$_['text_us']                      = 'САЩ произход';
+$_['text_ca']                      = 'Канадски произход';
+$_['text_eu']                      = 'Произход на Европейския съюз';
+$_['text_pr']                      = 'Пуерто Рико произход';
+$_['text_mx']                      = 'Мексико произход';
+$_['text_other']                   = 'Всички други произходи';
+$_['text_test']                    = 'Тест';
+$_['text_production']              = 'производство';
+$_['text_residential']             = 'жилищен';
+$_['text_commercial']              = 'търговски';
+$_['text_next_day_air']            = 'Следващ въздух на UPS';
+$_['text_2nd_day_air']             = 'Въздушен втори ден на UPS';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'Избор на тридневен UPS';
+$_['text_next_day_air_saver']      = 'Спестяване на въздух през следващия ден на UPS';
+$_['text_next_day_air_early_am']   = 'Следващ ден на UPS Air Early A.M.';
+$_['text_2nd_day_air_am']          = 'Втория ден на въздуха на UPS A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
+$_['text_standard']                = 'Стандарт на UPS';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPS Expedited';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'Стандарт на UPS днес';
+$_['text_today_dedicated_courier'] = 'Днес посветен куриер на UPS';
+$_['text_today_intercity']         = 'Днес';
+$_['text_today_express']           = 'UPS днес Експрес';
+$_['text_today_express_saver']     = 'UPS днес';
+
+// Entry
+$_['entry_key']                    = 'Ключ за достъп';
+$_['entry_username']               = 'Потребител';
+$_['entry_password']               = 'парола';
+$_['entry_pickup']                 = 'Метод за приемане';
+$_['entry_packaging']              = 'Тип опаковка';
+$_['entry_classification']         = 'Класификационен код на клиента';
+$_['entry_origin']                 = 'Код за произход на доставката';
+$_['entry_city']                   = 'Градът на произхода';
+$_['entry_state']                  = 'Произходна държава /провинция';
+$_['entry_country']                = 'Произходна държава';
+$_['entry_postcode']               = 'Произход Пощенски код';
+$_['entry_test']                   = 'Тестов режим';
+$_['entry_quote_type']             = 'Тип на котировката';
+$_['entry_service']                = 'Услуги';
+$_['entry_insurance']              = 'Активиране на застраховката';
+$_['entry_display_weight']         = 'Показване на теглото на доставката';
+$_['entry_weight_class']           = 'Клас на тегло';
+$_['entry_length_class']           = 'Клас на дължината';
+$_['entry_dimension']              = 'Размери (L x Ш x В)';
+$_['entry_length']                 = 'дължина';
+$_['entry_height']                 = 'височина';
+$_['entry_width']                  = 'широчина';
+$_['entry_tax_class']              = 'Данъчен клас';
+$_['entry_geo_zone']               = 'Гео Зона';
+$_['entry_status']                 = 'Статус';
+$_['entry_sort_order']             = 'Сортиране на поръчката';
+$_['entry_debug']                  = 'Режим на отстраняване';
+
+// Help
+$_['help_key']                     = 'Въведете ключа за достъп до тарифата за XML, определен от UPS.';
+$_['help_username']                = 'Въведете потребителското си име за профила на услугата UPS.';
+$_['help_password']                = 'Въведете паролата за профила си за UPS услуги.';
+$_['help_pickup']                  = 'Как давате пакети на UPS (използва се само при произход от САЩ) ?';
+$_['help_packaging']               = 'Какъв вид опаковка използвате?';
+$_['help_classification']          = '01 - Ако плащате за UPS акаунт и имате ежедневно приемане на UPS, 03 - Ако нямате UPS акаунт или плащате за UPS акаунт, но нямате ежедневна доставка, 04 - Ако изпращате от магазин за търговия на дребно (използва се само когато произхожда от САЩ)';
+$_['help_origin']                  = 'Коя точка на произход трябва да се използва (тази настройка засяга само това, което имената на UPS продукти се показват на потребителя)';
+$_['help_city']                    = 'Въведете името на града на произхода.';
+$_['help_state']                   = 'Въведете двубуквения код за държавата /провинцията си на произход.';
+$_['help_country']                 = 'Въведете двубуквения код за вашата страна на произход.';
+$_['help_postcode']                = 'Въведете своя пощенски /пощенски код.';
+$_['help_test']                    = 'Използвайте този модул в теста (YES) или в режим на производство (NO) ?';
+$_['help_quote_type']              = 'Цитат за жилищна или търговска доставка.';
+$_['help_service']                 = 'Изберете услугите на UPS, които ще се предлагат.';
+$_['help_insurance']               = 'Позволява застраховка с общ продукт като стойност';
+$_['help_display_weight']          = 'Искате ли да покажете теглото за доставка? (например Тегло за доставка: 2.7674 кг)';
+$_['help_weight_class']            = 'Задайте на килограми или паунда.';
+$_['help_length_class']            = 'Задайте на сантиметри или инчове.';
+$_['help_dimension']               = 'Това се приема за вашият среден размер на опаковката. Понастоящем не се поддържат отделни величини на елементи, така че трябва да въведете средни величини като 5x5x5.';
+$_['help_debug']                   = 'Запазва изпращане /recv данни в системния дневник';
+
+// Error
+$_['error_permission']             = 'Предупреждение: Нямате разрешение да променяте доставката на UPS (US) !';
+$_['error_key']                    = 'Необходим е ключ за достъп!';
+$_['error_username']               = 'Изисквано потребителско име!';
+$_['error_password']               = 'Необходима е парола!';
+$_['error_city']                   = 'Произход City!';
+$_['error_state']                  = 'Произходна държава /провинция Задължително!';
+$_['error_country']                = 'Произход Задължително за страната!';
+$_['error_dimension']              = 'Средни размери, изисквани!';

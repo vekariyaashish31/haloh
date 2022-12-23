@@ -1,0 +1,122 @@
+[08-Feb-2022 14:19:31 UTC] PHP Warning:  require_once(/home/finebuy/public_html/system/startup.php): failed to open stream: No such file or directory in /home/finebuy/public_html/admin/index.php on line 17
+[08-Feb-2022 14:19:31 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/finebuy/public_html/system/startup.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/finebuy/public_html/admin/index.php on line 17
+[08-Feb-2022 14:19:33 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:33 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:33 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:33 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:33 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:35 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:35 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:35 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:35 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:35 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:36 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:36 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:36 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:36 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:36 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:37 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:37 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:37 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:37 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:37 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:39 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:40 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:40 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:40 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:40 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:40 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fopen(/home/finebuy/storage/logs/error.log): failed to open stream: No such file or directory in /home/finebuy/public_html/system/library/log.php on line 22
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Warning:  fwrite() expects parameter 1 to be resource, boolean given in /home/finebuy/public_html/system/library/log.php on line 31
+[08-Feb-2022 14:19:41 UTC] PHP Fatal error:  Uncaught Exception: Error: <br />Error No:  in /home/finebuy/public_html/system/library/db/mysqli.php:10
+Stack trace:
+#0 /home/finebuy/public_html/system/library/db.php(31): DB\MySQLi->__construct('localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#1 /home/finebuy/public_html/system/framework.php(80): DB->__construct('mysqli', 'localhost', 'finebuy_fby', 'Kw1bxa[6a+*Y', 'finebuy_fby', '3306')
+#2 /home/finebuy/public_html/system/startup.php(104): require_once('/home/finebuy/p...')
+#3 /home/finebuy/public_html/admin/index.php(19): start('admin')
+#4 {main}
+  thrown in /home/finebuy/public_html/system/library/db/mysqli.php on line 10

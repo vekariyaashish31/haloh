@@ -1,0 +1,7 @@
+<div class="banner">
+  <div id="banner{{ module }}">
+    {% for banner in banners %}
+      {% if banner.link %}<div class="banner-effect"><a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a></div>{% else %}<div class="col-sm-6 col-xs-12"><div class="banner-effect"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></div></div>{% endif %}
+      {% endfor %}
+  </div>
+</div>

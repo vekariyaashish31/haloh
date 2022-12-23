@@ -1,0 +1,24 @@
+{{ header }}
+<div id="page-preloader" class="visible">
+      <div class="preloader">
+          <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+          </div>
+      </div>
+</div>
+<div id="common-home">
+  <div class="bg-color-b">
+  <div class="row commonrow">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-md-9 col-sm-8 col-xs-12' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}</div>
+    {{ column_right }}</div>
+</div>
+{{ content_bottom }}
+</div>
+{{ footer }}

@@ -1,0 +1,152 @@
+<?php
+$_['status_legend'] = 'General Status - If disabled, changes in admin zone and frontend zone will disappear.';
+$_['status_help'] = 'If disabled, changes in admin zone and frontend zone will disappear.';
+$_['theme_compatibility_legend'] = 'Template compatibility';
+$_['theme_compatibility_generic_functionality'] = 'Enable generic functionality';
+$_['theme_compatibility_generic_functionality_help'] = 'Enable it if your theme doesn\'t appear in compatibility themes list. The "<b>Add to cart</b>" button will be replaced by a new button which text is inside field "<b>Button text</b>", when client press in this button, a popup will appear where he will can choose product option combinations and add to cart.<br><i>Our team can do compatibility with your theme by additional quote.</i>';
+$_['theme_generic_button_text'] = 'Cart button text';
+$_['theme_generic_button_text_help'] = "This text will appear instead of 'Add to cart' button text.";
+$_['text_generic_modal_add'] = 'Generic popup button "Add" text';
+$_['text_generic_modal_add_default'] = 'Add to cart';
+$_['text_generic_modal_close'] = 'Generic popup button "Close" text';
+$_['text_generic_modal_close_default'] = 'Close';
+$_['text_generic_modal_choose'] = 'Choose options text';
+$_['text_generic_modal_choose_default'] = 'Choose options to see product data';
+$_['add_to_cart_button_selector'] = 'Add to cart button selector';
+$_['add_to_cart_button_selector_help'] = 'JS selector to add to cart button in product inner view.';
+$_['generic_mode_custom_code'] = 'Custom JS/CSS Code';
+$_['generic_mode_custom_code_help'] = 'If your custom theme is setting stiles in button <b>Add to cart</b> across his attribute ID, you will have to \'clone\' these styles with the selector <b>#button-add-modal</b>, which is the button that Template compatibility add in product inner view.<br>Don\' forget wrap your JS/CSS code with tags \'<b>script</b>\' and \'<b>style</b>\'.';
+$_['options_combination_fields_legend'] = 'Options combination fields';
+$_['price'] = 'Price';
+$_['price_help'] = 'Show and enable individual price for each option combination.';
+$_['price_customer_groups'] = 'Prices by customer group';
+$_['price_customer_groups_help'] = 'Will appear different prices to each customer groups in each option combination.';
+$_['special'] = 'Special Price';
+$_['special_help'] = 'Show and enable individual special price for each option combination.';
+$_['discount'] = 'Discounts';
+$_['discount_help'] = 'Show and enable individual discount price for each option combination.';
+$_['points'] = 'Points';
+$_['points_help'] = 'Show and enable individual points for each option combination.';
+$_['points_customer_groups'] = 'Points by customer groups';
+$_['points_customer_groups_help'] = 'Will appear different points to each customer groups in each option combination.';
+$_['reward_points'] = 'Reward Points';
+$_['reward_points_help'] = 'Show and enable individual reward points for each option combination.';
+$_['reward_points_customer_groups'] = 'Reward Points by customer groups';
+$_['reward_points_customer_groups_help'] = 'Will appear different reward points to each customer groups in each option combination.';
+$_['model'] = 'Model';
+$_['model_help'] = 'Show and enable individual model for each option combination.';
+$_['weight'] = 'Weight';
+$_['weight_help'] = 'Show and enable individual weight for each option combination.';
+$_['dimensions'] = 'Dimensions';
+$_['dimensions_help'] = 'Show and enable individual dimensions for each option combination (L x W x H).';
+$_['extra'] = 'Extra Text';
+$_['extra_help'] = 'Show and enable individual extra text for each option combination.';
+$_['image'] = 'Images';
+$_['image_help'] = 'Show and enable images for each option combination.';
+$_['sku'] = 'SKU';
+$_['sku_help'] = 'Show and enable SKU for each option combination.';
+$_['upc'] = 'UPC';
+$_['upc_help'] = 'Show and enable UPC for each option combination.';
+$_['product_inner_view'] = 'Product inner view design';
+$_['stock'] = 'Stock Count';
+$_['stock_help'] = 'When option combination is selected, will appear quantity numeric data between parentheses just after stock status: <b>In stock (123)</b>.';
+$_['button_reset_options'] = 'Button "Reset Options"';
+$_['button_reset_options_help'] = 'A link will appear after all options combination to reset all options. The options not available will be blocked.';
+$_['button_reset_options_text'] = 'Button text';
+$_['button_reset_options_text_default'] = 'Reset options';
+$_['options_like_images'] = 'Option like images';
+$_['options_like_images_help'] = 'Selected options will be replaced by images.<br>';
+$_['options_like_images_hide_not_available'] = 'Hide options not available';
+$_['options_like_images_image'] = 'Image';
+$_['options_like_images_image_help'] = 'Choose from where option image will be get.';
+$_['options_like_images_image_option_0'] = 'Option value image';
+$_['options_like_images_image_option_1'] = 'First option combination image';
+
+$_['options_like_images_option_fields'] = 'Options';
+$_['options_like_images_option_fields_help'] = 'Choose options which will be included as images';
+
+$_['options_like_images_width'] = 'With';
+$_['options_like_images_width_help'] = 'Only numbers (px)';
+$_['options_like_images_height'] = 'Height';
+$_['options_like_images_height_help'] = 'Only numbers (px)';
+$_['options_like_images_radius'] = 'Radius (round it)';
+$_['options_like_images_radius_help'] = 'Only numbers (px)';
+$_['options_like_images_selected_border_color'] = 'Images selected border color';
+$_['options_like_images_hover_border_color'] = 'Images hover border color';
+$_['options_like_images_tooltip_position'] = 'Tooltip Position';
+$_['options_like_images_tooltip_background_color'] = 'Tooltip background color';
+$_['options_like_images_tooltip_font_color'] = 'Tooltip font color';
+
+$_['options_like_list'] = 'Option like list';
+$_['options_like_list_help'] = 'Selected options will be replaced by lists.<br>';
+$_['options_like_list_hide_not_available'] = 'Hide options not available';
+
+$_['options_like_list_option_fields'] = 'Options';
+$_['options_like_list_option_fields_help'] = 'Choose options which will be included as list';
+
+$_['options_like_list_width'] = 'With';
+$_['options_like_list_width_help'] = 'Only numbers (px)';
+$_['options_like_list_height'] = 'Height';
+$_['options_like_list_height_help'] = 'Only numbers (px)';
+$_['options_like_list_radius'] = 'Radius (round it)';
+$_['options_like_list_radius_help'] = 'Only numbers (px)';
+$_['options_like_list_selected_border_color'] = 'Items selected border color';
+$_['options_like_list_hover_border_color'] = 'Items hover border color';
+$_['options_like_list_tooltip_position'] = 'Tooltip Position';
+$_['options_like_list_tooltip_background_color'] = 'Tooltip background color';
+$_['options_like_list_tooltip_font_color'] = 'Tooltip font color';
+
+$_['product_list_view'] = 'Product list view design (views: category, search, manufacturer info...)';
+$_['bullet'] = 'Option Bullets';
+$_['bullet_help'] = '<b>ONLY COMPATIBLE WITH THEMES INCLUDED IN COMPATIBILITY LIST</b><br>First option of each option combination will be shown in product list views (categories, search, manufacturer) like image bullets and enables image swapping when do click in these options.<br><i>Our team can do compatibility with your theme by additional quote.</i>';
+$_['bullet_option'] = 'Options';
+$_['bullet_option_help'] = 'Choose the options used for bullets by default.';
+$_['bullet_image'] = 'Bullet like';
+$_['bullet_image_help'] = 'Choose from where option image will be get.';
+$_['bullet_image_option_1'] = 'Image: Option value image';
+$_['bullet_image_option_2'] = 'Image: First option combination image';
+$_['bullet_image_option_3'] = 'Text: Option value name';
+$_['bullet_width'] = 'With';
+$_['bullet_width_help'] = 'Only numbers (px)';
+$_['bullet_height'] = 'Height';
+$_['bullet_height_help'] = 'Only numbers (px)';
+$_['bullet_radius'] = 'Radius (round it)';
+$_['bullet_selected_color'] = 'Bullets selected border color';
+$_['bullet_radius_help'] = 'Only numbers (px)';
+$_['general_texts_translations'] = 'General texts translations';
+$_['text_starting_from'] = 'Text starting from';
+$_['text_starting_from_default'] = 'Starting From';
+$_['text_unavailable_quantity'] = 'Text unavailable quantity';
+$_['text_unavailable_quantity_default'] = "Can't add %s unit(s) to cart, only %s available.";
+$_['text_dimensions'] = 'Text dimensions';
+$_['text_dimensions_default'] = 'Dimensions:';
+$_['text_dimensions_width'] = 'Text width';
+$_['text_dimensions_width_default'] = 'W:';
+$_['text_dimensions_height'] = 'Text height';
+$_['text_dimensions_height_default'] = 'H:';
+$_['text_dimensions_length'] = 'Text length';
+$_['text_dimensions_length_default'] = 'L:';
+
+$_['text_select_combination_message'] = 'Text Select combination message';
+$_['text_select_combination_message_default'] = 'You must select a valid option combination';
+
+$_['thead_config_status'] = 'Status';
+$_['thead_config_title'] = 'Title';
+$_['thead_config_description'] = 'Description';
+$_['thead_config_products_autocomplete'] = 'Products autocomplete';
+$_['thead_config_date_start'] = 'Start';
+$_['thead_config_date_end'] = 'End';
+
+$_['text_extra'] = 'Extra';
+$_['text_keep_stock_at_zero'] = 'Keep stock at zero';
+$_['help_keep_stock_at_zero'] = 'If this option is active the stock of each combination and the respective product will never have a value less than zero.';
+
+$_['combinations_as_products'] = 'Show combinations as products';
+$_['combinations_as_products_help'] = 'Each product combination will be shown as an independent product. Note: every time you update/create/delete a product through the opencart default forms an index will be updated and it will be used in the catalog when the product is requested.';
+$_['options_to_group_combinations'] = 'Options to group combinations by';
+$_['options_to_group_combinations_help'] = 'The combinations of each product will be grouped by the value(s) of the selected options and they will be shown as only one product in catalog. For example, if you have two combinations: 1. Color: Red, Size: M 2. Color: Red, Size: X. These combinations will be grouped in one combination with values Color: Red, Size: M,X and the last option values can be shown as option bullets in the product card.';
+
+$_['seo_url'] = 'SEO Url';
+$_['seo_url_help'] = 'Show and enable individual seo url for each combination';
+
+?>

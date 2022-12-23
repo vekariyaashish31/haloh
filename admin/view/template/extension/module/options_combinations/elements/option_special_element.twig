@@ -1,0 +1,37 @@
+<td>
+    <table class="table" id="option-special-{{ option_combination_row }}" >
+        <thead>
+        <tr>
+            <td class="text-left">{{ entry_customer_group }}</td>
+            <td class="text-right">{{ entry_priority }}</td>
+            <td class="text-right">{{ entry_price }}</td>
+            <td class="text-left">{{ entry_date_start }}</td>
+            <td class="text-left">{{ entry_date_end }}</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for i,special in combined_product_option.option_special %}
+            <tr id="special_row_{{ option_combination_row }}_{{ i }}">
+                <td>
+                    <select name="options_combinations[{{ option_combination_row }}][option_special][{{ special_row }}][customer]" class="form-control">
+                        {% for customer_group in customer_groups %}
+                            {%  if customer_group.customer_group_id == special.customer %}
+                                <option value="{{ customer_group.customer_group_id }}" selected >{{ customer_group.name }}</option>
+                            {% else %}
+                                <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </td>
+                <td><input type="text" name="options_combinations[{{ option_combination_row }}][option_special][{{ i }}][priority]" value="{{ special.priority }}" placeholder="{{ entry_priority }}" class="form-control" /></td>
+                <td><input type="text" name="options_combinations[{{ option_combination_row }}][option_special][{{ i }}][price]" value="{{ special.price }}" placeholder="{{ entry_price }}" class="form-control" /></td>
+                <td><div class="input-group date"><input type="text" name="options_combinations[{{ option_combination_row }}][option_special][{{ i }}][date_start]" value="{{ special.date_start }}" placeholder="{{ entry_date_start }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>
+                <td><div class="input-group date"><input type="text" name="options_combinations[{{ option_combination_row }}][option_special][{{ i }}][date_end]" value="{{ special.date_end }}" placeholder="{{ entry_date_end }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>
+                <td><button type="button" onclick="$('#special_row_{{ option_combination_row }}_{{ i }}').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" onclick="addOptionSpecial(this);" data-toggle="tooltip" title="{{ button_special_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+</td>

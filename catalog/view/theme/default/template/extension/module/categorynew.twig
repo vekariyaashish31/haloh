@@ -1,0 +1,71 @@
+    <div class="container pro-nepr">
+        <div class="cat-img">
+                <h3 class="heading">{{ heading_title }}{# <hr> #}</h3>
+            <div class="homecate row thummargin">
+                <div id="featured_category" >
+                <div class="category_module p-0">
+                <div id="category-name" class="owl-carousel owl-theme beyqu-center-column-btn">
+                    {% for category in categories %}
+                        {% if category.category_id == category_id %}
+                            <div class="col-xs-12 text-center cate-pa">
+                                <div class="block-cat-wr">
+                                    {% if category.image_name %}
+                                        <img src="{{ category.image_name }}" class="img-responsive center-block" alt="">
+                                    {% else %}
+                                        <img src="image/no_image.png" class="img-responsive center-block cat-noimg" alt="">
+                                    {% endif %}
+                                    <div class="content-thumb">
+                                        <div class="catedesh">
+                                            <h4 class="text-center"><a href="{{ category.href }}" class="">{{ category.name }}</a></h4>
+                                            {# <h5>{{ category.count }} product</h5> #}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="col-xs-12 text-center cate-pa">
+                                <div class="block-cat-wr">
+                                    {% if category.image_name %}
+                                    <a href="{{ category.href }}">
+                                        <img src="{{ category.image_name }}" class="img-responsive center-block" alt="">
+                                    </a>
+                                    {% else %}
+                                     <a href="{{ category.href }}">
+                                        <img src="image/no_image.png" class="img-responsive center-block cat-noimg" alt="">
+                                    </a>
+                                    {% endif %}
+                                    <div class="content-thumb">
+                                        <div class="catedesh">
+                                            <h4 class="text-center"><a href="{{ category.href }}" class="">{{ category.name }}</a></h4>
+                                            {# <h5>{{ category.count }} product</h5> #}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                     </div>
+                </div>
+            </div>
+            </div> 
+            </div>           
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("#category-name").owlCarousel({
+    itemsCustom : [
+    [0, 1],
+    [320, 2],
+    [575, 3],
+    [768, 4],
+    [992, 5],
+    [1200, 6]
+    ],      
+      autoPlay:false,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : true,
+      pagination:false
+    });
+    });
+</script>

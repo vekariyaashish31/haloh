@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'Квадрат';
+$_['heading_title_transaction']                         = 'Преглед на транзакция #%s';
+
+// Help
+$_['help_total']                                        = 'Общата сума на поръчката трябва да бъде достигната, преди този начин на плащане да стане активен.';
+$_['help_local_cron']                                   = 'Поставете тази команда в раздела CRON за уеб сървър. Настройте го да работи поне веднъж на ден.';
+$_['help_remote_cron']                                  = 'Използвайте този URL адрес, за да настроите задача CRON чрез уеб-базирана CRON услуга. Настройте го да работи поне веднъж на ден.';
+$_['help_recurring_status']                             = 'Активирайте, за да позволите периодични повтарящи се плащания. <br /> ЗАБЕЛЕЖКА: Трябва също така да настроите ежедневна задача CRON.';
+$_['help_cron_email']                                   = 'Обобщение на повтарящата се задача ще бъде изпратено до този имейл след завършване.';
+$_['help_cron_email_status']                            = 'Активирайте да получавате резюме след всяка задача CRON.';
+$_['help_notify_recurring_success']                     = 'Уведомявайте клиентите за успешните повтарящи се транзакции.';
+$_['help_notify_recurring_fail']                        = 'Уведомявайте клиентите за неуспешни повтарящи се транзакции.';
+
+// Tab
+$_['tab_setting']                                       = 'Настройки';
+$_['tab_transaction']                                   = 'Сделки';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'Повтарящи се плащания';
+
+// Text
+$_['text_access_token_expires_label']                   = 'Точката за достъп изтича';
+$_['text_access_token_expires_placeholder']             = 'Не се настройва';
+$_['text_acknowledge_cron']                             = 'Потвърждавам, че създадох автоматизирана задача за CRON, като използвам един от методите по-горе.';
+$_['text_admin_notifications']                          = 'Административни известия';
+$_['text_authorize_label']                              = 'Упълномощаване';
+$_['text_canceled_success']                             = 'Успех: успешно анулирахте това плащане!';
+$_['text_capture']                                      = 'Улавяне';
+$_['text_client_id_help']                               = 'Вземете това от страницата "Управление на приложението" на Square';
+$_['text_client_id_label']                              = 'Идент';
+$_['text_client_id_placeholder']                        = 'Идент';
+$_['text_client_secret_help']                           = 'Вземете това от страницата "Управление на приложението" на Square';
+$_['text_client_secret_label']                          = 'Заявка за заявка за OAuth';
+$_['text_client_secret_placeholder']                    = 'Заявка за заявка за OAuth';
+$_['text_confirm_action']                               = 'Сигурна ли си?';
+$_['text_confirm_cancel']                               = 'Наистина ли искате да отмените повтарящите се плащания?';
+$_['text_confirm_capture']                              = 'На път сте да уловите следната сума: <strong> %s </strong>. Кликнете върху OK, за да продължите.';
+$_['text_confirm_refund']                               = 'Моля, посочете причината за възстановяването:';
+$_['text_confirm_void']                                 = 'На път сте да анулирате следната сума: <strong> %s </strong>. Кликнете върху OK, за да продължите.';
+$_['text_connected']                                    = 'свързан';
+$_['text_connected_info']                               = 'Свържете отново, ако искате да превключите профили или ръчно сте отменили достъпа на това разширение от конзолата Square App. Ръчно опресняване на знака за достъп, ако е близо до 45 дни от последната продажба или повторно свързване.';
+$_['text_connection_section']                           = 'Квадратна връзка';
+$_['text_connection_success']                           = 'Успешно свързано!';
+$_['text_cron_email']                                   = 'Изпратете резюме на задачата на този имейл:';
+$_['text_cron_email_status']                            = 'Изпращане на обобщена информация за електронната поща:';
+$_['text_customer_notifications']                       = 'Известия на клиентите';
+$_['text_debug_disabled']                               = 'хора с увреждания';
+$_['text_debug_enabled']                                = 'Enabled';
+$_['text_debug_help']                                   = 'API заявките и отговорите ще бъдат записани в дневника за грешки на OpenCart. Използвайте това само за целите на отстраняването на грешки и развитието.';
+$_['text_debug_label']                                  = 'Отстраняване на грешки';
+$_['text_delay_capture_help']                           = 'Оторизирате транзакциите автоматично или извършвате автоматично таксуване';
+$_['text_delay_capture_label']                          = 'Тип транзакция';
+$_['text_disabled_connect_help_text']                   = 'Името на клиента и тайната са задължителни полета.';
+$_['text_edit_heading']                                 = 'Редактиране на Square';
+$_['text_enable_sandbox_help']                          = 'Активиране на режим "пясък" за тестване на транзакции';
+$_['text_enable_sandbox_label']                         = 'Активирайте режима на пясъчника';
+$_['text_executables']                                  = 'Методи за изпълнение на CRON';
+$_['text_extension']                                    = 'Разширения';
+$_['text_extension_status']                             = 'Статус на разширението';
+$_['text_extension_status_disabled']                    = 'хора с увреждания';
+$_['text_extension_status_enabled']                     = 'Enabled';
+$_['text_extension_status_help']                        = 'Активиране или деактивиране на начина на плащане';
+$_['text_insert_amount']                                = 'Моля, въведете сумата за възстановяване. Максимум: %s в %s:';
+$_['text_loading']                                      = 'Зареждате данни .. Моля, изчакайте ..';
+$_['text_loading_short']                                = 'Моля Изчакай..';
+$_['text_local_cron']                                   = 'Метод #1 - CRON Задача:';
+$_['text_location_error']                               = 'Възникна грешка при опит за синхронизиране на местоположения и символи: %';
+$_['text_location_help']                                = 'Изберете кой конфигуриран Квадрат местоположение да се използва за транзакции. Трябва да има възможности за обработка на карти.';
+$_['text_location_label']                               = 'местоположение';
+$_['text_manage']                                       = 'Транзакция с кредитни карти (квадрат)';
+$_['text_manage_tooltip']                               = 'Вижте подробности /Улавяне /Глад /Възстановяване';
+$_['text_merchant_info_section_heading']                = 'Механична информация';
+$_['text_merchant_name_label']                          = 'Име на търговеца';
+$_['text_merchant_name_placeholder']                    = 'Не се настройва';
+$_['text_no_appropriate_locations_warning']             = 'Няма местоположения, които да могат да извършват настройки за обработка на карти онлайн.';
+$_['text_no_location_selected_warning']                 = 'Няма избрано местоположение.';
+$_['text_no_locations_label']                           = 'Няма валидни местоположения';
+$_['text_no_transactions']                              = 'Все още няма регистрирани транзакции.';
+$_['text_not_connected']                                = 'Няма връзка';
+$_['text_not_connected_info']                           = 'С натискането на този бутон ще свържете този модул с вашия квадратен акаунт и ще активирате услугата.';
+$_['text_notification_ssl']                             = 'Уверете се, че сте включили SSL на страницата за плащане. В противен случай разширението няма да работи.';
+$_['text_notify_recurring_fail']                        = 'Повторната транзакция не бе успешна:';
+$_['text_notify_recurring_success']                     = 'Повторната транзакция е успешна:';
+$_['text_ok']                                           = 'Добре';
+$_['text_order_history_cancel']                         = 'Администраторът е анулирал вашите периодични плащания. Картата ви вече няма да бъде таксувана.';
+$_['text_payment_method_name_help']                     = 'Име на начина на плащане в Checkout';
+$_['text_payment_method_name_label']                    = 'Името на начина на плащане';
+$_['text_payment_method_name_placeholder']              = 'Кредитна /дебитна карта';
+$_['text_recurring_info']                               = 'Моля, уверете се, че сте задали ежедневна задача CRON, като използвате един от методите по-долу. Работите с CRON ви помагат с: <br /> <br /> &bull; Автоматично опресняване на маркера за достъп до API <br /> &bull; Обработка на повтарящи се транзакции';
+$_['text_recurring_status']                             = 'Състояние на периодичните плащания:';
+$_['text_redirect_uri_help']                            = 'Поставете тази връзка в полето URI за пренасочване под Управление на приложението /oAuth';
+$_['text_redirect_uri_label']                           = 'Площ URL адрес за пренасочване на OAuth';
+$_['text_refresh_access_token_success']                 = 'Успешно освежи връзката с профила ви в квадрат.';
+$_['text_refresh_token']                                = 'Пресъздайте токена';
+$_['text_refund']                                       = 'Възстановяване';
+$_['text_refund_details']                               = 'Данни за възстановяването';
+$_['text_refunded_amount']                              = 'Възстановено: %s. Статус на възстановяването: %s. Причина за възстановяването: %s';
+$_['text_refunds']                                      = 'Възстановявания (%s)';
+$_['text_remote_cron']                                  = 'Метод #2 - Отдалечено CRON:';
+$_['text_sale_label']                                   = 'продажба';
+$_['text_sandbox_access_token_help']                    = 'Вземете това от страницата "Управление на приложението" на Square';
+$_['text_sandbox_access_token_label']                   = 'Символ за достъп до';
+$_['text_sandbox_access_token_placeholder']             = 'Символ за достъп до';
+$_['text_sandbox_client_id_help']                       = 'Вземете това от страницата "Управление на приложението" на Square';
+$_['text_sandbox_client_id_label']                      = 'Идент';
+$_['text_sandbox_client_id_placeholder']                = 'Идент';
+$_['text_sandbox_disabled_label']                       = 'хора с увреждания';
+$_['text_sandbox_enabled']                              = 'Режимът "пясък" е активиран! Транзакциите ще преминат, но няма да се извършват такси.';
+$_['text_sandbox_enabled_label']                        = 'Enabled';
+$_['text_sandbox_section_heading']                      = 'Настройки за квадратен пясък';
+$_['text_select_location']                              = 'Изберете местоположение';
+$_['text_settings_section_heading']                     = 'Square Settings';
+$_['text_squareup']                                     = '<a target="_BLANK" href="https://squareup.com"> <img src="view/image/payment/squareup.png" alt="Square" заглавие="Square" стил=" граница: 1px твърди #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'Успех: Вие сте променили модула Square Payment!';
+$_['text_success_capture']                              = 'Транзакцията успешно е заснета!';
+$_['text_success_refund']                               = 'Транзакцията бе възстановена успешно!';
+$_['text_success_void']                                 = 'Транзакцията успешно е анулирана!';
+$_['text_token_expired']                                = 'Достъпът до вашия чекмедже за квадрат е изтекъл! <a href="%s"> Кликнете тук </a>, за да го подновите сега.';
+$_['text_token_expiry_warning']                         = 'Вашият знак за достъп до квадрат ще изтече на %s. <a href="%s"> Кликнете тук </a>, за да го подновите сега.';
+$_['text_token_revoked']                                = 'Четвъртият ви достъп за достъп има изтекъл срок или е бил отменен! <a href="%s"> Щракнете тук </a> за повторно упълномощаване на Square extension.';
+$_['text_transaction_statuses']                         = 'Статус на транзакциите';
+$_['text_view']                                         = 'Виж повече';
+$_['text_void']                                         = 'празнота';
+$_['text_na']                                           = 'N /A';
+$_['text_no_reason_provided']                           = 'Причина не е предоставен.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'Картовата транзакция е разрешена, но все още не е заснета.';
+$_['squareup_status_comment_captured']                  = 'Картографската транзакция е разрешена и впоследствие заснета (т.е. завършена).';
+$_['squareup_status_comment_voided']                    = 'Картовата транзакция бе разрешена и впоследствие анулирана (т.е. отменена).';
+$_['squareup_status_comment_failed']                    = 'Картовата транзакция не бе успешна.';
+
+// Entry
+$_['entry_total']                                       = 'Обща сума';
+$_['entry_geo_zone']                                    = 'Гео Зона';
+$_['entry_sort_order']                                  = 'Сортиране на поръчката';
+$_['entry_merchant']                                    = 'Идент. № на търговеца';
+$_['entry_transaction_id']                              = 'номер на транзакцията';
+$_['entry_order_id']                                    = 'Идентификатор на поръчката';
+$_['entry_partner_solution_id']                         = 'Идентификационен номер на партньор';
+$_['entry_type']                                        = 'Тип транзакция';
+$_['entry_currency']                                    = 'Валута';
+$_['entry_amount']                                      = 'Количество';
+$_['entry_browser']                                     = 'Потребителски агент на клиента';
+$_['entry_ip']                                          = 'IP клиент';
+$_['entry_date_created']                                = 'дата на създаване';
+$_['entry_billing_address_company']                     = 'Фактурираща компания';
+$_['entry_billing_address_street']                      = 'Улица за фактуриране';
+$_['entry_billing_address_city']                        = 'Платежен град';
+$_['entry_billing_address_postcode']                    = 'Фактуриране ZIP';
+$_['entry_billing_address_province']                    = 'Провинция /държава за фактуриране';
+$_['entry_billing_address_country']                     = 'Държава за фактуриране';
+$_['entry_status_authorized']                           = 'упълномощен';
+$_['entry_status_captured']                             = 'Заснето';
+$_['entry_status_voided']                               = 'анулира';
+$_['entry_status_failed']                               = 'Се провали';
+$_['entry_setup_confirmation']                          = 'Потвърждение за настройката:';
+
+// Error
+$_['error_permission']                                  = '<strong> Предупреждение: </strong> Нямате разрешение да променяте плащането Square!';
+$_['error_permission_recurring']                        = '<strong> Предупреждение: </strong> Нямате разрешение да променяте повтарящи се плащания!';
+$_['error_transaction_missing']                         = 'Транзакцията не е намерена!';
+$_['error_no_ssl']                                      = '<strong> Предупреждение: </strong> SSL не е активиран на администраторския ви панел. Моля, активирайте го, за да завършите конфигурацията си.';
+$_['error_user_rejected_connect_attempt']               = 'Опитът за връзка бе анулиран от потребителя.';
+$_['error_possible_xss']                                = 'Открихме възможна атака на кръстосан сайт и прекратихме опита ви за връзка. Моля, потвърдете идентификационния номер на приложението си и се възползвайте от него и опитайте отново с помощта на бутоните в администраторския панел.';
+$_['error_invalid_email']                               = 'Предоставеният имейл адрес не е валиден!';
+$_['error_cron_acknowledge']                            = 'Моля, потвърдете, че сте задали задача CRON.';
+$_['error_client_id']                                   = 'Клиентският идентификационен номер на приложението е задължително поле';
+$_['error_client_secret']                               = 'Клиентската тайна на приложението е задължително поле';
+$_['error_sandbox_client_id']                           = 'Идентификационният номер на клиент на пясъчника е задължително поле, когато режимът на пясък е активиран';
+$_['error_sandbox_token']                               = 'Маркерът "пясък" е задължително поле, когато режимът "пясък" е разрешен';
+$_['error_no_location_selected']                        = 'Местоположението е задължително поле';
+$_['error_refresh_access_token']                        = 'Възникна грешка при опит за опресняване на връзката на разширението към профила ви в Square. Моля, потвърдете идентификационните си данни за приложението и опитайте отново.';
+$_['error_form']                                        = 'Моля, проверете формуляра за грешки и се опитайте да го спасите.';
+$_['error_token']                                       = 'Възникна грешка при опресняване на означението: %s';
+$_['error_no_refund']                                   = 'Възстановяването не бе успешно.';
+
+// Column
+$_['column_transaction_id']                             = 'номер на транзакцията';
+$_['column_order_id']                                   = 'Идентификатор на поръчката';
+$_['column_customer']                                   = 'клиент';
+$_['column_status']                                     = 'Статус';
+$_['column_type']                                       = 'Тип';
+$_['column_amount']                                     = 'Количество';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'дата на създаване';
+$_['column_action']                                     = 'действие';
+$_['column_refunds']                                    = 'Възстановявания';
+$_['column_reason']                                     = 'причина';
+$_['column_fee']                                        = 'Такса за обработка';
+
+// Button
+$_['button_void']                                       = 'празнота';
+$_['button_refund']                                     = 'Възстановяване';
+$_['button_capture']                                    = 'Улавяне';
+$_['button_connect']                                    = 'Свържете';
+$_['button_reconnect']                                  = 'Повторно';
+$_['button_refresh']                                    = 'Обновяване на символа';

@@ -1,0 +1,24 @@
+
+<style>
+    ul.image_picker_selector li.options-image-picker-image div.options-image-picker-image.opt-as-list.selected,
+    div#options-combinations-container ul.thumbnails.image_picker_selector li div.opt-as-list.selected{
+        border-color: #{{ options_like_list_selected_border_color }} !important;
+    }
+    @media (hover: hover) {
+        ul.image_picker_selector li.options-image-picker-image div.options-image-picker-image.opt-as-list:hover,
+        div#options-combinations-container ul.thumbnails.image_picker_selector li div.opt-as-list:hover{
+            border-color: #{{ options_like_list_hover_border_color }} !important;
+        }
+    }
+</style>
+
+<div class="form-group{% if option.required %} required {% endif %}">
+    <label class="control-label" for="input-option{{ option.option_id }}">{{ option.name }}</label>
+    <select name="option-combinations[{{ option.option_id }}]" id="input-option-list-{{ option.option_id }}" class="form-control options-image-picker" data-type="{{ block_type }}">
+        <option value="">{{ text_select }}</option>
+        {% for option_value in option.product_option_value %}
+            <option data-img-alt="{{ option_value.name }}" data-img-class="options-image-picker-image opt-as-list {{ option.option_id }}-{{ option_value.option_value_id }}" data-img-src='' value="{{ option_value.option_value_id }}" data-option-id='{"{{ option.option_id }}":"{{ option_value.option_value_id }}"}'>{{ option_value.name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>

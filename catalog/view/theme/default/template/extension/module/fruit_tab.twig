@@ -1,0 +1,168 @@
+<div class="top-space container">
+    
+<div class="fruit-tab category-tab tabpro pro-nepr">
+  
+    <div class="category-tab-bg">
+    
+     
+    <!--category-tab-->
+        <div class="cat-tab">
+
+          <div class="main-head tab-pro">
+            
+          <button type="button" class="toggle collapsed cat-button hidden-lg hidden-md hidden-sm" data-toggle="collapse" data-target="#fruitcat_tab"></button>
+          <h2 class="pull-left">{{heading_title}}</h2>
+    <div class="collapse footer-collapse cat_tab" id="fruitcat_tab">
+        
+        <ul class="nav nav-tabs pro-tab text-right">
+          {% set i = 0 %}
+              {% for category in categories %}
+                {% if i == 4 %}
+                  <li class="fruitview_more fruitinspireTab"><a class=""><div class="dots"></div><span class="categoryName">More</span></a> </li>
+            </ul>
+            <ul class="view-more nav-tabs">                 
+                {% endif %}
+       
+                   {% if loop.index0 == 0 %}
+                {% set class = ' class="active fruitinspireTab"' %}
+            {% else %}
+                {% set class = ' class="fruitinspireTab"' %}
+            {% endif %}
+            <li {{class}}><a href="#fruittab-{{loop.index}}" data-toggle="tab">{{category.category}}</a></li>
+            {% set i = i + 1 %}
+        {% endfor %}
+        </ul>
+    </div>
+    </div>
+
+    <div class="">
+    <div class="tab-content">
+        
+        {% for products in categories %}
+        {% if loop.index0 == 0 %}
+            {% set class = ' active in' %}
+        {% else %}
+            {% set class = ''%}
+        {% endif %}
+        {% set temp = 0 %}
+        {% set setCol = 2 %}
+        <div class="tab-pane fade{{class}} row thummargin" id="fruittab-{{loop.index}}">
+          <div id="elctrocattab" class="owl-theme owl-carousel">
+            {% for product in products.products %}
+                  <div class="product-layout col-xs-12">
+    <div class="product-thumb transition">
+      <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive center-block" /></a>
+          <!-- inspire Images Start -->
+                 {% set t = 0 %}
+                  {% for more_image in product.more_images %}
+                  {% for pop in more_image %}
+                  {% if t == 0 %}
+                    <a href="{{ product.href }}"><img src="{{ pop.popup_more }}" class="img-responsive second-img" alt="hover image"/></a>
+                  {% set t = t + 1 %}
+                    {% endif %}
+
+                  {% endfor %}
+                  {% endfor %}
+
+          <!-- End -->
+        {% if product.price %}
+          {% if product.special %}
+               <span class="salep">{{ sale }}</span>
+          {% endif %}
+      {% endif %}
+      </div>
+      <div class="caption text-center">
+
+        <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+       {% if product.rating %}
+          <div class="rating">
+            {% for i in 1..5 %}
+            {% if product.rating < i %}
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-2x"></i>
+            </span>
+            {% else %}
+            <span class="fa fa-stack">
+              <i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+            </span>
+            {% endif %}
+          {% endfor %}</div>{% else %}
+          <div class="rating">{% for i in 1..5 %}
+          <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+          {% endfor %}</div>
+        {% endif %}
+        {% if product.price %}
+        <p class="price"> {% if not product.special %}
+          {{ product.price }}
+          {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+          {# {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} #} </p>
+        {% endif %} 
+         {% if product.tag_per  %}
+          <p class="sale-tag {{ random(['hot','new','sale']) }}">Save {{ product.tag_per }}%</p>
+          {% endif %}
+        <div class="button-group">
+          <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addwish"></use></svg></button>
+          <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcompare"></use></svg></button>
+          <div class="bquickv" data-toggle="tooltip" title="{{ button_quickview }}"></div>
+        </div>
+        <button class="acart" type="button" onclick="cart.add('{{ product.product_id }}');">{# <i class="fa fa-shopping-cart"></i>  #}<span class="hidden-xs">{{ button_cart }}</span></button>
+    </div>
+
+    </div>
+  </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+<!--/category-tab-->
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $(".tab-content .tab-pane #elctrocattab").owlCarousel({
+    itemsCustom : [
+    [0, 2],
+    [375, 2],
+    [600, 3],
+    [768, 4],
+    [992, 5],
+    [1200, 6]
+    ],
+      // autoPlay: 1000,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : true,
+      pagination:false
+    });
+    });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+if (($(window).width() > 767)) {
+     var count_block = $('.fruit-tab .fruitinspireTab').length;
+     var number_blocks = 4;
+     if(count_block < number_blocks){
+          return false; 
+     } else {
+          $('.fruit-tab .fruitinspireTab').each(function(i,n){
+                if(i> number_blocks) {
+                    $(this).addClass('it_hide_fruittab');
+                }
+          })
+          $('.it_hide_fruittab').hide();
+          $('.fruitview_more').click(function() {
+                $(this).toggleClass('active');
+                $('.it_hide_fruittab').slideToggle();
+          });
+     }
+}
+});
+
+</script>

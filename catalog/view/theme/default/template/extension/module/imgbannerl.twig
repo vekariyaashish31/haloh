@@ -1,0 +1,22 @@
+
+
+	<div class="col-xs-3 img-first img-l">
+
+			{% for banner in banners %}
+				<div class="imgbannerl firstbanner">
+				<div class=" banner-effect">
+				  {% if banner.link %}
+				  	<a href="{{ banner.link }}">
+				  		<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+				  	</a>
+				  {% else %}
+				  	<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}
+				</div>
+				</div>
+			  {% endfor %}
+	</div>
+
+
+
+</div>
+</div>

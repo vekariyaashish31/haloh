@@ -1,0 +1,1513 @@
+/*<script>*/
+    function CombinationEngine() {
+        this.load_option_values_from_get_params();
+    };
+
+    CombinationEngine.prototype.start = function () {
+        /* constructor */
+    };
+
+    CombinationEngine.prototype.error_wrapper_element = $('<div class="options-combinations-error"></div>');
+
+    CombinationEngine.prototype.include_styles = function () {
+        var styles = `
+                <style>
+                    div.thumbnail.opt-as-image {
+                        text-align: center;
+                    }
+
+                    .tingle-btn.tingle-btn--primary:disabled {
+                        background-color: #6d6b6b;
+                    }
+
+                    /* ${options_like_images_width ? 'div.thumbnail.opt-as-image {min-width: '+options_like_images_width+'px;}' : ''}*/
+
+                    /* ${options_like_images_height ? 'div.thumbnail.opt-as-image {height: '+options_like_images_height+'px;}' : ''}*/
+
+                    .image_picker_image, .thumbnail.opt-as-image, ul.thumbnails.image_picker_selector li.opt-as-image div.thumbnail.disabled:before {border-radius: ${options_like_images_radius ? options_like_images_radius : '0'}px;}
+
+                    div.thumbnail.opt-as-list {
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    div.thumbnail.opt-as-list span {
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    ${options_like_list_width ? 'div.thumbnail.opt-as-list {min-width: '+options_like_list_width+'px;}' : ''}
+
+                    ${options_like_list_height ? 'div.thumbnail.opt-as-list {height: '+options_like_list_height+'px;}' : ''}
+
+                    .image_picker_image.opt-as-list, .thumbnail.opt-as-list, ul.thumbnails.image_picker_selector li.opt-as-list div.thumbnail.disabled:before  {border-radius: ${options_like_list_radius ? options_like_list_radius : '0'}px;}
+
+                    .modal-container #options-combinations-container {
+                        float: left;
+                        width: 50%;
+                    }
+
+                    #generic-data-container {
+                        float: right;
+                        width: 50%;
+                    }
+
+                    .modal-container {
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 14px;
+                    }
+
+                    .modal-container label {
+                        font-size: 14px;
+                    }
+
+                    .owl-carousel.owl-theme {
+                        margin-bottom: 20px;
+                    }
+
+                    .generic-product-name {
+                        margin-top: 0px;
+                        margin-bottom: 20px;
+                        font-size: 45px;
+                        /*font-weight: bold;*/
+                    }
+
+                    #options-combinations-container {
+                        padding-right: 20px;
+                    }
+
+                    #generic-data-container {
+                        padding-left: 20px;
+                    }
+
+                    #generic-data-container span.generic-label {
+                        font-weight: bold;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container .selectable-options .form-group {
+                        border: 1px solid #e2e2e2;
+                        border-radius: 5px;
+                        padding: 15px;
+                        display: block !important;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container .selectable-options .form-group div {
+                        display: block !important;
+                    }
+
+                    #options-combinations-container .list-group {
+                        padding-bottom: 0;
+                        margin-bottom: 15px;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container .form-group.images-group, #options-combinations-container .form-group.list-group {
+                        padding-bottom: 10px;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container .form-group:last-child {
+                        margin-bottom: 10px;
+                    }
+
+
+                    #options-combinations-container-placeholder #options-combinations-container .form-group > label {
+                        font-weight: bold;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container .form-group input[type=radio], #options-combinations-container-placeholder #options-combinations-container .form-group input[type=checkbox] {
+                        margin: 0 0 0 0;
+                        margin-right: 5px;
+                        vertical-align: middle;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container  ul.thumbnails.image_picker_selector li {
+                        margin-bottom: 0;
+                    }
+
+                    #options-combinations-container-placeholder #options-combinations-container  ul.thumbnails.image_picker_selector li div {
+                        margin-bottom: 10px;
+                    }
+
+                    .tingle-modal-box__content {
+                        padding: 40px;
+                        padding-bottom: 0;
+                    }
+
+                    #generic-reset-options-container {
+                        width: 50%;
+                        padding-right: 20px;
+                        text-align: right;
+                    }
+
+                    .tingle-modal-box__footer {
+                        width: 50% !important;
+                        float: right !important;
+                        background-color: white !important;
+                        /*text-align: right;*/
+                    }
+
+                    /*.tingle-modal-box__footer button {*/
+                        /*width: 50%;*/
+                    /*}*/
+
+                    .tingle-btn {
+                        margin: 0 !important;
+                        border-radius: 3px;
+                    }
+
+                    .tingle-btn.tingle-btn--primary {
+                        width: 49%;
+                        float: right;
+                        background-color: #5685ff;
+                        color: #ffffff;
+                    }
+
+                    .tingle-btn.tingle-btn--danger {
+                        width: 49%;
+                        background-color: #e8e8e8;
+                        color: #535353;
+                    }
+
+                    div#options-combinations-container ul.thumbnails.image_picker_selector li .thumbnail{
+                        margin-bottom: 0px;
+                    }
+
+                    div#options-combinations-container ul.thumbnails.image_picker_selector li {
+                        margin-bottom: 10px;
+                    }
+
+                    div.options-combinations-error {
+                        border-color: red !important;
+                        color: red !important;
+                    }
+
+                    @media only screen and (max-width: 600px)  {
+
+                        .tingle-modal-box__content{
+                            padding: 5px;
+                        }
+
+                        .tingle-modal-box__footer{
+                            width: 100%;
+                        }
+
+                        .tingle-btn.tingle-btn--primary {
+                            width: 100%;
+                        }
+
+                        .tingle-btn.tingle-btn--danger {
+                            width: 100%;
+                        }
+
+                        #options-combinations-container {
+                            padding-right: 5px;
+                        }
+
+                        #generic-data-container {
+                            padding-left: 5px;
+                        }
+
+                    }
+
+                    .tooltip-options-like-image > .tooltip-inner{
+                        color: #{{ options_like_images_tooltip_font_color ? options_like_images_tooltip_font_color : 'fff' }};
+                        background-color: #{{ options_like_images_tooltip_background_color ? options_like_images_tooltip_background_color : '000' }};
+                    }
+                    .tooltip-options-like-image.left > .tooltip-arrow{
+                        border-left-color: #{{ options_like_images_tooltip_background_color ? options_like_images_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-image.right > .tooltip-arrow{
+                        border-right-color: #{{ options_like_images_tooltip_background_color ? options_like_images_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-image.top > .tooltip-arrow{
+                        border-top-color: #{{ options_like_images_tooltip_background_color ? options_like_images_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-image.bottom > .tooltip-arrow{
+                        border-bottom-color: #{{ options_like_images_tooltip_background_color ? options_like_images_tooltip_background_color : '000' }} !important;
+                    }
+
+                    .tooltip-options-like-list > .tooltip-inner{
+                        color: #{{ options_like_list_tooltip_font_color ? options_like_list_tooltip_font_color : 'fff' }};
+                        background-color: #{{ options_like_list_tooltip_background_color ? options_like_list_tooltip_background_color : '000' }};
+                    }
+                    .tooltip-options-like-list.left > .tooltip-arrow{
+                        border-left-color: #{{ options_like_list_tooltip_background_color ? options_like_list_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-list.right > .tooltip-arrow{
+                        border-right-color: #{{ options_like_list_tooltip_background_color ? options_like_list_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-list.top > .tooltip-arrow{
+                        border-top-color: #{{ options_like_list_tooltip_background_color ? options_like_list_tooltip_background_color : '000' }} !important;
+                    }
+                    .tooltip-options-like-list.bottom > .tooltip-arrow{
+                        border-bottom-color: #{{ options_like_list_tooltip_background_color ? options_like_list_tooltip_background_color : '000' }} !important;
+                    }
+                </style>
+            `;
+
+        var config_opt_comb_button_reset_options = '{{ config_opt_comb_button_reset_options }}';
+        if(config_opt_comb_button_reset_options == 1) {
+            styles += `
+                <style>
+                    @media (hover: hover) {
+                        ul.thumbnails.image_picker_selector li.disabled:hover,
+                        ul.thumbnails.image_picker_selector li div.thumbnail.disabled:hover{
+                          cursor: no-drop !important;
+                        }
+                    }
+                </style>
+            `;
+        }
+        $('head').append(styles);
+    };
+
+    CombinationEngine.prototype.get_clean_options_item = function(item){
+        /*returns a normalized copy of an option item */
+        if(!item)
+            return [];
+        /* deep copy items object */
+        var item = JSON.parse(JSON.stringify(item));
+        Object.keys(item).forEach(function (key) {
+            if (Array.isArray(item[key]) && item[key].length === 1){
+                item[key] = item[key][0];
+            }
+        });
+
+        return item;
+    };
+
+    CombinationEngine.prototype.array_subset_of = function (subset, haystack) {
+        /* find if an array is a subset of another array */
+        return subset.every(function(val) { return haystack.indexOf(val) >= 0; });
+    };
+
+    CombinationEngine.prototype.array_equal_to = function (array0, array1) {
+        if (array0.length !== array1.length)
+            return false;
+
+        let comp_func = function (a, b){
+            return a - b;
+        }
+
+        array0.sort(comp_func);
+        array1.sort(comp_func);
+
+        for (const i in array0){
+            if (array0[i] !== array1[i])
+                return false;
+        }
+
+        return true;
+    };
+
+    CombinationEngine.prototype.split_combination_options = function (combination_options) {
+        var combined_option_options = {};
+        var combined_option_no_selectable_options = {};
+
+        for (const [option_id, option_value] of Object.entries(combination_options)){
+            if (Array.isArray(option_value) || (option_value != null && !isNaN(option_value)))
+                combined_option_options[option_id] = option_value;
+            else
+                combined_option_no_selectable_options[option_id] = option_value;
+        }
+
+        return [combined_option_options, combined_option_no_selectable_options];
+    }
+
+
+    CombinationEngine.prototype.get_combination_by_options = function (options) {
+        /* returns an option combination matching a given options variant */
+        var self = this;
+
+        for (var i in combined_option) {
+
+            var combined_option_options = {};
+
+            [combined_option_options,] = this.split_combination_options(combined_option[i]['options'])
+
+            combined_option_options = this.get_clean_options_item(combined_option_options);
+
+            var isCombinedOption = true;
+
+            if (Object.keys(combined_option_options).length !== Object.keys(options).length){
+                isCombinedOption = false;
+            }else{
+                for (const key of Object.keys(combined_option_options)){
+                    if (options[key]){
+                        if(!Array.isArray(options[key]) && Array.isArray(combined_option_options[key])) {
+                            if (combined_option_options[key].length !== 1 || combined_option_options[key][0] !== options[key]) {
+                                isCombinedOption = false;
+                                break;
+                            }
+                        } else if (Array.isArray(options[key]) && Array.isArray(combined_option_options[key])) {
+                            if (!self.array_equal_to(options[key], combined_option_options[key])){
+                                isCombinedOption = false;
+                                break;
+                            }
+                        } else {
+                            if (options[key] !== combined_option_options[key]){
+                                isCombinedOption = false;
+                                break;
+                            }
+                        }
+                    } else {
+                        isCombinedOption = false;
+                        break;
+                    }
+                }
+            }
+
+            if (isCombinedOption){
+                return combined_option[i];
+            }
+
+        }
+        return null;
+    };
+
+    CombinationEngine.prototype.get_possible_combinations_by_options = function (options) {
+        /* returns all possible option combinations matching a given options variant */
+        var self = this;
+
+        var combined_options = [];
+        for (var i in combined_option) {
+            var combined_option_options = this.get_clean_options_item(combined_option[i]['options']);
+
+            var isCombinedOption = true;
+
+            Object.keys(options).forEach(function (key) {
+                if (combined_option_options[key]){
+                    /* if option is not array and combined option option is array */
+                    if(!Array.isArray(options[key]) && Array.isArray(combined_option_options[key])) {
+                        if (!combined_option_options[key].includes(options[key])) {
+                            isCombinedOption = false;
+                        }
+                        /* if option and combined option option are array */
+                    } else if (Array.isArray(options[key]) && Array.isArray(combined_option_options[key])) {
+                        if (!self.array_subset_of(options[key], combined_option_options[key])){
+                            isCombinedOption = false;
+                        }
+                        /* if ption and combined option option are not array */
+                    } else {
+                        if (options[key] !== combined_option_options[key]){
+                            isCombinedOption = false;
+                        }
+                    }
+                } else {
+                    isCombinedOption = false;
+                }
+            });
+
+            if (isCombinedOption){
+                combined_options.push(combined_option[i]);
+            }
+        }
+        return combined_options;
+    };
+
+    CombinationEngine.prototype.reset_options = function () {
+        var hide_options_like_images = {{ config_opt_comb_options_like_images_hide_not_available is not empty ? 1 : 0 }};
+        var hide_options_like_list = {{ config_opt_comb_options_like_list_hide_not_available is not empty ? 1 : 0 }};
+
+        var types = ['checkbox','radio','image'];
+        jQuery.each($('[data-option-id]'), function (i, item) {
+            $(item).prop('disabled', false);
+
+            var option_value = $(item).data('option-id');
+            var option_key = Object.keys(option_value)[0];
+
+            var img_selector = '.opt-as-image.'+ option_key +'-' + option_value[option_key];
+            if(hide_options_like_images)
+                $(img_selector).show();
+            else {
+                $(img_selector).removeClass('disabled');
+                $(img_selector).closest().removeClass('disabled');
+            }
+
+            var list_selector = '.opt-as-list.'+ option_key +'-' + option_value[option_key];
+            if(hide_options_like_list)
+                $(list_selector).show();
+            else {
+                $(list_selector).removeClass('disabled');
+                $(list_selector).closest().removeClass('disabled');
+            }
+
+            if(types.indexOf(item.type) !== -1) {
+                $(item).prop('checked', false);
+            }
+
+            $('#options-combinations-container .selectable-options .form-group').show();
+            $('#options-combinations-container .no-selectable-options .form-group').hide();
+            $('.thumbnail.options-image-picker-image').removeClass('selected');
+
+        });
+
+        jQuery.each($('[data-option-id]').closest('select'), function (i, item) {
+            $(item).val('');
+        });
+
+        jQuery('div#options-combinations-container span.option_name').remove();
+
+        this.reset_data();
+    };
+
+    CombinationEngine.prototype.find_selected = function () {
+        var selected_options = [];
+
+        jQuery.each($('[data-option-id]:checked'), function(i, item) {
+            var option_value = $(item).data('option-id');
+            selected_options.push(option_value);
+        });
+        return selected_options;
+    };
+
+    CombinationEngine.prototype.use_variant_data = function (selected_options) {
+
+        /* $(button_cart_selector).removeAttr("disabled"); */
+
+        var variant = this.get_combination_by_options(selected_options);
+        if (variant){
+            var current_elements = $(orig_elements_selector);
+            current_elements.remove();
+
+            var data_element = $('<ul class="list-unstyled"></ul>');
+
+            if (product.manufacturer){
+                data_element.append('<li><span class="generic-label">{{ text_manufacturer }}</span> <a href="'+product.manufacturers+'">'+product.manufacturer+'</a></li>');
+            }
+
+            if (this.get_model(variant)) {
+                data_element.append('<li><span class="generic-label">{{ text_model }}</span> <span>' + this.get_model(variant) + '</span></li>');
+            }
+
+            if (this.get_sku(variant)){
+                data_element.append('<li><span class="generic-label">{{ text_sku }}</span> <span>' + this.get_sku(variant) + '</span></li>');
+            }
+
+            if (this.get_upc(variant)){
+                data_element.append('<li><span class="generic-label">{{ text_upc }}</span> <span>' + this.get_upc(variant) + '</span></li>');
+            }
+
+            if (this.get_reward_points(variant)){
+                data_element.append('<li><span class="generic-label">{{ text_reward }}</span> <span>' + this.get_reward_points(variant) + '</span></li>');
+            }
+
+            data_element.append('<li><span class="generic-label">{{ text_stock }}</span> <span>' + this.get_stock(variant) + '</span></li>');
+
+            if (this.get_dimensions(variant)){
+                data_element.append('<li>'+this.get_dimensions(variant)+'</li>');
+
+            }
+            if (this.get_extra_text(variant)){
+                data_element.append('<li>'+this.get_extra_text(variant)+'</li>');
+
+            }
+
+            {% if price_enabled %}
+            var price_element = $('<ul class="list-unstyled"></ul>');
+            
+            $('.pro-price span').html(this.get_price(variant));
+
+            $('.pro-price').html(this.get_price(variant));
+
+            if (this.get_old_price(variant)) {
+                price_element.append('<li><span style="text-decoration: line-through;">'+this.get_old_price(variant)+'</span></li>');
+            }
+
+            price_element.append('<li><h2 class="price-block">'+this.get_price(variant)+'</h2></li>');
+
+            if (this.get_tax(variant)){
+                price_element.append('<li><span class="generic-label">{{ text_tax }}</span> <span>'+this.get_tax(variant)+'</span></li>');
+            }
+
+            if( this.get_points(variant) ) {
+                price_element.append('<li><span class="generic-label">{{ text_points }}</span> '+this.get_points(variant)+'</li>');
+            }
+
+            if(variant.option_discount.length){
+                price_element.append('<li><hr></li>');
+                variant.option_discount.forEach(function (discount) {
+                    price_element.append('<li>'+discount.quantity+'{{ text_discount }}'+discount.price_formatted+'</li>');
+                });
+            }
+
+            $(elements_placeholder_selector).after(data_element, price_element);
+            {% else %}
+            $(elements_placeholder_selector).after(data_element);
+            {% endif %}
+        } else {
+            this.reset_data(reset_image=false);
+        }
+
+    };
+
+    CombinationEngine.prototype.get_dimensions = function (variant) {
+        var dimensions_text = '';
+
+        var dimensions_length = parseFloat(variant.length);
+        var dimensions_width = parseFloat(variant.width);
+        var dimensions_height = parseFloat(variant.height);
+
+        if (dimensions_length){
+            dimensions_text += ' <span class="generic-label">' + text_dimensions_length_default + '</span> ' + dimensions_length.toFixed(2);
+        }
+        if (dimensions_width){
+            dimensions_text += ' <span class="generic-label">' + text_dimensions_width_default + '</span> ' + dimensions_width.toFixed(2);
+        }
+        if (dimensions_height){
+            dimensions_text += ' <span class="generic-label">' + text_dimensions_height_default + '</span> ' + dimensions_height.toFixed(2);
+        }
+
+        if (dimensions_text.length){
+            dimensions_text = `<span class="generic-label">${text_dimensions_default}</span>` + dimensions_text;
+        }
+        return dimensions_text;
+    };
+
+    CombinationEngine.prototype.get_stock = function (variant) {
+        var stock_text = '';
+
+        if (variant.quantity <= 0)
+            stock_text = product.stock_status;
+        else{
+            {% if config_stock_display %}
+            stock_text = product.quantity;
+            {% else %}
+            stock_text = '{{ text_instock }}';
+            {% endif %}
+        }
+
+        if (config_opt_comb_stock){
+            stock_text = stock_text + '<span class="availability-count-block">'+'('+variant.quantity+')'+'</span>'
+        }
+
+        return stock_text;
+    };
+
+    CombinationEngine.prototype.get_extra_text = function (variant) {
+        var extra_text = null;
+        if (variant.extra_text){
+            extra_text = variant.extra_text;
+        }
+        return extra_text;
+    };
+
+    CombinationEngine.prototype.get_old_price = function (variant, without_format=false) {
+        var old_price = null;
+        if (variant.option_special){
+            if (without_format){
+                old_price = variant.price;
+            } else {
+                old_price = variant.price_formatted;
+            }
+        }
+        return old_price;
+    };
+
+    CombinationEngine.prototype.get_price = function(variant, without_format=false) {
+        var price = variant.price_formatted;
+        if (variant.option_special){
+            if (without_format){
+                price = variant.option_special.price;
+            }else {
+                price = variant.option_special.price_formatted;
+            }
+        }
+        return price
+    };
+
+    CombinationEngine.prototype.get_sku = function (variant) {
+        var sku = null;
+        if(variant.sku) {
+            sku = variant.sku;
+        }
+        return sku;
+    };
+
+    CombinationEngine.prototype.get_upc = function (variant) {
+        var upc = null;
+        if(variant.upc) {
+            upc = variant.upc;
+        }
+        return upc;
+    };
+
+    CombinationEngine.prototype.get_model = function (variant) {
+        var model = null;
+        if(variant.model) {
+            model = variant.model;
+        }
+        return model;
+    };
+
+    CombinationEngine.prototype.get_tax = function (variant) {
+        var tax = null;
+        if (variant.tax_formatted){
+            tax  = variant.tax_formatted
+        }
+        return tax;
+    };
+
+    CombinationEngine.prototype.get_points = function(variant) {
+        var points = null;
+
+        if( variant.points ) {
+            points = variant.points;
+        }
+
+        return points;
+    };
+
+    CombinationEngine.prototype.get_reward_points = function (variant) {
+        var rewardPoints = null;
+        if(variant.reward) {
+            rewardPoints = variant.reward;
+        }
+        return rewardPoints;
+    };
+
+    CombinationEngine.prototype.get_weight = function (variant) {
+        var weight = null;
+        if(variant.weight) {
+            weight = variant.weight_formatted;
+        }
+        return weight;
+    };
+
+    CombinationEngine.prototype.is_possible_combination = function (combination, variants) {
+        /* returns true if a given combination is part of some given variant */
+        var result = true;
+
+        if(!variants)
+            return false;
+
+        Object.keys(combination).forEach(function (combinationKey) {
+
+            if (!variants[combinationKey]){
+                result = false;
+            } else {
+                if (!Array.isArray(combination[combinationKey]) && Array.isArray(variants[combinationKey])){
+                    if (!variants[combinationKey].includes(combination[combinationKey])){
+                        result = false;
+                    }
+                } else if (Array.isArray(combination[combinationKey]) && !Array.isArray(variants[combinationKey])){
+                    result = false;
+                } else if (!Array.isArray(combination[combinationKey]) && !Array.isArray(variants[combinationKey])){
+                    if (combination[combinationKey] != variants[combinationKey]){
+                        result = false;
+                    }
+                } else if (Array.isArray(combination[combinationKey]) && Array.isArray(variants[combinationKey])){
+                    var interception = variants[combinationKey].filter(function (elem) {
+                        return combination[combinationKey].indexOf(elem) > -1;
+                    }).length
+                    if (interception != combination[combinationKey].length){
+                        result = false;
+                    }
+                }
+            }
+
+        });
+
+        return result;
+    };
+
+    CombinationEngine.prototype.is_not_possible_value = function (combination) {
+        for(var i in combined_option) {
+            var variants = combined_option[i]['options'];
+            var result = this.is_possible_combination(combination, variants);
+            if(result === true) {
+                break;
+            }
+        }
+
+        return result !== true ;
+    };
+
+    CombinationEngine.prototype.enable_all = function () {
+        $('#options-combinations-container .selectable-options input').prop('disabled',false);
+    };
+
+    CombinationEngine.prototype.has_value = function (option, value) {
+        var hasValue = false;
+
+        var valueKey = Object.keys(value)[0];
+
+        if (option[valueKey]){
+            var optionData = option[valueKey];
+            var valueData = value[valueKey];
+
+            if (Array.isArray(optionData)){
+                if (optionData.includes(valueData)){
+                    hasValue = true;
+                }
+            } else if(optionData == valueData) {
+                hasValue = true;
+            }
+        }
+
+        return hasValue;
+    };
+
+    CombinationEngine.prototype.is_only_one_option = function (options) {
+        var keys = Object.keys(options);
+        if (keys.length === 1){
+            if (!Array.isArray(options[keys[0]])){
+                return true;
+            }
+        }
+        return false;
+    };
+
+    CombinationEngine.prototype.include_value_in_combination = function (combination, value) {
+        if (Array.isArray(combination[Object.keys(value)[0]])){
+            combination[Object.keys(value)[0]].push(value[Object.keys(value)[0]]);
+        } else if (combination[Object.keys(value)[0]] && combination[Object.keys(value)[0]] != value[Object.keys(value)[0]]) {
+            combination[Object.keys(value)[0]] = [combination[Object.keys(value)[0]], value[Object.keys(value)[0]]];
+        } else {
+            combination[Object.keys(value)[0]] = value[Object.keys(value)[0]];
+        }
+        return combination;
+    };
+
+    CombinationEngine.prototype.replace_value_in_combination = function (combination, value) {
+        combination[Object.keys(value)[0]] = value[Object.keys(value)[0]];
+        return combination;
+    };
+
+    CombinationEngine.prototype.get_options_images = function (options, unique=true) {
+        /* get images from possible combinations of options. if unique is true return only unique images */
+
+        images = [];
+
+        var possible_combinations = this.get_possible_combinations_by_options(options);
+
+        possible_combinations.forEach(function (combination) {
+            if (combination.images) {
+                images = images.concat(combination.images);
+            }
+        });
+
+        if (unique) {
+
+            /*remove duplicated image objects */
+            unque_images = images.reduce(function (p, c) {
+                var id = c.image;
+                if (p.temp.indexOf(id) === -1) {
+                    p.out.push(c);
+                    p.temp.push(id);
+                }
+                return p;
+            }, { temp: [], out: [] }).out;
+
+            return unque_images;
+        }
+
+        return images;
+    };
+
+    CombinationEngine.prototype.show_options = function (selected_block_id = '') {
+        this.enable_all();
+
+        var selected_options = this.find_selected();
+
+        var a = {};
+        selected_options.map(function (obj) {
+            for (var attrname in obj) {
+                if (a[attrname] && Array.isArray(a[attrname])){
+                    a[attrname].push(obj[attrname]);
+                    a[attrname].sort();
+                } else if (a[attrname]) {
+                    a[attrname] = [a[attrname], obj[attrname]];
+                    a[attrname].sort();
+                } else {
+                    a[attrname] = obj[attrname];
+                }
+            }
+        });
+
+        selected_options = a;
+
+        if (selected_options){
+            images = this.get_options_images(selected_options);
+            if (images.length) {
+                this.remove_combined_option_images();
+                this.add_combined_option_images(images);
+            }
+        }
+
+        var selected_val = $('#'+selected_block_id).val();
+
+        /* check for checkbox or radio */
+        if(( selected_val === '' || selected_val === undefined) && selected_block_id) {
+            $.each($('#'+selected_block_id+' input:checked'), function () {
+                var current_val = $(this).val();
+                if (selected_val && Array.isArray(selected_val)){
+                    selected_val.push(current_val);
+                } else if (selected_val) {
+                    selected_val = [selected_val, current_val];
+                } else {
+                    selected_val = current_val;
+                }
+            })
+        }
+
+        if( selected_val === '' || selected_val === undefined) {
+            selected_block_id = '';
+        }
+
+        if (!Object.keys(selected_options).length) {
+            this.reset_options();
+        } else {
+            var option_blocks = this.get_blocks();
+
+            for (var i in option_blocks) {
+
+                var block_id = option_blocks[i];
+
+
+                if(selected_block_id == '') {
+                    selected_block_id = block_id;
+                }
+
+                if(block_id === selected_block_id && this.is_only_one_option(selected_options) && (($('#'+block_id).data('type') == 'select' || $('#'+block_id).data('type') == 'radio'))) {
+                    continue;
+                }
+
+                var blockValues = this.get_block_values(block_id);
+
+                for (var ii in blockValues) {
+                    var value = blockValues[ii];
+
+                    if (this.has_value(selected_options, value)){
+                        continue;
+                    }
+
+                    included_combination = this.include_value_in_combination(JSON.parse(JSON.stringify(selected_options)), value);
+                    replaced_combination = this.replace_value_in_combination(JSON.parse(JSON.stringify(selected_options)), value);
+
+                    var result = this.is_not_possible_value(included_combination);
+                    if (($('#'+block_id).data('type') == 'select' || $('#'+block_id).data('type') == 'radio')){
+                        result = this.is_not_possible_value(replaced_combination);
+                    }
+                    this.disable_options(value, result);
+                }
+
+            }
+        }
+
+        this.hide_empty_image_blocks();
+
+        var variant = this.get_combination_by_options(selected_options)
+        if (variant)
+            this.show_no_selectable_options(variant);
+        else{
+            this.hide_all_no_selectable_options();
+        }
+
+        this.use_variant_data(selected_options);
+    };
+
+    CombinationEngine.prototype.hide_all_no_selectable_options = function (){
+        $('#options-combinations-container .no-selectable-options').empty();
+    }
+
+    var product_seo_keyword = '{{ product_seo_keyword }}';
+
+    // initialization code for no selectable options
+    var product_no_selectable_options = {{ no_selectable_options|json_encode|raw }};
+    var product_no_selectable_options_map = {};
+
+    //if(typeof values !== 'undefined')
+    for (var no_selectable_option of Object.values(product_no_selectable_options)){
+        if (product_no_selectable_options_map[no_selectable_option['option_id']] === undefined)
+            product_no_selectable_options_map[no_selectable_option['option_id']] = {
+                option_id: no_selectable_option['option_id'],
+                option_type: no_selectable_option['type'],
+                name: no_selectable_option['name'],
+                values: {}
+            };
+
+        product_no_selectable_options_map[no_selectable_option['option_id']]['values'][no_selectable_option['combination_id']] = no_selectable_option['value'];
+    }
+
+    CombinationEngine.prototype.show_no_selectable_options = function (combination){
+
+        this.hide_all_no_selectable_options();
+
+        var combination_no_selectable_options = {};
+
+        [, combination_no_selectable_options] = this.split_combination_options(combination['options']);
+
+        var init_date = false;
+        var init_datetime = false;
+        var init_time = false;
+        var init_upload_button = false;
+
+        for(var option_id of Object.keys(combination_no_selectable_options)){
+
+            var element = '';
+
+            if (product_no_selectable_options_map[option_id]['option_type'] === 'text'){
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label" for="input-option${option_id}-comb${combination['id']}">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <input type="text" name="option-combinations[${option_id}]" value="${product_no_selectable_options_map[option_id]['values'][combination['id']]}" placeholder="${product_no_selectable_options_map[option_id]['name']}" id="input-option${option_id}-comb${combination['id']}" class="form-control"/>
+                </div>
+                `;
+            }
+            else if(product_no_selectable_options_map[option_id]['option_type'] === 'textarea'){
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label" for="input-option${option_id}-comb${combination['id']}">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <textarea name="option-combinations[${option_id}]" rows="5" placeholder="${product_no_selectable_options_map[option_id]['name']}" id="input-option${option_id}-comb${combination['id']}" class="form-control">${product_no_selectable_options_map[option_id]['values'][combination['id']]}</textarea>
+                </div>
+                `;
+            }
+            else if (product_no_selectable_options_map[option_id]['option_type'] === 'file'){
+                init_upload_button = true;
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <button type="button" id="button-upload${option_id}-comb${combination['id']}" data-loading-text="{{ text_loading }}" class="btn btn-default btn-block"><i class="fa fa-upload"></i> {{ button_upload }}</button>
+                    <input type="hidden" name="option-combinations[${option_id}]" value="" id="input-option${option_id}-comb${combination['id']}"/>
+                </div>
+                `;
+            }
+            else if(product_no_selectable_options_map[option_id]['option_type'] === 'date'){
+                init_date = true;
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label" for="input-option${option_id}-comb${combination['id']}">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <div class="input-group date">
+                        <input type="text" name="option-combinations[${option_id}]" value="${product_no_selectable_options_map[option_id]['values'][combination['id']]}" data-date-format="YYYY-MM-DD" id="input-option${option_id}-comb${combination['id']}" class="form-control"/>
+                        <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                    </span></div>
+                </div>
+                `;
+            }
+            else if(product_no_selectable_options_map[option_id]['option_type'] === 'datetime') {
+                init_datetime = true;
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label" for="input-option${option_id}-comb${combination['id']}">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <div class="input-group datetime">
+                        <input type="text" name="option-combinations[${option_id}]" value="${product_no_selectable_options_map[option_id]['values'][combination['id']]}" data-date-format="YYYY-MM-DD HH:mm" id="input-option${option_id}-comb${combination['id']}" class="form-control"/>
+                        <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                    </span></div>
+                </div>
+                `;
+            }
+            else if(product_no_selectable_options_map[option_id]['option_type'] === 'time') {
+                init_time = true;
+                element = `
+                <div class="form-group required" id="option${option_id}-comb${combination['id']}">
+                    <label class="control-label" for="input-option${option_id}-comb${combination['id']}">${product_no_selectable_options_map[option_id]['name']}</label>
+                    <div class="input-group time">
+                        <input type="text" name="option-combinations[${option_id}]" value="${product_no_selectable_options_map[option_id]['values'][combination['id']]}" data-date-format="HH:mm" id="input-option${option_id}-comb${combination['id']}" class="form-control"/>
+                        <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                    </span></div>
+                </div>
+                `;
+            }
+            $('#options-combinations-container .no-selectable-options').append(element);
+        }
+        if (init_date){
+            $('.date').datetimepicker({
+                language: '{{ datepicker }}',
+                pickTime: false
+            });
+        }
+        if (init_datetime){
+            $('.datetime').datetimepicker({
+                language: '{{ datepicker }}',
+                pickDate: true,
+                pickTime: true
+            });
+        }
+        if (init_time){
+            $('.time').datetimepicker({
+                language: '{{ datepicker }}',
+                pickDate: false
+            });
+        }
+        if (init_upload_button) {
+            $('button[id^=\'button-upload\']').on('click', function () {
+                var node = this;
+
+                $('#form-upload').remove();
+
+                $('body').prepend('<form enctype="multipart/form-data" id="form-upload" style="display: none;"><input type="file" name="file" /></form>');
+
+                $('#form-upload input[name=\'file\']').trigger('click');
+
+                if (typeof timer != 'undefined') {
+                    clearInterval(timer);
+                }
+
+                timer = setInterval(function () {
+                    if ($('#form-upload input[name=\'file\']').val() != '') {
+                        clearInterval(timer);
+
+                        $.ajax({
+                            url: 'index.php?route=tool/upload',
+                            type: 'post',
+                            dataType: 'json',
+                            data: new FormData($('#form-upload')[0]),
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            beforeSend: function () {
+                                $(node).button('loading');
+                            },
+                            complete: function () {
+                                $(node).button('reset');
+                            },
+                            success: function (json) {
+                                $('.text-danger').remove();
+
+                                if (json['error']) {
+                                    $(node).parent().find('input').after('<div class="text-danger">' + json['error'] + '</div>');
+                                }
+
+                                if (json['success']) {
+                                    alert(json['success']);
+
+                                    $(node).parent().find('input').val(json['code']);
+                                }
+                            },
+                            error: function (xhr, ajaxOptions, thrownError) {
+                                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                            }
+                        });
+                    }
+                }, 500);
+            });
+        }
+    }
+
+    CombinationEngine.prototype.hide_empty_image_blocks = function () {
+        var hide_options_like_images = {{ config_opt_comb_options_like_images_hide_not_available is not empty ? 1 : 0 }};
+        var hide_options_like_list = {{ config_opt_comb_options_like_list_hide_not_available is not empty ? 1 : 0 }};
+
+        var option_blocks = this.get_blocks();
+
+        for (var i in option_blocks) {
+            var block = $('#'+option_blocks[i]);
+            var parent = block.parent();
+            var img_container = parent.children('ul.thumbnails');
+
+            var filter_hide = img_container.children('li').filter(function () {
+                var is_image_picker = !$(this).hasClass('opt-as-list');
+                if((is_image_picker && !hide_options_like_images) || (!is_image_picker && !hide_options_like_list)) {
+                    return !$(this).hasClass('disabled');
+                }
+                else
+                    return $(this).css('display') != "none"
+
+            }).length == 0;
+            if (img_container.length > 0 && filter_hide){
+                parent.hide();
+            } else {
+                parent.show();
+            }
+        }
+    };
+
+    CombinationEngine.prototype.disable_options = function (option_value, is_disabled) {
+        var hide_options_like_images = {{ config_opt_comb_options_like_images_hide_not_available is not empty ? 1 : 0 }};
+        var hide_options_like_list = {{ config_opt_comb_options_like_list_hide_not_available is not empty ? 1 : 0 }};
+
+        var option_key = Object.keys(option_value)[0];
+        var img_selector = '.opt-as-image.'+ option_key +'-' + option_value[option_key];
+        if (is_disabled){
+            if(hide_options_like_images)
+                $(img_selector).hide();
+            else
+                $(img_selector).addClass('disabled');
+        } else {
+            if(hide_options_like_images)
+                $(img_selector).show();
+            else
+                $(img_selector).removeClass('disabled');
+        }
+
+        var list_selector = '.opt-as-list.'+ option_key +'-' + option_value[option_key];
+        if (is_disabled){
+            if(hide_options_like_list)
+                $(list_selector).hide();
+            else
+                $(list_selector).addClass('disabled');
+        } else {
+            if(hide_options_like_list)
+                $(list_selector).show();
+            else
+                $(list_selector).removeClass('disabled');
+        }
+
+        var elem = $('[data-option-id=\'' + JSON.stringify(option_value) + '\']');
+        elem.prop('disabled', is_disabled);
+    };
+
+    CombinationEngine.prototype.get_block_id = function (elem) {
+        return elem.closest("[id^='input-option']").attr('id');
+    };
+
+    CombinationEngine.prototype.get_blocks = function () {
+        var result = [];
+        jQuery.each($("#options-combinations-container .selectable-options [id^='input-option']"), function(i, val) {
+            result[i] = val.id;
+        });
+
+        return result;
+    };
+
+    CombinationEngine.prototype.get_block_values = function (block_id) {
+        var result = [];
+
+        jQuery.each( $('#'+ block_id +' [data-option-id]'), function(i,v){
+            result.push($(v).data('option-id'));
+        });
+
+        return result;
+    };
+
+    CombinationEngine.prototype.related_checkbox_like_radio = function (elem, selected_block_id) {
+        /* if(elem.type === undefined) {
+             var option = $(elem).find('input');
+             if((option.attr('type') === 'checkbox') && option.is(':checked') ) {
+                 $('#'+selected_block_id + ' input[type=checkbox]').prop('checked',false);
+                 option.prop('checked',true);
+             }
+         } */
+    };
+
+    CombinationEngine.prototype.replace_elements = function (image, text) {
+        /* this function will replace an element with a span keeping its attributes */
+        var attrs = { };
+
+        $.each($(image)[0].attributes, function(idx, attr) {
+            attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+
+        $(image).replaceWith(function () {
+
+            var elem = $("<span />", attrs).append($(this).contents());
+            elem.text(text);
+            return elem;
+        });
+    };
+
+    CombinationEngine.prototype.reset_combined_option_images = function (){
+        console.error('reset_combined_option_images not implemented');
+    };
+
+    CombinationEngine.prototype.add_combined_option_images = function (images) {
+        console.error('add_combined_option_images not implemented');
+    };
+
+    CombinationEngine.prototype.remove_combined_option_images = function () {
+        console.error('remove_combined_option_images not implemented');
+    };
+
+    CombinationEngine.prototype.reset_data = function (reset_image=true) {
+        console.error('reset_data not implemented');
+    };
+
+    CombinationEngine.prototype.include_imagepicker = function () {
+        var self = this;
+
+        var tooltip_image_template = '<div class="tooltip tooltip-options-like-image" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>';
+        var tooltip_image_position = '{{ options_like_images_tooltip_position }}';
+        var tooltip_list_template = '<div class="tooltip tooltip-options-like-list" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>';
+        var tooltip_list_position = '{{ options_like_list_tooltip_position }}';
+
+        $("select.options-image-picker").imagepicker({
+            initialized: function () {
+                /* hack for include images alt message as title because lib does not allow to include title directly */
+                $(document).find('img.image_picker_image.options-image-picker-image').each(function () {
+                    var image = $(this);
+                    image.attr('title', image.attr('alt'));
+                    image.attr('data-original-title', image.attr('alt'));
+                    image.attr('data-toggle', 'tooltip');
+                    image.attr('data-placement', tooltip_image_position ? tooltip_image_position: 'top');
+                    image.attr('data-template', tooltip_image_template);
+
+                    if(typeof window['Journal'] != 'undefined') {
+                        $("ul.thumbnails.image_picker_selector").css('overflow', 'visible');
+                        image.attr('data-tooltip-class', 'push-tooltip');
+                        image.attr('data-placement', 'top');
+                        image.tooltip({container: "body"});
+                    }
+
+                    if (!image.attr('src')) {
+                        self.replace_elements(this, image.attr('alt'));
+                    }
+
+                    if(image.parent("div.options-image-picker-image").hasClass("selected") && !image.closest("div.form-group").find('span.option_name').length) {
+                        image.closest("div.form-group").find('label.control-label').first().append('&nbsp;<span class="option_name">'+image.attr("data-original-title")+'</span>');
+                    }
+                });
+
+                /* set minimal width equal as height */
+                $(document).find('span.image_picker_image.options-image-picker-image').each(function () {
+                	var image = $(this);
+                    $(this).parent().css("min-width", $(this).parent().outerHeight() + "px");
+                    $(this).attr('data-toggle', 'tooltip');
+                    $(this).attr('data-placement', tooltip_list_position ? tooltip_list_position: 'top');
+                    $(this).attr('data-template', tooltip_list_template);
+
+                    if(typeof window['Journal'] != 'undefined') {
+                        $("ul.thumbnails.image_picker_selector").css('overflow', 'visible');
+                        image.attr('data-tooltip-class', 'push-tooltip');
+                        image.attr('data-placement', 'top');
+                        image.tooltip({container: "body"});
+                    }
+
+                    if(image.parent("div.options-image-picker-image").hasClass("selected") && !image.closest("div.form-group").find('span.option_name').length) {
+                        image.closest("div.form-group").find('label.control-label').first().append('&nbsp;<span class="option_name">'+image.attr("data-original-title")+'</span>');
+                    }
+
+                });
+
+            },
+            selected: function(select, option, event) {
+                var select = $(this);
+                var option_name = select.find(':selected').attr('data-img-alt');
+                var label = select.closest('div.form-group').children('label');
+                var exist_option_name = label.find('span.option_name').length;
+                if(!exist_option_name)
+                    label.append('<span class="option_name"></span>');
+                label.find('span.option_name').html('');
+                if(option_name != '' && option_name != 'undefined')
+                    label.find('span.option_name').html('&nbsp;'+option_name);
+            },
+            changed: function(select, newValues, oldValues, event) {
+                if(typeof newValues[0] == 'undefined' || newValues[0] == '') {
+                    var select = $(this);
+                    var label = select.closest('div.form-group').children('label');
+                    label.find('span.option_name').html('');
+                }
+            }
+        });
+    };
+
+    CombinationEngine.prototype.register_on_input_change = function () {
+        var self = this;
+        $('[data-option-id]').parent().on('change', function () {
+            var selected_block_id = self.get_block_id($(this));
+            self.related_checkbox_like_radio(this, selected_block_id);
+            self.show_options(selected_block_id);
+            self.update_url();
+        });
+    };
+
+    CombinationEngine.prototype.update_url = function () {
+        var selected_options = this.find_selected();
+        var a = {};
+        selected_options.map(function (obj) {
+            for (var attrname in obj) {
+                if (a[attrname] && Array.isArray(a[attrname])){
+                    a[attrname].push(obj[attrname]);
+                    a[attrname].sort();
+                } else if (a[attrname]) {
+                    a[attrname] = [a[attrname], obj[attrname]];
+                    a[attrname].sort();
+                } else {
+                    a[attrname] = obj[attrname];
+                }
+            }
+        });
+        selected_options = a;
+
+        var product_href = '{{ product_href }}';
+
+        var variant = this.get_combination_by_options(selected_options);
+
+        if ('{{ seo_url }}' && variant && variant.seo_keyword){
+            if (product_href.includes('index.php?route=product/product')){
+                var end_pos = product_href.indexOf('index.php?route=product/product');
+                var base_url = product_href.substr(0, end_pos);
+                window.history.replaceState(window.history.state,document.title, base_url + variant.seo_keyword + '{{ url_params }}');
+            } else {
+                var product_href_arr = product_href.split('/');
+                var protocol = product_href_arr[0];
+                product_href_arr.splice(0, 2);
+                product_href_arr.splice(product_href_arr.length - 1, 1);
+                window.history.replaceState(
+                    window.history.state,
+                    document.title,
+                    protocol + "//" + product_href_arr.join('/') + '/' + variant.seo_keyword + '{{ url_params }}'
+                );
+            }
+        } else {
+            var option_values_str = '';
+            for (const [, option_value] of Object.entries(selected_options)){
+                if (Array.isArray(option_value))
+                    for (const option_value_id of option_value) {
+                        option_values_str += option_value_id + ',';
+                    }
+                else
+                    option_values_str += option_value + ',';
+            }
+            option_values_str = option_values_str.substr(0, option_values_str.length - 1);
+
+            var symbol_ovs = product_href.includes("&") ? '&' : '?';
+            var link = product_seo_keyword != '' ? product_seo_keyword : product_href;
+
+            window.history.replaceState(
+                window.history.state,
+                document.title,
+                link + symbol_ovs + 'ovs=' + option_values_str + '{{ url_params }}'
+            );
+        }
+    }
+
+
+    CombinationEngine.prototype.register_reset_options = function () {
+        var self = this;
+        $('#reset_options').on('click', function (e) {
+            e.preventDefault();
+            self.reset_options();
+        });
+    };
+
+    CombinationEngine.prototype.register_add_cart_call = function (callUrl=null, onAjaxSuccess=null, onAjaxError=null) {
+        var self = this;
+        var call_url = callUrl ? callUrl : ["index.php?route=checkout/cart/add"];
+
+        $(document).ajaxSuccess(function(event, xhr, settings, json) {
+
+            hide_function = function () {
+                setTimeout(function () {
+                    self.error_wrapper_element.hide(1000, function () {
+                        self.error_wrapper_element.html('');
+                    });
+                }, 3000);
+            };
+
+            if(call_url.includes(settings.url) && json && json.error){
+                if(json.error.quantity){
+                    self.error_wrapper_element.html(json.error.quantity);
+                    self.error_wrapper_element.show(0, hide_function);
+                } else if (json.error.require_combination){
+                    self.error_wrapper_element.html(json.error.require_combination);
+                    self.error_wrapper_element.show(0, hide_function);
+                } else if (json.error.invalid_combination) {
+                    self.error_wrapper_element.html(json.error.invalid_combination);
+                    self.error_wrapper_element.show(0, hide_function);
+                }
+            }
+            if (onAjaxSuccess){
+                onAjaxSuccess(event, xhr, settings, json, call_url);
+            }
+        });
+        $(document).ajaxError(function(event, xhr, settings, error) {
+            if(call_url.includes(settings.url))
+            {
+                if (onAjaxError){
+                    onAjaxError(event, xhr, settings, error, call_url);
+                }
+            }
+
+        });
+    };
+
+    CombinationEngine.prototype.include_error_wrapper = function () {
+        /* includes an element for containing error messages */
+        this.error_wrapper_element.hide();
+        $('#reset_options').after(this.error_wrapper_element);
+    };
+
+    CombinationEngine.prototype.check_only_one_combination = function() {
+        var self = this;
+        var last_id = '';
+        var options_combinations = combined_option;
+        if(options_combinations.length == 1 && options_combinations[0].options != '') {
+            $.each(options_combinations[0].options, function( option_id, option_value_id ) {
+                var input_name = 'option-combinations['+option_id+']';
+                if($('div#options-combinations-container').find('[name ="'+input_name+'"]').length >= 1) {
+                    var input = $('div#options-combinations-container').find('[name ="'+input_name+'"]');
+
+                    if(input.next().is('ul.image_picker_selector')) {
+                        input.next().find('li.'+option_id+"-"+option_value_id).find('div').trigger('click');
+                    } else {
+                        if(input.is('select')) {
+                            input.val(option_value_id);
+                        } else if (input.is(':radio') || input.is(':checkbox')) {
+                            input.prop( "checked", true );
+                        }
+                    }
+                    last_id = input.attr('id');
+                }
+            });
+            setTimeout(function() {
+                self.show_options(last_id);
+            }, 1500)
+        }
+    }
+
+    CombinationEngine.prototype.select_fist_combination = function() {
+        var self = this;
+        var last_id = '';
+        var options_combinations = combined_option;
+
+        if(options_combinations.length > 0 && options_combinations[0].options != '') {
+            $.each(options_combinations[0].options, function( option_id, option_value_id ) {
+                var input_name = 'option-combinations['+option_id+']';
+                if($('div#options-combinations-container').find('[name^="'+input_name+'"]').length >= 1) {
+                    var input = $('div#options-combinations-container').find('[name^="'+input_name+'"]');
+
+                    if(input.next().is('ul.image_picker_selector')) {
+                        input.next().find('li.'+option_id+"-"+option_value_id).find('div').trigger('click');
+                    } else if (input.is('select')) {
+                        input.val(option_value_id);
+                    } else if (input.is(':radio')) {
+                        input.filter(`[value="${option_value_id}"]`).prop('checked', true);
+                    } else if (input.is(':checkbox')){
+                        $.each(option_value_id, (index, value) => {
+                            input.filter(`[value="${value}"]`).prop('checked', true);
+                        });
+                    }
+                    last_id = input.attr('id');
+                }
+            });
+            setTimeout(function() {
+                self.show_options(last_id);
+            }, 1500)
+        }
+    }
+
+    CombinationEngine.prototype.load_option_values_from_get_params = function() {
+        const self = this;
+        let option_value_ids_str = '{{ option_value_ids }}';
+
+        if (option_value_ids_str){
+            const option_value_ids = option_value_ids_str.split(',');
+
+            for (const option_value_id of option_value_ids) {
+                const input_element = $('div#options-combinations-container')
+                    .find(`[value="${option_value_id}"]`);
+
+                input_element.each(function (index, elem){
+                    if ($(elem).is(':checkbox') || $(elem).is(':radio')){
+                        $(elem).prop('checked', true);
+                    }
+                    else if($(elem).is('option')){
+                        $(elem).parent().val(option_value_id);
+                    }
+                });
+            }
+
+            setTimeout(function (){
+                self.show_options();
+            }, 1500);
+        }
+    }
+
+    /*</script>*/

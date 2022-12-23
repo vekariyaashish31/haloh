@@ -1,0 +1,97 @@
+{{ header }}
+<style type="text/css">
+  #account-custom_search h2 {
+    text-align: center;
+    background: rgb(15, 58, 141);
+    border-width: 2px;
+    padding: 13px;
+    border-radius: 3px !important;
+    color: #fff;
+  }
+  input.form-control {
+    max-width: 100%;
+  }
+  textarea.form-control {
+    max-width: 100%;
+  }
+</style>
+<div id="account-custom_search" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h2>{{ text_custom_search }}</h2>
+      <form action="{{ action }}" method="post" enctype="multipart/form-data" class="form-horizontal">
+        <fieldset>
+          <div class="form-group required">
+            <label class="col-sm-3 control-label" for="input-product_url">{{ entry_product_url }}</label>
+            <div class="col-sm-9">
+              <input type="text" name="product_url" value="{{ product_url }}" placeholder="{{ entry_product_url }}" id="input-product_url" class="form-control" />
+              {% if error_product_url %}
+              <div class="text-danger">{{ error_product_url }}</div>
+              {% endif %} </div>
+          </div>
+          
+          <div class="form-group required hidden">
+            <label class="col-sm-3 control-label" for="input-product_name">{{ entry_product_name }}</label>
+            <div class="col-sm-9">
+              <input type="text" name="product_name" value="{{ product_name }}" placeholder="{{ entry_product_name_p }}" id="input-product_name" class="form-control" />
+              {% if error_product_name %}
+              <div class="text-danger">{{ error_product_name }}</div>
+              {% endif %} </div>
+          </div>
+          <div class="form-group required hidden">
+            <label class="col-sm-3 control-label" for="input-price">{{ entry_price }}</label>
+            <div class="col-sm-9">
+              <input type="text" name="price" value="{{ price }}" placeholder="{{ entry_price_p }}" id="input-price" class="form-control" />
+              {% if error_price %}
+              <div class="text-danger">{{ error_price }}</div>
+              {% endif %} </div>
+          </div>
+          <div class="form-group required">
+            <label class="col-sm-3 control-label" for="input-quantity">{{ entry_quantity }}</label>
+            <div class="col-sm-9">
+              <input type="text" name="quantity" value="{{ quantity }}" placeholder="{{ entry_quantity_p }}" id="input-quantity" class="form-control" />
+              {% if error_quantity %}
+              <div class="text-danger">{{ error_quantity }}</div>
+              {% endif %} </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label" for="input-details">{{ entry_details }}</label>
+            <div class="col-sm-9">
+              <textarea name="details" rows="3" placeholder="{{ entry_details }}" id="input-details" class="form-control">{{ details }}</textarea>
+            </div>
+          </div>
+        </fieldset>
+        <div class="buttons clearfix" style="padding: 0;">
+          <div class="" style="">
+            <input style="width: 100%;" type="submit" value="Confirm" class="btn btn-primary" />
+          </div>
+        </div>
+      </form>
+      <img src="/image/catalog/custom-search-banner.jpg" class="img-responsive" />
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Retrieve
+  var product_url = localStorage.getItem("product_url");
+  $('input[name=product_url]').val(product_url);
+} else {
+  localStorage.removeItem("product_url"); 
+  // document.getElementById("input-product_url").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+</script>
+{{ footer }}

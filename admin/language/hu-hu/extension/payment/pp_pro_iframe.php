@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					 = 'PayPal Pro iFrame';
+
+// Text
+$_['text_extension']                 = 'Extensions';
+$_['text_success']					 = 'Siker: módosította a PayPal Pro iFrame fiók részletei!';
+$_['text_edit']                      = 'A PayPal Pro iFrame szerkesztése';
+$_['text_pp_pro_iframe']			 = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			 = 'meghatalmazás';
+$_['text_sale']						 = 'Eladás';
+$_['text_payment_info']				 = 'Fizetési információ';
+$_['text_capture_status']			 = 'Capture állapot';
+$_['text_amount_auth']				 = 'Engedélyezett összeg';
+$_['text_amount_captured']			 = 'Befogott összeg';
+$_['text_amount_refunded']			 = 'Visszatérített összeg';
+$_['text_capture_amount']			 = 'A rögzítés összege';
+$_['text_complete_capture']			 = 'Teljes felvétel';
+$_['text_transactions']				 = 'tranzakciók';
+$_['text_complete']					 = 'teljes';
+$_['text_confirm_void']				 = 'Ha érvénytelenné válik, nem kaphat további pénzeszközöket';
+$_['text_view']						 = 'Kilátás';
+$_['text_refund']					 = 'Visszatérítés';
+$_['text_resend']					 = 'újraküldése';
+$_['text_reauthorise']				 = 'Reauthorise';
+$_['text_reauthorised']				 = 'A tranzakciót újra engedélyezték';
+$_['text_transaction']				 = 'Tranzakció';
+$_['text_product_lines']			 = 'Gyártósorok';
+$_['text_ebay_txn_id']				 = 'eBay tranzakciós azonosítója';
+$_['text_name']						 = 'Név';
+$_['text_qty']						 = 'Mennyiség';
+$_['text_price']					 = 'Ár';
+$_['text_number']					 = 'Szám';
+$_['text_coupon_id']				 = 'Kuponazonosító';
+$_['text_coupon_amount']			 = 'Kupon összege';
+$_['text_coupon_currency']			 = 'Kupon pénzneme';
+$_['text_loyalty_disc_amt']			 = 'Hűségkártya lemez összege';
+$_['text_loyalty_currency']			 = 'Hűségkártya pénznem';
+$_['text_options_name']				 = 'Opciók neve';
+$_['text_tax_amt']					 = 'Adó összeg';
+$_['text_currency_code']			 = 'Pénznem kód';
+$_['text_amount']					 = 'Összeg';
+$_['text_gift_msg']					 = 'Ajándéküzenet';
+$_['text_gift_receipt']				 = 'Ajándékutalvány';
+$_['text_gift_wrap_name']			 = 'Ajándék wrap név';
+$_['text_gift_wrap_amt']			 = 'Ajándékcsomag összege';
+$_['text_buyer_email_market']		 = 'Vevő marketing e-mail';
+$_['text_survey_question']			 = 'Felmérési kérdés';
+$_['text_survey_chosen']			 = 'Felmérés választás kiválasztva';
+$_['text_receiver_business']		 = 'Fogadó üzlet';
+$_['text_receiver_email']			 = 'Fogadó e-mail';
+$_['text_receiver_id']				 = 'Vevő azonosítója';
+$_['text_buyer_email']				 = 'Vevő e-mailje';
+$_['text_payer_id']					 = 'Payer ID';
+$_['text_payer_status']				 = 'Fizető státusza';
+$_['text_country_code']				 = 'Ország kód';
+$_['text_payer_business']			 = 'Payer üzlet';
+$_['text_payer_salute']				 = 'Fizető üdvözlése';
+$_['text_payer_firstname']			 = 'A fizető neve';
+$_['text_payer_middlename']			 = 'Payer középső neve';
+$_['text_payer_lastname']			 = 'Payer vezetékneve';
+$_['text_payer_suffix']				 = 'Fizető utótag';
+$_['text_address_owner']			 = 'Cím tulajdonosa';
+$_['text_address_status']			 = 'Cím státusza';
+$_['text_ship_sec_name']			 = 'Hajó másodlagos névre';
+$_['text_ship_name']				 = 'Hajó neve';
+$_['text_ship_street1']				 = 'Hajó címre 1';
+$_['text_ship_street2']				 = 'Hajó címre 2';
+$_['text_ship_city']				 = 'Hajó a városba';
+$_['text_ship_state']				 = 'Hajóállomás';
+$_['text_ship_zip']					 = 'Hajózás ZIP-be';
+$_['text_ship_country']				 = 'Hajó országkód';
+$_['text_ship_phone']				 = 'Hajó a telefonszámra';
+$_['text_ship_sec_add1']			 = 'Hajó a másodlagos címre 1';
+$_['text_ship_sec_add2']			 = 'Hajó másodlagos címre 2';
+$_['text_ship_sec_city']			 = 'Hajó a középvárosba';
+$_['text_ship_sec_state']			 = 'Hajó másodrendű államba';
+$_['text_ship_sec_zip']				 = 'Hajó a másodlagos ZIP-ba';
+$_['text_ship_sec_country']			 = 'Hajó másodlagos országkódra';
+$_['text_ship_sec_phone']			 = 'Hajó a másodlagos telefonhoz';
+$_['text_trans_id']					 = 'Tranzakció azonosítója';
+$_['text_receipt_id']				 = 'Átvételi azonosító';
+$_['text_parent_trans_id']			 = 'Szülői tranzakcióazonosító';
+$_['text_trans_type']				 = 'Tranzakció Típusa';
+$_['text_payment_type']				 = 'Fizetési mód';
+$_['text_order_time']				 = 'Rendelési idő';
+$_['text_fee_amount']				 = 'Díj összegét';
+$_['text_settle_amount']			 = 'Állítsa be az összeget';
+$_['text_tax_amount']				 = 'Adó összeg';
+$_['text_exchange']					 = 'Árfolyam';
+$_['text_payment_status']			 = 'Fizetési állapot';
+$_['text_pending_reason']			 = 'Függő ok';
+$_['text_reason_code']				 = 'Az ok kódja';
+$_['text_protect_elig']				 = 'Védelemre való jogosultság';
+$_['text_protect_elig_type']		 = 'Védelem jogosultsági típusa';
+$_['text_store_id']					 = 'Tárolja az azonosítót';
+$_['text_terminal_id']				 = 'Terminálazonosító';
+$_['text_invoice_number']			 = 'Számlaszám';
+$_['text_custom']					 = 'Szokás';
+$_['text_note']						 = 'jegyzet';
+$_['text_sales_tax']				 = 'Forgalmi adó';
+$_['text_buyer_id']					 = 'Vevő azonosítója';
+$_['text_close_date']				 = 'Zárás dátuma';
+$_['text_multi_item']				 = 'Több tétel';
+$_['text_sub_amt']					 = 'Előfizetési összeg';
+$_['text_sub_period']				 = 'Előfizetési időszak';
+$_['text_redirect']					 = 'Átirányítás';
+$_['text_iframe']					 = 'iframe';
+$_['help_checkout_method']			 = 'Kérjük, használja az átirányítási módszert, ha nincs telepítve SSL vagy ha nincs PayPal-fizetési opciója, amelyet letiltott a befogadott fizetési oldalon.';
+$_['help_debug']					 = 'Naplózza a kiegészítő információkat.';
+
+// Column
+$_['column_trans_id']				 = 'Tranzakció azonosítója';
+$_['column_amount']					 = 'Összeg';
+$_['column_type']					 = 'Fizetési mód';
+$_['column_status']					 = 'Állapot';
+$_['column_pending_reason']			 = 'Függő ok';
+$_['column_date_added']				 = 'Alkotó';
+$_['column_action']					 = 'Akció';
+
+// Tab
+$_['tab_settings']					 = 'Beállítások';
+$_['tab_order_status']				 = 'Rendelés állapota';
+$_['tab_checkout_customisation']	 = 'Megrendelés testreszabása';
+
+// Entry
+$_['entry_username']				 = 'API felhasználónév';
+$_['entry_password']				 = 'API jelszó';
+$_['entry_signature']				 = 'API Aláírás';
+$_['entry_test']					 = 'Teszt üzemmódban';
+$_['entry_total']					 = 'Teljes';
+$_['entry_order_status']			 = 'Rendelés állapota:';
+$_['entry_geo_zone']				 = 'Geo zóna:';
+$_['entry_status']					 = 'Állapot:';
+$_['entry_sort_order']				 = 'Sorrend:';
+$_['entry_transaction_method']		 = 'Tranzakciós módszer:';
+$_['entry_transaction_id']			 = 'Tranzakció azonosítója';
+$_['entry_full_refund']				 = 'Teljes visszatérítést';
+$_['entry_amount']					 = 'Összeg';
+$_['entry_message']					 = 'Üzenet';
+$_['entry_ipn_url']					 = 'IPN URL:';
+$_['entry_checkout_method']			 = 'Megrendelés módja:';
+$_['entry_debug']					 = 'Hibakeresési mód:';
+$_['entry_canceled_reversal_status'] = 'Megszakított visszavonási állapot:';
+$_['entry_completed_status']		 = 'Befejezett állapot:';
+$_['entry_denied_status']			 = 'Tiltott állapot:';
+$_['entry_expired_status']			 = 'Lejárt állapot:';
+$_['entry_failed_status']			 = 'Sikertelen állapot:';
+$_['entry_pending_status']			 = 'Függőben lévő állapot:';
+$_['entry_processed_status']		 = 'Feldolgozott állapot:';
+$_['entry_refunded_status']			 = 'Visszatérített állapot:';
+$_['entry_reversed_status']			 = 'Megfordított állapot:';
+$_['entry_voided_status']			 = 'Érvénytelen státusz:';
+
+// Help
+$_['help_test']						 = 'Használja az élő vagy tesztelő (homokozó) átjáró kiszolgálót a tranzakciók feldolgozásához? A teszt sikertelen lehet az Internet Explorer programban';
+$_['help_total']					 = 'A fizetésnek teljesnek kell lennie, mielőtt a fizetési mód aktívvá válna';
+
+// Button
+$_['button_refund']					 = 'Visszatérítés';
+$_['button_void']					 = 'Üres';
+$_['button_capture']				 = 'Elfog';
+$_['button_reauthorise']			 = 'Reauthorise';
+
+// Error
+$_['error_permission']				 = 'Figyelmeztetés: Önnek nincs engedélye a PayPal Website Payment Pro iFrame (UK) ! fizetési mód módosítására';
+$_['error_sig']						 = 'Aláírás szükséges!';
+$_['error_user']					 = 'Felhasználó szükséges!';
+$_['error_password']				 = 'Jelszó szükséges!';
+$_['error_timeout']					 = 'A kérés meghaladta a rendelkezésre álló időkeretet';
+$_['error_transaction_missing']		 = 'Nem sikerült megtalálni a tranzakciót';
+$_['error_missing_data']			 = 'Hiányzó adatok';
+$_['error_general']					 = 'Hiba történt';
+$_['error_capture']				     = 'Adjon meg egy befogadandó összeget';

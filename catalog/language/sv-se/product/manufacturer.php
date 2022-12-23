@@ -1,0 +1,27 @@
+<?php
+// Heading
+$_['heading_title']     = 'Hitta din favorit varumärke';
+
+// Text
+$_['text_brand']        = 'varumärke';
+$_['text_index']        = 'Varumärkesindex:';
+$_['text_error']        = 'Varumärke inte hittades!';
+$_['text_empty']        = 'Det finns inga produkter att lista.';
+$_['text_quantity']     = 'Antal:';
+$_['text_manufacturer'] = 'Varumärke:';
+$_['text_model']        = 'Produktkod:';
+$_['text_points']       = 'Belöningspoäng:';
+$_['text_price']        = 'Pris:';
+$_['text_tax']          = 'Ex Skatt:';
+$_['text_compare']      = 'Produkt Jämför (%s)';
+$_['text_sort']         = 'Sortera efter:';
+$_['text_default']      = 'Standard';
+$_['text_name_asc']     = 'Namn (A-Z)';
+$_['text_name_desc']    = 'Namn (Z - A)';
+$_['text_price_asc']    = 'Pris (Låg &gt; Hög)';
+$_['text_price_desc']   = 'Pris (Hög &gt; Låg)';
+$_['text_rating_asc']   = 'Betyg (lägst)';
+$_['text_rating_desc']  = 'Betyg (Högsta)';
+$_['text_model_asc']    = 'Modell (A - Z)';
+$_['text_model_desc']   = 'Modell (Z - A)';
+$_['text_limit']        = 'Show:';

@@ -1,0 +1,79 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td class="text-left">{{ column_date_added }}</td>
+        <td class="text-left">{{ column_comment }}</td>
+        <td class="text-left">{{ column_status }}</td>
+        <td class="text-left">{{ column_notify }}</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if histories %}
+      {% set myVal = 50 %}
+
+      {% for history in histories %}
+         {% set myVal = myVal + 10 %}
+      <tr>
+        <td class="text-left">{{ history.date_added }}</td>
+        <td class="text-left">
+
+<table>
+  <tr>
+    <td style="width: 100%;" >
+      {% if history.comment %}
+      <div style="width: 550px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
+          {{ history.comment }}
+      </div>
+      {% endif %}
+    </td>
+    <td>
+      {% if  history.tntcomment  %}
+        <button  type="button" class="btn btn-info btn-lg tntclickviewfull" data-toggle="modal" data-target="#myModal{{ myVal }}">view comment</button>
+        <div id="myModal{{ myVal }}" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body" style="word-wrap: break-word;white-space: pre-wrap;word-break: break-word;">
+                {{ history.tntcomment }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+
+
+
+      
+
+
+
+
+       
+
+
+
+      </td>
+        <td class="text-left">{{ history.status }}</td>
+        <td class="text-left">{{ history.notify }}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <tr>
+        <td class="text-center" colspan="4">{{ text_no_results }}</td>
+      </tr>
+      {% endif %}
+    </tbody>
+  </table>
+</div>
+<div class="row">
+  <div class="col-sm-6 text-left">{{ pagination }}</div>
+  <div class="col-sm-6 text-right">{{ results }}</div>
+</div>
+
+ 

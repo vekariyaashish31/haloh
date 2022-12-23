@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					 = 'PayPal Pro iFrame';
+
+// Text
+$_['text_extension']                 = 'Erweiterungen';
+$_['text_success']					 = 'Erfolg: Sie haben die PayPal Pro iFrame-Kontodetails! geändert';
+$_['text_edit']                      = 'Bearbeiten Sie PayPal Pro iFrame';
+$_['text_pp_pro_iframe']			 = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			 = 'Genehmigung';
+$_['text_sale']						 = 'Verkauf';
+$_['text_payment_info']				 = 'Zahlungsinformationen';
+$_['text_capture_status']			 = 'Erfassungsstatus';
+$_['text_amount_auth']				 = 'Betrag autorisiert';
+$_['text_amount_captured']			 = 'Betrag erfasst';
+$_['text_amount_refunded']			 = 'Betrag erstattet';
+$_['text_capture_amount']			 = 'Menge erfassen';
+$_['text_complete_capture']			 = 'Vollständige Erfassung';
+$_['text_transactions']				 = 'Transaktionen';
+$_['text_complete']					 = 'Komplett';
+$_['text_confirm_void']				 = 'Wenn Sie ungültig sind, können Sie keine weiteren Gelder erfassen';
+$_['text_view']						 = 'Aussicht';
+$_['text_refund']					 = 'Rückerstattung';
+$_['text_resend']					 = 'Erneut senden';
+$_['text_reauthorise']				 = 'Erneute Autorisierung';
+$_['text_reauthorised']				 = 'Die Transaktion wurde erneut autorisiert';
+$_['text_transaction']				 = 'Transaktion';
+$_['text_product_lines']			 = 'Produktlinien';
+$_['text_ebay_txn_id']				 = 'eBay-Transaktions-ID';
+$_['text_name']						 = 'Name';
+$_['text_qty']						 = 'Menge';
+$_['text_price']					 = 'Preis';
+$_['text_number']					 = 'Nummer';
+$_['text_coupon_id']				 = 'Gutschein-ID';
+$_['text_coupon_amount']			 = 'Gutscheinbetrag';
+$_['text_coupon_currency']			 = 'Gutscheinwährung';
+$_['text_loyalty_disc_amt']			 = 'Kundenkarten-CD-Betrag';
+$_['text_loyalty_currency']			 = 'Treuekartenwährung';
+$_['text_options_name']				 = 'Optionsname';
+$_['text_tax_amt']					 = 'Steuerbetrag';
+$_['text_currency_code']			 = 'Währungscode';
+$_['text_amount']					 = 'Menge';
+$_['text_gift_msg']					 = 'Geschenk Nachricht';
+$_['text_gift_receipt']				 = 'Geschenk-Empfang';
+$_['text_gift_wrap_name']			 = 'Name der Geschenkverpackung';
+$_['text_gift_wrap_amt']			 = 'Geschenkpapiermenge';
+$_['text_buyer_email_market']		 = 'Käufer Marketing-E-Mail';
+$_['text_survey_question']			 = 'Umfragefrage';
+$_['text_survey_chosen']			 = 'Auswahl der Umfrage ausgewählt';
+$_['text_receiver_business']		 = 'Empfängergeschäft';
+$_['text_receiver_email']			 = 'Empfänger-E-Mail';
+$_['text_receiver_id']				 = 'Empfänger-ID';
+$_['text_buyer_email']				 = 'Käufer-E-Mail';
+$_['text_payer_id']					 = 'Zahler-ID';
+$_['text_payer_status']				 = 'Payer-Status';
+$_['text_country_code']				 = 'Landesvorwahl';
+$_['text_payer_business']			 = 'Zahlergeschäft';
+$_['text_payer_salute']				 = 'Payer Begrüßung';
+$_['text_payer_firstname']			 = 'Payer Vorname';
+$_['text_payer_middlename']			 = 'Mittlerer Name des Zahlers';
+$_['text_payer_lastname']			 = 'Payer Nachname';
+$_['text_payer_suffix']				 = 'Payer Suffix';
+$_['text_address_owner']			 = 'Adressinhaber';
+$_['text_address_status']			 = 'Adressstatus';
+$_['text_ship_sec_name']			 = 'Liefert den zweiten Namen';
+$_['text_ship_name']				 = 'Versand an Name';
+$_['text_ship_street1']				 = 'Versand an Adresse 1';
+$_['text_ship_street2']				 = 'Versand an Adresse 2';
+$_['text_ship_city']				 = 'Schiff in die Stadt';
+$_['text_ship_state']				 = 'Lieferung in den Staat';
+$_['text_ship_zip']					 = 'Versand nach PLZ';
+$_['text_ship_country']				 = 'Versand nach Ländercode';
+$_['text_ship_phone']				 = 'An die Telefonnummer senden';
+$_['text_ship_sec_add1']			 = 'An die sekundäre Adresse senden 1';
+$_['text_ship_sec_add2']			 = 'An sekundäre Adresse senden 2';
+$_['text_ship_sec_city']			 = 'Schiff zur sekundären Stadt';
+$_['text_ship_sec_state']			 = 'In den sekundären Status versetzen';
+$_['text_ship_sec_zip']				 = 'Zum sekundären ZIP versenden';
+$_['text_ship_sec_country']			 = 'Versand an sekundären Ländercode';
+$_['text_ship_sec_phone']			 = 'Zum sekundären Telefon schicken';
+$_['text_trans_id']					 = 'Transaktions-ID';
+$_['text_receipt_id']				 = 'Beleg-ID';
+$_['text_parent_trans_id']			 = 'Übergeordnete Transaktions-ID';
+$_['text_trans_type']				 = 'Art der Transaktion';
+$_['text_payment_type']				 = 'Zahlungsart';
+$_['text_order_time']				 = 'Bestellzeitpunkt';
+$_['text_fee_amount']				 = 'Gebührenbetrag';
+$_['text_settle_amount']			 = 'Betrag abrechnen';
+$_['text_tax_amount']				 = 'Steuerbetrag';
+$_['text_exchange']					 = 'Tauschrate';
+$_['text_payment_status']			 = 'Zahlungsstatus';
+$_['text_pending_reason']			 = 'Ausstehender Grund';
+$_['text_reason_code']				 = 'Grundcode';
+$_['text_protect_elig']				 = 'Schutzberechtigung';
+$_['text_protect_elig_type']		 = 'Schutzberechtigungstyp';
+$_['text_store_id']					 = 'Geschäfts-ID';
+$_['text_terminal_id']				 = 'Terminal-ID';
+$_['text_invoice_number']			 = 'Rechnungsnummer';
+$_['text_custom']					 = 'Brauch';
+$_['text_note']						 = 'Hinweis';
+$_['text_sales_tax']				 = 'Mehrwertsteuer';
+$_['text_buyer_id']					 = 'Käufer-ID';
+$_['text_close_date']				 = 'Einsendeschluss';
+$_['text_multi_item']				 = 'Mehrfachartikel';
+$_['text_sub_amt']					 = 'Abonnementbetrag';
+$_['text_sub_period']				 = 'Abonnementzeitraum';
+$_['text_redirect']					 = 'Umleiten';
+$_['text_iframe']					 = 'Iframe';
+$_['help_checkout_method']			 = 'Verwenden Sie die Redirect-Methode, wenn SSL nicht installiert ist oder wenn auf Ihrer gehosteten Zahlungsseite die Option "Pay with PayPal" nicht aktiviert ist.';
+$_['help_debug']					 = 'Protokolliert zusätzliche Informationen.';
+
+// Column
+$_['column_trans_id']				 = 'Transaktions-ID';
+$_['column_amount']					 = 'Menge';
+$_['column_type']					 = 'Zahlungsart';
+$_['column_status']					 = 'Status';
+$_['column_pending_reason']			 = 'Ausstehender Grund';
+$_['column_date_added']				 = 'Erstellt';
+$_['column_action']					 = 'Aktion';
+
+// Tab
+$_['tab_settings']					 = 'die Einstellungen';
+$_['tab_order_status']				 = 'Bestellstatus';
+$_['tab_checkout_customisation']	 = 'Checkout-Anpassung';
+
+// Entry
+$_['entry_username']				 = 'API-Benutzername';
+$_['entry_password']				 = 'API-Passwort';
+$_['entry_signature']				 = 'API-Signatur';
+$_['entry_test']					 = 'Testmodus';
+$_['entry_total']					 = 'Gesamt';
+$_['entry_order_status']			 = 'Bestellstatus:';
+$_['entry_geo_zone']				 = 'Geo Zone:';
+$_['entry_status']					 = 'Status:';
+$_['entry_sort_order']				 = 'Sortierreihenfolge:';
+$_['entry_transaction_method']		 = 'Transaktionsmethode:';
+$_['entry_transaction_id']			 = 'Transaktions-ID';
+$_['entry_full_refund']				 = 'Komplette Rückerstattung';
+$_['entry_amount']					 = 'Menge';
+$_['entry_message']					 = 'Botschaft';
+$_['entry_ipn_url']					 = 'IPN-URL:';
+$_['entry_checkout_method']			 = 'Checkout-Methode:';
+$_['entry_debug']					 = 'Debug-Modus:';
+$_['entry_canceled_reversal_status'] = 'Stornierungsstatus storniert:';
+$_['entry_completed_status']		 = 'Abgeschlossener Status:';
+$_['entry_denied_status']			 = 'Abgelehnter Status:';
+$_['entry_expired_status']			 = 'Abgelaufener Status:';
+$_['entry_failed_status']			 = 'Fehlgeschlagener Status:';
+$_['entry_pending_status']			 = 'Offener Status:';
+$_['entry_processed_status']		 = 'Verarbeiteter Status:';
+$_['entry_refunded_status']			 = 'Rückerstatteter Status:';
+$_['entry_reversed_status']			 = 'Umgekehrter Status:';
+$_['entry_voided_status']			 = 'Ungültiger Status:';
+
+// Help
+$_['help_test']						 = 'Verwenden Sie den Live- oder Test-Gateway-Server (Sandbox), um Transaktionen zu verarbeiten? Der Test kann in Internet Explorer fehlschlagen';
+$_['help_total']					 = 'Die Checkout-Summe, die der Auftrag erreichen muss, bevor diese Zahlungsmethode aktiv wird';
+
+// Button
+$_['button_refund']					 = 'Rückerstattung';
+$_['button_void']					 = 'Leere';
+$_['button_capture']				 = 'Erfassung';
+$_['button_reauthorise']			 = 'Erneute Autorisierung';
+
+// Error
+$_['error_permission']				 = 'Warnung: Sie sind nicht berechtigt, die Zahlung PayPal Website Payment Pro iFrame (UK) ! zu ändern';
+$_['error_sig']						 = 'Unterschrift erforderlich!';
+$_['error_user']					 = 'Benutzer erforderlich!';
+$_['error_password']				 = 'Passwort erforderlich!';
+$_['error_timeout']					 = 'Zeitüberschreitung der Anforderung';
+$_['error_transaction_missing']		 = 'Die Transaktion konnte nicht gefunden werden';
+$_['error_missing_data']			 = 'Fehlende Daten';
+$_['error_general']					 = 'Es gab einen Fehler';
+$_['error_capture']				     = 'Geben Sie einen Betrag ein, der erfasst werden soll';

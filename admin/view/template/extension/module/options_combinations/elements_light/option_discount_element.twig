@@ -1,0 +1,42 @@
+{% spaceless %}
+
+    {% set discounts = combined_product_option['option_discount'] %}
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover" id="option-discount-{{ option_combination_row }}-">
+            <thead>
+            <tr>
+                <td class="text-left">{{ entry_customer_group }}</td>
+                <td class="text-left">{{ entry_quantity }}</td>
+                <td class="text-left">{{ entry_priority }}</td>
+                <td class="text-left">{{ entry_price }}</td>
+                <td class="text-left">{{ entry_date_start }}</td>
+                <td class="text-left">{{ entry_date_end }}</td>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% set count_discounts = 0 %}
+            {% if not discounts %}
+                {% set discounts = [] %}
+            {% endif %}
+            {% for discount in discounts %}
+                {% include element_folder ~'option_discount_element_row.twig' %}
+                {% set count_discounts = count_discounts + 1 %}
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5"></td>
+                <td>
+                    <div class="pull-right">
+                        <button type="button" data-toggle="tooltip" title=""
+                                class="btn btn-primary add-discount-customer-group" data-original-title="Add"><i
+                                    class="fa fa-plus-circle"></i></button>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endspaceless %}

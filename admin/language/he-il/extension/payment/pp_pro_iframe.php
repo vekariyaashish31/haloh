@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					= 'איי. פריים פייפאל פרו (PayPal Pro iFrame)';
+
+// Text
+$_['text_extension']     			= 'הרחבות';
+$_['text_success']					= 'בוצע בהצלחה: עדכנת בהצלחה את נתוני חשבון פייפאל פרו איי. פריים!';
+$_['text_edit']                     = 'עריכת איי. פריים פייפאל פרו ';
+$_['text_pp_pro_iframe']			= '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			= 'הרשאה';
+$_['text_sale']						= 'מכירה';
+$_['text_payment_info']				= 'מידע תשלום';
+$_['text_capture_status']			= 'ססטוס אישור עסקה';
+$_['text_amount_auth']				= 'סכום אושר';
+$_['text_amount_captured']			= 'סכום עסקה אושר';
+$_['text_amount_refunded']			= 'סכום זוכה';
+$_['text_capture_amount']			= 'סכום עסקה אושר';
+$_['text_complete_capture']			= 'עסקה אושרה בהצלחה';
+$_['text_transactions']				= 'עסקאות';
+$_['text_complete']					= 'הסתיים';
+$_['text_confirm_void']				= 'במידה ומבטלים לא יהיה ניתן ללכוד כספים בהמשך';
+$_['text_view']						= 'הצגה';
+$_['text_refund']					= 'זיכוי';
+$_['text_resend']					= 'שליחה נוספת';
+$_['text_reauthorise']				= 'אושרה שוב';
+$_['text_reauthorised']				= 'העסקה אושרה שוב';
+$_['text_transaction']				= 'עסקה';
+$_['text_product_lines']			= 'קווי פריט';
+$_['text_ebay_txn_id']				= 'מספר זיהוי עסקה באיביי';
+$_['text_name']						= 'שם';
+$_['text_qty']						= 'כמות';
+$_['text_price']					= 'מחיר';
+$_['text_number']					= 'מספר';
+$_['text_coupon_id']				= 'מספר זיהוי קופון';
+$_['text_coupon_amount']			= 'סכום קופון';
+$_['text_coupon_currency']			= 'מטבע קופון';
+$_['text_loyalty_disc_amt']			= 'סכום דיסק כרטיס נאמנות';
+$_['text_loyalty_currency']			= 'מטבע כרטיס נאמנות';
+$_['text_options_name']				= 'שמות אפשרויות';
+$_['text_tax_amt']					= 'סכום מס';
+$_['text_currency_code']			= 'קוד מטבע';
+$_['text_amount']					= 'סכום';
+$_['text_gift_msg']					= 'הודעת מתנה';
+$_['text_gift_receipt']				= 'מקבל המתנה';
+$_['text_gift_wrap_name']			= 'שם מעטפת מתנה';
+$_['text_gift_wrap_amt']			= 'סכום מעטפת מתנה';
+$_['text_buyer_email_market']		= 'דואר אלקטרוני שווקי של הקונה';
+$_['text_survey_question']			= 'שאלת סקר';
+$_['text_survey_chosen']			= 'בחירת סקר נבחרה';
+$_['text_receiver_business']		= 'העסק המקבל';
+$_['text_receiver_email']			= 'דואר אלקטרוני של המקבל';
+$_['text_receiver_id']				= 'מספר זיהוי של המקבל';
+$_['text_buyer_email']				= 'דואר אלקטרוני של המקבל';
+$_['text_payer_id']					= 'מספר זיהוי המשלם';
+$_['text_payer_status']				= 'סטטוס המשלם';
+$_['text_country_code']				= 'קוד מדינה';
+$_['text_payer_business']			= 'עסק המשלם';
+$_['text_payer_salute']				= 'הצדעת המשלם';
+$_['text_payer_firstname']			= 'שם פרטי של המשלם';
+$_['text_payer_middlename']			= 'שם אמצעי של המשלם';
+$_['text_payer_lastname']			= 'שם משפחה של המשלם';
+$_['text_payer_suffix']				= 'סיומת המשלם';
+$_['text_address_owner']			= 'כתובת הבעלים';
+$_['text_address_status']			= 'סטטוס כתובת';
+$_['text_ship_sec_name']			= 'משלוח לשם משני';
+$_['text_ship_name']				= 'משלוח לשם';
+$_['text_ship_street1']				= 'משלוח לכתובת 1';
+$_['text_ship_street2']				= 'משלוח לכתובת 2';
+$_['text_ship_city']				= 'משלוח לעיר';
+$_['text_ship_state']				= 'משלוח למדינה';
+$_['text_ship_zip']					= 'משלוח למיקוד';
+$_['text_ship_country']				= 'משלוח לקוד ארץ';
+$_['text_ship_phone']				= 'משלוח למספר טלפון';
+$_['text_ship_sec_add1']			= 'משלוח לכתובת משנית 1';
+$_['text_ship_sec_add2']			= 'לוח לכתובת משנית 1 2';
+$_['text_ship_sec_city']			= 'משלוח לעיר משנית';
+$_['text_ship_sec_state']			= 'משלוח למדינה משנית';
+$_['text_ship_sec_zip']				= 'משלוח למיקוד משני';
+$_['text_ship_sec_country']			= 'משלוח לקוד ארץ משני';
+$_['text_ship_sec_phone']			= 'משלוח לטלפון משני';
+$_['text_trans_id']					= 'מספר זיהוי עסקה';
+$_['text_receipt_id']				= 'מספר זיהוי המקבל';
+$_['text_parent_trans_id']			= 'מספר זיהוי עסקת אב';
+$_['text_trans_type']				= 'סוג עסקה';
+$_['text_payment_type']				= 'סוג עסקה';
+$_['text_order_time']				= 'זמן הזמנה';
+$_['text_fee_amount']				= 'סכום תשלום';
+$_['text_settle_amount']			= 'סכום פרעון';
+$_['text_tax_amount']				= 'סכום מס';
+$_['text_exchange']					= 'שער חליפין';
+$_['text_payment_status']			= 'סטטוס תשלום';
+$_['text_pending_reason']			= 'סיבת המתנה';
+$_['text_reason_code']				= 'קוד סיבה';
+$_['text_protect_elig']				= 'זכאות הגנה';
+$_['text_protect_elig_type']		= 'סוג זכאות הגנה';
+$_['text_store_id']					= 'מספר זיהוי חנות';
+$_['text_terminal_id']				= 'מספר זיהוי מסוף';
+$_['text_invoice_number']			= 'מספר חשבונית';
+$_['text_custom']					= 'מותאם אישית';
+$_['text_note']						= 'הערה';
+$_['text_sales_tax']				= 'מס מכירות';
+$_['text_buyer_id']					= 'מספר זיהוי קונה';
+$_['text_close_date']				= 'תאריך סגירה';
+$_['text_multi_item']				= 'פריט מרובה';
+$_['text_sub_amt']					= 'סכום מנוי';
+$_['text_sub_period']				= 'תקופת מנוי';
+$_['text_redirect']					= 'מועבר אל';
+$_['text_iframe']					= 'איי. פריים';
+$_['help_checkout_method']			= 'נא להשתמש בשיטת העברה במידה ואין ברשותך אס.אס.אל. (SSL) מותקן או אם אין ברשותך תשלום עם אפשרות פייפאל מנוטרלת בעמוד התשלום המארח.';
+$_['help_debug']					= 'תיעוד מידע נוסף.';
+
+// Column
+$_['column_trans_id']				= 'מספר זיהוי עסקה';
+$_['column_amount']					= 'סכום';
+$_['column_type']					= 'סוג תשלום';
+$_['column_status']					= 'סטטוס';
+$_['column_pending_reason']			= 'סיבת המתנה';
+$_['column_date_added']				= 'נוצר';
+$_['column_action']					= 'פעולה';
+
+// Tab
+$_['tab_settings']					= 'הגדרות';
+$_['tab_order_status']				= 'סטטוס הזמנה';
+$_['tab_checkout_customisation']	= 'התאמה של לתשלום';
+
+// Entry
+$_['entry_username']				= 'שם משתמש/ת של ממשק תכנות אפליקטיבי (API)';
+$_['entry_password']				= 'סיסמה של ממשק תכנות אפליקטיבי (API)';
+$_['entry_signature']				= 'חתימה של ממשק תכנות אפליקטיבי (API)';
+$_['entry_test']					= 'מצב בדיקות';
+$_['entry_total']					= 'סך הכל';
+$_['entry_order_status']			= 'סטטוס הזמנה:';
+$_['entry_geo_zone']				= 'איזור גיאוגרפי:';
+$_['entry_status']					= 'סטטוס:';
+$_['entry_sort_order']				= 'סדר מיון:';
+$_['entry_transaction_method']		= 'אופן העסקה:';
+$_['entry_transaction_id']			= 'מספר זיהוי עסקה';
+$_['entry_full_refund']				= 'זיכוי מלא';
+$_['entry_amount']					= 'סכום';
+$_['entry_message']					= 'הודעה';
+$_['entry_ipn_url']					= 'IPN URL:';
+$_['entry_checkout_method']			= 'אופן התשלום:';
+$_['entry_debug']					= 'מצב בדיקת שגיאות:';
+$_['entry_canceled_reversal_status'] = 'סטטוס ביטול החזר:';
+$_['entry_completed_status']		= 'סטטוס הסתיים:';
+$_['entry_denied_status']			= 'סטטוס נדחה:';
+$_['entry_expired_status']			= 'סטטוס פג תוקף:';
+$_['entry_failed_status']			= 'סטטוס נכשל:';
+$_['entry_pending_status']			= 'סטטוס ממתין:';
+$_['entry_processed_status']		= 'סטטוס בביצוע:';
+$_['entry_refunded_status']			= 'סטטוס זוכה:';
+$_['entry_reversed_status']			= 'סטטוס הוחזר:';
+$_['entry_voided_status']			= 'סטטוס בוטל:';
+
+// Help
+$_['help_test']						= 'יש להשתמש בשרתי שערים חיים או בבדיקות  (סנדבוקס) על מנת לבצע עסקאות? הבדיקה עלולה להכשל באינטרנט אקספלורר';
+$_['help_total']					= 'הסכום הכולל לתשלום שאליו ההזמנה צריכה להגיע לפני שאופן תשלום זה נהיה פעיל.';
+
+// Button
+$_['button_refund']					= 'זוכה';
+$_['button_void']					= 'בוטל';
+$_['button_capture']				= 'עסקה אושרה';
+$_['button_reauthorise']			= 'אושר שוב';
+
+// Error
+$_['error_permission']				= 'נא לשים לב: אין לך הרשאה לעדכן את תשלום פרו איי. פריים באתר תשלום פייפאל (UK)!';
+$_['error_sig']						= 'דרושה חתימה!';
+$_['error_user']					= 'נדרש משתמש/ת!';
+$_['error_password']				= 'נדרשת סיסמה!';
+$_['error_timeout']					= 'פג תוקף הבקשה';
+$_['error_transaction_missing']		= 'לא ניתן למצוא את העסקה';
+$_['error_missing_data']			= 'חסר מידע';
+$_['error_general']					= 'אירעה שגיאה';
+$_['error_capture']				= 'נא להכניס את הסכום לחיוב';

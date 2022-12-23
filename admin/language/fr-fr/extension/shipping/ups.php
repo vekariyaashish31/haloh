@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'Extensions';
+$_['text_success']                 = 'Succès: Vous avez modifié l\'expédition UPS!';
+$_['text_edit']                    = 'Modifier UPS Shipping';
+$_['text_regular_daily_pickup']    = 'Ramassage quotidien régulier';
+$_['text_daily_pickup']            = 'Ramassage quotidien';
+$_['text_customer_counter']        = 'Compteur client';
+$_['text_one_time_pickup']         = 'Un temps de ramassage';
+$_['text_on_call_air_pickup']      = 'Ramassage aérien sur appel';
+$_['text_letter_center']           = 'Centre de lettres';
+$_['text_air_service_center']      = 'Centre de service aérien';
+$_['text_suggested_retail_rates']  = 'Tarifs de détail suggérés (UPS Store)';
+$_['text_package']                 = 'Paquet';
+$_['text_ups_letter']              = 'Lettre d\'UPS';
+$_['text_ups_tube']                = 'Tube d\'UPS';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'UPS 25kg boîte';
+$_['text_ups_10kg_box']            = 'UPS 10kg boîte';
+$_['text_us']                      = 'Origine américaine';
+$_['text_ca']                      = 'Canada Origine';
+$_['text_eu']                      = 'Origine de l\'Union européenne';
+$_['text_pr']                      = 'Porto Rico Origine';
+$_['text_mx']                      = 'Mexique Origine';
+$_['text_other']                   = 'Toutes les autres origines';
+$_['text_test']                    = 'Tester';
+$_['text_production']              = 'Production';
+$_['text_residential']             = 'Résidentiel';
+$_['text_commercial']              = 'Commercial';
+$_['text_next_day_air']            = 'UPS Next Day Air';
+$_['text_2nd_day_air']             = 'UPS Deuxième Jour Air';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'Sélection UPS trois jours';
+$_['text_next_day_air_saver']      = 'Économie d\'air UPS Next Day';
+$_['text_next_day_air_early_am']   = 'UPS Next Day Air Début A.M.';
+$_['text_2nd_day_air_am']          = 'UPS Deuxième Jour Air A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
+$_['text_standard']                = 'UPS Standard';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPS Expedited';
+$_['text_express_early_am']        = 'UPS Express début A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'UPS Today Standard';
+$_['text_today_dedicated_courier'] = 'UPS Aujourd\'hui Courrier dédié';
+$_['text_today_intercity']         = 'UPS Aujourd\'hui Intercity';
+$_['text_today_express']           = 'UPS Today Express';
+$_['text_today_express_saver']     = 'UPS Today Express Saver';
+
+// Entry
+$_['entry_key']                    = 'Clef d\'accès';
+$_['entry_username']               = 'Nom d\'utilisateur';
+$_['entry_password']               = 'Mot de passe';
+$_['entry_pickup']                 = 'Méthode de ramassage';
+$_['entry_packaging']              = 'Type d\'emballage';
+$_['entry_classification']         = 'Code de classification client';
+$_['entry_origin']                 = 'Code d\'origine d\'expédition';
+$_['entry_city']                   = 'Ville d\'origine';
+$_['entry_state']                  = 'État d\'origine /province';
+$_['entry_country']                = 'Pays d\'origine';
+$_['entry_postcode']               = 'Code postal d\'origine';
+$_['entry_test']                   = 'Mode d\'essai';
+$_['entry_quote_type']             = 'Type de devis';
+$_['entry_service']                = 'Prestations de service';
+$_['entry_insurance']              = 'Activer l\'assurance';
+$_['entry_display_weight']         = 'Afficher le poids de la livraison';
+$_['entry_weight_class']           = 'Catégorie de poids';
+$_['entry_length_class']           = 'Classe de longueur';
+$_['entry_dimension']              = 'Dimensions (L xlxh)';
+$_['entry_length']                 = 'Longueur';
+$_['entry_height']                 = 'la taille';
+$_['entry_width']                  = 'Largeur';
+$_['entry_tax_class']              = 'Classe d\'impôt';
+$_['entry_geo_zone']               = 'Zone géographique';
+$_['entry_status']                 = 'Statut';
+$_['entry_sort_order']             = 'Ordre de tri';
+$_['entry_debug']                  = 'Mode débogage';
+
+// Help
+$_['help_key']                     = 'Entrez la clé d\'accès au tarif XML qui vous a été attribuée par UPS.';
+$_['help_username']                = 'Entrez votre nom d\'utilisateur de compte UPS Services.';
+$_['help_password']                = 'Entrez le mot de passe de votre compte UPS Services.';
+$_['help_pickup']                  = 'Comment donnez-vous des paquets à UPS (seulement utilisé lorsque l\'origine est aux États-Unis) ?';
+$_['help_packaging']               = 'Quel type d\'emballage utilisez-vous?';
+$_['help_classification']          = '01 - Si vous facturez un compte UPS et que vous avez un enlèvement UPS quotidien, 03 - Si vous n\'avez pas de compte UPS ou que vous facturez un compte UPS mais que vous n\'avez pas de ramassage quotidien, 04 - Si vous expédiez depuis un point de vente au détail (utilisé uniquement lorsque l\'origine est les États-Unis)';
+$_['help_origin']                  = 'Quel point d\'origine doit être utilisé (ce paramètre n\'affecte que les noms de produits UPS affichés)';
+$_['help_city']                    = 'Entrez le nom de la ville d\'origine.';
+$_['help_state']                   = 'Entrez le code à deux lettres pour votre état /province d\'origine.';
+$_['help_country']                 = 'Entrez le code à deux lettres pour votre pays d\'origine.';
+$_['help_postcode']                = 'Entrez votre code postal d\'origine.';
+$_['help_test']                    = 'Utilisez ce module en mode Test (YES) ou Production (NO) ?';
+$_['help_quote_type']              = 'Devis pour la livraison résidentielle ou commerciale.';
+$_['help_service']                 = 'Sélectionnez les services UPS à offrir.';
+$_['help_insurance']               = 'Active l\'assurance avec le total du produit comme valeur';
+$_['help_display_weight']          = 'Voulez-vous afficher le poids d\'expédition? (par exemple, Poids du colis: 2,7674 kg)';
+$_['help_weight_class']            = 'Définir en kilogrammes ou en livres.';
+$_['help_length_class']            = 'Définir en centimètres ou en pouces.';
+$_['help_dimension']               = 'Ceci est supposé être la taille moyenne de votre boîte d\'emballage. Les dimensions individuelles des articles ne sont pas supportées pour le moment, vous devez donc entrer des dimensions moyennes comme 5x5x5.';
+$_['help_debug']                   = 'Enregistre les données d\'envoi /recv dans le journal système';
+
+// Error
+$_['error_permission']             = 'Attention: Vous n\'avez pas la permission de modifier l\'expédition UPS (US )!';
+$_['error_key']                    = 'Clé d\'accès requise!';
+$_['error_username']               = 'Nom d\'utilisateur requis!';
+$_['error_password']               = 'Mot de passe requis!';
+$_['error_city']                   = 'Ville d\'origine!';
+$_['error_state']                  = 'Provenance /province requise!';
+$_['error_country']                = 'Pays d\'origine requis!';
+$_['error_dimension']              = 'Dimensions moyennes requises!';

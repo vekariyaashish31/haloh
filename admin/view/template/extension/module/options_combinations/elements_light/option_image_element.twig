@@ -1,0 +1,28 @@
+<div id="option-images-{{ option_combination_row }}-" class="option-combination-images">
+    {% set images_count = 0 %}
+    {% for image_index,item in combined_product_option['images'] %}
+        {% set image_thumb = item['image'] %}
+        {% if item['image_thumb'] %}
+            {% set image_thumb = item['image_thumb'] %}
+        {% endif %}
+        <div>
+            <a href="{{ item['image'] }}" data-toggle="image" class="img-thumbnail"
+               id="thumb-image{{ option_combination_row }}-{{ image_index }}">
+                <img src="{{ image_thumb }}" alt="" title="" data-placeholder="{{ item['image'] }}"/>
+            </a>
+            <input id="input-image{{ option_combination_row }}-{{ image_index }}"
+                   class="input-option-images-{{ option_combination_row }}" type="hidden"
+                   name="options_combinations[{{ option_combination_row }}][images][{{ image_index }}]"
+                   value="{{ item['image'] }}"/>
+        </div>
+        {% set images_count = images_count + 1 %}
+    {% endfor %}
+</div>
+
+{% set add_image_buttin_style = '' %}
+    {% if images_count > 2 %}
+        {% set add_image_buttin_style = 'display: none;' %}
+    {% endif %}
+
+<button onclick="addImageForOption(this);" type="button" data-toggle="tooltip" title="" class="btn btn-primary "
+        data-original-title="Add Image" style="{{ add_image_buttin_style }}"><i class="fa fa-plus-circle"></i></button>

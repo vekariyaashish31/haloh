@@ -1,0 +1,113 @@
+{{ header }}
+
+<div id="account-custom_search" class="container">
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+    
+
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+
+       <button style="position: absolute;right: 0px;top: -12px;" type="button" class="close" data-dismiss="modal"><i style="background: white;color: black;font-size: 30px;" class="btn btn-danger">&times;</i></button>
+      <div class="modal-body" style="padding: 0;">
+        <div class="row" style="margin: 0px;">
+
+          <div class="col-sm-6 popupImageQrcode" style="padding: 0;">
+            <img style="width: 100%;" src="https://www.changcargo.com/image/qrcode1.jpg">
+          </div>
+
+          <div class="col-sm-6" style="padding: 0;text-align: center;">
+                
+              <div class="tntfirst tntleftsidefirst">
+                <div class="subtext">
+                  <p style="font-size: 35px;">Yeah!!!!</p>
+                  <p style="margin-top: 25px;font-size: 24px;color: green;">เลขที่สั่งซื้อของคุณคือ:</p>
+                  <p style="font-size: 24px;color: red;margin-top: 25px;">{{ tntorder_id }}</p>
+                </div>
+              <div class="tntfirst tntleftsidesecond">
+                <div class="subtext">
+                  <a href="#" class="btn btn-primary">LINE: @CHANGCARGO</a>
+                  <p style="font-size: 20px;">กรุณาเพิ่ม ID LINE ของเรา</p>
+                  <p style="font-size: 19px;">เพื่อติดตามสถานะคำสั่งซื้อ</p>
+                  <a href="#" class="btn btn-primary">ยืนยัน</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+<style>
+  .tntleftsidefirst{
+    height: 213px;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+  }
+  .tntleftsidesecond{
+    height: 213px;
+    width: 100%;
+    background: #f6f2f2;
+    position: absolute;
+    top: 213px;
+  }
+  .tntleftsidefirst .subtext {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+  }
+  .tntleftsidesecond .subtext {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 94%;
+  }
+  @media (max-width: 767px){
+    .modal-dialog {
+      margin: 50px;
+    }
+    .tntleftsidesecond .subtext {
+      padding: 14% 0px;
+      margin: 0px 5px;
+    }
+    .popupImageQrcode{
+      display: none;
+    }
+  }
+</style>
+<script>
+$(document).ready(function(e){
+  $("#myModal").modal('show');
+  setTimeout(function(){
+   $("#myModal .close").click();
+}, 10000);
+});
+</script>
+{{ footer }}

@@ -1,0 +1,447 @@
+/*<script>*/
+    $(function () {
+        /* Fix live price update for Journal 3 */
+            if(typeof Journal != 'undefined' && !("key" in Journal))
+                Journal['productPageStylePriceUpdate'] = false;
+        /* END Fix live price update for Journal 3 */
+
+        var add_to_cart_button_selector = '{{ config_opt_comb_add_to_cart_button_selector }}';
+        var add_to_cart_button = $(add_to_cart_button_selector);
+        var combined_option = {{ options|json_encode|raw }};
+        var product_options = {{ product_options|json_encode|raw }};
+        var product = {{ data|json_encode|raw }};
+        var config_opt_comb_stock = '{{ config_opt_comb_stock }}';
+
+        var text_dimensions_default = '{{ config_opt_comb_text_dimensions }}';
+        var text_dimensions_length_default = '{{ config_opt_comb_text_dimensions_length }}';
+        var text_dimensions_width_default = '{{ config_opt_comb_text_dimensions_width }}';
+        var text_dimensions_height_default = '{{ config_opt_comb_text_dimensions_height }}';
+        var text_select = '{{ text_select }}';
+
+        var options_like_images = '{{ options_like_images }}';
+        var options_like_images_image = '{{ options_like_images_image }}';
+        var options_like_images_option_fields = {{ options_like_images_option_fields is not empty ? options_like_images_option_fields|json_encode|raw : '[]' }};
+        var options_like_images_width = '{{ options_like_images_width }}';
+        var options_like_images_height = '{{ options_like_images_height }}';
+        var options_like_images_radius = '{{ options_like_images_radius }}';
+
+        var options_like_list = '{{ options_like_list }}';
+        var options_like_list_option_fields = {{ options_like_list_option_fields is not empty ? options_like_list_option_fields|json_encode|raw : '[]' }};
+        var options_like_list_width = '{{ options_like_list_width }}';
+        var options_like_list_height = '{{ options_like_list_height }}';
+        var options_like_list_radius = '{{ options_like_list_radius }}';
+
+        var config_opt_comb_theme_generic = '{{ config_opt_comb_theme_generic }}';
+
+        var images_selector = 'ul.thumbnails:not(.image_picker_selector)';
+        var orig_elements_selector = 'div#generic-data-container > ul.list-unstyled';
+        var new_elements_selector = 'div#generic-data-container > ul.list-unstyled';
+        var elements_placeholder_selector = 'div#generic-data-container > h1';
+
+        var config_opt_comb_theme_generic_button_text = '{{ config_opt_comb_theme_generic_button_text }}';
+
+        var initial_images = $(images_selector).html();
+
+        var text_generic_modal_add = '{{ text_generic_modal_add }}';
+        var text_generic_modal_close = '{{ text_generic_modal_close }}';
+        var text_generic_modal_choose = '{{ text_generic_modal_choose }}';
+        var text_reset_options = '{{ text_reset_options }}';
+        var config_opt_comb_button_reset_options = '{{ config_opt_comb_button_reset_options }}';
+
+        {% include 'default/template/product/options_combinations_common_script.twig' %}
+
+        function GenericCombinationEngine(){
+            CombinationEngine.call(this);
+        }
+        GenericCombinationEngine.prototype = Object.create(CombinationEngine.prototype);
+
+        GenericCombinationEngine.prototype.reset_combined_option_images = function () {
+            this.remove_combined_option_images();
+            this.add_combined_option_images(this.get_options_images(this.find_selected()));
+        };
+
+        GenericCombinationEngine.prototype.add_combined_option_images = function (images) {
+            /*  include images to template */
+
+            if(images.length) {
+                var owl = $('div.tingle-modal div.modal-container div.owl-carousel');
+
+
+                images.forEach(function (image) {
+                    var image_html = `<img src="${image.image_thumb}" data-image="${image.image_popup}">`;
+                    owl.trigger('add.owl.carousel', [image_html]);
+                });
+
+                owl.trigger('refresh.owl.carousel');
+
+                $(document).find('div.tingle-modal .owl-item img').each(function (e) {
+                    $(this).wrap('<span style="display:inline-block"></span>')
+                        .css('display', 'block')
+                        .parent()
+                        .zoom({
+                            url: $(this).data('image'),
+                        });
+                });
+
+            } else {
+                /*  this.reset_combined_option_images(); */
+            }
+        };
+
+        GenericCombinationEngine.prototype.remove_combined_option_images = function () {
+            /* empty carousel */
+            var owl = $('div.tingle-modal div.modal-container div.owl-carousel');
+            for (var i=$('.owl-item').length; i > 0; i--){
+                owl.trigger('remove.owl.carousel', [i-1]).trigger('refresh.owl.carousel');
+            }
+        };
+
+        GenericCombinationEngine.prototype.reset_data = function (reset_image=true) {
+            /* add_to_cart_button.attr("disabled", true); */
+            /* $(document).find(button_cart_selector).attr("disabled", true); */
+            var current_elements = $(document).find(new_elements_selector);
+            current_elements.remove();
+            $(elements_placeholder_selector).after(origin_elements);
+            if (reset_image){
+                this.reset_combined_option_images();
+            }
+        };
+
+        GenericCombinationEngine.prototype.register_add_cart_call = function () {
+            CombinationEngine.prototype.register_add_cart_call(
+                [
+                "index.php?route=checkout/cart/add",
+                "index.php?route=extension/soconfig/cart/add"
+                ],
+                function(event, xhr, settings, json) {
+                    /* if add product ajax call success */
+                    if (!json.error){
+                        modal.close();
+                    }
+                    $(document).find('.tingle-btn.tingle-btn--primary').prop('disabled', false);
+                },
+                function (event, xhr, settings, error) {
+                    /* if add product ajax call fail */
+                    $(document).find('.tingle-btn.tingle-btn--primary').prop('disabled', false);
+                });
+        };
+
+        GenericCombinationEngine.prototype.get_blocks = function () {
+            var result = [];
+            jQuery.each($("#options-combinations-container .selectable-options [id^='input-option']"), function(i, val) {
+                result[i] = val.id;
+            });
+
+            return result;
+        };
+
+        GenericCombinationEngine.prototype.load_option_values_from_get_params = function() {
+            const self = this;
+            const currentQueryVars = getUrlVars();
+            let option_value_ids_str = '{{ option_value_ids }}';
+
+            if( currentQueryVars.hasOwnProperty('ovs') ) {
+                const currentOvs = currentQueryVars['ovs'];
+                
+                if( currentOvs !== option_value_ids_str ) {
+                    option_value_ids_str = currentOvs;
+                }
+            }
+
+            if( option_value_ids_str ) {
+                const option_value_ids = option_value_ids_str.split(',');
+
+                for( const option_value_id of option_value_ids ) {
+                    const input_element = $('div#options-combinations-container').find(`[value="${option_value_id}"]`);
+
+                    input_element.each( function(index, elem) {
+                        if( $(elem).is(':checkbox') || $(elem).is(':radio') ) {
+                            $(elem).prop('checked', true);
+                        } else if( $(elem).is('option') ) {
+                            $(elem).parent().val(option_value_id);
+                        }
+                    } );
+                }
+
+                setTimeout( function() {
+                    self.show_options();
+                }, 1500 );
+            }
+        }
+
+        function getUrlVars() {
+            // Read a page's GET URL variables and return them as an associative array.
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            
+            for( var i = 0; i < hashes.length; i++ ) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+
+            return vars;
+        }
+
+        var generic_combination_engine = new GenericCombinationEngine();
+
+        /* instanciate new modal */
+        var modal = new tingle.modal({
+            footer: true,
+            stickyFooter: false,
+            /* closeMethods: ['overlay', 'button', 'escape'], */
+            closeMethods: ['escape'],
+            closeLabel: "Close",
+            /* cssClass: ['custom-class-1', 'custom-class-2'], */
+            onOpen: function() {
+                generic_combination_engine.load_option_values_from_get_params();
+                generic_combination_engine.include_imagepicker();
+
+                setTimeout( function(){
+                    if(($('div.tingle-modal-box__content').height()+$('div.tingle-modal-box__footer').height()) >= $(window).height()) {
+                        $('div.tingle-modal').addClass('tingle-modal--overflow');
+                    }
+                }  , 1000 );
+            },
+            onClose: function() {
+                generic_combination_engine.reset_options();
+                /* console.log('modal closed'); */
+            },
+            /* beforeClose: function() {
+                 return true; // close the modal
+                 return false; // nothing happens
+            } */
+        });
+
+        var modal_body = `
+            <div class="modal-container">
+
+                <div class="owl-carousel owl-theme">
+                </div>
+                <div class="modal-container">
+                    <div id="options-combinations-container-placeholder">
+                        ${getOptions()}
+                    </div>
+                    <div id="generic-data-container">
+                    <h1 class="generic-product-name">${product.name}</h1>
+                    <ul class="list-unstyled">
+                        <li>${text_generic_modal_choose}</li>
+                    </ul>
+                    </div>
+                </div>
+                <div id="generic-reset-options-container"`+(config_opt_comb_button_reset_options == '' ? ' style="display:none;"' : '')+`>
+                    <a href="#" id="reset_options">${text_reset_options}</a>
+                </div>
+            </div>
+        `;
+
+        /* set content */
+        modal.setContent(modal_body);
+
+        var origin_elements = $(document).find(orig_elements_selector);
+
+        $('div.tingle-modal div.modal-container div.owl-carousel').owlCarouselOptionsCombinations({
+            loop:false,
+            margin:10,
+        });
+
+        /* add 'Close' button */
+        modal.addFooterBtn(text_generic_modal_close, 'tingle-btn tingle-btn--danger', function() {
+            modal.close();
+        });
+
+        /* add a 'Add' button */
+        modal.addFooterBtn(text_generic_modal_add, 'tingle-btn tingle-btn--primary', function() {
+
+            /*looks hellish, but we need to temporally move the elements inside #products */
+            var form_elements = $('#options-combinations-container');
+            var parent = form_elements.parent();
+
+            var reference_element = $(add_to_cart_button_selector);
+            if (!reference_element.length){
+                reference_element = $('input[name=quantity]');
+            }
+
+            form_elements.detach().appendTo(reference_element.parent());
+
+            $(add_to_cart_button_selector).trigger('click');
+
+            /* let's put the elements in their original place */
+            parent.append(form_elements.detach());
+
+            /* Disable button (it should be enabled on add to cart ajax request response,
+            check register_add_cart_call()) */
+            $(this).prop('disabled', true);
+        });
+
+        function getOptionHtml(option) {
+            var html_option = '';
+            if (options_like_images && options_like_images_option_fields.includes(option.option_id)){
+                html_option = `
+                <div class="form-group${option.required ? ' required ' : ''} images-group">
+                    <label class="control-label" for="input-option${option.option_id}">${option.name}</label>
+                    <select ${option.type == 'checkbox' ? 'multiple="multiple"' : ''} name="option-combinations[${ option.option_id }]" id="input-option${ option.option_id }" class="form-control options-image-picker" data-type="${option.type}">
+                        <option value="">${ text_select }</option>
+                `;
+
+                $.each(option.product_option_value, function(key, option_value) {
+
+                    var image_src = '';
+                    if (options_like_images_image == 0){
+                        if (option_value.image){
+                            image_src = option_value.image;
+                        }
+                    } else if (option_value.opt_image){
+                        image_src = option_value.opt_image;
+                    }
+
+                    html_option += `
+                            <option data-img-alt="${ option_value.name }" data-img-class="options-image-picker-image opt-as-image ${ option.option_id }-${ option_value.option_value_id }" data-img-src='${image_src}' value="${ option_value.option_value_id }" data-option-id='{"${ option.option_id }":"${ option_value.option_value_id }"}'>${ option_value.name }
+                            </option>
+                    `;
+                });
+
+                html_option += `
+                    </select>
+                </div>
+                `;
+
+            } else if (options_like_list && options_like_list_option_fields != null && options_like_list_option_fields.includes(option.option_id)) {
+                html_option = `
+                <div class="form-group${option.required ? ' required ' : ''} list-group">
+                    <label class="control-label" for="input-option${option.option_id}">${option.name}</label>
+                    <select ${option.type == 'checkbox' ? 'multiple="multiple"' : ''} name="option-combinations[${ option.option_id }]" id="input-option-list-${ option.option_id }" class="form-control options-image-picker" data-type="${option.type}">
+                        <option value="">${ text_select }</option>
+                `;
+
+                $.each(option.product_option_value, function(key, option_value) {
+                    html_option += `
+                            <option data-img-alt="${ option_value.name }" data-img-class="options-image-picker-image opt-as-list ${ option.option_id }-${ option_value.option_value_id }" data-img-src='' value="${ option_value.option_value_id }" data-option-id='{"${ option.option_id }":"${ option_value.option_value_id }"}'>${ option_value.name }
+                            </option>
+                    `;
+                });
+
+                html_option += `
+                    </select>
+                </div>
+                `;
+            } else {
+
+                if (option.type == 'select'){
+                    html_option = `
+                        <div class="form-group${option.required ? ' required ' : ''}">
+                            <label class="control-label" for="input-option${option.option_id}">${option.name}</label>
+                            <select name="option-combinations[${ option.option_id }]" id="input-option${ option.option_id }" class="form-control" data-type="select">
+                                <option value="">${ text_select }</option>
+                    `;
+
+                    $.each(option.product_option_value, function(key, option_value) {
+                        html_option += `
+                            <option value="${ option_value.option_value_id }" data-option-id='{"${ option.option_id }":"${ option_value.option_value_id }"}'>${ option_value.name }
+                            </option>
+                    `;
+                    });
+
+                    html_option += `
+                        </select>
+                    </div>
+                    `;
+                }
+                if (option.type == 'radio'){
+                    html_option = `
+                        <div class="form-group${option.required ? ' required ' : ''}">
+                            <label  class="control-label">${option.name}</label>
+                            <div id="input-option${ option.option_id }" data-type="radio">
+                    `;
+
+                    $.each(option.product_option_value, function(key, option_value) {
+                        html_option += `
+                            <div class="">
+                                <label>
+                                <input type="${option.type}" name="option-combinations[${ option.option_id }]" value="${ option_value.option_value_id }" data-option-id='{"${ option.option_id }":"${ option_value.option_value_id }"}' />
+                                    ${ option_value.name }
+                                </label>
+                            </div>
+                        `;
+                    });
+
+                    html_option += `
+                        </div>
+                    </div>
+                    `;
+                }
+                if (option.type == 'checkbox'){
+                    html_option = `
+                        <div class="form-group${option.required ? ' required ' : ''}">
+                            <label  class="control-label">${option.name}</label>
+                            <div id="input-option${ option.option_id }" data-type="radio">
+                    `;
+
+                    $.each(option.product_option_value, function(key, option_value) {
+                        html_option += `
+                            <div class="">
+                                <label>
+                                    <input type="${option.type}" name="option-combinations[${ option.option_id }][]" value="${ option_value.option_value_id }" data-option-id='{"${ option.option_id }":"${ option_value.option_value_id }"}' />
+                                    ${ option_value.name }
+                                </label>
+                            </div>
+                        `;
+                    });
+
+                    html_option += `
+                        </div>
+                    </div>
+                    `;
+                }
+            }
+
+            return html_option;
+        }
+
+        function getOptions(){
+            var options = '<div id="options-combinations-container"><div class="selectable-options">';
+
+            product_options.forEach(function (option) {
+                options += getOptionHtml(option);
+            });
+
+            options += '</div><div class="no-selectable-options"></div></div>';
+
+            return options;
+        }
+
+        var new_button = $(add_to_cart_button_selector).clone();
+        new_button.html(config_opt_comb_theme_generic_button_text);
+
+        if(new_button.is('input') && new_button.attr('type') == 'button') {
+            new_button.val(config_opt_comb_theme_generic_button_text);
+        }
+        
+        $(add_to_cart_button_selector).attr('style','display:none !important;');
+
+        new_button.attr('id', 'button-add-modal');
+        new_button.insertBefore(add_to_cart_button_selector);
+
+        //Compatibility for specific templates
+            new_button.removeClass('js-btn-add-cart');
+
+        $(document).on('click', '#button-add-modal', function (e) {
+            modal.open();
+        });
+
+        generic_combination_engine.include_styles();
+
+        generic_combination_engine.include_error_wrapper();
+
+        generic_combination_engine.register_on_input_change();
+
+        generic_combination_engine.register_reset_options();
+
+        generic_combination_engine.reset_options();
+
+        generic_combination_engine.register_add_cart_call();
+
+        generic_combination_engine.show_options();
+
+    });
+/*</script>*/

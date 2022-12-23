@@ -1,0 +1,87 @@
+{% spaceless %}
+
+{% set points = combined_product_option['option_points'] %}
+
+<td class="text-right">
+    <table class="table table-striped table-bordered table-hover" id="option-points-{{ option_combination_row }}">
+        <thead>
+            <tr>
+                <th>{{ entry_customer_group }}</th>
+                <th>{{ entry_prefix }}</th>
+                <th>{{ entry_points }} <i class="fa fa-question-circle" style="color: #1e91cf" data-toggle="tooltip" title="{{ entry_points_help }}"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if config_opt_comb_points_customer_groups %}
+                
+                {% set count_groups = 0 %}
+                {% for customer_group in customer_groups %}
+
+                    {% set customer_group_id = customer_group.customer_group_id %}
+                    {% set points_customer_group = [] %}
+                    {% for poi in points %}
+                        {% if poi.customer_group_id == customer_group_id %}
+                            {% set points_customer_group = poi %}
+                        {% endif %}
+                    {% endfor %}
+
+                    <tr id="point_row_{{ option_combination_row }}_{{ count_groups }}">
+                        <td>
+                            <input type="hidden" name="options_combinations[{{ option_combination_row }}][option_points][{{ count_groups }}][customer_group_id]" value="{{ customer_group.customer_group_id }}" />
+                            {{ customer_group.name|escape }}
+                        </td>
+                        <td>
+                            <select name="options_combinations[{{ option_combination_row }}][option_points][{{ count_groups }}][points_prefix]" class="form-control">
+                            {% if points_customer_group.points_prefix == '=' %}
+                                <option value="=" selected>=</option>
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                            {% elseif points_customer_group.points_prefix == '-'  %}
+                                <option value="=">=</option>
+                                <option value="+">+</option>
+                                <option value="-" selected>-</option>
+                            {% else %}
+                                <option value="=">=</option>
+                                <option value="+" selected>+</option>
+                                <option value="-">-</option>
+                            {% endif %}
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="options_combinations[{{ option_combination_row }}][option_points][{{ count_groups }}][points]" value="{{ points_customer_group.points }}" placeholder="{{ entry_points }}">
+                        </td>
+                    </tr>
+
+                    {% set count_groups = count_groups + 1 %}
+                {% endfor %}
+
+            {% else %}
+                <td>
+                    {{ entry_all_customer_groups }}
+                </td>
+                <td>
+                    <select name="options_combinations[{{ option_combination_row }}][option_points][0][points_prefix]" class="form-control">
+                    {% if points[0].points_prefix == '=' %}
+                        <option value="=" selected>=</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                    {% elseif points[0].points_prefix == '-'  %}
+                        <option value="=">=</option>
+                        <option value="+">+</option>
+                        <option value="-" selected>-</option>
+                    {% else %}
+                        <option value="=">=</option>
+                        <option value="+" selected>+</option>
+                        <option value="-">-</option>
+                    {% endif %}
+                    </select>
+                </td>
+                <td>
+                    <input type="text" class="form-control" name="options_combinations[{{ option_combination_row }}][option_points][0][points]" value="{{ points[0].points }}" placeholder="{{ entry_points }}">
+                </td>
+            {% endif %}
+            
+        </tbody>
+    </table>
+</td>
+{% endspaceless %}

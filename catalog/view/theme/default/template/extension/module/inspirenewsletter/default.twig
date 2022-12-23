@@ -1,0 +1,28 @@
+<div class="inspire-newsletter {{ prefix }} inspire-newsletter" id="newsletter_{{ id }}" data-mode="{{ mode }}">
+		<form id="formNewLestter" method="post" action="{{ action }}" class="formNewLestter newsletter-bg" {% if banner is not empty%} style="background-image: url('{{ banner }}')" {% endif %}>
+			<div class="inner news-pati row">
+				{# <h3 >{{ entry_newsletter }}</h3> #}
+				<div class="col-sm-6 col-xs-12 hidden-xs">
+					<div class="sign-up-img"></div>
+					<div class="description-top ">
+						<h3 class="mail-msg">{{ entry_sign_up_for_newsletter }}</h3>
+						<p>{{ description }}</p>
+					</div>	
+				</div>
+				<div class="form-group col-sm-6 col-xs-12">
+					<input type="text" class="form-control input-md inputNew" {% if customer_email is not defined %} onblur="javascript:if(this.value=='')this.value='{{ default_input_text }}';" onfocus="javascript:if(this.value=='{{ default_input_text }}')this.value='';"{% endif %} value="{{ customer_email? customer_email : default_input_text }}" size="18" name="email">
+						<button type="submit" name="submitNewsletter" class="btn btn-danger ne-su">{{ button_subscribe }}</button>
+					<input type="hidden" value="1" name="action">
+					<div class="valid"></div>
+					<div class="description-bottom">
+						{{ social }}
+					</div>
+				</div>
+				
+			</div>
+		</form>
+</div>
+
+<script type="text/javascript"><!--
+$("#newsletter_{{ id }}").inspireoNewsletter().work(  '{{ valid_email }}' );
+--></script>

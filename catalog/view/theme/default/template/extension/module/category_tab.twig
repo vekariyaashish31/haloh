@@ -1,0 +1,112 @@
+<div class="category-tab pro-bg pro-nepr">
+    <div class="tab-pro">
+    <h2 class="pull-left">All Proudcts</h2>
+    <!--category-tab-->   
+    <div class="visible-xs catbe"><button type="button" class="toggle catb collapsed" data-toggle="collapse" data-target="#cat_tab" aria-expanded="false"></button></div>
+        <ul class="nav nav-tabs collapse footer-collapse pro-tab text-right" id="cat_tab">
+        {% for category in categories %}
+            {% if loop.index0 == 0 %}
+                {% set class = ' class="active"'%}
+            {% else %}
+                {% set class = ''%}
+            {% endif %}
+            <li><a href="#tab-{{loop.index}}" data-toggle="tab">{{category.category}}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="tab-content">
+        
+        {% for products in categories %}
+        {% if loop.index0 == 0 %}
+            {% set class = ' active in' %}
+        {% else %}
+            {% set class = ''%}
+        {% endif %}
+        <div class="tab-pane fade{{class}}" id="tab-{{loop.index}}">
+            <div class="row thummargin">
+            <div id="cattab" class="owl-theme owl-carousel">
+            {% for product in products.products %}
+                <div class="product-layout col-xs-12">
+    <div class="product-thumb transition">
+      <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive center-block" /></a>
+        <!-- insp Images Start -->
+                        {% set t = 0 %}
+                          {% for insp_image in product.insp_images %}
+                          {% if t == 0 %}
+                           <a href="{{ product.href }}"><img src="{{ insp_image.popup }}" class="img-responsive second-img" alt="hover image"/></a>
+                          {% set t = t + 1 %}
+                          {% endif %}
+                        {% endfor %}
+        <!-- insp Images End -->
+        {% if product.price %}
+          {% if product.special %}
+               <span class="salepro">sale</span>
+          {% endif %}
+      {% endif %}
+      </div>
+      <div class="caption text-center">
+
+        <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+       {% if product.rating %}
+          <div class="rating">
+            {% for i in 1..5 %}
+            {% if product.rating < i %}
+            <span class="fa fa-stack">
+              <i class="fa fa-star-o fa-stack-2x"></i>
+            </span>
+            {% else %}
+            <span class="fa fa-stack">
+              <i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+            </span>
+            {% endif %}
+          {% endfor %}</div>{% else %}
+          <div class="rating">{% for i in 1..5 %}
+          <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+          {% endfor %}</div>
+        {% endif %}
+        {% if product.price %}
+        <p class="price"> {% if not product.special %}
+          {{ product.price }}
+          {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+          {# {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} #} </p>
+        {% endif %} 
+         {% if product.tag_per  %}
+          <p class="sale-tag {{ random(['hot','new','sale']) }}">Save {{ product.tag_per }}%</p>
+          {% endif %}
+         <div class="button-group">
+          <button class="acart" {# data-toggle="tooltip" title="{{ button_cart }}" #} type="button" onclick="cart.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcart"></use></svg> <span>{{ button_cart }}</span></button>
+          <button type="button" {# data-toggle="tooltip" title="{{ button_wishlist }}" #} onclick="wishlist.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addwish"></use></svg> <span>{{ button_wishlist }}</span></button>
+          <button type="button" {# data-toggle="tooltip" title="{{ button_compare }}" #} onclick="compare.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcompare"></use></svg> <span>{{ button_compare }}</span></button>
+          <div class="bquickv" {# title="quickview" data-toggle="tooltip" #}></div>
+        </div>
+    </div>
+    </div>
+  </div>
+            {% endfor %}
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!--/category-tab-->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $(".tab-content .tab-pane #cattab").owlCarousel({
+    itemsCustom : [
+    [0, 2],
+    [375, 2],
+    [600, 3],
+    [768, 2],
+    [992, 3],
+    [1200, 4],
+    [1410, 5]
+    ],
+      // autoPlay: 1000,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : true,
+      pagination:false
+    });
+    });
+</script>

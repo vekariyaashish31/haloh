@@ -1,0 +1,122 @@
+/*<script>*/
+    $(function () {
+
+        var combined_option = {{ options|json_encode|raw }};
+        var product = {{ data|json_encode|raw }};
+
+        var add_to_cart_button_selector = '#button-cart';
+        var add_to_cart_button = $(add_to_cart_button_selector);
+        var button_cart_selector = add_to_cart_button_selector;
+        var config_opt_comb_stock = '{{ config_opt_comb_stock }}';
+        var text_dimensions_default = '{{ config_opt_comb_text_dimensions }}';
+        var text_dimensions_length_default = '{{ config_opt_comb_text_dimensions_length }}';
+        var text_dimensions_width_default = '{{ config_opt_comb_text_dimensions_width }}';
+        var text_dimensions_height_default = '{{ config_opt_comb_text_dimensions_height }}';
+
+        var text_select = '{{ text_select }}';
+
+        var options_like_images = '{{ options_like_images }}';
+        var options_like_images_image = '{{ options_like_images_image }}';
+        var options_like_images_option_fields = {{ options_like_images_option_fields|json_encode|raw }};
+        var options_like_images_width = '{{ options_like_images_width }}';
+        var options_like_images_height = '{{ options_like_images_height }}';
+        var options_like_images_radius = '{{ options_like_images_radius }}';
+
+        var options_like_list = '{{ options_like_list }}';
+        var options_like_list_option_fields = {{ options_like_list_option_fields|json_encode|raw }};
+        var options_like_list_width = '{{ options_like_list_width }}';
+        var options_like_list_height = '{{ options_like_list_height }}';
+        var options_like_list_radius = '{{ options_like_list_radius }}';
+
+        var config_opt_comb_theme_generic = '{{ config_opt_comb_theme_generic }}';
+
+        var images_selector = 'ul.thumbnails:not(.image_picker_selector)';
+        var orig_elements_selector = 'div.col-sm-4 > ul.list-unstyled';
+        var new_elements_selector = 'div.col-sm-4 > ul.list-unstyled';
+        var elements_placeholder_selector = 'div.col-sm-4 > h1';
+
+        var initial_images = $(images_selector).html();
+        var orig_elements = $(orig_elements_selector).clone(true);
+
+
+
+        {% include 'default/template/product/options_combinations_common_script.twig' %}
+
+        function DefaultCombinationEngine(){
+            CombinationEngine.call(this);
+        }
+        DefaultCombinationEngine.prototype = Object.create(CombinationEngine.prototype);
+
+        DefaultCombinationEngine.prototype.reset_combined_option_images = function () {
+            if ($(images_selector).html() != initial_images){
+                $(images_selector).html(initial_images);
+            }
+        };
+
+        DefaultCombinationEngine.prototype.add_combined_option_images = function (images) {
+            if(images.length) {
+                var image_template = '<li class="[li_class] comb_opt_images">' +
+                    '<a class="thumbnail" href="[image_popup]" title="[image_title]">' +
+                    '<img src="[image_thumb]" title="[image_title]" alt="[image_alt]">' +
+                    '</a>' +
+                    '</li>';
+
+                var html = '';
+                jQuery.each(images, function (i,item) {
+                    var li_class = '';
+                    var show_image = item['image_thumb'];
+                    if(i !== 0){
+                        li_class = 'image-additional';
+                        show_image = item['image_additional'];
+                    }
+
+                    var image = image_template.replace('[image_popup]',item['image_popup'])
+                        .replace('[image_thumb]',show_image)
+                        .replace('[image_title]','')
+                        .replace('[image_title]','')
+                        .replace('[image_alt]','')
+                        .replace('[li_class]', li_class);
+                    html += image;
+
+                });
+
+                if(html) {
+
+                    $(images_selector).append(html);
+                }
+            } else {
+                this.reset_combined_option_images();
+            }
+        };
+
+        DefaultCombinationEngine.prototype.remove_combined_option_images = function () {
+            $(images_selector).html('');
+        };
+
+        DefaultCombinationEngine.prototype.reset_data = function (reset_image=true) {
+            /* add_to_cart_button.attr("disabled", true); */
+            var current_elements = $('div.col-sm-4 > ul.list-unstyled');
+            current_elements.remove();
+            $(elements_placeholder_selector).after(orig_elements);
+            if (reset_image){
+                this.reset_combined_option_images();
+            }
+        };
+
+        var default_combination_engine = new DefaultCombinationEngine();
+        default_combination_engine.include_styles();
+
+        default_combination_engine.include_error_wrapper();
+
+        default_combination_engine.include_imagepicker();
+
+        default_combination_engine.register_on_input_change();
+
+        default_combination_engine.register_reset_options();
+
+        default_combination_engine.register_add_cart_call();
+
+        default_combination_engine.start();
+
+    });
+/*</script>*/

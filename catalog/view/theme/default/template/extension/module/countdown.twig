@@ -1,0 +1,345 @@
+<style type="text/css">
+  .ttvtab-first-product{
+   margin-bottom: 1px;
+    border-bottom: 1px solid #f7f7f7;
+}
+</style>
+<div class="dealbg">
+<div class="pro-bg pro-nepr container">
+<div class="">
+<h2 class="heading">{{ heading_title }}{# <hr> #}</h2>
+<div class="count-pro">
+<div class="row thummargin"> 
+    {# pc #}
+      <div class="row thummargin hidden-xs hidden-sm">
+        <div id="count" class="owl-theme owl-carousel latestpc">
+          {% if doublerow %}
+            {% set count = 1 %}
+            {% set singleRow = false %}
+          {% else %}
+            {% set count = 5 %}
+            {% set singleRow = true %}
+          {% endif %}
+          {% for product in products %}
+              {% if count == '1' %}
+               <div class='item'>
+
+              {% set tabdoublefirst = "ttvtab-first-product" %}
+              {% endif %}
+                <div class="product-layout col-xs-12 {{ tabdoublefirst }}">
+                  <div class="product-thumb transition">
+                    <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive center-block" /></a>
+                      <!-- insp Images Start -->
+                                      {% set t = 0 %}
+                                        {% for insp_image in product.insp_images %}
+                                        {% if t == 0 %}
+                                         <a href="{{ product.href }}"><img src="{{ insp_image.popup }}" class="img-responsive second-img" alt="hover image"/></a>
+                                        {% set t = t + 1 %}
+                                        {% endif %}
+                                      {% endfor %}
+                              <!-- insp Images End -->
+                              {# {% if product.price %}
+                                {% if product.special %}
+                                     <span class="salepro">sale</span>
+                                {% endif %}
+                            {% endif %} #}
+                            {% if config_module.countdown %}<div id="Countdown{{ product.product_id }}" class="box-timer"></div> {% endif %}
+                    </div>
+                    <div class="caption text-center">
+
+                            <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                       
+                           {% if product.rating %}
+                              <div class="rating">
+                                {% for i in 1..5 %}
+                                {% if product.rating < i %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% else %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% endif %}
+                              {% endfor %}</div>{% else %}
+                              <div class="rating">{% for i in 1..5 %}
+                              <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                              {% endfor %}</div>
+                            {% endif %}
+                            {% if product.price %}
+                            <p class="price"> {% if not product.special %}
+                              {{ product.price }}
+                              {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+                              {# {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} #} </p>
+                            {% endif %} 
+                             {% if product.tag_per  %}
+                              <p class="sale-tag {{ random(['hot','new','sale']) }}">Save {{ product.tag_per }}%</p>
+                              {% endif %}
+                            <div class="button-group">
+                              <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addwish"></use></svg></button>
+                              <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcompare"></use></svg></button>
+                              <div class="bquickv" data-toggle="tooltip" title="{{ button_quickview }}"></div>
+                            </div>
+                            <button class="acart" type="button" onclick="cart.add('{{ product.product_id }}');">{# <i class="fa fa-shopping-cart"></i>  #}<span class="hidden-xs">{{ button_cart }}</span></button>
+                    </div>
+
+                       {% if product.date_end %}
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#Countdown{{ product.product_id }}').countdown({
+                                            until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+                                            labels: ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'],
+                                            labels1: ['Year', 'Month', 'Week', 'Day', 'Hr', 'Min', 'Sec'],
+                                        });
+                                        //$('#Countdown<?php echo $product['product_id'];?>').countdown('pause');
+                                    });
+                                </script>
+                        {% endif %}
+                  </div>
+                </div>
+              {% set tabdoublefirst = "" %}
+              {% if count == desktop %}
+                </div>
+                {% set count = 0 %}
+              {% endif %}
+              {% set count = count + 1 %}
+            {% endfor %} 
+            {% if count != '1' and not singleRow %}
+            </div>
+            {% endif %}
+          </div>
+      </div>
+    {# pc #}
+    {# tb #}
+      <div class="row thummargin hidden-lg hidden-md hidden-xs">
+        <div id="count" class="owl-theme owl-carousel latesttb">
+          {% if doublerow %}
+            {% set count = 1 %}
+            {% set singleRow = false %}
+          {% else %}
+            {% set count = 5 %}
+            {% set singleRow = true %}
+          {% endif %}
+          {% for product in products %}
+              {% if count == '1' %}
+               <div class='item'>
+
+              {% set tabdoublefirst = "ttvtab-first-product" %}
+              {% endif %}
+                <div class="product-layout col-xs-12 {{ tabdoublefirst }}">
+                  <div class="product-thumb transition">
+                    <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive center-block" /></a>
+                      <!-- insp Images Start -->
+                                      {% set t = 0 %}
+                                        {% for insp_image in product.insp_images %}
+                                        {% if t == 0 %}
+                                         <a href="{{ product.href }}"><img src="{{ insp_image.popup }}" class="img-responsive second-img" alt="hover image"/></a>
+                                        {% set t = t + 1 %}
+                                        {% endif %}
+                                      {% endfor %}
+                              <!-- insp Images End -->
+                              {# {% if product.price %}
+                                {% if product.special %}
+                                     <span class="salepro">sale</span>
+                                {% endif %}
+                            {% endif %} #}
+                            {% if config_module.countdown %}<div id="Countdown{{ product.product_id }}" class="box-timer"></div> {% endif %}
+                    </div>
+                    <div class="caption text-center">
+
+                            <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                       
+                           {% if product.rating %}
+                              <div class="rating">
+                                {% for i in 1..5 %}
+                                {% if product.rating < i %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% else %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% endif %}
+                              {% endfor %}</div>{% else %}
+                              <div class="rating">{% for i in 1..5 %}
+                              <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                              {% endfor %}</div>
+                            {% endif %}
+                            {% if product.price %}
+                            <p class="price"> {% if not product.special %}
+                              {{ product.price }}
+                              {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+                              {# {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} #} </p>
+                            {% endif %} 
+                             {% if product.tag_per  %}
+                              <p class="sale-tag {{ random(['hot','new','sale']) }}">Save {{ product.tag_per }}%</p>
+                              {% endif %}
+                            <div class="button-group">
+                              <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addwish"></use></svg></button>
+                              <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcompare"></use></svg></button>
+                              <div class="bquickv" data-toggle="tooltip" title="{{ button_quickview }}"></div>
+                            </div>
+                            <button class="acart" type="button" onclick="cart.add('{{ product.product_id }}');">{# <i class="fa fa-shopping-cart"></i>  #}<span class="hidden-xs">{{ button_cart }}</span></button>
+                    </div>
+
+                       {% if product.date_end %}
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#Countdown{{ product.product_id }}').countdown({
+                                            until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+                                            labels: ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'],
+                                            labels1: ['Year', 'Month', 'Week', 'Day', 'Hr', 'Min', 'Sec'],
+                                        });
+                                        //$('#Countdown<?php echo $product['product_id'];?>').countdown('pause');
+                                    });
+                                </script>
+                        {% endif %}
+                  </div>
+                </div>
+              {% set tabdoublefirst = "" %}
+              {% if count == tablet %}
+                </div>
+                {% set count = 0 %}
+              {% endif %}
+              {% set count = count + 1 %}
+            {% endfor %} 
+            {% if count != '1' and not singleRow %}
+            </div>
+            {% endif %}
+          </div>
+      </div>
+    {# tb #}
+    {# mb #}
+       <div class="row thummargin hidden-lg hidden-md hidden-sm ">
+        <div id="count" class="owl-theme owl-carousel latestpc">
+          {% if doublerow %}
+            {% set count = 1 %}
+            {% set singleRow = false %}
+          {% else %}
+            {% set count = 5 %}
+            {% set singleRow = true %}
+          {% endif %}
+          {% for product in products %}
+              {% if count == '1' %}
+               <div class='item'>
+
+              {% set tabdoublefirst = "ttvtab-first-product" %}
+              {% endif %}
+                <div class="product-layout col-xs-12 {{ tabdoublefirst }}">
+                  <div class="product-thumb transition">
+                    <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive center-block" /></a>
+                      <!-- insp Images Start -->
+                                      {% set t = 0 %}
+                                        {% for insp_image in product.insp_images %}
+                                        {% if t == 0 %}
+                                         <a href="{{ product.href }}"><img src="{{ insp_image.popup }}" class="img-responsive second-img" alt="hover image"/></a>
+                                        {% set t = t + 1 %}
+                                        {% endif %}
+                                      {% endfor %}
+                              <!-- insp Images End -->
+                              {# {% if product.price %}
+                                {% if product.special %}
+                                     <span class="salepro">sale</span>
+                                {% endif %}
+                            {% endif %} #}
+                            {% if config_module.countdown %}<div id="Countdown{{ product.product_id }}" class="box-timer"></div> {% endif %}
+                    </div>
+                    <div class="caption text-center">
+
+                            <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                       
+                           {% if product.rating %}
+                              <div class="rating">
+                                {% for i in 1..5 %}
+                                {% if product.rating < i %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% else %}
+                                <span class="fa fa-stack">
+                                  <i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i>
+                                </span>
+                                {% endif %}
+                              {% endfor %}</div>{% else %}
+                              <div class="rating">{% for i in 1..5 %}
+                              <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
+                              {% endfor %}</div>
+                            {% endif %}
+                            {% if product.price %}
+                            <p class="price"> {% if not product.special %}
+                              {{ product.price }}
+                              {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
+                              {# {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} #} </p>
+                            {% endif %} 
+                             {% if product.tag_per  %}
+                              <p class="sale-tag {{ random(['hot','new','sale']) }}">Save {{ product.tag_per }}%</p>
+                              {% endif %}
+                            <div class="button-group">
+                              <button type="button" data-toggle="tooltip" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addwish"></use></svg></button>
+                              <button type="button" data-toggle="tooltip" title="{{ button_compare }}" onclick="compare.add('{{ product.product_id }}');"><svg width="16px" height="16px"><use xlink:href="#addcompare"></use></svg></button>
+                              <div class="bquickv" data-toggle="tooltip" title="{{ button_quickview }}"></div>
+                            </div>
+                            <button class="acart" type="button" onclick="cart.add('{{ product.product_id }}');">{# <i class="fa fa-shopping-cart"></i>  #}<span class="hidden-xs">{{ button_cart }}</span></button>
+                    </div>
+
+                       {% if product.date_end %}
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $('#Countdown{{ product.product_id }}').countdown({
+                                            until: new Date({{ product.date_end|date("Y") }}, {{ product.date_end|date("m") }}-1, {{ product.date_end|date("d") }}, {{ product.date_end|date("H") }}, {{ product.date_end|date("i") }}, {{ product.date_end|date("s") }}),
+                                            labels: ['Years', 'Months', 'Weeks', 'Days', 'Hrs', 'Mins', 'Secs'],
+                                            labels1: ['Year', 'Month', 'Week', 'Day', 'Hr', 'Min', 'Sec'],
+                                        });
+                                        //$('#Countdown<?php echo $product['product_id'];?>').countdown('pause');
+                                    });
+                                </script>
+                        {% endif %}
+                  </div>
+                </div>
+              {% set tabdoublefirst = "" %}
+              {% if count == mobile %}
+                </div>
+                {% set count = 0 %}
+              {% endif %}
+              {% set count = count + 1 %}
+            {% endfor %} 
+            {% if count != '1' and not singleRow %}
+            </div>
+            {% endif %}
+          </div>
+      </div>
+    {# mb #}
+
+   </div>
+   </div>
+   </div>
+</div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $(".latestpc , .latesttb , .latestpc").owlCarousel({
+
+    //$("#count").owlCarousel({
+    itemsCustom : [
+   /* [0, 1],
+    [375, 2],
+    [600, 3],
+    [768, 3],
+    [992, 4],
+    [1200, 5]*/
+    [0, 2],
+    [375, 2],
+    [600, 3],
+    [768, 4],
+    [992, 4],
+    [1200, 5],
+    [1410, 5]
+    ],
+      // autoPlay: 1000,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : true,
+      pagination:false
+    });
+    });
+</script>

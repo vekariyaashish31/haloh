@@ -1,0 +1,499 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // this will allow easily cloning rows select fields
+        $(document).on('change', '#option-combination-table select', function (e) {
+            var current_select = $(this);
+            var value = current_select.val();
+            $(this).find('option').each(function (index) {
+                $(this).removeAttr('selected');
+                if(Array.isArray(value)){
+                    if(value.includes($(this).attr('value'))){
+                        $(this).attr('selected', 'selected');
+                        $(this).prop('selected', true);
+                    }
+                }else {
+                    if ($(this).attr('value') == value) {
+                        $(this).attr('selected', 'selected');
+                        $(this).prop('selected', true);
+                    }
+                }
+            });
+        });
+    });
+
+    var error_options_combination = [
+        {% for error_options_combination in options_combinations_js_errors %}
+        "{{ error_options_combination }}",
+        {% endfor %}
+    ];
+
+    $( document ).ready(function(){
+        error_options_combination.forEach(element => {
+            $('[name="'+element+'"]').parent().addClass('has-error');
+        });
+    });
+
+    function updateRowNumbers(){
+        $('#option-combinations-container .combination-row .combination-number').each(function(index){
+            $(this).text(index+1);
+        });
+    }
+
+    var user_token = '{{ user_token }}';
+
+    function addCombination(add_position = 'append', options = '', multiple = '', options_ids = ''){
+        var option_combination_row =  $('#option-combinations-container .row.combination-row').length;
+
+        var url = "index.php?route=extension/module/options_combinations/getOptionsRow";
+
+        options = options ? encodeURI(JSON.stringify(options)) : '';
+
+        $('#options-load-overlay').show();
+        return $.getJSON( url, {
+                user_token: user_token,
+                option_combination_row: option_combination_row,
+                options: options,
+                multiple: multiple,
+                options_ids: options_ids,
+            }
+        ).done(function(data) {
+            var html = data.data;
+
+            if(add_position == 'append') {
+                $('#option-combinations-container').append(html);
+            } else {
+                $('#option-combinations-container').prepend(html);
+            }
+
+            $('.date').datetimepicker({
+                pickTime: false
+            });
+        }).fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            console.log( "Request Failed: " + err );
+            alert( "Request Failed");
+        }).always(function() {
+            $('#options-load-overlay').hide();
+            updateRowNumbers();
+        });
+    }
+
+    function addImageForOption(elem) {
+        var row = getRow(elem);
+        var new_image = getOptionImages(row);
+        if(new_image) {
+            $('#option-images-' + row + '-').append(new_image);
+        }
+        var option_images_count = $('#option-images-'+row+'- > div').length;
+        if(option_images_count > 2) {
+            setElementVisibility(row, 'div.option-combination-images + button', 0);
+        }
+    }
+
+    function setElementVisibility(row, element, isVisible) {
+        var item = $('div#combined_product_option_'+row+' '+element);
+        if(item) {
+            if(isVisible) {
+                item.show();
+            } else {
+                item.hide();
+            }
+        }
+    }
+
+    function getOptionImages(row) {
+        var option_images_count = $('#option-images-'+row+'- div').length;
+
+        var result = '<div><a href="" data-toggle="image" class="img-thumbnail" id="thumb-image' + row + '-' + option_images_count + '">' +
+            '<img src="{{ options_thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" />' +
+            '</a>' +
+            '<input id="input-image' + row + '-' + option_images_count + '" class="input-option-images-' + row + '" type="hidden" name="options_combinations[' + row + '][images][' + option_images_count + ']" value="{{ options_thumb }}" /></div>';
+
+        return result;
+
+    }
+
+    function addOptionInsideOptionCombination(elem) {
+        var row = getRow(elem);
+        $('#select-option').remove();
+        var new_el = $('<input class="form-control" id="select-option">');
+        $(elem).before(new_el);
+
+        $('#select-option').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: 'index.php?route=catalog/option/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
+                        dataType: 'json',
+                        success: function (json) {
+                            var result = []
+                            $.each(json,function(i,v){
+                                var a = $('#combined_product_option_'+row).find(".option[data-option_id='" + v.option_id + "']");
+                                if(a.length == 0) {
+                                    result.push(v);
+                                }
+                            });
+                            if(result) {
+                                response($.map(result, function (item) {
+
+                                    return {
+                                        category: item['category'],
+                                        label: item['name'],
+                                        value: item['option_id'],
+                                        type: item['type'],
+                                        option_value: item['option_value']
+                                    }
+                                }));
+                            }
+                        }
+                    })
+                },
+                'select': function (item) {
+                    addSelectedOption(item, row);
+                    $('#select-option').remove();
+                }
+            }
+        )
+    }
+
+    function addSelectedOption(item, row){
+        var table = $(`#tab-comb-data-${row} table.combination-options`);
+        var html = '<tr>';
+        html += `<td class="option" data-option_id="${item.value}"><a href="#" class="remove-option"><i class="fa fa-minus-circle" style="display: inline"></i></a>${item.label}:</td>`;
+        html += '<td>';
+
+        if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+            if (item['option_value']) {
+                var multiple = item.type === 'checkbox' ? ' multiple="multiple"' : '';
+                var multiple_name = multiple ? '[]' : '';
+
+                html += `<select class="form-control" ${multiple} name="options_combinations[${row}][options][${item.value}]${multiple_name}" data-option-name="${item['label']}" onchange="updateCombinationTitle($(this).closest('table').closest('.combination-row'));">`;
+
+                var selected_value_id = '';
+                if(item['selected_value_id']) {
+                    selected_value_id = item['selected_value_id'];
+                }
+
+                $.each(item['option_value'], function (opt_indx, opt_value) {
+                    if(selected_value_id && selected_value_id == opt_value.option_value_id) {
+                        html += `<option value="${opt_value.option_value_id}" selected="selected" data-option-value-name="${opt_value['name']}"> ${opt_value.name} </option>`;
+                    } else {
+                        html += `<option value="${opt_value.option_value_id}" data-option-value-name="${opt_value['name']}"> ${opt_value.name} </option>`;
+                    }
+                });
+
+                html += '</select>';
+            }
+
+            updateCombinationTitle(table.closest('.row.combination-row'));
+        } else {
+            if (item['type'] == 'text') {
+                html += `<input class="form-control" type="text" name="options_combinations[${row}][options][${item['value']}]" value="" placeholder="{{ entry_option_value }}" data-option-name="${item['label']}"/>`;
+            }
+            else if (item['type'] == 'textarea') {
+                html += `<textarea class="form-control" name="options_combinations[${row}][options][${item['value']}]" rows="2" placeholder="{{ entry_option_value }}" data-option-name="${item['label']}"></textarea>`;
+            }
+            else if (item['type'] == 'file') {
+                html += `<input style="display:none;" class="form-control" type="text" name="options_combinations[${row}][options][${item['value']}]" value="" placeholder="{{ entry_option_value }}" data-option-name="${item['label']}"/>`;
+            }
+            else if (item['type'] == 'date') {
+                html += `<div class="input-group date"><input class="form-control" type="text" name="options_combinations[${row}][options][${item['value']}]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" data-option-name="${item['label']}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>`;
+            }
+            else if (item['type'] == 'time') {
+                html += `<div class="input-group time"><input class="form-control" type="text" name="options_combinations[${row}][options][${item['value']}]" value="" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" data-option-name="${item['label']}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>`;
+            }
+            else if (item['type'] == 'datetime') {
+                html += `<div class="input-group datetime"><input class="form-control" type="text" name="options_combinations[${row}][options][${item['value']}]" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" data-option-name="${item['label']}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>`;
+            }
+        }
+
+        html += '</td>';
+        html += '</tr>';
+        table.append(html);
+
+        $('.date').datetimepicker({
+            language: '{{ datepicker }}',
+            pickTime: false
+        });
+
+        $('.time').datetimepicker({
+            language: '{{ datepicker }}',
+            pickDate: false
+        });
+
+        $('.datetime').datetimepicker({
+            language: '{{ datepicker }}',
+            pickDate: true,
+            pickTime: true
+        });
+    }
+
+    function getRow(elem) {
+        return $(elem).closest('div.combination-row').data('row-id');
+    }
+
+    function removeRow(elem) {
+        $(this).tooltip('destroy');
+        $('#combined_product_option_'+getRow(elem)).remove();
+        updateRowNumbers();
+    }
+
+    function copyRow(el) {
+        var option_combination_row =  $('#option-combinations-container .row.combination-row').length;
+
+        var row = $(el).closest('div.combination-row');
+        var row_number = row.data('row-id');
+
+        // touch all input values
+        row.find('input').each(function() {
+            $(this).attr('value', $(this).val());
+        });
+
+        var new_row = row.clone();
+
+        //Remove ID
+        new_row.find('input.option_combination_id_hidden').val('');
+
+        new_row.find('.panel .panel-collapse').addClass('in');
+
+        new_row.attr('id',`combined_product_option_${option_combination_row}`);
+        new_row.attr('data-row-id', option_combination_row);
+        new_row.find('.panel-heading a[data-toggle="collapse"]').attr('href', `#combined_option_${option_combination_row}`);
+        new_row.find('.panel.panel-default > .panel-collapse').attr('id', `combined_option_${option_combination_row}`);
+
+        // Replacing tabs links
+        new_row.find('.panel.panel-default > .panel-collapse > .panel-body > ul.nav.nav-tabs li > a').each(function (){
+            var href = $(this).attr('href');
+            var href_arr = href.split('-');
+            href_arr[href_arr.length - 1] = option_combination_row;
+            $(this).attr('href', href_arr.join('-'));
+        });
+
+        // Replacing tab-content ids
+        new_row.find('.panel.panel-default > .panel-collapse > .panel-body > .tab-content .tab-pane').each(function (){
+            var id = $(this).attr('id');
+            var id_arr = id.split('-');
+            id_arr[id_arr.length - 1] = option_combination_row;
+            $(this).attr('id', id_arr.join('-'));
+        });
+
+        var new_row_html = new_row[0].outerHTML;
+
+        // Here we are replacing strings that are in the html more than once
+        new_row_html = replaceAll(new_row_html,'options_combinations[' + row_number + ']','options_combinations[' + option_combination_row + ']');
+        new_row_html = replaceAll(new_row_html, 'option-price-'+row_number+'-', 'option-price-'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'option-images-'+row_number+'-', 'option-images-'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'thumb-image'+row_number+'-', 'thumb-image'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'option-discount-'+row_number+'-', 'option-discount-'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'discount_row_'+row_number+'_', 'discount_row_'+option_combination_row+'_');
+        new_row_html = replaceAll(new_row_html, 'option-special-'+row_number+'-', 'option-special-'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'special_row_'+row_number+'_', 'special_row_'+option_combination_row+'_');
+        new_row_html = replaceAll(new_row_html, 'input-image'+row_number+'-', 'input-image'+option_combination_row+'-');
+        new_row_html = replaceAll(new_row_html, 'options_combinations['+row_number+'][images]', 'options_combinations['+option_combination_row+'][images]');
+
+        $('#option-combinations-container').append(new_row_html);
+
+        updateRowNumbers();
+    }
+
+    function updateCombinationTitle(combination_row){
+        var options_table = combination_row.find('table.combination-options');
+        var combination_title_element = combination_row.find('.panel-title .options-and-values-selected');
+        var options_title = '';
+
+        options_table.find('select').each(function(option_index){
+            if (option_index != 0)
+                options_title += ' - ';
+
+            options_title += $(this).data('option-name') + ': ';
+
+            $(this).find('option:selected').each(function(option_value_index){
+                if (option_value_index != 0)
+                    options_title += ', ';
+                options_title += $(this).data('option-value-name');
+            });
+        });
+
+        combination_title_element.text(options_title);
+    }
+
+    function replaceAll(str, find, replace) {
+        var $r="";
+        while($r!=str){
+            $r = str;
+            str = str.replace(find, replace);
+        }
+        return str;
+    }
+
+
+    $('#option-combinations-container').on('click','td.option a.remove-option',function(e){
+        e.preventDefault();
+        var option = $(this);
+        var option_block = option.closest('tr');
+        var combination_row = option.closest('.row.combination-row');
+
+        var table = option_block.closest('table');
+        option_block.remove();
+        // remove empty tbody for styles
+        if (table.find('tbody').is(':empty')){
+            table.find('tbody').remove();
+        }
+
+        setTimeout(function () {
+            updateCombinationTitle(combination_row);
+        }, 100);
+
+    });
+
+    $(document).ready(function() {
+        if ('select2' in $('.select2')) {
+            $('.select2').select2({
+                width: 'resolve',
+            });
+        }
+
+        $(document).on('click', 'button#button-clear', function(e){
+            // remove image
+            var row = getRow($(this));
+            var option_images_count = $('#option-images-'+row+'- > div').length;
+            if(option_images_count < 4) {
+                setElementVisibility(row, 'div.option-combination-images + button', 1);
+            }
+            $(this).parent().parent().parent().remove();
+
+        });
+
+        $('.js-add-option-with-selected-variants').on('click', function(e){
+            e.preventDefault();
+            addCombination('prepend').done(function(){
+                var selected =  $('#selected-variants').select2().val();
+                $.get(
+                    'index.php?route=extension/module/options_combinations/getOptionValuesByIds&user_token={{ user_token }}',
+                    {'option_ids':selected},
+                    function(response)
+                    {
+                        var row = $('#option-combinations-container .row.combination-row').length;
+                        if (row > 0) {
+                            row --;
+                        }
+                        if(response.options) {
+                            $.each(response.options, function(i,item) {
+                                addSelectedOption(item, row);
+                            });
+                        }
+                    });
+            });
+        });
+
+        $('.js-fill-possible-variants').on('click', function(e){
+            e.preventDefault();
+
+            var selected =  $('#selected-variants').select2().val();
+            if(!selected) {
+                alert('Options are not selected!');
+                return;
+            }
+            addCombination('prepend', '', true, selected);
+        });
+
+        // $('#tab-option').attr('style','overflow-x: scroll');
+    });
+
+
+    function addDiscountCustomerGroup(tableBody, add_position = 'append'){
+
+        var count_discounts = tableBody.find('tr').length;
+        var option_combination_row = tableBody.closest('table').closest('div.combination-row').data('row-id');
+        var url = "index.php?route=extension/module/options_combinations/getDiscountRow";
+
+        $('#options-load-overlay').show();
+        return $.getJSON( url, {
+                user_token: user_token,
+                option_combination_row: option_combination_row,
+                count_discounts: count_discounts,
+            }
+        ).done(function(data) {
+
+            var html = data.data;
+
+            if(add_position == 'append') {
+                tableBody.append(html);
+            } else {
+                tableBody.prepend(html);
+            }
+
+            $('.date').datetimepicker({
+                pickTime: false
+            });
+        }).fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            alert( "Request Failed");
+        }).always(function() {
+            $('#options-load-overlay').hide();
+        });
+    };
+
+    $(document).on('click', '.add-discount-customer-group', function(e){
+        var tableBody = $(e.target).closest('table').find('tbody');
+        addDiscountCustomerGroup(tableBody);
+
+    });
+
+    $(document).on('change', '.discount-row-customer-group-select', function(e){
+        var optionSelected = $("option:selected", this);
+        if (optionSelected.val() == 'remove'){
+            optionSelected.closest('tr').remove();
+        }
+    });
+
+    function addSpecialCustomerGroup(tableBody, add_position = 'append'){
+
+        var count_specials = tableBody.find('tr').length;
+        var option_combination_row = tableBody.closest('table').closest('div.combination-row').data('row-id');
+        var url = "index.php?route=extension/module/options_combinations/getSpecialRow";
+
+        $('#options-load-overlay').show();
+        return $.getJSON( url, {
+                user_token: user_token,
+                option_combination_row: option_combination_row,
+                count_specials: count_specials,
+            }
+        ).done(function(data) {
+            var html = data.data;
+            if(add_position == 'append') {
+                tableBody.append(html);
+            } else {
+                tableBody.prepend(html);
+            }
+            $('.date').datetimepicker({
+                pickTime: false
+            });
+        }).fail(function( jqxhr, textStatus, error ) {
+            var err = textStatus + ", " + error;
+            alert( "Request Failed");
+        }).always(function() {
+            $('#options-load-overlay').hide();
+        });
+    };
+
+    $(document).on('click', '.add-special-customer-group', function(e){
+        var tableBody = $(e.target).closest('table').find('tbody');
+        addSpecialCustomerGroup(tableBody);
+    });
+
+    $(document).on('change', '.special-row-customer-group-select', function(e){
+        var optionSelected = $("option:selected", this);
+        if (optionSelected.val() == 'remove'){
+            optionSelected.closest('tr').remove();
+        }
+    });
+
+    $(document).ready(function() {
+        if (location.hash === '#tab-option') {
+            $('a[href="#tab-option"]').tab('show')
+        }
+    });
+</script>

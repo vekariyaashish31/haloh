@@ -1,0 +1,98 @@
+{% set element_folder = 'extension/module/options_combinations/elements_light/' %}
+<link rel="stylesheet" href="view/stylesheet/devmanextensions/options_combinations/options.css">
+<div id="options-load-overlay">
+    <div class="loader">Loading...</div>
+</div>
+<div class="panel panel-info">
+    <div class="panel panel-heading">
+        <div class="row">
+            <div class="col-sm-1">
+                <label for="selected-variants">Select options</label>
+            </div>
+            <div class="col-sm-3">
+                <select id="selected-variants" class="form-control select2" name="selected-variants[]"
+                        multiple="multiple" style="width:100%;">
+                    {% for option in options_id_name %}
+                        <option value="{{ option.option_id }}">{{ option.name }} [{{ option.option_id }}]
+                            [{{ option.type }}]
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-8">
+                <a class="btn btn-success js-add-option-with-selected-variants">Add combination with selected
+                    options</a>
+                <a class="btn btn-warning js-fill-possible-variants">Generate all possible combinations</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-body">
+        <div class="row">
+            <div class="container-fluid">
+                <div id="option-combinations-container">
+                    {% set option_combination_columns = 4 + config_opt_comb_extra|number_format + config_opt_comb_price|number_format + config_opt_comb_points|number_format + config_opt_comb_reward_points|number_format + config_opt_comb_model|number_format + config_opt_comb_image|number_format + config_opt_comb_dimensions|number_format + config_opt_comb_discount|number_format + config_opt_comb_special|number_format + config_opt_comb_weight|number_format + config_opt_comb_sku|number_format + config_opt_comb_upc|number_format %}
+                    {% set option_combination_row = 0 %}
+                    {% for combined_product_option in options_combinations %}
+                        {% include 'extension/module/options_combinations/combination_row.twig' %}
+                        {% set option_combination_row = option_combination_row + 1 %}
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <button onclick="addCombination();" type="button" data-toggle="tooltip" title=""
+                            class="btn btn-primary" data-original-title="Add Combination"><i
+                                class="fa fa-plus-circle"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel panel-heading">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="h4">{{ bullet }}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-body">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-bullet-option_id">
+                <span data-toggle="tooltip" title=""
+                      data-original-title="{{ entry_bullet_option_help }}">{{ bullet_option }}</span>
+            </label>
+
+            <div class="col-sm-10">
+                <select name="options_combinations_bullet[option_id]" id="input-bullet-option_id" class="form-control">
+                    <option value="">-- Default --</option>
+                    {% for option_id, option_name in all_product_options %}
+                        <option {% if option_id == options_combinations_bullet.option_id %}selected="selected"{% endif %}
+                                value="{{ option_id }}">{{ option_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-bullet-language">
+                <span data-toggle="tooltip" title=""
+                      data-original-title="{{ entry_bullet_image_help }}">{{ bullet_image }}</span>
+            </label>
+            <div class="col-sm-10">
+                <select name="options_combinations_bullet[image_origin]" id="input-bullet-language"
+                        class="form-control">
+                    <option value="">-- Default --</option>
+                    <option {% if options_combinations_bullet.image_origin == 1 %}selected="selected"{% endif %}
+                            value="1">{{ bullet_image_option_1 }}</option>
+                    <option {% if options_combinations_bullet.image_origin == 2 %}selected="selected"{% endif %}
+                            value="2">{{ bullet_image_option_2 }}</option>
+                    <option {% if options_combinations_bullet.image_origin == 3 %}selected="selected"{% endif %}
+                            value="3">{{ bullet_image_option_3 }}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+{% include element_folder ~'form_script.twig' %}

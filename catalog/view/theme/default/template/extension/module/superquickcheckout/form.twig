@@ -1,0 +1,103 @@
+<form method="POST" action="{{ action }}" id="superquickcheckout_form">
+    {% if title %}
+        <h3 id="superquickcheckout_title">{{ title }}</h3>
+    {% endif %}
+    <div id="superquickcheckout_input" {% if ordered %}style="display: none;"{% endif %}>
+        {{ form_html }}
+    </div>
+    <div id="superquickcheckout_ordered" {% if not ordered %}style="display: none;"{% endif %}>
+        <p class="sqc-margin-bottom">{{ superquickcheckout_text_ordered }}</p>
+        <button class="btn btn-default" id="superquickcheckout_order_again">{{ superquickcheckout_button_order_again }}</button>
+    </div>
+    {% if title %}
+        <hr />
+    {% endif %}
+</form>
+<style type="text/css">
+    .alert-dismissable .sqc-close {
+        right: 0;
+    }
+
+    .alert-dismissable.sqc-alert {
+        display: block;
+    }
+
+    .sqc-margin-bottom {
+        margin-bottom: 10px;
+    }
+</style>
+<script type="text/javascript">
+(function($) {
+    var form_selector = '#superquickcheckout_form';
+    var title_selector = '#superquickcheckout_title';
+    var order_again_button_selector = '#superquickcheckout_order_again';
+    var submit_button_selector = '#superquickcheckout_submit';
+    var input_container_selector = '#superquickcheckout_input';
+    var ordered_container_selector = '#superquickcheckout_ordered';
+    var alert_selector = '.alert';
+
+    $(document).on('click', order_again_button_selector, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $(this).closest(form_selector).find(ordered_container_selector).hide();
+        $(this).closest(form_selector).find(input_container_selector).show();
+    });
+
+    $(document).on('submit', form_selector, function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var form = this;
+        
+        var showMessage = function(html) {
+            if ($(form).find(title_selector).length) {
+                $(form).find(title_selector).after(html);
+            } else {
+                $(form).prepend(html);
+            }
+        }
+
+        var showError = function(message) {
+            var html = '<div class="sqc-alert alert alert-danger alert-dismissable warning sqc-margin-bottom"><i class="fa fa-warning"></i> ' + message + '<button type="button" class="close sqc-close" data-dismiss="alert"><i class="fa fa-times"></button></div>';
+
+            showMessage(html);
+        }
+
+        var showSuccess = function(message) {
+            var html = '<div class="sqc-alert alert alert-success alert-dismissable success sqc-margin-bottom"><i class="fa fa-check"></i> ' + message + '<button type="button" class="close sqc-close" data-dismiss="alert"><i class="fa fa-times"></button></div>';
+
+            showMessage(html);
+        }
+
+        $.ajax({
+            url: $(form).attr('action'),
+            data: $(form_selector + ', #product input[type=\'text\'], #product input[type=\'hidden\'], #product input[type=\'radio\']:checked, #product input[type=\'checkbox\']:checked, #product select, #product textarea').serialize(),
+            type: 'POST',
+            dataType: 'json',
+            beforeSend: function() {
+                $(form).find(alert_selector).remove();
+                $(form).find(submit_button_selector).button('loading');
+            },
+            success: function(data) {
+                if (data.error) {
+                    showError(data.error);
+                } else if (data.success) {
+                    showSuccess(data.success);
+
+                    $(form).find(ordered_container_selector).show();
+                    $(form).find(input_container_selector).hide();
+                } else if (data.redirect) {
+                    document.location = data.redirect;
+                }
+            },
+            error: function() {
+                showError('{{ superquickcheckout_error_general }}');
+            },
+            complete: function() {
+                $(form).find(submit_button_selector).button('reset');
+            }
+        });
+    });
+})(jQuery);
+</script>

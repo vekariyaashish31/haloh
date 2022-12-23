@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'Rozšíření';
+$_['text_success']                 = 'Úspěšnost: Upravili jste přepravu UPS!';
+$_['text_edit']                    = 'Upravit zásilku UPS';
+$_['text_regular_daily_pickup']    = 'Pravidelný denní příjem';
+$_['text_daily_pickup']            = 'Denní vyzvednutí';
+$_['text_customer_counter']        = 'Počítadlo zákazníků';
+$_['text_one_time_pickup']         = 'One Time Pickup';
+$_['text_on_call_air_pickup']      = 'Při vyzvednutí volaného vzduchu';
+$_['text_letter_center']           = 'Letter Center';
+$_['text_air_service_center']      = 'Středisko leteckých služeb';
+$_['text_suggested_retail_rates']  = 'Doporučené maloobchodní ceny (obchod UPS)';
+$_['text_package']                 = 'Balík';
+$_['text_ups_letter']              = 'UPS Letter';
+$_['text_ups_tube']                = 'UPS Tube';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'Krabice UPS 25 kg';
+$_['text_ups_10kg_box']            = 'UPS 10 kg box';
+$_['text_us']                      = 'Americký původ';
+$_['text_ca']                      = 'Kanadský původ';
+$_['text_eu']                      = 'Původu Evropské unie';
+$_['text_pr']                      = 'Puerto Rico Původ';
+$_['text_mx']                      = 'Původ Mexika';
+$_['text_other']                   = 'Všechny ostatní původy';
+$_['text_test']                    = 'Test';
+$_['text_production']              = 'Výroba';
+$_['text_residential']             = 'Obytný';
+$_['text_commercial']              = 'Komerční';
+$_['text_next_day_air']            = 'UPS následující den';
+$_['text_2nd_day_air']             = 'Jednosměrný vzduch UPS';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'Volba třídenního UPS';
+$_['text_next_day_air_saver']      = 'Úspora vzduchu v příštím dni UPS';
+$_['text_next_day_air_early_am']   = 'UPS Next Day Air Early A.M.';
+$_['text_2nd_day_air_am']          = 'Druhý den UPS Air A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
+$_['text_standard']                = 'Standard UPS';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPS Urychlil';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'Standard UPS dnes';
+$_['text_today_dedicated_courier'] = 'Dnešní specializovaný kurýr UPS';
+$_['text_today_intercity']         = 'UPS dnes Intercity';
+$_['text_today_express']           = 'UPS dnes Express';
+$_['text_today_express_saver']     = 'UPS dnes expresní spořič';
+
+// Entry
+$_['entry_key']                    = 'Přístupový klíč';
+$_['entry_username']               = 'Uživatelské jméno';
+$_['entry_password']               = 'Heslo';
+$_['entry_pickup']                 = 'Metoda vyzvednutí';
+$_['entry_packaging']              = 'Typ balení';
+$_['entry_classification']         = 'Klasifikační kód zákazníka';
+$_['entry_origin']                 = 'Původní kód zásilky';
+$_['entry_city']                   = 'Město původu';
+$_['entry_state']                  = 'Stát původu /provincie';
+$_['entry_country']                = 'Země původu';
+$_['entry_postcode']               = 'Poštovní směrovací číslo';
+$_['entry_test']                   = 'Testovací mód';
+$_['entry_quote_type']             = 'Typ citátu';
+$_['entry_service']                = 'Služby';
+$_['entry_insurance']              = 'Povolit pojištění';
+$_['entry_display_weight']         = 'Zobrazení hmotnosti dodávky';
+$_['entry_weight_class']           = 'Hmotnostní třída';
+$_['entry_length_class']           = 'Třída délky';
+$_['entry_dimension']              = 'Rozměry (D x Š x V)';
+$_['entry_length']                 = 'Délka';
+$_['entry_height']                 = 'Výška';
+$_['entry_width']                  = 'Šířka';
+$_['entry_tax_class']              = 'Daňová třída';
+$_['entry_geo_zone']               = 'Geo zóna';
+$_['entry_status']                 = 'Postavení';
+$_['entry_sort_order']             = 'Řadit objednávku';
+$_['entry_debug']                  = 'Debugovací mód';
+
+// Help
+$_['help_key']                     = 'Zadejte klíč pro přístup k sazbám XML, který vám byl přidělen UPS.';
+$_['help_username']                = 'Zadejte uživatelské jméno účtu služby UPS.';
+$_['help_password']                = 'Zadejte heslo účtu služby UPS.';
+$_['help_pickup']                  = 'Jak dáváte balíčky UPS (používá se pouze při původu v USA) ?';
+$_['help_packaging']               = 'Jaký obal používáte?';
+$_['help_classification']          = '01 - Pokud účtujete na účet UPS a máte denní příjem UPS, 03 - Pokud nemáte účet UPS nebo účtujete na účet UPS, ale nemáte denní vyzvednutí, 04 - Pokud odesíláte maloobchodní prodejna (používá se pouze při původu v USA)';
+$_['help_origin']                  = 'Jaký výchozí bod by měl být použit (toto nastavení se týká pouze názvů produktů UPS, které se uživateli zobrazují)';
+$_['help_city']                    = 'Zadejte název města původu.';
+$_['help_state']                   = 'Zadejte dvojpísmenový kód pro váš stát původu /provincii.';
+$_['help_country']                 = 'Zadejte dvoumístný kód země původu.';
+$_['help_postcode']                = 'Zadejte svůj PSČ /poštovní směrovací číslo.';
+$_['help_test']                    = 'Tento modul použijte v testu (YES) nebo v režimu výroby (NO) ?';
+$_['help_quote_type']              = 'Citace pro distribuci bytů nebo komerčních nemovitostí.';
+$_['help_service']                 = 'Vyberte služby UPS, které mají být nabízeny.';
+$_['help_insurance']               = 'Povoluje pojištění s celkovým produktem jako hodnotu';
+$_['help_display_weight']          = 'Chcete zobrazit přepravní hmotnost? (například dodací hmotnost: 2,77674 kg)';
+$_['help_weight_class']            = 'Nastavte na kilogramy nebo libry.';
+$_['help_length_class']            = 'Nastavte na centimetry nebo palce.';
+$_['help_dimension']               = 'Předpokládá se, že se jedná o průměrnou velikost balení. Jednotlivé rozměry položek nejsou v tuto chvíli podporovány, takže musíte zadat průměrné rozměry, například 5x5x5.';
+$_['help_debug']                   = 'Uloží data odesílání /obnovení do systémového protokolu';
+
+// Error
+$_['error_permission']             = 'Upozornění: Nemáte oprávnění k úpravě přepravy UPS!';
+$_['error_key']                    = 'Požadovaný přístupový klíč!';
+$_['error_username']               = 'Požadováno uživatelské jméno!';
+$_['error_password']               = 'Potřebné heslo!';
+$_['error_city']                   = 'Původ City!';
+$_['error_state']                  = 'Původní stát /provincie Požadováno!';
+$_['error_country']                = 'Původní požadovaná země!';
+$_['error_dimension']              = 'Průměrné požadované rozměry!';

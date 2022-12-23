@@ -1,0 +1,161 @@
+<!-- <copyright file="multiimageuploader.twig" company="Sharley's Web Development"> 
+ Copyright (c) 2018 All Right Reserved, http://sharleys.co.uk/ 
+
+ This source is subject to the Sharley's Web Development and GPL Licenses. 
+ Please see the license.txt file for more information. 
+ All other rights reserved. 
+ 
+ THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY  
+ KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE 
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A 
+ PARTICULAR PURPOSE. 
+ 
+ </copyright> 
+ <author>Kamen Sharlandjiev</author> 
+ <email>support@sharleys.co.uk</email> 
+ <date>25/01/2018</date>--> 
+
+{{ header }}{{ column_left }}
+<div id="content"> 
+  <div class="page-header">    
+    <div class="container-fluid">     
+      <div class="pull-right"> 
+        <button type="submit" form="form-multiimageuploader" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button> 
+        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+     </div>
+      <h1>{{ heading_title }}</h1>  
+    <ul class="breadcrumb">
+      {% for breadcrumb in breadcrumbs %}
+      <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+      {% endfor %}
+    </ul>
+    </div>    
+  </div>      
+  <div class="container-fluid">       
+  	{% if error_warning %}
+    <div class="alert alert-danger alert-dismissible\><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default"> 
+      <div class="panel-heading">     
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_form }} </h3>   
+      </div>  
+      <div class="panel-body"> 
+       <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-multiimageuploader" class="form-horizontal">
+          <ul class="nav nav-tabs">   
+            <li class="active">
+              <a href="#tab_general" data-toggle="tab">
+              {{ tab_general }}</a>
+            </li>       
+            <li >
+              <a href="#tab_help" data-toggle="tab">
+              {{ tab_help }}</a>
+            </li>       
+          </ul>      
+          <div class="tab-content">   
+            <div class="tab-pane active" id="tab_general">      
+              <h3>{{ tab_general_legend }}</h3>   
+            <div class="form-group ">
+              <label class="col-sm-2 control-label" for="input-multiimageuploader_status">{{ entry_status }}</label>
+              <div class="col-sm-2">
+                <select name="multiimageuploader_status" id="input-multiimageuploader_status" class="form-control ">
+                  	{% if multiimageuploader_status == "0" %}
+ 	                   <option value="0" selected="selected">Disabled</option> 
+                  	{% else %}
+  	                  <option value="0">Disabled</option> 
+                  	{% endif %}
+                  	{% if multiimageuploader_status == "1" %}
+ 	                   <option value="1" selected="selected">Enabled</option> 
+                  	{% else %}
+  	                  <option value="1">Enabled</option> 
+                  	{% endif %}
+									{% if status_all_values is defined and status_all_values is iterable %}                  {% for key, val in status_all_values %}
+                  	{% if key == multiimageuploader_status %}
+                 	 <option value="{{ key }}" selected="selected">{{ val }}</option>
+                  	{% else %}
+                  	<option value="{{ key }}">{{ val }}</option>
+                  	{% endif %}
+                  	{% endfor %}
+                  {% endif %}
+                </select>
+              </div>
+            </div>	
+              <div class="form-group ">
+            	  <label class="col-sm-2 control-label" for="input-multiimageuploader_folder">{{ entry_folder }}</label>
+              	<div class="col-sm-2">
+                	<input type="text" name="multiimageuploader_folder" value="{{ multiimageuploader_folder }}" placeholder="{{ entry_multiimageuploader_folder }}" id="input-multiimageuploader_folder" class="form-control" />
+								</div>
+							</div>
+            <div class="form-group ">
+              <label class="col-sm-2 control-label" for="input-multiimageuploader_segment">{{ entry_segment }}</label>
+              <div class="col-sm-2">
+                <select name="multiimageuploader_segment" id="input-multiimageuploader_segment" class="form-control ">
+                  	{% if multiimageuploader_segment == "0" %}
+ 	                   <option value="0" selected="selected">No segment</option> 
+                  	{% else %}
+  	                  <option value="0">No segment</option> 
+                  	{% endif %}
+                  	{% if multiimageuploader_segment == "date" %}
+ 	                   <option value="date" selected="selected">By Date</option> 
+                  	{% else %}
+  	                  <option value="date">By Date</option> 
+                  	{% endif %}
+									{% if segment_all_values is defined and segment_all_values is iterable %}                  {% for key, val in segment_all_values %}
+                  	{% if key == multiimageuploader_segment %}
+                 	 <option value="{{ key }}" selected="selected">{{ val }}</option>
+                  	{% else %}
+                  	<option value="{{ key }}">{{ val }}</option>
+                  	{% endif %}
+                  	{% endfor %}
+                  {% endif %}
+                </select>
+              </div>
+            </div>	
+            <div class="form-group ">
+              <label class="col-sm-2 control-label" for="input-multiimageuploader_deletedef">{{ entry_deletedef }}</label>
+              <div class="col-sm-2">
+                <select name="multiimageuploader_deletedef" id="input-multiimageuploader_deletedef" class="form-control ">
+                  	{% if multiimageuploader_deletedef == "0" %}
+ 	                   <option value="0" selected="selected">No, keep</option> 
+                  	{% else %}
+  	                  <option value="0">No, keep</option> 
+                  	{% endif %}
+                  	{% if multiimageuploader_deletedef == "1" %}
+ 	                   <option value="1" selected="selected">Yes, remove</option> 
+                  	{% else %}
+  	                  <option value="1">Yes, remove</option> 
+                  	{% endif %}
+									{% if deletedef_all_values is defined and deletedef_all_values is iterable %}                  {% for key, val in deletedef_all_values %}
+                  	{% if key == multiimageuploader_deletedef %}
+                 	 <option value="{{ key }}" selected="selected">{{ val }}</option>
+                  	{% else %}
+                  	<option value="{{ key }}">{{ val }}</option>
+                  	{% endif %}
+                  	{% endfor %}
+                  {% endif %}
+                </select>
+              </div>
+            </div>	
+            </div>   
+            <div class="tab-pane " id="tab_help">      
+              <h3>{{ tab_help_legend }}</h3>   
+      			  <div class="panel panel-default"> 
+      			    <div class="panel-heading"><h4 class="panel-title">{{ entry_test_about }}</h4></div> 
+      			    <div class="panel-body"><strong>Multi Image Uploader</strong> is another great module developed by <a href="http://sharleys.co.uk/" target="_blank">Sharley's Web Development</a></div> 
+      			  </div> 
+      			  <div class="panel panel-default"> 
+      			    <div class="panel-heading"><h4 class="panel-title">{{ entry_test_support }}</h4></div> 
+      			    <div class="panel-body"><a href="mailto: support@sharleys.co.uk?subject=Multi Image Uploader support on <?php echo HTTP_CATALOG;?>" class="btn btn-success"> <i class="fa fa-life-ring fa-lg"></i> Contact Us</a>   <a href="http://on.fb.me/1inp4Ik" target="_blank" class="btn btn-primary"> <i class="fa fa-thumbs-up"></i> Follow us on Facebook</a></div> 
+      			  </div> 
+      			  <div class="panel panel-default"> 
+      			    <div class="panel-heading"><h4 class="panel-title">{{ entry_test_vote_for_us }}</h4></div> 
+      			    <div class="panel-body">Please give as your vote & comment on <a href="http://bit.ly/1vHShWu" target="_blank">Opencart Extension Store</a></div> 
+      			  </div> 
+            </div>   
+          </div>     
+        </form>      
+      </div>  
+    </div>    
+  </div>      
+<?php echo $footer; ?> 

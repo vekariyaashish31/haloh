@@ -1,0 +1,21 @@
+@media (max-width: 991px) {
+    .sm-margin-bottom-10 {
+        margin-bottom: 10px;
+    }
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-top--9 {
+    margin-top: -9px;
+}
+
+div[role="timepicker"] .input-group-addon {
+    cursor: pointer;
+}
+
+.note-toolbar.panel-heading i {
+    font-size: 12px;
+}

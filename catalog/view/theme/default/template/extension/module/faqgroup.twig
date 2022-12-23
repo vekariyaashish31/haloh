@@ -1,0 +1,67 @@
+{% if faq_search %}
+<div id="faqsearch" class="input-group left_bar">
+<h4>{{ text_search }}</h4>
+<input type="text" name="faqsearch" value="{{ faqsearch }}" placeholder="{{ text_search }}" class="form-control" />
+<span class="input-group-btn">
+<button type="button" id="button-faqsearch" class="btn btn-default"><i class="fa fa-search"></i></button>
+</span>
+</div>
+{% endif %}
+{% if faqstatus %}
+<div class="list-group">
+<h4>Faq Groups</h4>
+	{% for faqgroup in faqgroups %}
+	{% if faqgroup.faqgroup_id == faqgroup_id %}
+  <a href="{{ faqgroup.href }}" class="list-group-item active">{{ faqgroup.name }}</a>
+
+  {% else %}
+  <a href="{{ faqgroup.href }}" class="list-group-item">{{ faqgroup.name }}</a>
+  {% endif %}
+ {% endfor %}
+</div>
+{% endif %}
+<style>
+.left_bar{
+	padding:10px;
+	border:1px solid #ddd;
+	border-radius:5px;
+}
+.input-group{
+	margin-bottom:20px;
+}
+.input-group .form-control{
+	border-top-left-radius:5px!important;
+	border-bottom-left-radius:5px!important;
+}
+.input-group-addon, .input-group-btn{
+	vertical-align:bottom!important;
+}
+.list-group h4{
+	    margin: 0;
+    padding: 10px;
+    background: #eee;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: 1px solid #ddd;
+	border-bottom:none!important;
+}
+</style>
+<script>
+$('#button-faqsearch').bind('click', function() {
+	url = 'index.php?route=extension/search';
+
+	var search = $('input[name=\'faqsearch\']').val();
+	
+	url += '&faqsearch=' + encodeURIComponent(search);
+	
+	location = url;
+});
+
+$('input[name=\'faqsearch\']').bind('keydown', function(e) {
+	if (e.keyCode == 13) {
+		$('#button-faqsearch').trigger('click');
+	}
+});
+
+
+</script>

@@ -1,0 +1,108 @@
+<?php
+$_['heading_title']                              = 'שירותי מסחר מאובטח באינטרנט (Secure Trading Web Service)';
+
+$_['tab_settings']                               = 'הגדרות';
+$_['tab_myst']                                   = 'MyST';
+
+$_['text_securetrading_ws']                      = '<a href="http://www.securetradingfs.com/partner/open-cart/" target="_blank"><img src="view/image/payment/secure_trading.png" alt="Secure Trading" title="Secure Trading" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_extension']                             = 'הרחבות';
+$_['text_all_geo_zones']                         = 'כל האיזורים הגיאוגרפים';
+$_['text_process_immediately']                   = 'ביצוע מיידי';
+$_['text_wait_x_days']                           = 'להמתין %d ימים';
+$_['text_wait']                                  = 'נא להמתין.';
+$_['text_authorisation_reversed']                = 'הרשאה אוחזרה בהצלחה';
+$_['text_refund_issued']                         = 'זיכוי בוצע בהצלחה';
+$_['text_success']                               = 'בוצע בהצלחה: עדכנת מודול שירותי מסחר מאובטח באינטרנט !';
+$_['text_pending_settlement']                    = 'פרעון בהמתנה';
+$_['text_manual_settlement']                     = 'פרעון ידני';
+$_['text_suspended']                             = 'מושהה';
+$_['text_cancelled']                             = 'בוטל';
+$_['text_settling']                              = 'בתהליך פרעון';
+$_['text_settled']                               = 'נפרע';
+$_['text_no_transactions']                       = 'אין עסקאות להראות';
+$_['text_ok']                                    = 'Ok';
+$_['text_denied']                                = 'נדחה';
+$_['text_pending_settlement_manually_overriden'] = 'פרעון בהמתנה, לדרוס ידנית';
+$_['text_pending_suspended']                     = 'מושהה';
+$_['text_pending_settled']                       = 'נפרע';
+$_['text_payment_info']                          = 'מידע תשלום';
+$_['text_release_status']                        = 'תשלום שוחרר';
+$_['text_void_status']                           = 'הרשאה להחזר';
+$_['text_rebate_status']                         = 'תשלום הוחזר';
+$_['text_order_ref']                             = 'מזהה הזמנה';
+$_['text_order_total']                           = 'סך הכל אושר';
+$_['text_total_released']                        = 'סך הכל שוחרר';
+$_['text_transactions']                          = 'עסקאות';
+$_['text_column_amount']                         = 'סכום';
+$_['text_column_type']                           = 'סוג';
+$_['text_column_created']                        = 'נוצר';
+$_['text_release_ok']                            = 'שוחרר בהצלחה';
+$_['text_release_ok_order']                      = 'שוחרר בהצלחה, סטטוס הזמנה עודכן לנפרע בהצלחה';
+$_['text_rebate_ok']                             = 'בוצעה הוזלה בהצלחה';
+$_['text_rebate_ok_order']                       = 'הוזלה בוצעה בהצלחה, סטטוס הזמנה עודכן להוזל';
+$_['text_void_ok']                               = 'ביטול בוצע בהצלחה, סטטוס הזמנה עודכן לבוטל';
+$_['text_confirm_void']                          = 'האם בוודאוות לחזור מהזדהות';
+$_['text_confirm_release']                       = 'האם בוודאוות לשחרר בתשלום?';
+$_['text_confirm_rebate']                        = 'האם בוודאוות להוזיל בתשלום?';
+
+$_['entry_site_reference']                       = 'הפניית אתר';
+$_['entry_username']                             = 'שם משתמש/ת';
+$_['entry_password']                             = 'סיסמה';
+$_['entry_csv_username']                         = 'שם משתמש/ת CSV';
+$_['entry_csv_password']                         = 'סיסמת CSV';
+$_['entry_3d_secure']                            = 'שימוש באבטחת 3D ';
+$_['entry_cards_accepted']                       = 'כרטיסים מורשים';
+$_['entry_order_status']                         = 'סטטוס הזמנה';
+$_['entry_failed_order_status']                  = 'סטטוס הזמנה נכשל';
+$_['entry_declined_order_status']                = 'סטטוס הזמנה נדחה';
+$_['entry_refunded_order_status']                = 'סטטוס הזמנה זוכה';
+
+$_['entry_authorisation_reversed_order_status']  = 'סטטוס הזמנה חזרה מהזדהות';
+$_['entry_settle_status']                        = 'סטטוס פרעון';
+$_['entry_settle_due_date']                      = 'תאריך פרעון';
+$_['entry_geo_zone']                             = 'איזור גיאוגרפי';
+$_['entry_sort_order']                           = 'סדר מיון';
+$_['entry_status']                               = 'סטטוס';
+$_['entry_total']                                = 'סך הכל';
+$_['entry_reverse_authorisation']                = 'חזרה מהזדהות:';
+$_['entry_refunded']                             = 'זוכה:';
+$_['entry_refund']                               = 'סיבת הזיכוי (%s):';
+$_['entry_currency']                             = 'מטבע';
+$_['entry_status_code']                          = 'קוד שגיאה';
+$_['entry_payment_type']                         = 'סוג תשלום';
+$_['entry_request']                              = 'בקשה';
+$_['entry_date_from']                            = 'מתאריך';
+$_['entry_date_to']                              = 'עד תאריך';
+$_['entry_hour']                                 = 'שעה';
+$_['entry_minute']                               = 'דקה';
+
+$_['column_order_id']                            = 'מספר זיהוי הזמנה';
+$_['column_transaction_reference']               = 'אסמכתא של העסקה';
+$_['column_customer']                            = 'לקוח/ה';
+$_['column_total']                               = 'סך הכל';
+$_['column_currency']                            = 'מטבע';
+$_['column_settle_status']                       = 'סטטוס פרעון';
+$_['column_status']                              = 'סטטוס';
+$_['column_type']                                = 'סוג';
+$_['column_payment_type']                        = 'סוג תשלום';
+
+$_['error_permission']                           = 'אין לך הרשאה לעדכן מודול זה';
+$_['error_site_reference']                       = 'נדרש הפניית אתר';
+$_['error_cards_accepted']                       = 'נדרש כרטיסים מורשים';
+$_['error_username']                             = 'נדרש שם משתמש/ת';
+$_['error_password']                             = 'נדרשת סיסמה';
+$_['error_connection']                           = 'לא ניתן להתחבר למסחר מאובטח (Secure Trading)';
+$_['error_data_missing']                         = 'חסרים נתונים';
+
+$_['help_refund']                                = 'נא לכלול את הנקודה העשרונית ואת החלק העשרוני של הסכום';
+$_['help_csv_username']                          = 'שם משתמש/ת של עסקת שירות הורדה';
+$_['help_csv_password']                          = 'סיסמה של עסקת שירות הורדה';
+$_['help_total']                                 = 'הסכום הכולל לתשלום שאליו ההזמנה צריכה להגיע לפני שאופן תשלום זה נהיה פעיל.';
+
+$_['button_reverse_authorisation']               = 'חזרה מהזדהות';
+$_['button_refund']                              = 'זיכוי';
+$_['button_show']                                = 'להראות';
+$_['button_download']                            = 'הורדה';
+$_['button_release']                             = 'שחרור';
+$_['button_rebate']                              = 'הוזלה / זיכוי';
+$_['button_void']                                = 'חזרה מהזדהות';

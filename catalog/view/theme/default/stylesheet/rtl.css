@@ -1,0 +1,390 @@
+@media (min-width:992px){
+    .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
+        float: right;
+    }
+}
+@media (min-width:768px){
+    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+        float: right;
+    }
+}
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    float:right;
+}
+.pull-left{
+    float:right !important;
+}
+.pull-right{
+    float:left !important;
+}
+.list-unstyled {
+    padding-right: 0;
+}
+.text-right{
+    text-align: left;
+}
+.text-left{
+    text-align: right;
+}
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"] input[type="radio"]{
+    float: left;
+    margin-left: 0;
+}
+.checkbox label, .radio label {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"] {
+    margin-left: auto;
+    margin-right: -20px;
+}
+.list-inline{
+    padding-right: 0;
+    margin-right: -5px;
+    margin-left: 0;
+}
+.dropdown-menu{
+    text-align: right;
+}
+.nav-tabs > li {
+    float: right;
+}
+.dropdown-menu.pull-right {
+    left: 0 !important;
+    right: auto !important;
+}
+.dropdown-menu{
+    right: auto;
+    left: 0;
+}
+.checkbox-inline, .radio-inline {
+    padding-right: 20px;
+    padding-left: 0;
+}
+#top #form-currency .currency-select, #top #form-language .language-select {
+    text-align: right;
+}
+.nav{
+    padding-right: 0;
+}
+.dropdown-menu-right {
+    left: 0 !important;
+    right: auto !important;
+}
+.product-thumb .button-group{
+    direction: rtl;
+}
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.leftpro .caption{
+    direction: rtl;
+}
+.select-input::after {
+    right: auto;
+    left: 10px;
+}
+.breadcrumb > li:last-child::after {
+    border-left: 0;
+    border-top: none;
+}
+.breadcrumb > li::after {
+    left: 0;
+    right: auto;
+    width: 9px;
+    height: 9px;
+    border-left: 2px solid #000;
+    border-top: 2px solid #000;
+    border-bottom: none;
+    border-right: 0;
+}
+.alert-dismissable .close, .alert-dismissible .close{
+    left: 0;
+    right: 0;
+}
+/* header */
+.curlan, .hwishc {
+    margin-right: 15px;
+    margin-left: auto;
+}
+#insp-search-category {
+    float: right;
+    border-radius: 0 5px 5px 0;
+    background-position: left 10px bottom 20px;
+}
+#search .input-lg{
+    border-right: none;
+}
+#search .btn-default{
+    border-radius: 5px 0 0 5px;
+}
+.inspsearch .close-nav {
+    left: -20px;
+    right: auto;
+}
+.cartr i {
+    margin-left: 10px;
+    margin-right: auto;
+}
+#cart {
+    margin-right: 40px;
+    margin-left: auto;
+}
+.ser-co {
+    padding-right: 20px;
+    padding-left: 0;
+}
+img.quote{
+    right: 100px;
+    left: auto;
+    transform: rotateY(180deg);
+}
+/* product */
+.pro-tab.nav-tabs {
+    margin-left: 100px;
+    margin-right: auto;
+}
+.pro-nepr .owl-buttons {
+    left: 0px;
+    right: auto;
+}
+#count .caption {
+    padding-right: 15px;
+    padding-left: 0;
+}
+.salepro{
+    left: 15px;
+    right: auto;
+}
+.text-name{
+    text-align: right;
+}
+.leftpadd .owl-pagination{
+    left: 0;
+    right: auto;
+}
+.leftpadd #blog .owl-pagination {
+    left: 10px;
+    right: auto;
+}
+.dealbg .home-heading{
+    float: right;
+}
+.dealbg .home-heading {
+    padding-left: 30px;
+    padding-right: 0;
+}
+.view-more{
+    left: 105px;
+    right: auto;
+}
+.test-img{
+    right: 24px;
+    left: auto;
+}
+/* footer */
+.sign-up-img{
+    right: 15px;
+    left: auto;
+}
+.description-top{
+    margin-right: 60px;
+    margin-left: auto;
+}
+footer h5:after{
+    right: 0;
+    left: auto;
+}
+.foot-app ul {
+    padding-right: 30px;
+    padding-left: 0;
+}
+#scroll{
+    left: 10px;
+    right: auto;
+}
+.ne-su {
+    border-radius: 5px 0 0 5px;
+    left: 14px;
+    right: auto;
+}
+.blog-right{
+    direction: rtl;
+}
+.inspire-post-author span{
+    display: inline-block;
+}
+/* product page */
+.datebtn {
+    border-radius: 5px 0 0 5px !important;
+}
+.qtlabel{
+    margin-left: 10px;
+    margin-right: auto;
+}
+.zoomWindow {
+    right: 500px;
+    left: auto !important;
+}
+@media(max-width: 1410px){
+    .zoomWindow {
+        right: 470px;
+        left: auto !important;
+    }
+}
+.btnminus {
+    border-right: 1px solid #ebebeb;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+.btnplus {
+    border-left: 1px solid #ebebeb;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-top-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+}
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"], .radio-inline input[type="radio"] {
+    margin-right: -20px;
+}
+.checkbox label, .radio label {
+    padding-right: 20px;
+}
+.checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"], .radio input[type="radio"] input[type="radio"] {
+    float: right;
+    right: 0;
+    margin-right: 0;
+}
+.product-right .checkbox input[type="checkbox"]{
+    direction: ltr;
+}
+.a2a_default_style a {
+    float: right !important;
+}
+/* category page */
+@media (min-width: 768px) {
+    #menu li a:hover .enangle {
+        transform: rotate(90deg);
+    }
+    .product-list .product-thumb .image {
+        float: right;
+    }
+    .enangle{
+        float: left;
+    }
+    #menu .dropdown-menu{
+        right: 100%;
+        left: auto;
+    }
+}
+@media(min-width: 768px){
+    .product-list .product-thumb .image {
+        float: right;
+        margin-right: auto;
+    }
+    .product-list .product-thumb .caption{
+        padding-right: 15px;
+        padding-left: 0;
+        text-align: right;
+    }
+    .product-list .product-thumb .button-group{
+        text-align: right;
+    }
+}
+.list-group a {
+    direction: ltr;
+    text-align: right;
+}
+.filterp{
+    direction: ltr;
+    text-align: right;
+}
+.sorting select.form-control {
+    background-position: left;
+}
+.sb-theme-cat-list ul li {
+    float: right;
+    margin-right: 5px;
+    direction: ltr;
+    margin-left: auto;
+}
+.alert .close{
+    left: 0;
+    right: auto;
+    float: left;
+}
+/*respionsive */
+@media(max-width: 767px){
+    .pro-tab.nav-tabs{
+        text-align: right;
+    }
+}
+
+@media(max-width: 767px){
+    #cart {
+        margin-right: 15px;
+        margin-left: auto;
+    }
+    .ser-block{
+        text-align: right;
+    }
+    .deskmenu{
+        right: 15px;
+        left: auto;
+    }
+    .cat-button{
+        left: 0;
+        right: auto;
+        width: auto;
+    }
+    #vegetablecat_tab, #fruitcat_tab{
+        left: 10px;
+        right: auto;
+    }
+    .head-b-right{
+        left: 0;
+    }
+    #form-currency .currency-select, #form-language .language-select{
+        text-align: right;
+    }
+    .filterp .filtercolb{
+        left: 15px;
+        right: auto;
+    }
+    .sidenav{
+        right: 0;
+        left: auto;
+    }
+    #menu .nav > li > a,.sidenav .close-nav{
+        text-align: right;
+    }
+    .closebtn {
+        float: left;
+    }   
+    .xslogo {
+        margin-right: 30px;
+        margin-left: auto;
+    }
+    .xsic {
+        float: left;
+    }
+    footer h5 .toggle.collapsed::after, .filterp .toggle.collapsed::after,footer h5 .toggle::after, .filterp .toggle::after{
+        float: left;
+    }
+}
+@media(min-width: 768px) and (max-width: 991px){
+    .pro-tab.nav-tabs{
+        text-align: right;
+    }
+}

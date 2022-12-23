@@ -1,0 +1,236 @@
+<footer>
+<div class="foot-top">
+  <div class="container">
+      {{ ftop_full }}
+  </div>
+</div>
+<div class="container">
+
+
+
+      
+
+  <div class="">
+    <div class="row footmr">
+
+    
+      
+   {#  {% if footer_left and footer_right %}
+    {% set class = 'col-sm-8' %}
+    {% elseif footer_left or footer_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %} #}
+
+    <div class="middle-footer">
+      <div class="col-sm-3">
+        <div class="xs-fab">
+          {{ footer_left }}
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <h5>{{ text_extra }}
+            <button type="button" class="btn btn-primary toggle collapsed" data-toggle="collapse" data-target="#extra"></button>
+          </h5>
+          <div id="extra" class="collapse footer-collapse">
+          <ul class="list-unstyled">
+
+			{% if faqbottom %}
+				<li><a href="{{ faq }}">{{ text_faq }}</a></li>
+			{% endif %}
+				
+            <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+            <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+            <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+            <li><a href="{{ special }}">{{ text_special }}</a></li>
+            <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        {% if informations %}
+        <h5>{{ text_information }}
+          <button type="button" class="btn btn-primary toggle collapsed" data-toggle="collapse" data-target="#info"></button>
+        </h5>
+        <div id="info" class="collapse footer-collapse">
+        <ul class="list-unstyled">
+         {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+        </ul>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_account }}
+          <button type="button" class="btn btn-primary toggle collapsed" data-toggle="collapse" data-target="#account"></button>
+        </h5>
+        <div id="account" class="collapse footer-collapse">
+        <ul class="list-unstyled lastb">
+          <li><a href="{{ account }}">{{ text_account }}</a></li>
+          <li><a href="{{ order }}">{{ text_order }}</a></li>
+          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+          <li><a href="{{ return }}">{{ text_return }}</a></li>
+        </ul>
+        </div>
+      </div>
+      {# <div class="col-sm-3">
+        <div class="xs-fab">
+          {{ footer_right }}
+        </div>
+      </div> #}
+    </div>
+
+     <!--  {{ footer_right }} -->
+    </div>
+    {{ fbottom_full }}
+    </div>
+    
+  
+  
+
+</div>
+
+<div class="foot-power text-center">
+    <div class="container">
+          <div class="row">
+            <div class="copy col-xs-12 col-sm-12">{{ powered }}</div>
+          </div>
+    </div>
+</div>
+<a href="" id="scroll" title="Scroll to Top" style="display: block;">
+   <i class="fa fa-angle-up"></i>
+</a>
+
+<div class="footerStaticBarMobile">
+  <div class="custom-col">
+    <a href="{{ home }}">
+      <i class="fa fa-home" aria-hidden="true"></i>
+      <br/>
+      HOME
+    </a>
+  </div>
+  <div class="custom-col">
+    <a href="{{ categories }}">
+      <i class="fa fa-th-large" aria-hidden="true"></i>
+      <br/>
+      CATEGORY
+    </a>
+  </div>
+  <div class="custom-col">
+    <a href="{{ cart }}">
+      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+      <br/>
+      CART
+    </a>
+  </div>
+  <div class="custom-col">
+    <a href="{{ account }}">
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+      <br/>
+      ACCOUNT
+    </a>
+  </div>
+  <div class="custom-col">
+    {# <a href="{{ more_link }}">
+      <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      <br/>
+      MORE
+    </a> #}
+    <div class="dropup">
+      <a data-toggle="dropdown"><i class="fa fa-ellipsis-v" aria-hidden="true"></i><br/>MORE</a>
+      <ul class="dropdown-menu">
+        {% for item in more_link %}
+          {% set item = item %}
+          <li>{{ item }}</li>  
+        {% endfor %}
+      </ul>
+    </div>
+    
+  </div>
+</div>
+
+</footer>
+
+
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+
+<script>
+    
+    $(document).ready(function(){ 
+      $('img').addClass('img-responsive');
+});
+
+    $(document).ready(function(){ 
+      $('.btnimage').removeClass('img-responsive');
+});
+</script>
+<script type="text/javascript">
+  function pageRedirect() {
+    var searchField = $('input[name=search]').val();
+    if (searchField == '') {
+      var searchField = $('input[name=side_search]').val();
+    }
+    if (searchField == '') {
+      $('input[name=search]').focus();
+    } else {
+      // Check browser support
+      if (typeof(Storage) !== "undefined") {
+        // Store
+        localStorage.setItem("product_url", searchField);
+        window.location.href = "{{ href_custom_search }}";
+      }
+    }
+  }  
+</script>
+<!-- Custom Search - / End -->
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+
+            <!-- Custom Search -->
+            <script type="text/javascript">
+              /* function pageRedirect() {
+                var searchField = $('input[name=search]').val();
+                if (searchField == '') {
+                  $('input[name=search]').focus();
+                } else {
+                  // Check browser support
+                  if (typeof(Storage) !== "undefined") {
+                    // Store
+                    localStorage.setItem("product_url", searchField);
+                    window.location.href = "{{ href_custom_search }}";
+                  }
+                }
+              } */
+			  function pageRedirect() {
+				var searchField = $('input[name=search]').val();
+				if (searchField == '') {
+				  var searchField = $('input[name=side_search]').val();
+				}
+				if (searchField == '') {
+				  $('input[name=search]').focus();
+				  $('input[name=side_search]').focus();
+				} else {
+				  // Check browser support
+				  if (typeof(Storage) !== "undefined") {
+					// Store
+					localStorage.setItem("product_url", searchField);
+					window.location.href = "{{ href_custom_search }}";
+				  }
+				}
+			  }
+            </script>
+            <!-- Custom Search - / End -->
+            
+</body></html>
+
+
+

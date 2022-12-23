@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<name>Cross Selling Bundle 3.0</name>
+    <code>cross_selling_bundle</code>
+    <version>1.0.1</version>
+    <author>OpenCartBoost</author>
+	<link>opencartboost.com</link>
+	
+	<file path="admin/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[$this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");]]></search>
+			<add position="after"><![CDATA[
+			$this->db->query("DELETE FROM " . DB_PREFIX . "also_viewed WHERE product_id = '" . (int)$product_id . "'");
+			]]></add>
+		</operation>
+	</file>
+	<file path="catalog/controller/product/product.php">
+		<operation>
+			<search><![CDATA[public function index() {]]></search>
+			<add position="after"><![CDATA[
+			$recently_viewed_products = [];
+        
+			if (isset($this->request->cookie['recently_viewed'])) {
+				$recently_viewed_products = explode(',', $this->request->cookie['recently_viewed']);
+			} else if (isset($this->session->data['recently_viewed'])) {
+				$recently_viewed_products = $this->session->data['recently_viewed'];
+			}
+			
+			$prod_id = (int)$this->request->get['product_id'];   
+
+			$recently_viewed_products = array_diff($recently_viewed_products, [$prod_id]);
+
+			array_unshift($recently_viewed_products, $prod_id);
+
+			setcookie('recently_viewed', implode(',',$recently_viewed_products), time() + 86400, '/');
+			
+			if (!isset($this->session->data['recently_viewed']) || $this->session->data['recently_viewed'] != $recently_viewed_products) {
+				$this->session->data['recently_viewed'] = $recently_viewed_products;
+			}
+			]]></add>
+		</operation>
+		<operation>
+			<search><![CDATA[$this->model_catalog_product->updateViewed($this->request->get['product_id']);]]></search>
+			<add position="before"><![CDATA[
+			$this->model_catalog_product->updateViewedProduct($this->request->get['product_id']);
+			]]></add>
+		</operation>
+	</file>
+	
+	<file path="catalog/model/catalog/product.php">
+		<operation>
+			<search><![CDATA[public function getProduct($product_id) {]]></search>
+			<add position="before"><![CDATA[
+			public function updateViewedProduct($product_id) {
+				$this->db->query("DELETE FROM " . DB_PREFIX . "also_viewed WHERE (UNIX_TIMESTAMP(`date_added`) + 604800) < UNIX_TIMESTAMP(NOW())"); 
+				
+				if ($this->customer->isLogged()) {
+					$customer_id = $this->customer->getId();
+				} else {
+					$customer_id = 0;
+				}
+				
+				$check_also_viewed_data = $this->db->query("SELECT * FROM " . DB_PREFIX . "also_viewed WHERE product_id = '" . (int)$product_id . "' AND customer_id = '" . (int)$customer_id . "' AND ip_address = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+				
+				$data_exists = $check_also_viewed_data->num_rows > 0;
+		
+				if(!$data_exists){
+					$this->db->query("INSERT INTO " . DB_PREFIX . "also_viewed SET product_id = '" . (int)$product_id . "', customer_id = '" . (int)$customer_id . "', ip_address = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', date_added = NOW()");
+				}
+			}
+			]]></add>
+		</operation>
+	</file>
+</modification>

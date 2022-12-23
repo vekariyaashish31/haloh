@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'მოედანი';
+$_['heading_title_transaction']                         = 'იხილეთ ტრანზაქცია #%s';
+
+// Help
+$_['help_total']                                        = 'შეკვეთის ჯამური თანხა უნდა მიაღწიოს ამ გადახდის მეთოდის ამოქმედებამდე.';
+$_['help_local_cron']                                   = 'ამ ბრძანების ჩასმა თქვენი ვებ სერვერის CRON ჩანართში. დააყენეთ იგი აწარმოებს დღეში ერთხელ მაინც.';
+$_['help_remote_cron']                                  = 'გამოიყენეთ ეს URL CRON- ის ამოცანის შესაქმნელად ვებ-დაფუძნებული CRON სერვისით. დააყენეთ იგი აწარმოებს დღეში ერთხელ მაინც.';
+$_['help_recurring_status']                             = 'ჩართვა პერიოდული განმეორებითი გადახდების დასაშვებია. <br /> შენიშვნა: თქვენ ასევე უნდა დააყენოთ ყოველდღიური CRON ამოცანა.';
+$_['help_cron_email']                                   = 'განმეორებითი დავალების შემაჯამებელი დასრულების შემდეგ გადაეგზავნება ამ ელ.';
+$_['help_cron_email_status']                            = 'ჩართეთ CRON- ის ყველა CRON- ის შესრულების შემდეგ.';
+$_['help_notify_recurring_success']                     = 'აცნობეთ კლიენტებს წარმატებული განმეორებითი ტრანზაქციების შესახებ.';
+$_['help_notify_recurring_fail']                        = 'შეატყობინეთ მომხმარებელს განმეორებითი ტრანზაქციების შესახებ.';
+
+// Tab
+$_['tab_setting']                                       = 'პარამეტრები';
+$_['tab_transaction']                                   = 'გარიგებები';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'განმეორებითი გადახდები';
+
+// Text
+$_['text_access_token_expires_label']                   = 'წვდომის ნიშნად იწურება';
+$_['text_access_token_expires_placeholder']             = 'არ არის კონფიგურაცია';
+$_['text_acknowledge_cron']                             = 'მე ვადასტურებ, რომ მე შევქმენი ავტომატური CRON- ის დავალება ზემოთ მოყვანილი მეთოდის გამოყენებით.';
+$_['text_admin_notifications']                          = 'Admin შეტყობინებები';
+$_['text_authorize_label']                              = 'ავტორიზაცია';
+$_['text_canceled_success']                             = 'წარმატება: თქვენ წარმატებით გააუქმეთ ეს გადახდა !';
+$_['text_capture']                                      = 'ხელში';
+$_['text_client_id_help']                               = 'მიიღეთ ეს მართვა განაცხადის გვერდიდან მოედანზე';
+$_['text_client_id_label']                              = 'კვადრატული განაცხადის ID';
+$_['text_client_id_placeholder']                        = 'კვადრატული განაცხადის ID';
+$_['text_client_secret_help']                           = 'მიიღეთ ეს მართვა განაცხადის გვერდიდან მოედანზე';
+$_['text_client_secret_label']                          = 'OAuth განაცხადის საიდუმლო';
+$_['text_client_secret_placeholder']                    = 'OAuth განაცხადის საიდუმლო';
+$_['text_confirm_action']                               = 'დარწმუნებული ხართ ?';
+$_['text_confirm_cancel']                               = 'დარწმუნებული ხართ, რომ გსურთ განმეორებითი გადახდების გაუქმება ?';
+$_['text_confirm_capture']                              = 'თქვენ მიიღებთ შემდეგ ოდენობას: <strong> %s </strong>. დააჭირეთ OK გასაგრძელებლად.';
+$_['text_confirm_refund']                               = 'გთხოვთ, მოგვაწოდოთ დაბრუნების მიზეზი:';
+$_['text_confirm_void']                                 = 'თქვენ აპირებთ ბათილად მოახდინოთ შემდეგი თანხა: <strong> %s </strong>. დააჭირეთ OK გასაგრძელებლად.';
+$_['text_connected']                                    = 'დაკავშირებულია';
+$_['text_connected_info']                               = 'ხელახლა შეიყვანეთ თუ გსურთ ანგარიშის შეცვლა ან ხელით გაუქმებული ეს გაფართოების დაშვება კვადრატული აპლიკაციის კონსოლიდან. ხელით განაახლოთ წვდომის ტონი, თუ ეს უკანასკნელი იყიდება 45 დღის განმავლობაში ბოლო გაყიდვიდან ან ხელახლა გაერთე.';
+$_['text_connection_section']                           = 'მოედანი კავშირი';
+$_['text_connection_success']                           = 'წარმატებულად უკავშირდება !';
+$_['text_cron_email']                                   = 'გაგზავნეთ დავალებების გაგზავნა ამ ელ-ფოსტაზე:';
+$_['text_cron_email_status']                            = 'ელ-ფოსტის რეზიუმეს გაგზავნა:';
+$_['text_customer_notifications']                       = 'მომხმარებელთა შეტყობინებები';
+$_['text_debug_disabled']                               = 'გამორთულია';
+$_['text_debug_enabled']                                = 'ჩართულია';
+$_['text_debug_help']                                   = 'API მოთხოვნები და პასუხები შესული იქნება OpenCart შეცდომის ჟურნალში. გამოიყენეთ ეს მხოლოდ გამართვისა და განვითარების მიზნით.';
+$_['text_debug_label']                                  = 'შეცდომების შესასვლელი';
+$_['text_delay_capture_help']                           = 'მხოლოდ გარიგების უფლება ან ავტომატურად ასრულებს ბრალს';
+$_['text_delay_capture_label']                          = 'ტრანზაქციის ტიპი';
+$_['text_disabled_connect_help_text']                   = 'საჭიროა კლიენტის იდენტიფიკაცია და საიდუმლო.';
+$_['text_edit_heading']                                 = 'მოედანზე რედაქტირება';
+$_['text_enable_sandbox_help']                          = 'სავარჯიშო ტრანზაქციების სავარჯიშო რეჟიმში ჩართვა';
+$_['text_enable_sandbox_label']                         = 'სავარჯიშო რეჟიმში ჩართვა';
+$_['text_executables']                                  = 'CRON აღსრულების მეთოდები';
+$_['text_extension']                                    = 'გაგრძელება';
+$_['text_extension_status']                             = 'გაფართოების სტატუსი';
+$_['text_extension_status_disabled']                    = 'გამორთულია';
+$_['text_extension_status_enabled']                     = 'ჩართულია';
+$_['text_extension_status_help']                        = 'გადახდის მეთოდის ჩართვა ან გამორთვა';
+$_['text_insert_amount']                                = 'გთხოვთ, ჩაწეროთ თანხის დაბრუნება. მაქსიმალური რაოდენობა: %s in %s:';
+$_['text_loading']                                      = 'მონაცემები იტვირთება .. გთხოვთ დაელოდოთ ..';
+$_['text_loading_short']                                = 'გთხოვთ მოიცადოთ..';
+$_['text_local_cron']                                   = 'მეთოდი #1 - CRON სამუშაო:';
+$_['text_location_error']                               = 'მდებარეობებისა და ნიშნად სინქრონიზაციისას შეცდომა იყო: %';
+$_['text_location_help']                                = 'აირჩიეთ რომელია კვადრატული ადგილმდებარეობის დაყენება გარიგებისთვის. უნდა ჰქონდეს ბარათის დამუშავების შესაძლებლობები.';
+$_['text_location_label']                               = 'მდებარეობა';
+$_['text_manage']                                       = 'საკრედიტო ბარათის ტრანზაქცია (კვადრატი)';
+$_['text_manage_tooltip']                               = 'იხილეთ დეტალები /Capture /Void /Refund';
+$_['text_merchant_info_section_heading']                = 'Mechant ინფორმაცია';
+$_['text_merchant_name_label']                          = 'სავაჭრო სახელი';
+$_['text_merchant_name_placeholder']                    = 'არ არის კონფიგურაცია';
+$_['text_no_appropriate_locations_warning']             = 'თქვენს კვადრატულ ანგარიშზე ონლაინ ბარათის დამონტაჟების დაყენება არ არსებობს.';
+$_['text_no_location_selected_warning']                 = 'არჩეული მდებარეობა არ არის.';
+$_['text_no_locations_label']                           = 'არ არის სწორი ადგილმდებარეობა';
+$_['text_no_transactions']                              = 'ჯერჯერობით არ ყოფილა შესული გარიგებები.';
+$_['text_not_connected']                                = 'არ არის დაკავშირებული';
+$_['text_not_connected_info']                           = 'ამ ღილაკზე დაჭერით თქვენ დააკავშირებთ ამ მოდულს თქვენს მოედანზე და გაააქტიურებთ სერვისს.';
+$_['text_notification_ssl']                             = 'დარწმუნდით, რომ თქვენ გაქვთ SSL ჩართული თქვენს გადახდა გვერდზე. წინააღმდეგ შემთხვევაში, გაფართოება არ იმუშავებს.';
+$_['text_notify_recurring_fail']                        = 'განმეორებითი ტრანზაქცია ვერ მოხერხდა:';
+$_['text_notify_recurring_success']                     = 'განმეორებითი ტრანსაქცია წარმატებული:';
+$_['text_ok']                                           = 'კარგი';
+$_['text_order_history_cancel']                         = 'ადმინისტრატორმა გააუქმა თქვენი განმეორებითი გადახდა. თქვენი ბარათი აღარ იქნება გადახდილი.';
+$_['text_payment_method_name_help']                     = 'გადახდა გადახდის მეთოდის სახელი';
+$_['text_payment_method_name_label']                    = 'გადახდის მეთოდი სახელი';
+$_['text_payment_method_name_placeholder']              = 'საკრედიტო /სადებეტო ბარათი';
+$_['text_recurring_info']                               = 'გთხოვთ, დარწმუნდეთ, რომ ყოველდღიური CRON- ის ამოცანაა ქვემოთ ჩამოთვლილი მეთოდის გამოყენებით. CRON სამუშაოები დაგეხმარებათ: <br /> <br /> &bull; თქვენი API ხელმისაწვდომობის ავტომატური განახლება <br /> &bull; განმეორებითი ოპერაციების დამუშავება';
+$_['text_recurring_status']                             = 'განმეორებითი გადახდების სტატუსი:';
+$_['text_redirect_uri_help']                            = 'ჩასმა ეს ბმული გადამისამართების URI ველში მართვა განაცხადის /ოატის ქვეშ';
+$_['text_redirect_uri_label']                           = 'მოედანზე OAuth გადამისამართება URL';
+$_['text_refresh_access_token_success']                 = 'წარმატებით განახლდა თქვენი კვადრატული ანგარიშის კავშირი.';
+$_['text_refresh_token']                                = 'ხელახლა შექმნათ ტონი';
+$_['text_refund']                                       = 'დაბრუნება';
+$_['text_refund_details']                               = 'დაბრუნების დეტალები';
+$_['text_refunded_amount']                              = 'დაბრუნება: %s. დაბრუნების სტატუსი: %. დაბრუნების მიზეზი: %';
+$_['text_refunds']                                      = 'თანხის დაბრუნება (%s)';
+$_['text_remote_cron']                                  = 'მეთოდი #2 - დისტანციური CRON:';
+$_['text_sale_label']                                   = 'იყიდება';
+$_['text_sandbox_access_token_help']                    = 'მიიღეთ ეს მართვა განაცხადის გვერდიდან მოედანზე';
+$_['text_sandbox_access_token_label']                   = 'Sandbox წვდომის ნიშნად';
+$_['text_sandbox_access_token_placeholder']             = 'Sandbox წვდომის ნიშნად';
+$_['text_sandbox_client_id_help']                       = 'მიიღეთ ეს მართვა განაცხადის გვერდიდან მოედანზე';
+$_['text_sandbox_client_id_label']                      = 'Sandbox განაცხადის ID';
+$_['text_sandbox_client_id_placeholder']                = 'Sandbox განაცხადის ID';
+$_['text_sandbox_disabled_label']                       = 'გამორთულია';
+$_['text_sandbox_enabled']                              = 'Sandbox რეჟიმი ჩართულია ! ტრანზაქციები გამოჩნდება გადის, მაგრამ არანაირი ბრალდება არ მოხდება.';
+$_['text_sandbox_enabled_label']                        = 'ჩართულია';
+$_['text_sandbox_section_heading']                      = 'მოედანზე Sandbox პარამეტრები';
+$_['text_select_location']                              = 'აირჩიეთ ადგილმდებარეობა';
+$_['text_settings_section_heading']                     = 'მოედანზე პარამეტრები';
+$_['text_squareup']                                     = '<a target="_BLANK" href="https://squareup.com"> <img src="view/image/payment/squareup.png" alt="Square" title="Square" style="border: 1px მყარი #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'წარმატება: თქვენ შეცვლით მოედანზე გადახდის მოდელს !';
+$_['text_success_capture']                              = 'გარიგება წარმატებით დაიპყრო !';
+$_['text_success_refund']                               = 'ტრანზაქცია წარმატებით დაბრუნდა !';
+$_['text_success_void']                                 = 'ტრანზაქცია წარმატებით ხორციელდება !';
+$_['text_token_expired']                                = 'თქვენი კვადრატული დაშვების ნიშნად ვადა ამოიწურა ! <a href="%s"> დააწკაპუნეთ აქ </a> რათა განაახლოს ახლა.';
+$_['text_token_expiry_warning']                         = 'თქვენი კვადრატული დაშვების ნიშნად იწურება %s- ზე. <a href="%s"> დააწკაპუნეთ აქ </a> განვაახლოთ ახლა.';
+$_['text_token_revoked']                                = 'თქვენი კვადრატული წვდომის ტონი ამოიწურა ან გააუქმა ! <a href="%s"> დააწკაპუნეთ აქ </a> ხელახლა დასაშვებია კვადრატული გაფართოება.';
+$_['text_transaction_statuses']                         = 'გარიგების სტატუსები';
+$_['text_view']                                         = 'იხილეთ მეტი';
+$_['text_void']                                         = 'ძალადაკარგულად';
+$_['text_na']                                           = 'N /A';
+$_['text_no_reason_provided']                           = 'მიზეზი არ არის გათვალისწინებული.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'ბარათის გარიგება უფლებამოსილია, მაგრამ ჯერ არ არის დაკავებული.';
+$_['squareup_status_comment_captured']                  = 'ბარათის გარიგება უფლებამოსილი იყო და შემდგომში ტყვედ (მაგ., დასრულებული).';
+$_['squareup_status_comment_voided']                    = 'ბარათის ტრანზაქცია უფლებამოსილი იყო და მოგვიანებით გაუქმდა (მაგ .: გაუქმდა).';
+$_['squareup_status_comment_failed']                    = 'ბარათის გარიგება ვერ მოხერხდა.';
+
+// Entry
+$_['entry_total']                                       = 'სულ';
+$_['entry_geo_zone']                                    = 'ჯეო ზონა';
+$_['entry_sort_order']                                  = 'სორტირების ორდენი';
+$_['entry_merchant']                                    = 'სავაჭრო ID';
+$_['entry_transaction_id']                              = 'გარიგების ID';
+$_['entry_order_id']                                    = 'შეკვეთის ნომერი';
+$_['entry_partner_solution_id']                         = 'პარტნიორის გადაწყვეტილების ID';
+$_['entry_type']                                        = 'ტრანზაქციის ტიპი';
+$_['entry_currency']                                    = 'ვალუტა';
+$_['entry_amount']                                      = 'თანხა';
+$_['entry_browser']                                     = 'მომხმარებელთა მომხმარებელი აგენტი';
+$_['entry_ip']                                          = 'დამკვეთი IP';
+$_['entry_date_created']                                = 'შექმნის თარიღი';
+$_['entry_billing_address_company']                     = 'ბილინგის კომპანია';
+$_['entry_billing_address_street']                      = 'ბილინგის ქუჩა';
+$_['entry_billing_address_city']                        = 'ბილინგი ქალაქი';
+$_['entry_billing_address_postcode']                    = 'ბილინგის ZIP';
+$_['entry_billing_address_province']                    = 'საბილინგო პროვინცია /სახელმწიფო';
+$_['entry_billing_address_country']                     = 'საბილინგო ქვეყანა';
+$_['entry_status_authorized']                           = 'ავტორიზებული';
+$_['entry_status_captured']                             = 'ტყვედ';
+$_['entry_status_voided']                               = 'გაუქმდა';
+$_['entry_status_failed']                               = 'ვერ მოხერხდა';
+$_['entry_setup_confirmation']                          = 'დადასტურების დაყენება:';
+
+// Error
+$_['error_permission']                                  = '<strong> გაფრთხილება: </strong> გადახდის უფლება არ გაქვთ';
+$_['error_permission_recurring']                        = '<strong> გაფრთხილება: </strong> თქვენ არ გაქვთ ნებართვა განმეორებითი გადახდების შეცვლაზე !';
+$_['error_transaction_missing']                         = 'ტრანზაქცია არ მოიძებნა !';
+$_['error_no_ssl']                                      = '<strong> გაფრთხილება: </strong> SSL არ არის ჩართული თქვენს მმართველ პანელში. გთხოვთ, ჩართოთ თქვენი კონფიგურაციის დასრულება.';
+$_['error_user_rejected_connect_attempt']               = 'კავშირის მცდელობა გაუქმდა მომხმარებლის მიერ.';
+$_['error_possible_xss']                                = 'ჩვენ აღმოვაჩინეთ შესაძლო ჯვრის თავდასხმა და შეწყვიტა თქვენი კავშირი მცდელობა. გთხოვთ, შეამოწმოთ თქვენი აპლიკაციის საიდუმლო და საიდუმლო და კვლავ სცადოთ ღილაკებს ადმინისტრატორის პანელში.';
+$_['error_invalid_email']                               = 'მიწოდებული ელექტრონული ფოსტის მისამართი არ არის valid!';
+$_['error_cron_acknowledge']                            = 'გთხოვთ, დაადასტუროთ CRON- ის სამუშაო.';
+$_['error_client_id']                                   = 'აპლიკაციის კლიენტის ID არის აუცილებელი ველი';
+$_['error_client_secret']                               = 'აპლიკაციის კლიენტის საიდუმლო აუცილებელი ველია';
+$_['error_sandbox_client_id']                           = 'სავარჯიშო კლიენტის ID არის სავალდებულო ველი, როდესაც სავარჯიშო რეჟიმში ჩართულია';
+$_['error_sandbox_token']                               = 'სავარჯიშოში ჩართულია სავარჯიშო რეჟიმი, როდესაც სავარჯიშო სენსორული რეჟიმი ჩართულია';
+$_['error_no_location_selected']                        = 'მდებარეობა აუცილებელი ველია';
+$_['error_refresh_access_token']                        = 'თქვენი კვადრატული ანგარიშის გაფართოების კავშირის განახლებისას მოხდა შეცდომა. გთხოვთ, შეამოწმოთ თქვენი აპლიკაციის მონაცემები და ისევ სცადოთ.';
+$_['error_form']                                        = 'გთხოვთ, შეამოწმოთ შეცდომის ფორმა და გადავარჩინოთ აგიენი.';
+$_['error_token']                                       = 'შეცდომა დაფიქსირდა ტონის განახლებისას: %s';
+$_['error_no_refund']                                   = 'თანხის დაბრუნება ვერ მოხერხდა.';
+
+// Column
+$_['column_transaction_id']                             = 'გარიგების ID';
+$_['column_order_id']                                   = 'შეკვეთის ნომერი';
+$_['column_customer']                                   = 'დამკვეთი';
+$_['column_status']                                     = 'სტატუსი';
+$_['column_type']                                       = 'ტიპი';
+$_['column_amount']                                     = 'თანხა';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'შექმნის თარიღი';
+$_['column_action']                                     = 'მოქმედება';
+$_['column_refunds']                                    = 'დაბრუნება';
+$_['column_reason']                                     = 'მიზეზი';
+$_['column_fee']                                        = 'დამუშავების საფასური';
+
+// Button
+$_['button_void']                                       = 'ძალადაკარგულად';
+$_['button_refund']                                     = 'დაბრუნება';
+$_['button_capture']                                    = 'ხელში';
+$_['button_connect']                                    = 'დაკავშირება';
+$_['button_reconnect']                                  = 'დაკავშირება';
+$_['button_refresh']                                    = 'მაუსის განახლება';

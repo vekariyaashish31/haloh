@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'Náměstí';
+$_['heading_title_transaction']                         = 'Zobrazit transakci #%s';
+
+// Help
+$_['help_total']                                        = 'Pokladna celkově musí být před odesláním této platební metody aktivní.';
+$_['help_local_cron']                                   = 'Vložte tento příkaz do záložky CRON webového serveru. Nastavte jej tak, aby běžel alespoň jednou denně.';
+$_['help_remote_cron']                                  = 'Pomocí této adresy URL nastavte úkol CRON prostřednictvím webové služby CRON. Nastavte jej tak, aby běžel alespoň jednou denně.';
+$_['help_recurring_status']                             = 'Povolit povolení periodických opakujících se plateb. <br /> Poznámka: Je třeba také nastavit denní úkol CRON.';
+$_['help_cron_email']                                   = 'Souhrn opakující se úlohy bude po dokončení zaslán na tento e-mail.';
+$_['help_cron_email_status']                            = 'Povolte, abyste obdrželi souhrn po každé úloze CRON.';
+$_['help_notify_recurring_success']                     = 'Informujte zákazníky o úspěšných opakovaných transakcích.';
+$_['help_notify_recurring_fail']                        = 'Informujte zákazníky o neúspěšných opakovaných transakcích.';
+
+// Tab
+$_['tab_setting']                                       = 'Nastavení';
+$_['tab_transaction']                                   = 'Transakce';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'Opakované platby';
+
+// Text
+$_['text_access_token_expires_label']                   = 'Platnost tokenu přístupu uplyne';
+$_['text_access_token_expires_placeholder']             = 'Není nastaveno';
+$_['text_acknowledge_cron']                             = 'Potvrzuji, že jsem nastavil automatizovaný úkol CRON pomocí jedné z výše uvedených metod.';
+$_['text_admin_notifications']                          = 'Upozornění administrátora';
+$_['text_authorize_label']                              = 'Povolit';
+$_['text_canceled_success']                             = 'Úspěšnost: Tuto platbu jste úspěšně zrušili!';
+$_['text_capture']                                      = 'Zachyťte';
+$_['text_client_id_help']                               = 'Získejte to z stránky Správa aplikace na náměstí';
+$_['text_client_id_label']                              = 'ID aplikace čtverce';
+$_['text_client_id_placeholder']                        = 'ID aplikace čtverce';
+$_['text_client_secret_help']                           = 'Získejte to z stránky Správa aplikace na náměstí';
+$_['text_client_secret_label']                          = 'Tajemství aplikace OAuth';
+$_['text_client_secret_placeholder']                    = 'Tajemství aplikace OAuth';
+$_['text_confirm_action']                               = 'Jsi si jistý?';
+$_['text_confirm_cancel']                               = 'Opravdu chcete zrušit opakované platby?';
+$_['text_confirm_capture']                              = 'Chystáte se zachytit následující částku: <strong> %s </strong>. Klepnutím na tlačítko OK pokračujte.';
+$_['text_confirm_refund']                               = 'Uveďte prosím důvod pro vrácení peněz:';
+$_['text_confirm_void']                                 = 'Chystáte se zrušit následující částku: <strong> %s </strong>. Klepnutím na tlačítko OK pokračujte.';
+$_['text_connected']                                    = 'Připojeno';
+$_['text_connected_info']                               = 'Znovu připojte, pokud chcete přepnout účty, nebo ručně zrušit přístup tohoto rozšíření z konzoly Square app. Ručně aktualizujte přístupový token, pokud se blíží 45 dní od posledního prodeje nebo znovu připojte.';
+$_['text_connection_section']                           = 'Square Connection';
+$_['text_connection_success']                           = 'Úspěšně připojen!';
+$_['text_cron_email']                                   = 'Odeslání souhrnu úloh do tohoto e-mailu:';
+$_['text_cron_email_status']                            = 'Odeslat souhrn e-mailů:';
+$_['text_customer_notifications']                       = 'Upozornění zákazníka';
+$_['text_debug_disabled']                               = 'Zakázáno';
+$_['text_debug_enabled']                                = 'Povoleno';
+$_['text_debug_help']                                   = 'Požadavky a reakce rozhraní API budou zaznamenány do protokolu chyb OpenCart. Použijte toto pouze pro ladění a vývoj.';
+$_['text_debug_label']                                  = 'Ladění protokolování';
+$_['text_delay_capture_help']                           = 'Povolení transakcí provádíte nebo provádíte pouze automaticky';
+$_['text_delay_capture_label']                          = 'Typ transakce';
+$_['text_disabled_connect_help_text']                   = 'Klientské id a tajné jsou povinná pole.';
+$_['text_edit_heading']                                 = 'Upravit čtverec';
+$_['text_enable_sandbox_help']                          = 'Povolení režimu sandbox pro testování transakcí';
+$_['text_enable_sandbox_label']                         = 'Povolit režim sandbox';
+$_['text_executables']                                  = 'Metody provádění CRON';
+$_['text_extension']                                    = 'Rozšíření';
+$_['text_extension_status']                             = 'Stav rozšíření';
+$_['text_extension_status_disabled']                    = 'Zakázáno';
+$_['text_extension_status_enabled']                     = 'Povoleno';
+$_['text_extension_status_help']                        = 'Povolení nebo zakázání platební metody';
+$_['text_insert_amount']                                = 'Vložte prosím částku náhrady. Maximální: %s v %s:';
+$_['text_loading']                                      = 'Loading data .. Prosím čekejte ..';
+$_['text_loading_short']                                = 'Prosím, čekejte..';
+$_['text_local_cron']                                   = 'Metoda #1 - Úloha CRON:';
+$_['text_location_error']                               = 'Při pokusu o synchronizaci umístění a tokenu: % došlo k chybě';
+$_['text_location_help']                                = 'Vyberte, který konfigurovaný čtvercový umístění použijte pro transakce. Musí mít zapnuté funkce pro zpracování karet.';
+$_['text_location_label']                               = 'Umístění';
+$_['text_manage']                                       = 'Transakce kreditní kartou (čtverec)';
+$_['text_manage_tooltip']                               = 'Zobrazit detaily /Zachytit /Zrušit /Vrátit';
+$_['text_merchant_info_section_heading']                = 'Mechant Informace';
+$_['text_merchant_name_label']                          = 'Název obchodníka';
+$_['text_merchant_name_placeholder']                    = 'Není nastaveno';
+$_['text_no_appropriate_locations_warning']             = 'V účtu Square nejsou k dispozici žádná místa, která by umožňovala nastavení online zpracování karty.';
+$_['text_no_location_selected_warning']                 = 'Neexistuje žádné vybrané místo.';
+$_['text_no_locations_label']                           = 'Žádné platné umístění';
+$_['text_no_transactions']                              = 'Nebyly zaznamenány žádné transakce.';
+$_['text_not_connected']                                = 'Nepřipojený';
+$_['text_not_connected_info']                           = 'Klepnutím na toto tlačítko propojíte tento modul s účtem Square a aktivujete službu.';
+$_['text_notification_ssl']                             = 'Ujistěte se, že máte na stránce plateb povoleno službu SSL. V opačném případě nebude rozšíření fungovat.';
+$_['text_notify_recurring_fail']                        = 'Opakovaná transakce se nezdařila:';
+$_['text_notify_recurring_success']                     = 'Opakovaná transakce úspěšná:';
+$_['text_ok']                                           = 'OK';
+$_['text_order_history_cancel']                         = 'Správce zrušil vaše opakované platby. Vaše karta již nebude účtována.';
+$_['text_payment_method_name_help']                     = 'Název platební metody Checkout';
+$_['text_payment_method_name_label']                    = 'Název způsobu platby';
+$_['text_payment_method_name_placeholder']              = 'Kreditní /Debetní karta';
+$_['text_recurring_info']                               = 'Ujistěte se, že jste nastavili denní úkol CRON pomocí jedné z níže uvedených metod. Úkoly CRON vám pomohou s: <br /> <br /> &bull; Automatické obnovení přístupového tokenu API <br /> &bull; Zpracování opakovaných transakcí';
+$_['text_recurring_status']                             = 'Stav opakujících se plateb:';
+$_['text_redirect_uri_help']                            = 'Vložte tento odkaz do pole Přesměrování URI v části Správa aplikace /oAuth';
+$_['text_redirect_uri_label']                           = 'Adresa URL přesměrování OAuth';
+$_['text_refresh_access_token_success']                 = 'Úspěšně jste obnovili připojení k účtu Square.';
+$_['text_refresh_token']                                = 'Znovu vytvořte token';
+$_['text_refund']                                       = 'Vrácení platby';
+$_['text_refund_details']                               = 'Podrobnosti o vrácení peněz';
+$_['text_refunded_amount']                              = 'Refunded: %s. Stav refundace: %s. Důvod vrácení: %s';
+$_['text_refunds']                                      = 'Vrácení platby (%s)';
+$_['text_remote_cron']                                  = 'Metoda #2 - Vzdálené CRON:';
+$_['text_sale_label']                                   = 'Prodej';
+$_['text_sandbox_access_token_help']                    = 'Získejte to z stránky Správa aplikace na náměstí';
+$_['text_sandbox_access_token_label']                   = 'Sandbox Access Token';
+$_['text_sandbox_access_token_placeholder']             = 'Sandbox Access Token';
+$_['text_sandbox_client_id_help']                       = 'Získejte to z stránky Správa aplikace na náměstí';
+$_['text_sandbox_client_id_label']                      = 'ID aplikace Sandbox';
+$_['text_sandbox_client_id_placeholder']                = 'ID aplikace Sandbox';
+$_['text_sandbox_disabled_label']                       = 'Zakázáno';
+$_['text_sandbox_enabled']                              = 'Režim Sandbox je aktivní! Transakce se budou zobrazovat, ale nebudou provedeny žádné poplatky.';
+$_['text_sandbox_enabled_label']                        = 'Povoleno';
+$_['text_sandbox_section_heading']                      = 'Nastavení Square Sandbox';
+$_['text_select_location']                              = 'Vyberte místo';
+$_['text_settings_section_heading']                     = 'Nastavení čtverců';
+$_['text_squareup']                                     = '<a target="_BLANK" href="https://squareup.com"> <img src="view/image/payment/squareup.png" alt="Square" title="Square" style="border: 1px solid #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'Úspěšnost: Modifikoval jste platobní modul!';
+$_['text_success_capture']                              = 'Transakce úspěšně zachycena!';
+$_['text_success_refund']                               = 'Transakce byla úspěšně vrácena!';
+$_['text_success_void']                                 = 'Transakce úspěšně ukončena!';
+$_['text_token_expired']                                = 'Váš přístupový token Square has expired! <a href="%s"> Klikněte zde </a> a obnovte jej nyní.';
+$_['text_token_expiry_warning']                         = 'Váš tokenový přístupový token vyprší na adrese %s. <a href="%s"> Klikněte zde </a> a obnovte jej nyní.';
+$_['text_token_revoked']                                = 'Váš přístupový token Square vypršel nebo byl zrušen! <a href="%s"> Klikněte zde </a> k opětovnému povolení rozšíření Square.';
+$_['text_transaction_statuses']                         = 'Stavy transakcí';
+$_['text_view']                                         = 'Ukázat více';
+$_['text_void']                                         = 'Neplatné';
+$_['text_na']                                           = 'N /A';
+$_['text_no_reason_provided']                           = 'Důvod nebyl poskytnut.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'Karta transakce byla schválena, ale dosud nebyla zachycena.';
+$_['squareup_status_comment_captured']                  = 'Karta transakce byla schválena a následně zachycena (tj. Dokončena).';
+$_['squareup_status_comment_voided']                    = 'Karta transakce byla schválena a následně zrušena (tj. Zrušena).';
+$_['squareup_status_comment_failed']                    = 'Karta transakce se nezdařila.';
+
+// Entry
+$_['entry_total']                                       = 'Celkový';
+$_['entry_geo_zone']                                    = 'Geo zóna';
+$_['entry_sort_order']                                  = 'Řadit objednávku';
+$_['entry_merchant']                                    = 'ID obchodníka';
+$_['entry_transaction_id']                              = 'ID transakce';
+$_['entry_order_id']                                    = 'číslo objednávky';
+$_['entry_partner_solution_id']                         = 'ID řešení partnera';
+$_['entry_type']                                        = 'typ transakce';
+$_['entry_currency']                                    = 'Měna';
+$_['entry_amount']                                      = 'Množství';
+$_['entry_browser']                                     = 'Agentka uživatele zákazníků';
+$_['entry_ip']                                          = 'IP zákazníka';
+$_['entry_date_created']                                = 'Datum vytvoření';
+$_['entry_billing_address_company']                     = 'Fakturační společnost';
+$_['entry_billing_address_street']                      = 'Billing Street';
+$_['entry_billing_address_city']                        = 'Fakturační město';
+$_['entry_billing_address_postcode']                    = 'Fakturační PSČ';
+$_['entry_billing_address_province']                    = 'Fakturace provincie /státu';
+$_['entry_billing_address_country']                     = 'Země účtování';
+$_['entry_status_authorized']                           = 'Autorizovaný';
+$_['entry_status_captured']                             = 'Zachyceno';
+$_['entry_status_voided']                               = 'Zrušeno';
+$_['entry_status_failed']                               = 'Selhalo';
+$_['entry_setup_confirmation']                          = 'Potvrzení instalace:';
+
+// Error
+$_['error_permission']                                  = '<strong> Varování: </strong> Nemáte oprávnění měnit platbu Square!';
+$_['error_permission_recurring']                        = '<strong> Upozornění: </strong> Nemáte oprávnění měnit opakované platby!';
+$_['error_transaction_missing']                         = 'Transakce nebyla nalezena!';
+$_['error_no_ssl']                                      = '<strong> Upozornění: </strong> SSL není ve vašem administračním panelu povoleno. Povolejte jej dokončení konfigurace.';
+$_['error_user_rejected_connect_attempt']               = 'Pokus o připojení byl zrušen uživatelem.';
+$_['error_possible_xss']                                = 'Zjistili jsme možný útok mezi webovými stránkami a váš pokus o připojení byl ukončen. Ověřte své ID aplikace a tajně a zkuste to znovu pomocí tlačítek na panelu administrátora.';
+$_['error_invalid_email']                               = 'Zadaná e-mailová adresa není platná!';
+$_['error_cron_acknowledge']                            = 'Potvrďte, že jste nastavili úlohu CRON.';
+$_['error_client_id']                                   = 'ID klienta aplikace je povinné pole';
+$_['error_client_secret']                               = 'Klientské tajemství aplikace je povinné pole';
+$_['error_sandbox_client_id']                           = 'ID klienta karantény je povinné pole, pokud je aktivován režim karantény';
+$_['error_sandbox_token']                               = 'Pole pískovce je povinné pole, je-li zapnut režim sandbox';
+$_['error_no_location_selected']                        = 'Umístění je povinné pole';
+$_['error_refresh_access_token']                        = 'Došlo k chybě při pokusu o obnovení připojení rozšíření k účtu Square. Ověřte prosím pověření své aplikace a zkuste to znovu.';
+$_['error_form']                                        = 'Zkontrolujte formu chyb a zkuste uložit agian.';
+$_['error_token']                                       = 'Během obnovení tokenu došlo k chybě: %s';
+$_['error_no_refund']                                   = 'Refundace selhala.';
+
+// Column
+$_['column_transaction_id']                             = 'ID transakce';
+$_['column_order_id']                                   = 'číslo objednávky';
+$_['column_customer']                                   = 'Zákazník';
+$_['column_status']                                     = 'Postavení';
+$_['column_type']                                       = 'Typ';
+$_['column_amount']                                     = 'Množství';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'Datum vytvoření';
+$_['column_action']                                     = 'Akce';
+$_['column_refunds']                                    = 'Náhrady';
+$_['column_reason']                                     = 'Důvod';
+$_['column_fee']                                        = 'Poplatek za zpracování';
+
+// Button
+$_['button_void']                                       = 'Neplatné';
+$_['button_refund']                                     = 'Vrácení platby';
+$_['button_capture']                                    = 'Zachyťte';
+$_['button_connect']                                    = 'Připojit';
+$_['button_reconnect']                                  = 'Znovu připojte';
+$_['button_refresh']                                    = 'Aktualizovat token';

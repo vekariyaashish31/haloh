@@ -1,0 +1,134 @@
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-status">
+        <span data-toggle="tooltip" title="{{ help_status }}">{{ entry_status }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_status" id="select-status" class="form-control">
+            <option value="0" {{ status == '0' ? 'selected' }}>{{ text_disabled }}</option>
+            <option value="1" {{ status == '1' ? 'selected' }}>{{ text_enabled }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-widget">
+        <span data-toggle="tooltip" title="{{ help_widget }}">{{ entry_widget }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_widget" id="select-widget" class="form-control">
+            <option value="0" {{ widget == '0' ? 'selected' }}>{{ text_disabled }}</option>
+            <option value="1" {{ widget == '1' ? 'selected' }}>{{ text_enabled }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-position">
+        <span data-toggle="tooltip" title="{{ help_position }}">{{ entry_position }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_position" id="select-position" class="form-control">
+            <option value="default" {{ position == 'default' ? 'selected' }}>{{ text_default_opencart }}</option>
+            <option value="above" {{ position == 'above' ? 'selected' }}>{{ text_above_cart }}</option>
+            <option value="below" {{ position == 'below' ? 'selected' }}>{{ text_below_cart }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-action">
+        <span data-toggle="tooltip" title="{{ help_action }}">{{ entry_action }}</span>
+    </label>
+    <div class="col-sm-10">
+        <div role="dimension-container" data-dimension-col="6">
+            <div class="row">
+                <div class="col-xs-12" role="dimension-select">
+                    <select name="module_superquickcheckout_action" id="select-action" class="form-control">
+                        <option value="message" {{ action == 'message' ? 'selected' }}>{{ text_action_message }}</option>
+                        <option value="redirect" {{ action == 'redirect' ? 'selected' }}>{{ text_action_redirect }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-12" role="dimension-value" data-dimension-value="redirect">
+                    <div class="input-group">
+                        <span class="input-group-addon">{{ text_uri }}</span>
+                        <input name="module_superquickcheckout_redirect" value="{{ redirect }}" class="form-control" placeholder="{{ text_placeholder_redirect }}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-hours-status">
+        <span data-toggle="tooltip" title="{{ help_hours_status }}">{{ entry_hours_status }}</span>
+    </label>
+    <div class="col-sm-10">
+        <div role="dimension-container" data-dimension-col="6">
+            <div class="row">
+                <div class="col-xs-12" role="dimension-select">
+                    <select name="module_superquickcheckout_hours_status" id="select-hours-status" class="form-control">
+                        <option value="0" {{ hours_status == '0' ? 'selected' }}>{{ text_disabled }}</option>
+                        <option value="1" {{ hours_status == '1' ? 'selected' }}>{{ text_enabled }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-12" role="dimension-value" data-dimension-value="1">
+                    <div class="row">
+                        <div class="col-sm-6 margin-bottom-10">
+                            <div class="input-group" role="timepicker">
+                                <span class="input-group-addon">{{ text_from }}</span>
+                                <input name="module_superquickcheckout_hours_from" value="{{ hours_from }}" class="form-control" placeholder="{{ text_placeholder_hours_from }}" />
+                                <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 margin-bottom-10">
+                            <div class="input-group" role="timepicker">
+                                <span class="input-group-addon">{{ text_to }}</span>
+                                <input name="module_superquickcheckout_hours_to" value="{{ hours_to }}" class="form-control" placeholder="{{ text_placeholder_hours_to }}" />
+                                <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ text_server_time }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-privacy-policy">
+        <span data-toggle="tooltip" title="{{ text_privacy_policy_help }}">{{ text_privacy_policy }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_privacy_policy" id="select-privacy-policy" class="form-control">
+            <option value="0" {{ privacy_policy == '0' ? 'selected' }}>{{ text_disabled }}</option>
+            <option value="1" {{ privacy_policy == '1' ? 'selected' }}>{{ text_enabled }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-admin-notification">
+        <span data-toggle="tooltip" title="{{ help_admin_notification }}">{{ entry_admin_notification }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_admin_notification" id="select-admin-notification" class="form-control">
+            <option value="0" {{ admin_notification == '0' ? 'selected' }}>{{ text_disabled }}</option>
+            <option value="1" {{ admin_notification == '1' ? 'selected' }}>{{ text_enabled }}</option>
+        </select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="select-customer-notification">
+        <span data-toggle="tooltip" title="{{ help_customer_notification }}">{{ entry_customer_notification }}</span>
+    </label>
+    <div class="col-sm-10">
+        <select name="module_superquickcheckout_customer_notification" id="select-customer-notification" class="form-control">
+            <option value="0" {{ customer_notification == '0' ? 'selected' }}>{{ text_disabled }}</option>
+            <option value="1" {{ customer_notification == '1' ? 'selected' }}>{{ text_enabled }}</option>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'Extensions';
+$_['text_success']                 = 'Siker: módosították a UPS szállítást!';
+$_['text_edit']                    = 'UPS Szállítás szerkesztése';
+$_['text_regular_daily_pickup']    = 'Rendszeres napi felvétel';
+$_['text_daily_pickup']            = 'Napi Pickup';
+$_['text_customer_counter']        = 'Ügyfélszámláló';
+$_['text_one_time_pickup']         = 'One Time Pickup';
+$_['text_on_call_air_pickup']      = 'On Call Air Pickup';
+$_['text_letter_center']           = 'Letter Center';
+$_['text_air_service_center']      = 'Légiszervizközpont';
+$_['text_suggested_retail_rates']  = 'Javasolt kiskereskedelmi árak (UPS Store)';
+$_['text_package']                 = 'Csomag';
+$_['text_ups_letter']              = 'UPS levél';
+$_['text_ups_tube']                = 'UPS Tube';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'UPS 25 kg-os doboz';
+$_['text_ups_10kg_box']            = 'UPS 10kg-os doboz';
+$_['text_us']                      = 'Amerikai eredetű';
+$_['text_ca']                      = 'Kanada eredete';
+$_['text_eu']                      = 'Európai Unió eredete';
+$_['text_pr']                      = 'Puerto Rico Origin';
+$_['text_mx']                      = 'Mexikó eredete';
+$_['text_other']                   = 'Minden más eredet';
+$_['text_test']                    = 'Teszt';
+$_['text_production']              = 'Termelés';
+$_['text_residential']             = 'Lakó';
+$_['text_commercial']              = 'Kereskedelmi';
+$_['text_next_day_air']            = 'UPS Next Day Air';
+$_['text_2nd_day_air']             = 'UPS Second Day Air';
+$_['text_ground']                  = 'UPS földelés';
+$_['text_3_day_select']            = 'UPS Három napos választás';
+$_['text_next_day_air_saver']      = 'UPS Next Day Air Saver';
+$_['text_next_day_air_early_am']   = 'UPS Next Day Air Early A.M.';
+$_['text_2nd_day_air_am']          = 'UPS Second Day Air A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'A UPS világszerte felgyorsult';
+$_['text_standard']                = 'UPS szabvány';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'A UPS felgyorsult';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'UPS Today Standard';
+$_['text_today_dedicated_courier'] = 'UPS ma dedikált futár';
+$_['text_today_intercity']         = 'UPS Today Intercity';
+$_['text_today_express']           = 'UPS Today Express';
+$_['text_today_express_saver']     = 'UPS Today Express Saver';
+
+// Entry
+$_['entry_key']                    = 'Hozzáférési kulcs';
+$_['entry_username']               = 'Felhasználónév';
+$_['entry_password']               = 'Jelszó';
+$_['entry_pickup']                 = 'Pickup módszer';
+$_['entry_packaging']              = 'Csomagolás típusa';
+$_['entry_classification']         = 'Vásárlói besorolási kód';
+$_['entry_origin']                 = 'Szállítási származási kód';
+$_['entry_city']                   = 'Származási város';
+$_['entry_state']                  = 'Származási állam /tartomány';
+$_['entry_country']                = 'Származási ország';
+$_['entry_postcode']               = 'Származási irányítószám';
+$_['entry_test']                   = 'Teszt üzemmódban';
+$_['entry_quote_type']             = 'Idézet típusa';
+$_['entry_service']                = 'Szolgáltatások';
+$_['entry_insurance']              = 'Engedélyezés engedélyezése';
+$_['entry_display_weight']         = 'A megjelenítés súlya';
+$_['entry_weight_class']           = 'Súlyosztály';
+$_['entry_length_class']           = 'Hosszú osztály';
+$_['entry_dimension']              = 'Méretek (L x Sz x Ma)';
+$_['entry_length']                 = 'Hossz';
+$_['entry_height']                 = 'Magasság';
+$_['entry_width']                  = 'Szélesség';
+$_['entry_tax_class']              = 'Adóosztály';
+$_['entry_geo_zone']               = 'Geo zóna';
+$_['entry_status']                 = 'Állapot';
+$_['entry_sort_order']             = 'Sorrend';
+$_['entry_debug']                  = 'Hibakeresési mód';
+
+// Help
+$_['help_key']                     = 'Adja meg az UPS-hez hozzárendelt XML-sebességű hozzáférési kulcsot.';
+$_['help_username']                = 'Adja meg a UPS szolgáltatás fiókjának felhasználónevét.';
+$_['help_password']                = 'Adja meg a UPS szolgáltatás fiókjának jelszavát.';
+$_['help_pickup']                  = 'Hogyan adsz csomagokat a UPS-nek (csak akkor használod, ha az Egyesült Államok származik) ?';
+$_['help_packaging']               = 'Milyen csomagolást használjon?';
+$_['help_classification']          = '01 - Ha számlázol egy UPS számlára, és napi UPS pickup-val rendelkezik, 03 - Ha nincs UPS-fiókja, vagy számlázol egy UPS-fiókot, de nincs napi átvétel, 04 - egy kiskereskedelmi üzlet (csak akkor használják, ha az Egyesült Államok származik)';
+$_['help_origin']                  = 'Milyen kiindulási pontot kell használni (ez a beállítás csak az UPS terméknevének megjelenítésére vonatkozik)';
+$_['help_city']                    = 'Adja meg a származási város nevét.';
+$_['help_state']                   = 'Adja meg a származási ország /tartomány kétbetűs kódját.';
+$_['help_country']                 = 'Írja be a származási ország kétbetűs kódját.';
+$_['help_postcode']                = 'Írja be a zip /postalcode eredetét.';
+$_['help_test']                    = 'Használja ezt a modult a Test (YES) vagy az Production (?) módban';
+$_['help_quote_type']              = 'Idegen vagy kereskedelmi kézbesítés.';
+$_['help_service']                 = 'Válassza ki a kínált UPS szolgáltatásokat.';
+$_['help_insurance']               = 'Engedélyezi a termék teljes értékű biztosítását, mint értéket';
+$_['help_display_weight']          = 'Szeretné megjeleníteni a szállítási súly? (például a szállítási súly: 2,77674 kg)';
+$_['help_weight_class']            = 'Állítsa be kilogrammra vagy fontra.';
+$_['help_length_class']            = 'Állítsa be centiméterre vagy hüvelykre.';
+$_['help_dimension']               = 'Ezt feltételezik az átlagos csomagoló doboz mérete. Az egyes elemméretek jelenleg nem támogatottak, ezért be kell írni az átlagos méretet, például az 5x5x5 értéket.';
+$_['help_debug']                   = 'A send /recv adatokat a rendszer naplójába menti';
+
+// Error
+$_['error_permission']             = 'Figyelmeztetés: Nincs engedélye a UPS (US) shipping! módosítására';
+$_['error_key']                    = 'Hozzáférési kulcs szükséges!';
+$_['error_username']               = 'Felhasználónév szükséges!';
+$_['error_password']               = 'Jelszó szükséges!';
+$_['error_city']                   = 'Origin City!';
+$_['error_state']                  = 'Szükséges származási állam /tartomány!';
+$_['error_country']                = 'Származási ország szükséges!';
+$_['error_dimension']              = 'Átlagos méretek szükségesek!';

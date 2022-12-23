@@ -1,0 +1,23 @@
+<div class="allbanner col-sm-4 col-xs-12 hidden-xs">
+<div class="row">
+
+			{% for banner in banners %}
+				<div class="imgbanner firstbanner col-xs-6">
+				<div class=" banner-effect">
+				  {% if banner.link %}
+				  	<a href="{{ banner.link }}">
+				  		<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+				  	</a>
+				  {% else %}
+				  	<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />{% endif %}
+				</div>
+				</div>
+			  {% endfor %}
+</div>
+</div>
+
+</div>
+</div>
+
+
+

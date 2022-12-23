@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					 = 'PayPal Pro iFrame';
+
+// Text
+$_['text_extension']                 = 'Extensions';
+$_['text_success']					 = 'Framgång: Du har ändrat PayPal Pro iFrame konto detaljer!';
+$_['text_edit']                      = 'Redigera PayPal Pro iFrame';
+$_['text_pp_pro_iframe']			 = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			 = 'Tillstånd';
+$_['text_sale']						 = 'Försäljning';
+$_['text_payment_info']				 = 'Betalningsinformation';
+$_['text_capture_status']			 = 'Capture status';
+$_['text_amount_auth']				 = 'Belopp godkänt';
+$_['text_amount_captured']			 = 'Belopp som tagits';
+$_['text_amount_refunded']			 = 'Belopp återbetalas';
+$_['text_capture_amount']			 = 'Fånga beloppet';
+$_['text_complete_capture']			 = 'Komplett fångst';
+$_['text_transactions']				 = 'transaktioner';
+$_['text_complete']					 = 'Komplett';
+$_['text_confirm_void']				 = 'Om du ogiltig kan du inte fånga några ytterligare medel';
+$_['text_view']						 = 'Se';
+$_['text_refund']					 = 'Återbetalning';
+$_['text_resend']					 = 'Skicka igen';
+$_['text_reauthorise']				 = 'Reauthorise';
+$_['text_reauthorised']				 = 'Transaktionen återautoriserades';
+$_['text_transaction']				 = 'Transaktion';
+$_['text_product_lines']			 = 'Produktlinjer';
+$_['text_ebay_txn_id']				 = 'eBay-transaktions-ID';
+$_['text_name']						 = 'namn';
+$_['text_qty']						 = 'Kvantitet';
+$_['text_price']					 = 'Pris';
+$_['text_number']					 = 'siffra';
+$_['text_coupon_id']				 = 'Kupong ID';
+$_['text_coupon_amount']			 = 'Kupongbelopp';
+$_['text_coupon_currency']			 = 'Kupongvaluta';
+$_['text_loyalty_disc_amt']			 = 'Lojalitetskortskivans belopp';
+$_['text_loyalty_currency']			 = 'Lojalitetskortvaluta';
+$_['text_options_name']				 = 'Alternativnamn';
+$_['text_tax_amt']					 = 'Skattebeloppet';
+$_['text_currency_code']			 = 'Valutakod';
+$_['text_amount']					 = 'Belopp';
+$_['text_gift_msg']					 = 'Presentmeddelande';
+$_['text_gift_receipt']				 = 'Presentkort';
+$_['text_gift_wrap_name']			 = 'Presentförpackningsnamn';
+$_['text_gift_wrap_amt']			 = 'Presentförpackningsbelopp';
+$_['text_buyer_email_market']		 = 'Köparens marknadsföring e-post';
+$_['text_survey_question']			 = 'Undersökningsfråga';
+$_['text_survey_chosen']			 = 'Val av undersökningsval';
+$_['text_receiver_business']		 = 'Mottagarverksamhet';
+$_['text_receiver_email']			 = 'Mottagarens email';
+$_['text_receiver_id']				 = 'Mottagar-ID';
+$_['text_buyer_email']				 = 'Köparens email';
+$_['text_payer_id']					 = 'Betalnings-ID';
+$_['text_payer_status']				 = 'Betalarstatus';
+$_['text_country_code']				 = 'Landskod';
+$_['text_payer_business']			 = 'Betalarverksamhet';
+$_['text_payer_salute']				 = 'Betalarens hälsning';
+$_['text_payer_firstname']			 = 'Betalarens förnamn';
+$_['text_payer_middlename']			 = 'Betalarens mellannamn';
+$_['text_payer_lastname']			 = 'Betalarens efternamn';
+$_['text_payer_suffix']				 = 'Betalarens suffix';
+$_['text_address_owner']			 = 'Adressägare';
+$_['text_address_status']			 = 'Adressstatus';
+$_['text_ship_sec_name']			 = 'Skicka till sekundärt namn';
+$_['text_ship_name']				 = 'Skicka till namn';
+$_['text_ship_street1']				 = 'Skicka till adress 1';
+$_['text_ship_street2']				 = 'Skicka till adress 2';
+$_['text_ship_city']				 = 'Skicka till stad';
+$_['text_ship_state']				 = 'Skicka till staten';
+$_['text_ship_zip']					 = 'Skicka till ZIP';
+$_['text_ship_country']				 = 'Skicka till landskod';
+$_['text_ship_phone']				 = 'Skicka till telefonnummer';
+$_['text_ship_sec_add1']			 = 'Skicka till sekundär adress 1';
+$_['text_ship_sec_add2']			 = 'Skicka till sekundär adress 2';
+$_['text_ship_sec_city']			 = 'Skicka till andra stad';
+$_['text_ship_sec_state']			 = 'Skicka till sekundär tillstånd';
+$_['text_ship_sec_zip']				 = 'Skicka till sekundär ZIP';
+$_['text_ship_sec_country']			 = 'Skicka till sekundär landskod';
+$_['text_ship_sec_phone']			 = 'Skicka till sekundär telefon';
+$_['text_trans_id']					 = 'Transaktions ID';
+$_['text_receipt_id']				 = 'Kvittot ID';
+$_['text_parent_trans_id']			 = 'Föräldratransaktions-ID';
+$_['text_trans_type']				 = 'Överföringstyp';
+$_['text_payment_type']				 = 'Betalnings typ';
+$_['text_order_time']				 = 'Beställningstid';
+$_['text_fee_amount']				 = 'Avgift belopp';
+$_['text_settle_amount']			 = 'Avräkna beloppet';
+$_['text_tax_amount']				 = 'Skattebeloppet';
+$_['text_exchange']					 = 'Växlingskurs';
+$_['text_payment_status']			 = 'Betalningsstatus';
+$_['text_pending_reason']			 = 'Väntar på anledning';
+$_['text_reason_code']				 = 'Orsakskod';
+$_['text_protect_elig']				 = 'Skyddskrav';
+$_['text_protect_elig_type']		 = 'Typ av skyddsklassificering';
+$_['text_store_id']					 = 'Butik ID';
+$_['text_terminal_id']				 = 'Terminal ID';
+$_['text_invoice_number']			 = 'Fakturanummer';
+$_['text_custom']					 = 'Beställnings';
+$_['text_note']						 = 'Notera';
+$_['text_sales_tax']				 = 'Försäljningstaxa';
+$_['text_buyer_id']					 = 'Köparens ID';
+$_['text_close_date']				 = 'Slutdatum';
+$_['text_multi_item']				 = 'Multi-objekt';
+$_['text_sub_amt']					 = 'Prenumerationsbelopp';
+$_['text_sub_period']				 = 'Prenumerationsperiod';
+$_['text_redirect']					 = 'Dirigera om';
+$_['text_iframe']					 = 'iframe';
+$_['help_checkout_method']			 = 'Använd omdirigeringsmetod om du inte har SSL-installerat eller om du inte har betalning med PayPal-alternativet inaktiverat på din värdbaserade betalningssida.';
+$_['help_debug']					 = 'Loggar ytterligare information.';
+
+// Column
+$_['column_trans_id']				 = 'Transaktions ID';
+$_['column_amount']					 = 'Belopp';
+$_['column_type']					 = 'Betalnings typ';
+$_['column_status']					 = 'Status';
+$_['column_pending_reason']			 = 'Väntar på anledning';
+$_['column_date_added']				 = 'Skapad';
+$_['column_action']					 = 'Handling';
+
+// Tab
+$_['tab_settings']					 = 'inställningar';
+$_['tab_order_status']				 = 'Orderstatus';
+$_['tab_checkout_customisation']	 = 'Kassa anpassning';
+
+// Entry
+$_['entry_username']				 = 'API Användarnamn';
+$_['entry_password']				 = 'API-lösenord';
+$_['entry_signature']				 = 'API-signatur';
+$_['entry_test']					 = 'Övningsläge';
+$_['entry_total']					 = 'Total';
+$_['entry_order_status']			 = 'Orderstatus:';
+$_['entry_geo_zone']				 = 'Geo Zone:';
+$_['entry_status']					 = 'Status:';
+$_['entry_sort_order']				 = 'Sorteringsordning:';
+$_['entry_transaction_method']		 = 'Transaktionsmetod:';
+$_['entry_transaction_id']			 = 'Transaktions ID';
+$_['entry_full_refund']				 = 'Full återbetalning';
+$_['entry_amount']					 = 'Belopp';
+$_['entry_message']					 = 'Meddelande';
+$_['entry_ipn_url']					 = 'IPN-URL:';
+$_['entry_checkout_method']			 = 'Kassa Metod:';
+$_['entry_debug']					 = 'Debugläge:';
+$_['entry_canceled_reversal_status'] = 'Avbruten återgångsstatus:';
+$_['entry_completed_status']		 = 'Slutförd status:';
+$_['entry_denied_status']			 = 'Nekad status:';
+$_['entry_expired_status']			 = 'Förfallit status:';
+$_['entry_failed_status']			 = 'Misslyckad status:';
+$_['entry_pending_status']			 = 'Väntar Status:';
+$_['entry_processed_status']		 = 'Bearbetad status:';
+$_['entry_refunded_status']			 = 'Återbetalad status:';
+$_['entry_reversed_status']			 = 'Omvänd status:';
+$_['entry_voided_status']			 = 'Annullerad status:';
+
+// Help
+$_['help_test']						 = 'Använd gateway-servern för live eller testning (sandbox) för att behandla transaktioner? Testet kan misslyckas i Internet Explorer';
+$_['help_total']					 = 'Kassa totalt ordern måste nås innan betalningsmetoden blir aktiv';
+
+// Button
+$_['button_refund']					 = 'Återbetalning';
+$_['button_void']					 = 'Ogiltig';
+$_['button_capture']				 = 'Fånga';
+$_['button_reauthorise']			 = 'Reauthorise';
+
+// Error
+$_['error_permission']				 = 'Varning: Du har inte behörighet att ändra betalning PayPal Webbsida Betalning Pro iFrame (UK) !';
+$_['error_sig']						 = 'Signatur Required!';
+$_['error_user']					 = 'Användare Required!';
+$_['error_password']				 = 'Lösenord Required!';
+$_['error_timeout']					 = 'Begäran tog för lång tid';
+$_['error_transaction_missing']		 = 'Det gick inte att hitta transaktionen';
+$_['error_missing_data']			 = 'Saknar data';
+$_['error_general']					 = 'det var ett problem';
+$_['error_capture']				     = 'Ange ett belopp för att fånga';

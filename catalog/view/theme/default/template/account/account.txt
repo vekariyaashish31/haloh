@@ -1,0 +1,95 @@
+{{ header }}
+
+<div id="account-account" class="container common-shed acpage">
+  <div class="bg-color-b">
+  
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}</div>
+  {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-md-6 col-sm-8 col-xs-12' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-md-9 col-sm-8 col-xs-12' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">
+      
+       <h2>{{ text_my_orders }}</h2>
+      <div class="row account-part">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ order }}">
+            <span><img src="image/catalog/account/order-list.png" class="img-respinsive" /></span><span>{{ text_order }}<br><h5>See your order history</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ download }}">
+            <span><img src="image/catalog/account/download.png" class="img-respinsive" /></span><span>{{ text_download }}<br><h5>Download Your Theme</h5></span>
+          </a>
+        </div>
+        {% if reward %}
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ reward }}">
+            <span><img src="image/catalog/account/reward.png" class="img-respinsive" /></span><span>{{ text_reward }}<br><h5>Count Reward Point</h5></span>
+          </a>
+        </div>
+        {% endif %}
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ return }}">
+            <span><img src="image/catalog/account/return.png" class="img-respinsive" /></span><span>{{ text_return }}<br><h5>See your Return</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ transaction }}">
+            <span><img src="image/catalog/account/transaction.png" class="img-respinsive" /></span><span>{{ text_transaction }}<br><h5>See your Transaction</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ recurring }}">
+            <span><img src="image/catalog/account/paymnet.png" class="img-respinsive" /></span><span>{{ text_recurring }}<br><h5>See your Payment</h5></span>
+          </a>
+        </div>
+      </div>
+      <div class="account-right">
+
+        {{ content_top }}
+      <h2>{{ text_my_account }}</h2>
+      <div class="row account-part">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ edit }}">
+            <span><img src="image/catalog/account/edit-account.png" class="img-respinsive" /></span><span>{{ text_edit }}<br><h5>edit your account</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ password }}">
+            <span><img src="image/catalog/account/pass.png" class="img-respinsive" /></span><span>{{ text_password }}<br><h5>Change Your Passowrd</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ address }}">
+            <span><img src="image/catalog/account/location.png" class="img-respinsive" /></span><span>{{ text_address }}<br><h5>Edit your address</h5></span>
+          </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+          <a href="{{ newsletter }}">
+            <span><img src="image/catalog/account/newsletter.png" class="img-respinsive" /></span><span>{{ text_newsletter }}<br><h5>subscribe for newsletter</h5></span>
+          </a>
+        </div>
+        {# <li><a href="{{ wishlist }}">{{ text_wishlist1 }}</a></li> #}
+      </div>
+      {% if credit_cards %}
+      <h2>{{ text_credit_card }}</h2>
+      <ul class="list-unstyled accolor">
+        {% for credit_card in credit_cards %}
+        <li><a href="{{ credit_card.href }}">{{ credit_card.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+     
+      
+      {{ content_bottom }}</div></div>
+    {{ column_right }}</div>
+</div>
+</div>
+{{ footer }}

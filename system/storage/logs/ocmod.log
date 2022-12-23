@@ -1,0 +1,3031 @@
+2021-11-03 16:48:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 29
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 83
+----------------------------------------------------------------
+2021-11-13 18:13:04 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 467
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 29
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('design/layout');
+LINE: 1170
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 17
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 157
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 82
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 238
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 366
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1009
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1023
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1033
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1594
+CODE: {{ footer }}
+LINE: 1696
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 515
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 820
+CODE: $this->load->model('design/layout');
+LINE: 1237
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Column
+LINE: 32
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Column
+LINE: 30
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Column
+LINE: 29
+LINE: 152
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Column
+LINE: 31
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 17
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 18
+LINE: 161
+CODE: if (isset($data['product_discount'])) {
+LINE: 102
+LINE: 275
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 408
+CODE: public function getProduct(
+LINE: 468
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1122
+CODE: {{ footer }}
+LINE: 1803
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 663
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 428
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th/product/product.php
+CODE: // Tabs
+LINE: 46
+LINE: 104
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 74
+CODE: public function getPopularProducts($limit) {
+LINE: 307
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {% for image in images %}
+LINE: 77
+CODE: {{ tab_description }}</a></li>
+LINE: 328
+CODE: id="tab-description">{{ description }}</div>
+LINE: 383
+CODE: {{ footer }}
+LINE: 928
+----------------------------------------------------------------
+MOD: Quick Checkout
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: public function index() {
+LINE: 5
+CODE: $this->load->language('checkout/checkout');
+LINE: 31
+
+FILE: catalog/controller/checkout/cart.php
+CODE: if ($this->cart->hasProducts() || !empty($this->session->data['vouchers'])) {
+LINE: 24
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 83
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 382
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 283
+CODE: $data['products'][] = array(
+LINE: 286
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 7
+LINE: 50
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 9
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 71
+CODE: <td class="text-left">{{ product.name }}
+LINE: 87
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+LINE: 185
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 947
+CODE: $data['products'][] = array(
+LINE: 952
+CODE: $product_data[] = array(
+LINE: 1639
+LINE: 1840
+CODE: $product_data[] = array(
+LINE: 1643
+LINE: 1848
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1503
+LINE: 1731
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 106
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 7
+LINE: 145
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 9
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 265
+----------------------------------------------------------------
+2021-11-15 3:51:49 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 467
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 29
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('design/layout');
+LINE: 1170
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 17
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 157
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 82
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 238
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 366
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1009
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1023
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1033
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1594
+CODE: {{ footer }}
+LINE: 1696
+----------------------------------------------------------------
+MOD: PAIBKK.com Thai Translation for front end
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 515
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 820
+CODE: $this->load->model('design/layout');
+LINE: 1237
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Column
+LINE: 32
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Column
+LINE: 30
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/th-th/catalog/product.php
+CODE: // Column
+LINE: 27
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Column
+LINE: 29
+LINE: 152
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Column
+LINE: 31
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 17
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 18
+LINE: 161
+CODE: if (isset($data['product_discount'])) {
+LINE: 102
+LINE: 275
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 408
+CODE: public function getProduct(
+LINE: 468
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1122
+CODE: {{ footer }}
+LINE: 1803
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 663
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 428
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th-th/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th/product/product.php
+CODE: // Tabs
+LINE: 46
+LINE: 104
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 74
+CODE: public function getPopularProducts($limit) {
+LINE: 307
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {% for image in images %}
+LINE: 77
+CODE: {{ tab_description }}</a></li>
+LINE: 328
+CODE: id="tab-description">{{ description }}</div>
+LINE: 383
+CODE: {{ footer }}
+LINE: 928
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 83
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 382
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 283
+CODE: $data['products'][] = array(
+LINE: 286
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th-th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th-th/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 7
+LINE: 50
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 9
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 71
+CODE: <td class="text-left">{{ product.name }}
+LINE: 87
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+LINE: 185
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 947
+CODE: $data['products'][] = array(
+LINE: 952
+CODE: $product_data[] = array(
+LINE: 1639
+LINE: 1840
+CODE: $product_data[] = array(
+LINE: 1643
+LINE: 1848
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1503
+LINE: 1731
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 106
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th-th/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 7
+LINE: 145
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 9
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 265
+----------------------------------------------------------------
+2021-11-15 3:56:53 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 467
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 29
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('design/layout');
+LINE: 1170
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 17
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 157
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 82
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 238
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 366
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1009
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1023
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1033
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1594
+CODE: {{ footer }}
+LINE: 1696
+----------------------------------------------------------------
+MOD: PAIBKK.com Thai Translation for front end
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 515
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 820
+CODE: $this->load->model('design/layout');
+LINE: 1237
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Column
+LINE: 32
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Column
+LINE: 30
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/th-th/catalog/product.php
+CODE: // Column
+LINE: 27
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Column
+LINE: 29
+LINE: 152
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Column
+LINE: 31
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 17
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 18
+LINE: 161
+CODE: if (isset($data['product_discount'])) {
+LINE: 102
+LINE: 275
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 408
+CODE: public function getProduct(
+LINE: 468
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1122
+CODE: {{ footer }}
+LINE: 1803
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 663
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 428
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th-th/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th/product/product.php
+CODE: // Tabs
+LINE: 46
+LINE: 104
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 74
+CODE: public function getPopularProducts($limit) {
+LINE: 307
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {% for image in images %}
+LINE: 77
+CODE: {{ tab_description }}</a></li>
+LINE: 328
+CODE: id="tab-description">{{ description }}</div>
+LINE: 383
+CODE: {{ footer }}
+LINE: 928
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 83
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 382
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 283
+CODE: $data['products'][] = array(
+LINE: 286
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th-th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th-th/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 7
+LINE: 50
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 9
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 71
+CODE: <td class="text-left">{{ product.name }}
+LINE: 87
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+LINE: 185
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 947
+CODE: $data['products'][] = array(
+LINE: 952
+CODE: $product_data[] = array(
+LINE: 1639
+LINE: 1840
+CODE: $product_data[] = array(
+LINE: 1643
+LINE: 1848
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1503
+LINE: 1731
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 106
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th-th/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 7
+LINE: 145
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 9
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 265
+----------------------------------------------------------------
+2021-11-15 3:56:59 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 467
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+
+FILE: catalog/controller/common/header.php
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 29
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('design/layout');
+LINE: 1170
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 17
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 157
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 82
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 238
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 366
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1009
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1023
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1033
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1594
+CODE: {{ footer }}
+LINE: 1696
+----------------------------------------------------------------
+MOD: PAIBKK.com Thai Translation for front end
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 515
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 820
+CODE: $this->load->model('design/layout');
+LINE: 1237
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Column
+LINE: 32
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Column
+LINE: 30
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Column
+LINE: 29
+
+FILE: admin/language/th-th/catalog/product.php
+CODE: // Column
+LINE: 27
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Column
+LINE: 29
+LINE: 152
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Column
+LINE: 31
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 17
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 18
+LINE: 161
+CODE: if (isset($data['product_discount'])) {
+LINE: 102
+LINE: 275
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 408
+CODE: public function getProduct(
+LINE: 468
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1122
+CODE: {{ footer }}
+LINE: 1803
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 663
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 428
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th-th/product/product.php
+CODE: // Tabs
+LINE: 46
+
+FILE: catalog/language/th/product/product.php
+CODE: // Tabs
+LINE: 46
+LINE: 104
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Tabs
+LINE: 49
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 74
+CODE: public function getPopularProducts($limit) {
+LINE: 307
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: {% for image in images %}
+LINE: 77
+CODE: {{ tab_description }}</a></li>
+LINE: 328
+CODE: id="tab-description">{{ description }}</div>
+LINE: 383
+CODE: {{ footer }}
+LINE: 928
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 83
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $data['products'][] = array(
+LINE: 382
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 283
+CODE: $data['products'][] = array(
+LINE: 286
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th-th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th-th/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 7
+LINE: 50
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 9
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 71
+CODE: <td class="text-left">{{ product.name }}
+LINE: 87
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+LINE: 185
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 947
+CODE: $data['products'][] = array(
+LINE: 952
+CODE: $product_data[] = array(
+LINE: 1639
+LINE: 1840
+CODE: $product_data[] = array(
+LINE: 1643
+LINE: 1848
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1503
+LINE: 1731
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 106
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th-th/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 7
+LINE: 145
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 9
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/model/checkout/order.php
+CODE: public function getOrderTotals($order_id) {
+LINE: 265
+----------------------------------------------------------------

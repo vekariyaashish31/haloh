@@ -1,0 +1,174 @@
+<?php
+// Heading
+$_['heading_title']					 = 'PayPal Pro iFrame';
+
+// Text
+$_['text_extension']                 = 'Rozšíření';
+$_['text_success']					 = 'Úspěch: Upravili jste podrobnosti účtu PayPal Pro iFrame!';
+$_['text_edit']                      = 'Upravte službu PayPal Pro iFrame';
+$_['text_pp_pro_iframe']			 = '<a target="_BLANK" href="https://www.paypal.com/uk/mrb/pal=V4T754QB63XXL"><img src="view/image/payment/paypal.png" alt="PayPal Website Payment Pro" title="PayPal Website Payment Pro iFrame" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_authorization']			 = 'Oprávnění';
+$_['text_sale']						 = 'Prodej';
+$_['text_payment_info']				 = 'Informace o platbě';
+$_['text_capture_status']			 = 'Zachytit stav';
+$_['text_amount_auth']				 = 'Částka schválená';
+$_['text_amount_captured']			 = 'Zachycená částka';
+$_['text_amount_refunded']			 = 'Částka vrácena';
+$_['text_capture_amount']			 = 'Zachytit množství';
+$_['text_complete_capture']			 = 'Kompletní zachycení';
+$_['text_transactions']				 = 'Transakce';
+$_['text_complete']					 = 'Kompletní';
+$_['text_confirm_void']				 = 'Pokud ztratíte, nemůžete získat další finanční prostředky';
+$_['text_view']						 = 'Pohled';
+$_['text_refund']					 = 'Vrácení platby';
+$_['text_resend']					 = 'Přeposlat';
+$_['text_reauthorise']				 = 'Znovu udělejte oprávnění';
+$_['text_reauthorised']				 = 'Transakce byla znovu schválena';
+$_['text_transaction']				 = 'Transakce';
+$_['text_product_lines']			 = 'Výrobní linky';
+$_['text_ebay_txn_id']				 = 'ID transakce eBay';
+$_['text_name']						 = 'název';
+$_['text_qty']						 = 'Množství';
+$_['text_price']					 = 'Cena';
+$_['text_number']					 = 'Číslo';
+$_['text_coupon_id']				 = 'ID kupónu';
+$_['text_coupon_amount']			 = 'Částka kupónu';
+$_['text_coupon_currency']			 = 'Měna kupónu';
+$_['text_loyalty_disc_amt']			 = 'Množství věrnostní karty';
+$_['text_loyalty_currency']			 = 'Měna vernostních karet';
+$_['text_options_name']				 = 'Název možnosti';
+$_['text_tax_amt']					 = 'Částka daně';
+$_['text_currency_code']			 = 'Kód měny';
+$_['text_amount']					 = 'Množství';
+$_['text_gift_msg']					 = 'Dárková zpráva';
+$_['text_gift_receipt']				 = 'Potvrzení o dárcích';
+$_['text_gift_wrap_name']			 = 'Název dárkového obalu';
+$_['text_gift_wrap_amt']			 = 'Objem dárkového obalu';
+$_['text_buyer_email_market']		 = 'E-mail pro kupujícího';
+$_['text_survey_question']			 = 'Otázka průzkumu';
+$_['text_survey_chosen']			 = 'Výběr výběrového šetření';
+$_['text_receiver_business']		 = 'Přijímací činnost';
+$_['text_receiver_email']			 = 'E-mail příjemce';
+$_['text_receiver_id']				 = 'ID přijímače';
+$_['text_buyer_email']				 = 'E-mail kupujícího';
+$_['text_payer_id']					 = 'Identifikační číslo plátce';
+$_['text_payer_status']				 = 'Stav plátce';
+$_['text_country_code']				 = 'Kód země';
+$_['text_payer_business']			 = 'Platební činnost';
+$_['text_payer_salute']				 = 'Zasvěcení platitele';
+$_['text_payer_firstname']			 = 'Křestní jméno';
+$_['text_payer_middlename']			 = 'Platební prostřední jméno';
+$_['text_payer_lastname']			 = 'Příjmení plátce';
+$_['text_payer_suffix']				 = 'Přípona plátce';
+$_['text_address_owner']			 = 'Vlastník adresy';
+$_['text_address_status']			 = 'Stav adresy';
+$_['text_ship_sec_name']			 = 'Lodě do sekundárního jména';
+$_['text_ship_name']				 = 'Loď pro jméno';
+$_['text_ship_street1']				 = 'Loď na adresu 1';
+$_['text_ship_street2']				 = 'Loď na adresu 2';
+$_['text_ship_city']				 = 'Loď do města';
+$_['text_ship_state']				 = 'Loď ke státu';
+$_['text_ship_zip']					 = 'Odeslání do ZIP';
+$_['text_ship_country']				 = 'Kód lodě k zemi';
+$_['text_ship_phone']				 = 'Odeslat na telefonní číslo';
+$_['text_ship_sec_add1']			 = 'Odeslání na vedlejší adresu 1';
+$_['text_ship_sec_add2']			 = 'Odeslání na sekundární adresu 2';
+$_['text_ship_sec_city']			 = 'Loď do sekundárního města';
+$_['text_ship_sec_state']			 = 'Loď do sekundárního stavu';
+$_['text_ship_sec_zip']				 = 'Odeslání do sekundárního ZIP';
+$_['text_ship_sec_country']			 = 'Kód lodě do sekundární země';
+$_['text_ship_sec_phone']			 = 'Odeslat na sekundární telefon';
+$_['text_trans_id']					 = 'ID transakce';
+$_['text_receipt_id']				 = 'Potvrzení ID';
+$_['text_parent_trans_id']			 = 'ID transakce nadřazené osoby';
+$_['text_trans_type']				 = 'Typ transakce';
+$_['text_payment_type']				 = 'Způsob platby';
+$_['text_order_time']				 = 'Čas objednávky';
+$_['text_fee_amount']				 = 'Výše poplatku';
+$_['text_settle_amount']			 = 'Vyrovnejte částku';
+$_['text_tax_amount']				 = 'Částka daně';
+$_['text_exchange']					 = 'Směnný kurz';
+$_['text_payment_status']			 = 'Status platby';
+$_['text_pending_reason']			 = 'Nevyřízený důvod';
+$_['text_reason_code']				 = 'Kód příčiny';
+$_['text_protect_elig']				 = 'Ochrana způsobilosti';
+$_['text_protect_elig_type']		 = 'Typ způsobilosti ochrany';
+$_['text_store_id']					 = 'ID obchodu';
+$_['text_terminal_id']				 = 'ID terminálu';
+$_['text_invoice_number']			 = 'Číslo faktury';
+$_['text_custom']					 = 'Zvyk';
+$_['text_note']						 = 'Poznámka';
+$_['text_sales_tax']				 = 'Prodejní daň';
+$_['text_buyer_id']					 = 'ID kupujícího';
+$_['text_close_date']				 = 'Uzávěrka';
+$_['text_multi_item']				 = 'Položka více položek';
+$_['text_sub_amt']					 = 'Částka předplatného';
+$_['text_sub_period']				 = 'Období předplatného';
+$_['text_redirect']					 = 'Přesměrování';
+$_['text_iframe']					 = 'Irám';
+$_['help_checkout_method']			 = 'Použijte metodu Přesměrování, pokud nemáte nainstalovanou službu SSL, nebo pokud nemáte možnost Pay with PayPal vypnuta na stránce hostované platby.';
+$_['help_debug']					 = 'Zaznamenává další informace.';
+
+// Column
+$_['column_trans_id']				 = 'ID transakce';
+$_['column_amount']					 = 'Množství';
+$_['column_type']					 = 'Způsob platby';
+$_['column_status']					 = 'Postavení';
+$_['column_pending_reason']			 = 'Nevyřízený důvod';
+$_['column_date_added']				 = 'Vytvořeno';
+$_['column_action']					 = 'Akce';
+
+// Tab
+$_['tab_settings']					 = 'Nastavení';
+$_['tab_order_status']				 = 'Stav objednávky';
+$_['tab_checkout_customisation']	 = 'Pokladní přizpůsobení';
+
+// Entry
+$_['entry_username']				 = 'Uživatelské jméno API';
+$_['entry_password']				 = 'Heslo API';
+$_['entry_signature']				 = 'Podpis API';
+$_['entry_test']					 = 'Testovací mód';
+$_['entry_total']					 = 'Celkový';
+$_['entry_order_status']			 = 'Stav objednávky:';
+$_['entry_geo_zone']				 = 'Geo zóna:';
+$_['entry_status']					 = 'Postavení:';
+$_['entry_sort_order']				 = 'Řazení pořadí:';
+$_['entry_transaction_method']		 = 'Metoda transakce:';
+$_['entry_transaction_id']			 = 'ID transakce';
+$_['entry_full_refund']				 = 'Vrácení peněz';
+$_['entry_amount']					 = 'Množství';
+$_['entry_message']					 = 'Zpráva';
+$_['entry_ipn_url']					 = 'IPN URL:';
+$_['entry_checkout_method']			 = 'Metoda Checkout:';
+$_['entry_debug']					 = 'Debugovací mód:';
+$_['entry_canceled_reversal_status'] = 'Zrušeno Stav zvratu:';
+$_['entry_completed_status']		 = 'Dokončeno Stav:';
+$_['entry_denied_status']			 = 'Odmítnuto Stav:';
+$_['entry_expired_status']			 = 'Stav vypršela:';
+$_['entry_failed_status']			 = 'Stav selhal:';
+$_['entry_pending_status']			 = 'Stav čekajícího:';
+$_['entry_processed_status']		 = 'Zpracované stav:';
+$_['entry_refunded_status']			 = 'Stav vrácených prostředků:';
+$_['entry_reversed_status']			 = 'Zpětný stav:';
+$_['entry_voided_status']			 = 'Status zrušený:';
+
+// Help
+$_['help_test']						 = 'Použijte živý nebo zkušební (sandbox) server brány pro zpracování transakcí? Test může v aplikaci Internet Explorer selhat';
+$_['help_total']					 = 'Pokladna celkově musí být před odesláním této platební metody aktivní';
+
+// Button
+$_['button_refund']					 = 'Vrácení platby';
+$_['button_void']					 = 'Neplatné';
+$_['button_capture']				 = 'Zachyťte';
+$_['button_reauthorise']			 = 'Znovu udělejte oprávnění';
+
+// Error
+$_['error_permission']				 = 'Upozornění: Nemáte oprávnění měnit platbu PayPal Website Payment Pro iFrame (UK) !';
+$_['error_sig']						 = 'Požadovaný podpis!';
+$_['error_user']					 = 'Požadovaný uživatel!';
+$_['error_password']				 = 'Potřebné heslo!';
+$_['error_timeout']					 = 'Vypršel časový limit žádosti';
+$_['error_transaction_missing']		 = 'Nelze najít transakci';
+$_['error_missing_data']			 = 'Chybějící data';
+$_['error_general']					 = 'byla tam chyba';
+$_['error_capture']				     = 'Zadejte částku, kterou chcete zachytit';

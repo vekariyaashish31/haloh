@@ -1,0 +1,3762 @@
+2022-05-19 12:00:15 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 479
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: <font color="#19a3f2"><b>Custom Search</b></font>
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 960
+CODE: $product_data[] = array(
+LINE: 1671
+LINE: 1891
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 13
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/th-th/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 10
+LINE: 151
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 12
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a> {% for option in product.option %}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td>{{ product.name }}
+LINE: 88
+
+FILE: admin/view/template/sale/order_shipping.twig
+CODE: <td>{{ product.name }}
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 75
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $order_data['products'][] = array(
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/checkout/success.php
+CODE: $this->cart->clear();
+LINE: 25
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 300
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_product_id = $this->db->getLastId();
+LINE: 19
+LINE: 85
+
+FILE: catalog/view/theme/default/template/common/search.twig
+CODE: <div id="search" class="input-group">
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 227
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 14
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/th-th/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 10
+LINE: 56
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 12
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ product.name }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: system/library/cart/cart.php
+CODE: $product_data[] = array(
+LINE: 243
+----------------------------------------------------------------
+MOD: Faq Module
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'catalog/recurring')) {
+LINE: 66
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 26
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 48
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 71
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 89
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/category');
+LINE: 895
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Entry
+LINE: 34
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Entry
+LINE: 32
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/th-th/catalog/product.php
+CODE: // Entry
+LINE: 29
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Entry
+LINE: 31
+LINE: 147
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Entry
+LINE: 33
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Entry
+LINE: 31
+CODE: public function addProduct($data) {
+LINE: 12
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 13
+LINE: 147
+CODE: public function getTotalProducts($data = array()) {
+LINE: 653
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <li><a href="#tab-design" data-toggle="tab">{{ tab_design }}</a></li>
+LINE: 41
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1047
+CODE: {{ footer }}
+LINE: 1681
+CODE: $this->load->model('catalog/review');
+LINE: 263
+LINE: 577
+LINE: 647
+CODE: $this->load->model('tool/image');
+LINE: 304
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Error
+LINE: 56
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Error
+LINE: 54
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/th-th/product/product.php
+CODE: // Error
+LINE: 54
+
+FILE: catalog/language/th/product/product.php
+CODE: // Error
+LINE: 53
+LINE: 113
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Error
+LINE: 56
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Error
+LINE: 53
+CODE: public function getTotalProductSpecials() {
+LINE: 567
+CODE: 'product_id'       => $query->row['product_id'],
+LINE: 42
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <li><a href="#tab-review" data-toggle="tab">{{ tab_review }}</a></li>
+LINE: 311
+CODE: <div class="tab-pane active" id="tab-description">{{ description }}</div>
+LINE: 362
+
+FILE: catalog/controller/common/header.php
+CODE: $data['direction'] = $this->language->get('direction');
+LINE: 69
+
+FILE: catalog/language/ar/common/header.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/bg-bg/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/cs-cz/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/de-de/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/es-es/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/et-ee/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fi-fi/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fr-fr/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/he-il/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/hu-hu/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/it-it/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/ka-ge/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/pl-pl/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/sv-se/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th-th/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th/common/header.php
+CODE: // Text
+LINE: 5
+LINE: 28
+
+FILE: catalog/language/tr-tr/common/header.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/zh-cn/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <span class="hidden-xs hidden-sm hidden-md">{{ text_checkout }}</span></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['manufacturer'] = $this->url->link('product/manufacturer');
+LINE: 32
+
+FILE: catalog/language/ar/common/footer.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/bg-bg/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/cs-cz/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/de-de/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/es-es/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/et-ee/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fi-fi/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fr-fr/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/he-il/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/hu-hu/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/it-it/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/ka-ge/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/pl-pl/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/sv-se/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th-th/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th/common/footer.php
+CODE: // Text
+LINE: 5
+LINE: 29
+
+FILE: catalog/language/tr-tr/common/footer.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/zh-cn/common/footer.php
+CODE: // Text
+LINE: 5
+CODE: <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+LINE: 42
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 51
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+CODE: $this->load->model('design/layout');
+LINE: 1199
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 29
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 171
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 94
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 252
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 380
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1012
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1026
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1036
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1608
+CODE: {{ footer }}
+LINE: 1739
+----------------------------------------------------------------
+MOD: Options combinations
+CODE: $data['footer'] = $this->load->controller('common/footer');
+LINE: 506
+LINE: 1234
+CODE: return !$this->error;
+LINE: 1293
+CODE: if (isset($this->error['warning'])) {
+LINE: 391
+LINE: 520
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 486
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1478
+CODE: class ModelCatalogProduct extends Model {
+LINE: 6
+CODE: if (isset($data['product_option'])) {
+LINE: 68
+LINE: 227
+CODE: $this->addProduct($data);
+LINE: 392
+CODE: public function deleteProduct($product_id) {
+LINE: 397
+CODE: public function getTotalProductSpecials() {
+LINE: 578
+CODE: 'special'          => $query->row['special'],
+LINE: 64
+CODE: 'manufacturer'     => $query->row['manufacturer'],
+LINE: 62
+CODE: $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+LINE: 227
+CODE: public function getProducts($data = array()) {
+LINE: 91
+CODE: $query = $this->db->query($sql);
+LINE: 257
+CODE: $product_data[$result['product_id']] = $this->getProduct($result['product_id']);
+LINE: 260
+CODE: public function getTotalProducts($data = array()) {
+LINE: 482
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 587
+CODE: $order_data['products'][] = array(
+LINE: 226
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$product['product_id'] . "', name = '" . $this->db->escape($product['name']) . "', model = '" . $this->db->escape($product['model']) . "', quantity = '" . (int)$product['quantity'] . "', price = '" . (float)$product['price'] . "', total = '" . (float)$product['total'] . "', tax = '" . (float)$product['tax'] . "', reward = '" . (int)$product['reward'] . "'");
+LINE: 10
+LINE: 76
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET quantity = (quantity - " . (int)$order_product['quantity'] . ") WHERE product_id = '" . (int)$order_product['product_id'] . "' AND subtract = '1'");
+LINE: 365
+CODE: $this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity + " . (int)$order_product['quantity'] . ") WHERE product_id = '" . (int)$order_product['product_id'] . "' AND subtract = '1'");
+LINE: 411
+CODE: $this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity + " . (int)$product['quantity'] . ") WHERE product_id = '" . (int)$product['product_id'] . "' AND subtract = '1'");
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->cart->add($order_product_info['product_id'], $order_product_info['quantity'], $option_data);
+LINE: 450
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 508
+CODE: $data['tax'] = false;
+LINE: 358
+CODE: {% if recurrings %}
+LINE: 250
+CODE: <h2>{{ price }}</h2>
+NOT FOUND - OPERATION SKIPPED!
+CODE: <h2>{{ special }}</h2>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {% if options %}
+LINE: 148
+CODE: {% for option in options %}
+LINE: 152
+CODE: {{ footer }}
+LINE: 824
+CODE: public function rewrite($link) {
+LINE: 82
+CODE: function index() {
+LINE: 7
+CODE: class Cart {
+LINE: 3
+CODE: public function __construct($registry) {
+LINE: 9
+CODE: $download_data = array();
+LINE: 208
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 66
+CODE: $product_data[] = array(
+LINE: 262
+CODE: $price = $product_discount_query->row['price'];
+LINE: 196
+CODE: $price = $product_special_query->row['price'];
+LINE: 205
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
+LINE: 321
+CODE: if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
+LINE: 324
+CODE: if (!$json) {
+LINE: 384
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 240
+CODE: $data['products'][] = array(
+LINE: 247
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 268
+CODE: $data['products'][] = array(
+LINE: 275
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 230
+CODE: $data['products'][] = array(
+LINE: 237
+CODE: $data['products'][] = array(
+LINE: 493
+CODE: $data['products'][] = array(
+LINE: 500
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 158
+CODE: $data['products'][] = array(
+LINE: 165
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 145
+LINE: 146
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 160
+LINE: 161
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/manufacturer_info.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 107
+LINE: 108
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 457
+LINE: 458
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 100
+CODE: $data['products'][] = array(
+LINE: 105
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 97
+CODE: $data['products'][] = array(
+LINE: 101
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 88
+CODE: $data['products'][] = array(
+LINE: 92
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 91
+CODE: $data['products'][] = array(
+LINE: 95
+
+FILE: catalog/view/theme/default/template/extension/module/account.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login_error.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_pay.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/banner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestproduct.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 60
+LINE: 62
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 42
+LINE: 43
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/blogger.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/carousel.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/category.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/category_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 68
+LINE: 69
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/categorynew.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/centerbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/countdown.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 70
+LINE: 71
+LINE: 170
+LINE: 171
+LINE: 270
+LINE: 271
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/cross_selling.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 51
+LINE: 52
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/custom_search_form.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/divido_calculator.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/ebay_listing.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 7
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/faq.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/faqgroup.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 65
+LINE: 66
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/filter.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/fruit_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 95
+LINE: 96
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/google_hangouts.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/html.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbannerc.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbannerl.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/information.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/inspirequickview.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/klarna_checkout_module.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 65
+LINE: 66
+LINE: 151
+LINE: 152
+LINE: 237
+LINE: 238
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/laybuy_layout.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/offerbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/onsaleproduct.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 52
+LINE: 53
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pilibaba_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/popupconfirm.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_braintree_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_login.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/recently_viewed.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 43
+LINE: 44
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_direct_cards.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_server_cards.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sellbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 50
+LINE: 51
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/store.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/topbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/vegetable_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 94
+LINE: 95
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['products'] = array();
+LINE: 346
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'special'    => $special,
+LINE: 398
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+LINE: 175
+CODE: $('input[name=\'filter_model\']').autocomplete({
+LINE: 355
+
+FILE: catalog/controller/account/login.php
+CODE: return !$this->error;
+LINE: 196
+CODE: public function autocomplete() {
+LINE: 1350
+CODE: $json[] = array(
+LINE: 1425
+CODE: $json[] = array(
+LINE: 1429
+CODE: $this->response->setOutput($this->load->view('sale/order_form
+LINE: 719
+CODE: 'product_id' => $product['product_id'],
+LINE: 527
+
+FILE: admin/view/template/sale/order_form.twig
+CODE: <td class="text-left">{{ order_product.name }}<br />
+LINE: 251
+CODE: html += '  <input type="hidden" name="product[' + i + '][product_id]" value="' + product['product_id'] + '" />';
+LINE: 2354
+CODE: <td class="text-center" colspan="6">{{ text_no_results }}</td>
+LINE: 298
+CODE: <td class="text-center" colspan="5">{{ text_no_results }}</td>
+LINE: 832
+CODE: option: item['option'],
+LINE: 1201
+CODE: if (item['option'] != '') {
+LINE: 1212
+CODE: html += '  <legend>{{ entry_option }}</legend>';
+LINE: 1218
+CODE: $('#option').html('');
+LINE: 1391
+CODE: $('#button-product-add').on('click', function() {
+LINE: 1400
+CODE: html += ' <td class="text-right" colspan="4">' + total['title'] + ':</td>';
+NOT FOUND - OPERATION SKIPPED!
+CODE: html += '  <td colspan="5" class="text-center">{{ text_no_results }}</td>';
+LINE: 2500
+CODE: {{ footer }}
+LINE: 2607
+
+FILE: catalog/controller/api/cart.php
+CODE: $this->cart->add($product['product_id'], $product['quantity'], $option);
+LINE: 32
+CODE: 'product_id' => $product['product_id'],
+LINE: 184
+
+FILE: catalog/controller/api/order.php
+CODE: 'product_id' => $product['product_id'],
+LINE: 207
+LINE: 578
+CODE: {{ sub_totals_table_column_count }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ totals_table_column_count }}
+LINE: 832
+LINE: 2500
+CODE: style="max-width: 200px;"
+LINE: 2392
+CODE: $json['error']['store'] = $this->language->get('error_store');
+LINE: 78
+CODE: $this->cart->add($this->request->post['product_id'], $quantity, $option);
+LINE: 82
+CODE: if (!isset($json['error']['option'])) {
+LINE: 67
+CODE: $this->cart->add($this->request->post['product_id'], $quantity, $option);
+            $json['success'] = $this->language->get('text_success');
+            unset($this->session->data['shipping_method']);
+            unset($this->session->data['shipping_methods']);
+            unset($this->session->data['payment_method']);
+            unset($this->session->data['payment_methods']);
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/catalog/option.php
+CODE: $this->load->model('catalog/product');
+LINE: 413
+CODE: $product_total = $this->model_catalog_product->getTotalProductsByOptionId($option_id);
+LINE: 421
+CODE: class ControllerCatalogOption extends Controller {
+LINE: 2
+CODE: array_multisort($sort_order, SORT_ASC, $option_value_data);
+LINE: 476
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 160
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 168
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 188
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 196
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 151
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 159
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 438
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 530
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 59
+LINE: 421
+CODE: $this->request->get['product_id'] = $url[1];
+LINE: 34
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "seo_url WHERE `query` = '" . $this->db->escape($key . '=' . (int)$value) . "' AND store_id = '" . (int)$this->config->get('config_store_id') . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 101
+CODE: $twig = new \Twig\Environment($loader, $config);
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------
+MOD: PAIBKK.com Thai Translation for front end
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 545
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 853
+CODE: $this->load->model('design/layout');
+LINE: 1300
+CODE: // Column
+LINE: 32
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 30
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 27
+CODE: // Column
+LINE: 29
+LINE: 155
+CODE: // Column
+LINE: 31
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 32
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 34
+LINE: 188
+CODE: if (isset($data['product_discount'])) {
+LINE: 128
+LINE: 312
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 461
+CODE: public function getProduct(
+LINE: 521
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1137
+CODE: {{ footer }}
+LINE: 1847
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 745
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 478
+CODE: // Tabs
+LINE: 49
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 47
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 47
+CODE: // Tabs
+LINE: 46
+LINE: 111
+CODE: // Tabs
+LINE: 49
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 88
+CODE: public function getPopularProducts($limit) {
+LINE: 355
+CODE: {% if thumb %}
+LINE: 32
+CODE: {% if images %}
+LINE: 41
+CODE: {{ column_right }}
+LINE: 537
+CODE: {% for image in images %}
+LINE: 63
+CODE: {{ tab_description }}</a></li>
+LINE: 338
+CODE: id="tab-description">{{ description }}</div>
+LINE: 400
+CODE: {{ footer }}
+LINE: 1013
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 158
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+CODE: $data['products'][] = array(
+LINE: 389
+CODE: $data['products'][] = array(
+LINE: 392
+CODE: $data['products'][] = array(
+LINE: 303
+CODE: $data['products'][] = array(
+LINE: 306
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th-th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+CODE: // Text
+LINE: 11
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 8
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+LINE: 56
+CODE: // Text
+LINE: 9
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 74
+CODE: <td class="text-left">{{ product.name }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['products'][] = array(
+LINE: 970
+CODE: $data['products'][] = array(
+LINE: 975
+CODE: $product_data[] = array(
+LINE: 1696
+LINE: 1926
+CODE: $product_data[] = array(
+LINE: 1700
+LINE: 1934
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1547
+LINE: 1804
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 116
+CODE: // Text
+LINE: 10
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+LINE: 151
+CODE: // Text
+LINE: 9
+CODE: // Text
+LINE: 7
+CODE: public function getOrderTotals($order_id) {
+LINE: 307
+----------------------------------------------------------------
+2022-06-05 7:39:50 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: $loader = new \Twig_Loader_Filesystem(DIR_TEMPLATE);
+LINE: 19
+----------------------------------------------------------------
+MOD: Cross Selling Bundle 3.0
+
+FILE: admin/model/catalog/product.php
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE product_id = '" . (int)$product_id . "'");
+LINE: 330
+
+FILE: catalog/controller/product/product.php
+CODE: public function index() {
+LINE: 25
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 479
+
+FILE: catalog/model/catalog/product.php
+CODE: public function getProduct($product_id) {
+LINE: 25
+----------------------------------------------------------------
+MOD: <font color="#19a3f2"><b>Custom Search</b></font>
+
+FILE: admin/controller/sale/order.php
+CODE: $data['products'][] = array(
+LINE: 960
+CODE: $product_data[] = array(
+LINE: 1671
+LINE: 1891
+
+FILE: admin/language/ar/sale/order.php
+CODE: // Text
+LINE: 13
+
+FILE: admin/language/bg-bg/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/cs-cz/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/de-de/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/en-gb/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/es-es/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/et-ee/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/fi-fi/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/fr-fr/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/he-il/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/hu-hu/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/it-it/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/ka-ge/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/pl-pl/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/sv-se/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/th-th/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/language/th/sale/order.php
+CODE: // Text
+LINE: 10
+LINE: 151
+
+FILE: admin/language/tr-tr/sale/order.php
+CODE: // Text
+LINE: 12
+
+FILE: admin/language/zh-cn/sale/order.php
+CODE: // Text
+LINE: 10
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a> {% for option in product.option %}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: admin/view/template/sale/order_invoice.twig
+CODE: <td>{{ product.name }}
+LINE: 88
+
+FILE: admin/view/template/sale/order_shipping.twig
+CODE: <td>{{ product.name }}
+LINE: 101
+
+FILE: catalog/controller/common/footer.php
+CODE: $data['scripts'] = $this->document->getScripts('footer');
+LINE: 75
+
+FILE: catalog/controller/checkout/confirm.php
+CODE: $order_data['products'][] = array(
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 385
+
+FILE: catalog/controller/checkout/success.php
+CODE: $this->cart->clear();
+LINE: 25
+
+FILE: catalog/controller/account/order.php
+CODE: $data['products'][] = array(
+LINE: 300
+
+FILE: catalog/model/checkout/order.php
+CODE: $order_product_id = $this->db->getLastId();
+LINE: 19
+LINE: 85
+
+FILE: catalog/view/theme/default/template/common/search.twig
+CODE: <div id="search" class="input-group">
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/common/footer.twig
+CODE: </body>
+LINE: 227
+
+FILE: catalog/language/ar/account/order.php
+CODE: // Text
+LINE: 14
+
+FILE: catalog/language/bg-bg/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/cs-cz/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/de-de/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/en-gb/account/order.php
+CODE: // Text
+LINE: 11
+
+FILE: catalog/language/es-es/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/et-ee/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/fi-fi/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/fr-fr/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/he-il/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/hu-hu/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/it-it/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/ka-ge/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/pl-pl/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/sv-se/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/th-th/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/language/th/account/order.php
+CODE: // Text
+LINE: 10
+LINE: 56
+
+FILE: catalog/language/tr-tr/account/order.php
+CODE: // Text
+LINE: 12
+
+FILE: catalog/language/zh-cn/account/order.php
+CODE: // Text
+LINE: 10
+
+FILE: catalog/view/theme/default/template/account/order_info.twig
+CODE: <td class="text-left">{{ product.name }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: system/library/cart/cart.php
+CODE: $product_data[] = array(
+LINE: 243
+----------------------------------------------------------------
+MOD: Faq Module
+
+FILE: admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'catalog/recurring')) {
+LINE: 66
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: $url = explode('=', $query->row['query']);
+LINE: 26
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id') {
+LINE: 48
+CODE: } elseif (isset($this->request->get['information_id'])) {
+LINE: 71
+CODE: if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+LINE: 89
+
+FILE: admin/controller/catalog/product.php
+CODE: $this->load->model('catalog/category');
+LINE: 895
+
+FILE: admin/language/ar/catalog/product.php
+CODE: // Entry
+LINE: 34
+
+FILE: admin/language/bg-bg/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/cs-cz/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/de-de/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/en-gb/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/es-es/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/et-ee/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/fi-fi/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/fr-fr/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/he-il/catalog/product.php
+CODE: // Entry
+LINE: 32
+
+FILE: admin/language/hu-hu/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/it-it/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/ka-ge/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/pl-pl/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/sv-se/catalog/product.php
+CODE: // Entry
+LINE: 31
+
+FILE: admin/language/th-th/catalog/product.php
+CODE: // Entry
+LINE: 29
+
+FILE: admin/language/th/catalog/product.php
+CODE: // Entry
+LINE: 31
+LINE: 147
+
+FILE: admin/language/tr-tr/catalog/product.php
+CODE: // Entry
+LINE: 33
+
+FILE: admin/language/zh-cn/catalog/product.php
+CODE: // Entry
+LINE: 31
+CODE: public function addProduct($data) {
+LINE: 12
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 13
+LINE: 147
+CODE: public function getTotalProducts($data = array()) {
+LINE: 653
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: <li><a href="#tab-design" data-toggle="tab">{{ tab_design }}</a></li>
+LINE: 41
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1047
+CODE: {{ footer }}
+LINE: 1681
+CODE: $this->load->model('catalog/review');
+LINE: 263
+LINE: 577
+LINE: 647
+CODE: $this->load->model('tool/image');
+LINE: 304
+
+FILE: catalog/language/ar/product/product.php
+CODE: // Error
+LINE: 56
+
+FILE: catalog/language/bg-bg/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/cs-cz/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/de-de/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/en-gb/product/product.php
+CODE: // Error
+LINE: 54
+
+FILE: catalog/language/es-es/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/et-ee/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/fi-fi/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/fr-fr/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/he-il/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/hu-hu/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/it-it/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/ka-ge/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/pl-pl/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/sv-se/product/product.php
+CODE: // Error
+LINE: 53
+
+FILE: catalog/language/th-th/product/product.php
+CODE: // Error
+LINE: 54
+
+FILE: catalog/language/th/product/product.php
+CODE: // Error
+LINE: 53
+LINE: 113
+
+FILE: catalog/language/tr-tr/product/product.php
+CODE: // Error
+LINE: 56
+
+FILE: catalog/language/zh-cn/product/product.php
+CODE: // Error
+LINE: 53
+CODE: public function getTotalProductSpecials() {
+LINE: 567
+CODE: 'product_id'       => $query->row['product_id'],
+LINE: 42
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <li><a href="#tab-review" data-toggle="tab">{{ tab_review }}</a></li>
+LINE: 311
+CODE: <div class="tab-pane active" id="tab-description">{{ description }}</div>
+LINE: 362
+
+FILE: catalog/controller/common/header.php
+CODE: $data['direction'] = $this->language->get('direction');
+LINE: 69
+
+FILE: catalog/language/ar/common/header.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/bg-bg/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/cs-cz/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/de-de/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/en-gb/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/es-es/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/et-ee/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fi-fi/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fr-fr/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/he-il/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/hu-hu/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/it-it/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/ka-ge/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/pl-pl/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/sv-se/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th-th/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th/common/header.php
+CODE: // Text
+LINE: 5
+LINE: 28
+
+FILE: catalog/language/tr-tr/common/header.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/zh-cn/common/header.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <span class="hidden-xs hidden-sm hidden-md">{{ text_checkout }}</span></a></li>
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['manufacturer'] = $this->url->link('product/manufacturer');
+LINE: 32
+
+FILE: catalog/language/ar/common/footer.php
+CODE: // Text
+LINE: 8
+
+FILE: catalog/language/bg-bg/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/cs-cz/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/de-de/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/en-gb/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/es-es/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/et-ee/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fi-fi/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/fr-fr/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/he-il/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/hu-hu/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/it-it/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/ka-ge/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/pl-pl/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/sv-se/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th-th/common/footer.php
+CODE: // Text
+LINE: 5
+
+FILE: catalog/language/th/common/footer.php
+CODE: // Text
+LINE: 5
+LINE: 29
+
+FILE: catalog/language/tr-tr/common/footer.php
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/zh-cn/common/footer.php
+CODE: // Text
+LINE: 5
+CODE: <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+LINE: 42
+----------------------------------------------------------------
+MOD: Inspire Newsletter
+----------------------------------------------------------------
+MOD: Inspire QuickView
+CODE: $data['title'] = $this->document->getTitle();
+LINE: 51
+----------------------------------------------------------------
+MOD: Instant Product Editor (IPE)
+----------------------------------------------------------------
+MOD: Multi Image Uploader OC3x
+CODE: $this->load->model('design/layout');
+LINE: 1199
+CODE: private $error = array();
+LINE: 15
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 29
+CODE: foreach ($data['product_description'] as $language_id => $value) {
+LINE: 171
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 94
+CODE: foreach ($data['product_image'] as $product_image) {
+LINE: 252
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product_to_download WHERE product_id = '" . (int)$product_id . "'");
+LINE: 380
+CODE: <td class="text-right">{{ entry_sort_order }}
+LINE: 1012
+CODE: <td class="text-right"><input type="text" name="product_image[{{ image_row }}][sort_order]"
+LINE: 1026
+CODE: <td class="text-left"><button type="button" onclick="addImage();" data-toggle="tooltip" title="{{ button_image_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button>
+LINE: 1036
+CODE: html += '  <td class="text-right"><input type="text" name="product_image[' + image_row + '][sort_order]"
+LINE: 1608
+CODE: {{ footer }}
+LINE: 1739
+----------------------------------------------------------------
+MOD: Options combinations
+CODE: $data['footer'] = $this->load->controller('common/footer');
+LINE: 506
+LINE: 1234
+CODE: return !$this->error;
+LINE: 1293
+CODE: if (isset($this->error['warning'])) {
+LINE: 391
+LINE: 520
+CODE: <div class="tab-pane" id="tab-option">
+LINE: 486
+CODE: $('#tab-option .tab-content').append(html);
+LINE: 1478
+CODE: class ModelCatalogProduct extends Model {
+LINE: 6
+CODE: if (isset($data['product_option'])) {
+LINE: 68
+LINE: 227
+CODE: $this->addProduct($data);
+LINE: 392
+CODE: public function deleteProduct($product_id) {
+LINE: 397
+CODE: public function getTotalProductSpecials() {
+LINE: 578
+CODE: 'special'          => $query->row['special'],
+LINE: 64
+CODE: 'manufacturer'     => $query->row['manufacturer'],
+LINE: 62
+CODE: $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
+LINE: 227
+CODE: public function getProducts($data = array()) {
+LINE: 91
+CODE: $query = $this->db->query($sql);
+LINE: 257
+CODE: $product_data[$result['product_id']] = $this->getProduct($result['product_id']);
+LINE: 260
+CODE: public function getTotalProducts($data = array()) {
+LINE: 482
+CODE: $sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
+LINE: 587
+CODE: $order_data['products'][] = array(
+LINE: 226
+CODE: $this->db->query("INSERT INTO " . DB_PREFIX . "order_product SET order_id = '" . (int)$order_id . "', product_id = '" . (int)$product['product_id'] . "', name = '" . $this->db->escape($product['name']) . "', model = '" . $this->db->escape($product['model']) . "', quantity = '" . (int)$product['quantity'] . "', price = '" . (float)$product['price'] . "', total = '" . (float)$product['total'] . "', tax = '" . (float)$product['tax'] . "', reward = '" . (int)$product['reward'] . "'");
+LINE: 10
+LINE: 76
+CODE: $this->db->query("UPDATE " . DB_PREFIX . "product SET quantity = (quantity - " . (int)$order_product['quantity'] . ") WHERE product_id = '" . (int)$order_product['product_id'] . "' AND subtract = '1'");
+LINE: 365
+CODE: $this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity + " . (int)$order_product['quantity'] . ") WHERE product_id = '" . (int)$order_product['product_id'] . "' AND subtract = '1'");
+LINE: 411
+CODE: $this->db->query("UPDATE `" . DB_PREFIX . "product` SET quantity = (quantity + " . (int)$product['quantity'] . ") WHERE product_id = '" . (int)$product['product_id'] . "' AND subtract = '1'");
+NOT FOUND - OPERATION SKIPPED!
+CODE: $this->cart->add($order_product_info['product_id'], $order_product_info['quantity'], $option_data);
+LINE: 450
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 508
+CODE: $data['tax'] = false;
+LINE: 358
+CODE: {% if recurrings %}
+LINE: 250
+CODE: <h2>{{ price }}</h2>
+NOT FOUND - OPERATION SKIPPED!
+CODE: <h2>{{ special }}</h2>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {% if options %}
+LINE: 148
+CODE: {% for option in options %}
+LINE: 152
+CODE: {{ footer }}
+LINE: 824
+CODE: public function rewrite($link) {
+LINE: 82
+CODE: function index() {
+LINE: 7
+CODE: class Cart {
+LINE: 3
+CODE: public function __construct($registry) {
+LINE: 9
+CODE: $download_data = array();
+LINE: 208
+CODE: foreach (json_decode($cart['option']) as $product_option_id => $value) {
+LINE: 66
+CODE: $product_data[] = array(
+LINE: 262
+CODE: $price = $product_discount_query->row['price'];
+LINE: 196
+CODE: $price = $product_special_query->row['price'];
+LINE: 205
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $product_options = $this->model_catalog_product->getProductOptions($this->request->post['product_id']);
+LINE: 321
+CODE: if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
+LINE: 324
+CODE: if (!$json) {
+LINE: 384
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 240
+CODE: $data['products'][] = array(
+LINE: 247
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 268
+CODE: $data['products'][] = array(
+LINE: 275
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 230
+CODE: $data['products'][] = array(
+LINE: 237
+CODE: $data['products'][] = array(
+LINE: 493
+CODE: $data['products'][] = array(
+LINE: 500
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 158
+CODE: $data['products'][] = array(
+LINE: 165
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 145
+LINE: 146
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 160
+LINE: 161
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/product/manufacturer_info.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 107
+LINE: 108
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 457
+LINE: 458
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 100
+CODE: $data['products'][] = array(
+LINE: 105
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 97
+CODE: $data['products'][] = array(
+LINE: 101
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 88
+CODE: $data['products'][] = array(
+LINE: 92
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 91
+CODE: $data['products'][] = array(
+LINE: 95
+
+FILE: catalog/view/theme/default/template/extension/module/account.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_login_error.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/amazon_pay.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/banner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestproduct.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 60
+LINE: 62
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 42
+LINE: 43
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/blogger.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/carousel.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/category.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/category_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 68
+LINE: 69
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/categorynew.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/centerbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/countdown.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 70
+LINE: 71
+LINE: 170
+LINE: 171
+LINE: 270
+LINE: 271
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/cross_selling.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 51
+LINE: 52
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/custom_search_form.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/divido_calculator.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/ebay_listing.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 7
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/faq.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/faqgroup.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 65
+LINE: 66
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/filter.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/fruit_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 95
+LINE: 96
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/google_hangouts.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/html.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbannerc.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/imgbannerl.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/information.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/inspirequickview.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/klarna_checkout_module.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 65
+LINE: 66
+LINE: 151
+LINE: 152
+LINE: 237
+LINE: 238
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/laybuy_layout.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/offerbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/onsaleproduct.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 52
+LINE: 53
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pilibaba_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/popupconfirm.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_braintree_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_button.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/pp_login.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/recently_viewed.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 43
+LINE: 44
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_direct_cards.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sagepay_server_cards.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/sellbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/slideshow.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 50
+LINE: 51
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/store.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/topbanner.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: catalog/view/theme/default/template/extension/module/vegetable_tab.twig
+CODE: <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ product.price }}
+LINE: 94
+LINE: 95
+CODE: <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span>
+NOT FOUND - OPERATION SKIPPED!
+CODE: $data['products'] = array();
+LINE: 346
+CODE: $data['products'][] = array(
+LINE: 391
+CODE: 'special'    => $special,
+LINE: 398
+
+FILE: admin/view/template/catalog/product_list.twig
+CODE: <td class="text-right"><a href="{{ product.edit }}" data-toggle="tooltip" title="{{ button_edit }}" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+LINE: 175
+CODE: $('input[name=\'filter_model\']').autocomplete({
+LINE: 355
+
+FILE: catalog/controller/account/login.php
+CODE: return !$this->error;
+LINE: 196
+CODE: public function autocomplete() {
+LINE: 1350
+CODE: $json[] = array(
+LINE: 1425
+CODE: $json[] = array(
+LINE: 1429
+CODE: $this->response->setOutput($this->load->view('sale/order_form
+LINE: 719
+CODE: 'product_id' => $product['product_id'],
+LINE: 527
+
+FILE: admin/view/template/sale/order_form.twig
+CODE: <td class="text-left">{{ order_product.name }}<br />
+LINE: 251
+CODE: html += '  <input type="hidden" name="product[' + i + '][product_id]" value="' + product['product_id'] + '" />';
+LINE: 2354
+CODE: <td class="text-center" colspan="6">{{ text_no_results }}</td>
+LINE: 298
+CODE: <td class="text-center" colspan="5">{{ text_no_results }}</td>
+LINE: 832
+CODE: option: item['option'],
+LINE: 1201
+CODE: if (item['option'] != '') {
+LINE: 1212
+CODE: html += '  <legend>{{ entry_option }}</legend>';
+LINE: 1218
+CODE: $('#option').html('');
+LINE: 1391
+CODE: $('#button-product-add').on('click', function() {
+LINE: 1400
+CODE: html += ' <td class="text-right" colspan="4">' + total['title'] + ':</td>';
+NOT FOUND - OPERATION SKIPPED!
+CODE: html += '  <td colspan="5" class="text-center">{{ text_no_results }}</td>';
+LINE: 2500
+CODE: {{ footer }}
+LINE: 2607
+
+FILE: catalog/controller/api/cart.php
+CODE: $this->cart->add($product['product_id'], $product['quantity'], $option);
+LINE: 32
+CODE: 'product_id' => $product['product_id'],
+LINE: 184
+
+FILE: catalog/controller/api/order.php
+CODE: 'product_id' => $product['product_id'],
+LINE: 207
+LINE: 578
+CODE: {{ sub_totals_table_column_count }}
+NOT FOUND - OPERATION SKIPPED!
+CODE: {{ totals_table_column_count }}
+LINE: 832
+LINE: 2500
+CODE: style="max-width: 200px;"
+LINE: 2392
+CODE: $json['error']['store'] = $this->language->get('error_store');
+LINE: 78
+CODE: $this->cart->add($this->request->post['product_id'], $quantity, $option);
+LINE: 82
+CODE: if (!isset($json['error']['option'])) {
+LINE: 67
+CODE: $this->cart->add($this->request->post['product_id'], $quantity, $option);
+            $json['success'] = $this->language->get('text_success');
+            unset($this->session->data['shipping_method']);
+            unset($this->session->data['shipping_methods']);
+            unset($this->session->data['payment_method']);
+            unset($this->session->data['payment_methods']);
+NOT FOUND - OPERATION SKIPPED!
+
+FILE: admin/controller/catalog/option.php
+CODE: $this->load->model('catalog/product');
+LINE: 413
+CODE: $product_total = $this->model_catalog_product->getTotalProductsByOptionId($option_id);
+LINE: 421
+CODE: class ControllerCatalogOption extends Controller {
+LINE: 2
+CODE: array_multisort($sort_order, SORT_ASC, $option_value_data);
+LINE: 476
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 160
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 168
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 188
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 196
+CODE: $product_total = $this->model_catalog_product->getTotalProducts($filter_data);
+LINE: 151
+CODE: $results = $this->model_catalog_product->getProducts($filter_data);
+LINE: 159
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 438
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 530
+CODE: $this->response->setOutput($this->load->view('product/
+LINE: 59
+LINE: 421
+CODE: $this->request->get['product_id'] = $url[1];
+LINE: 34
+CODE: $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "seo_url WHERE `query` = '" . $this->db->escape($key . '=' . (int)$value) . "' AND store_id = '" . (int)$this->config->get('config_store_id') . "' AND language_id = '" . (int)$this->config->get('config_language_id') . "'");
+LINE: 101
+CODE: $twig = new \Twig\Environment($loader, $config);
+NOT FOUND - OPERATION SKIPPED!
+----------------------------------------------------------------
+MOD: PAIBKK.com Thai Translation for front end
+----------------------------------------------------------------
+MOD: Product Videos
+CODE: protected function getForm() {
+LINE: 545
+CODE: if (isset($this->request->post['weight'])) {
+LINE: 853
+CODE: $this->load->model('design/layout');
+LINE: 1300
+CODE: // Column
+LINE: 32
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 30
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 29
+CODE: // Column
+LINE: 27
+CODE: // Column
+LINE: 29
+LINE: 155
+CODE: // Column
+LINE: 31
+CODE: // Column
+LINE: 28
+CODE: public function addProduct($data) {
+LINE: 32
+CODE: status = '" . (int)$data['status'] . "',
+LINE: 34
+LINE: 188
+CODE: if (isset($data['product_discount'])) {
+LINE: 128
+LINE: 312
+CODE: $this->db->query("DELETE FROM " . DB_PREFIX . "product WHERE
+LINE: 461
+CODE: public function getProduct(
+LINE: 521
+CODE: {{ tab_image }}</a></li>
+LINE: 40
+CODE: <div class="tab-pane" id="tab-reward">
+LINE: 1137
+CODE: {{ footer }}
+LINE: 1847
+CODE: $product_info = $this->model_catalog_product->getProduct($product_id);
+LINE: 189
+LINE: 745
+CODE: $data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
+LINE: 478
+CODE: // Tabs
+LINE: 49
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 47
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 46
+CODE: // Tabs
+LINE: 47
+CODE: // Tabs
+LINE: 46
+LINE: 111
+CODE: // Tabs
+LINE: 49
+CODE: // Tabs
+LINE: 46
+CODE: 'date_modified'    => $query->row['date_modified'],
+LINE: 88
+CODE: public function getPopularProducts($limit) {
+LINE: 355
+CODE: {% if thumb %}
+LINE: 32
+CODE: {% if images %}
+LINE: 41
+CODE: {{ column_right }}
+LINE: 537
+CODE: {% for image in images %}
+LINE: 63
+CODE: {{ tab_description }}</a></li>
+LINE: 338
+CODE: id="tab-description">{{ description }}</div>
+LINE: 400
+CODE: {{ footer }}
+LINE: 1013
+----------------------------------------------------------------
+MOD: Redirects 301, 302, 303 - SEO
+CODE: $data['cart'] = $this->load->controller('common/cart');
+LINE: 158
+----------------------------------------------------------------
+MOD: TMD Missing Product Image Module
+CODE: $data['products'][] = array(
+LINE: 389
+CODE: $data['products'][] = array(
+LINE: 392
+CODE: $data['products'][] = array(
+LINE: 303
+CODE: $data['products'][] = array(
+LINE: 306
+
+FILE: catalog/language/ar/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/bg-bg/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/cs-cz/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/de-de/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/en-gb/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/es-es/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/et-ee/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+LINE: 6
+
+FILE: catalog/language/fi-fi/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/fr-fr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/he-il/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/hu-hu/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/it-it/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/ka-ge/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/pl-pl/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/sv-se/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th-th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/th/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/tr-tr/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/language/zh-cn/checkout/checkout.php
+CODE: $_['heading_title']                  = 'Checkout';
+NOT FOUND - OPERATIONS ABORTED!
+CODE: // Text
+LINE: 11
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 8
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+LINE: 56
+CODE: // Text
+LINE: 9
+CODE: // Text
+LINE: 7
+
+FILE: catalog/language/bg-bg/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_add.php
+CODE: // Text
+LINE: 4
+LINE: 37
+
+FILE: catalog/language/tr-tr/mail/order_add.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_add.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/bg-bg/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/cs-cz/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/de-de/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/en-gb/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/es-es/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/et-ee/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fi-fi/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/fr-fr/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/he-il/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/hu-hu/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/it-it/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/ka-ge/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/pl-pl/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/sv-se/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th-th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/language/th/mail/order_edit.php
+CODE: // Text
+LINE: 4
+LINE: 19
+
+FILE: catalog/language/tr-tr/mail/order_edit.php
+CODE: // Text
+LINE: 6
+
+FILE: catalog/language/zh-cn/mail/order_edit.php
+CODE: // Text
+LINE: 4
+
+FILE: catalog/controller/mail/order.php
+CODE: // Products
+LINE: 199
+CODE: $data['products'][] = array(
+LINE: 229
+LINE: 426
+CODE: $order_products = $this->model_checkout_order->getOrderProducts($order_id);
+LINE: 406
+CODE: $data['text_link'] = $language->get('text_link');
+LINE: 70
+LINE: 301
+
+FILE: catalog/view/theme/default/template/checkout/confirm.twig
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 8
+CODE: <td class="text-left">{{ voucher.description }}</td>
+LINE: 34
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 22
+CODE: <td colspan="4" class="text-right"><strong>{{ total.title }}:</strong></td>
+LINE: 50
+CODE: <td class="text-left">{{ column_name }}</td>
+LINE: 74
+CODE: <td class="text-left">{{ product.name }}
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/mail/order_add.twig
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;">{{ text_product }}</td>
+LINE: 73
+CODE: <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">{{ product.name }}
+LINE: 87
+CODE: colspan="4"
+LINE: 111
+CODE: <td class="text-left">{{ column_product }}</td>
+LINE: 149
+CODE: <td class="text-left"><a href="{{ product.href }}">{{ product.name }}</a>
+LINE: 163
+CODE: colspan="4"
+NOT FOUND - OPERATIONS ABORTED!
+CODE: $data['products'][] = array(
+LINE: 970
+CODE: $data['products'][] = array(
+LINE: 975
+CODE: $product_data[] = array(
+LINE: 1696
+LINE: 1926
+CODE: $product_data[] = array(
+LINE: 1700
+LINE: 1934
+CODE: $data['orders'] = array();
+LINE: 209
+LINE: 1547
+LINE: 1804
+CODE: <td><b>{{ column_product }}</b></td>
+LINE: 71
+CODE: <td>{{ product.name }}
+LINE: 84
+CODE: colspan="4"
+LINE: 116
+CODE: // Text
+LINE: 10
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+CODE: // Text
+LINE: 7
+LINE: 151
+CODE: // Text
+LINE: 9
+CODE: // Text
+LINE: 7
+CODE: public function getOrderTotals($order_id) {
+LINE: 307
+----------------------------------------------------------------

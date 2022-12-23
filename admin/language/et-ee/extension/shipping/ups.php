@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'Laiendused';
+$_['text_success']                 = 'Edu: olete muutnud UPS shipping!';
+$_['text_edit']                    = 'Muuda UPSi saatmist';
+$_['text_regular_daily_pickup']    = 'Regulaarne päevapikker';
+$_['text_daily_pickup']            = 'Daily Pickup';
+$_['text_customer_counter']        = 'Kliendiraamat';
+$_['text_one_time_pickup']         = 'Üks kord Pikk';
+$_['text_on_call_air_pickup']      = 'Helista Air Pickup\'is';
+$_['text_letter_center']           = 'Kirjakeskus';
+$_['text_air_service_center']      = 'Air Service Center';
+$_['text_suggested_retail_rates']  = 'Soovitatavad jaehind (UPS Store)';
+$_['text_package']                 = 'Pakett';
+$_['text_ups_letter']              = 'UPSi kiri';
+$_['text_ups_tube']                = 'UPS Tube';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'UPS 25kg kasti';
+$_['text_ups_10kg_box']            = 'UPS 10kg kasti';
+$_['text_us']                      = 'USA päritolu';
+$_['text_ca']                      = 'Kanada päritolu';
+$_['text_eu']                      = 'Euroopa Liidu päritolu';
+$_['text_pr']                      = 'Puerto Rico päritolu';
+$_['text_mx']                      = 'Mehhiko päritolu';
+$_['text_other']                   = 'Kõik muud päritolud';
+$_['text_test']                    = 'Test';
+$_['text_production']              = 'Tootmine';
+$_['text_residential']             = 'Elamu';
+$_['text_commercial']              = 'Kaubanduslik';
+$_['text_next_day_air']            = 'UPS Next Day Air';
+$_['text_2nd_day_air']             = 'UPSi teise päeva õhk';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'UPS Three-Day Select';
+$_['text_next_day_air_saver']      = 'UPS Next Day Air Saver';
+$_['text_next_day_air_early_am']   = 'UPS Järgmine päev Air Early A.M.';
+$_['text_2nd_day_air_am']          = 'UPS Second Day Air A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide kiirendatud';
+$_['text_standard']                = 'UPS Standard';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPSi kiirendatud';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'UPS Täna Standard';
+$_['text_today_dedicated_courier'] = 'UPS täna pühendatud kuller';
+$_['text_today_intercity']         = 'UPS Täna Intercity';
+$_['text_today_express']           = 'UPS Täna Express';
+$_['text_today_express_saver']     = 'UPS Täna Express Saver';
+
+// Entry
+$_['entry_key']                    = 'Juurdepääsuklahv';
+$_['entry_username']               = 'Kasutajanimi';
+$_['entry_password']               = 'Parool';
+$_['entry_pickup']                 = 'Pikendusmeetod';
+$_['entry_packaging']              = 'Pakendi tüüp';
+$_['entry_classification']         = 'Kliendi klassifikatsioonikood';
+$_['entry_origin']                 = 'Saatmise päritolu kood';
+$_['entry_city']                   = 'Päritolu linn';
+$_['entry_state']                  = 'Päritoluriik /provints';
+$_['entry_country']                = 'Päritoluriik';
+$_['entry_postcode']               = 'Päritolu Postiindeks';
+$_['entry_test']                   = 'Testirežiim';
+$_['entry_quote_type']             = 'Tsiteerimise tüüp';
+$_['entry_service']                = 'Teenused';
+$_['entry_insurance']              = 'Kindlustuse lubamine';
+$_['entry_display_weight']         = 'Kuva kohaletoimetamise kaal';
+$_['entry_weight_class']           = 'Kaaluklass';
+$_['entry_length_class']           = 'Pikkus klass';
+$_['entry_dimension']              = 'Mõõtmed (L x W x H)';
+$_['entry_length']                 = 'Pikkus';
+$_['entry_height']                 = 'Kõrgus';
+$_['entry_width']                  = 'Laius';
+$_['entry_tax_class']              = 'Maksuklass';
+$_['entry_geo_zone']               = 'Geo tsoon';
+$_['entry_status']                 = 'Olek';
+$_['entry_sort_order']             = 'Sorteeri järjestus';
+$_['entry_debug']                  = 'Silumisrežiim';
+
+// Help
+$_['help_key']                     = 'Sisestage UPS-i poolt määratud XML-koodide juurdepääsuklahv.';
+$_['help_username']                = 'Sisestage UPSi teenuse konto kasutajanimi.';
+$_['help_password']                = 'Sisestage UPSi teenuse konto parool.';
+$_['help_pickup']                  = 'Kuidas pakute UPSile pakette (kasutatakse ainult siis, kui päritolu on USA) ?';
+$_['help_packaging']               = 'Millist pakendit kasutate?';
+$_['help_classification']          = '01 - Kui arveldate UPSi kontole ja teil on igapäevane UPS-i pikap, 03 - kui teil UPSi kontot ei ole või olete arveldanud UPSi kontole, kuid ei ole igapäevast pikapaika, siis 04 - kui sa saadad jaemüügipunkt (kasutatakse ainult siis, kui see on pärit USAst)';
+$_['help_origin']                  = 'Millist lähtepunkti tuleks kasutada (see seade mõjutab ainult seda, mida UPSi tootenimed kasutajale näidatakse)';
+$_['help_city']                    = 'Sisestage päritolukoha nimi.';
+$_['help_state']                   = 'Sisestage oma päritoluriigi /provintsi kahetäheline kood.';
+$_['help_country']                 = 'Sisestage oma päritoluriigi kahetäheline kood.';
+$_['help_postcode']                = 'Sisestage oma päritolu zip /postiindeks.';
+$_['help_test']                    = 'Kasutage seda moodulit testis (YES) või tootmisrežiimis (NO) ?';
+$_['help_quote_type']              = 'Kodumajapidamiste või kommertsteadete hinnakiri.';
+$_['help_service']                 = 'Valige pakutavad UPS teenused.';
+$_['help_insurance']               = 'Võimaldab kindlustust toote kogusumma väärtusena';
+$_['help_display_weight']          = 'Kas soovite kuvada saatmiskaalu? (nt. Kohaletoimetamise kaal: 2 7674 kg)';
+$_['help_weight_class']            = 'Määrake kilogrammides või naela.';
+$_['help_length_class']            = 'Määrake sentimeetrites või tollides.';
+$_['help_dimension']               = 'Eeldatakse, et see on teie keskmine pakkekasti suurus. Sellel ajal ei toetata üksikuid üksuse mõõtmeid, seega peate sisestama keskmised mõõtmed nagu 5x5x5.';
+$_['help_debug']                   = 'Salvestab andmete saatmise /tagasivõtmise süsteemi logi';
+
+// Error
+$_['error_permission']             = 'Hoiatus: Teil pole luba muuta UPS (US) shipping!';
+$_['error_key']                    = 'Juurdepääsuvõimalus Required!';
+$_['error_username']               = 'Kasutajanimi Required!';
+$_['error_password']               = 'Parool on kohustuslik!';
+$_['error_city']                   = 'Päritolu City!';
+$_['error_state']                  = 'Päritolu riik /provints kohustuslik!';
+$_['error_country']                = 'Päritolu Riik Required!';
+$_['error_dimension']              = 'Keskmised mõõdud on nõutavad!';

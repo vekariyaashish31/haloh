@@ -1,0 +1,55 @@
+<style>
+    .opt-bullets {
+        padding: 10px 20px 0px 20px;
+    }
+
+    li.opt-as-bullet {
+        margin: 0 5px 5px 0 !important;
+    }
+
+    div.thumbnail.opt-as-bullet {
+        margin-bottom: 5px !important;
+        text-align: center;
+    }
+
+    {% if bullet_radius %}
+    .image_picker_image, .thumbnail.opt-as-bullet {
+        border-radius: {{ bullet_radius }}px;
+    }
+    {% endif %}
+
+    .image_picker_image, .thumbnail.opt-as-bullet {
+        border-radius: {{ bullet_radius }}px;
+    }
+    ul.thumbnails.image_picker_selector li .thumbnail.selected {
+        border: 1px solid #{{ bullet_selected_color }};
+    }
+</style>
+
+<script>
+    if(typeof option_combinations_transform_bullets == 'function')
+        option_combinations_transform_bullets();
+</script>
+
+{% set random_number = random(10000000000) %}
+
+<div class="opt-bullets">
+    <select name="bullet-option-combinations[{{ option.option_id }}]" id="input-option-bullet-{{ random_number }}" class="form-control" data-type="{{ block_type }}">
+        <option value="">{{ text_select }}</option>
+        {% set bullet_image_origin =  product is defined and product.bullet_image_origin is defined and product.bullet_image_origin is not empty ? product.bullet_image_origin : bullet_image_origin %}
+
+        {% for option_value in option.product_option_value %}
+            {% set bullet_image = '' %}
+            {% if bullet_image_origin == 1 %}
+                {% set bullet_image = option_value.bullet_image %}
+            {% elseif bullet_image_origin == 2 %}
+                {% set bullet_image = option_value.bullet_opt_image %}
+            {% endif %}
+
+            {% set bullet_image_mask = option_value.bullet_image_mask %}
+
+            <option data-card-image="{{ option_value.bullet_card_image }}" data-img-alt="{{ option.name }}: {{ option_value.name }}" data-img-class="opt-as-bullet type_{{ bullet_image_origin }} {{ option.option_id }}-{{ option_value.option_value_id }}" data-img-src='{{ bullet_image }}' data-img-src-mask='{{ bullet_image_mask }}' value="{{ option_value.option_value_id }}" >{{ option_value.name }}
+            </option>
+        {% endfor %}
+    </select>
+</div>

@@ -1,0 +1,380 @@
+{% set element_folder = 'extension/module/options_combinations/elements_light/' %}
+<div id="combined_product_option_{{ option_combination_row }}" class="row combination-row" data-row-id="{{ option_combination_row }}">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="display: flex; flex-direction: row; align-items: center">
+
+            <!-- Combination id hidden input -->
+            <input type="hidden" class="option_combination_id_hidden" name="options_combinations[{{ option_combination_row }}][id]"
+                   value="{{ combined_product_option.id }}"/>
+
+            <h4 class="panel-title" style="margin-right: auto">
+                <a data-toggle="collapse" href="#combined_option_{{ option_combination_row }}">
+                    <b>Option Combination <span class="combination-number">{{ option_combination_row  + 1 }}</span>.</b>
+                    <span class="options-and-values-selected">
+                        {% for combined_option_id,combined_option_value_id in combined_product_option['options'] %}
+
+                            {% if options_id_name[combined_option_id]['type'] != 'text' and
+                                options_id_name[combined_option_id]['type'] != 'textarea' and
+                                options_id_name[combined_option_id]['type'] != 'file' and
+                                options_id_name[combined_option_id]['type'] != 'date' and
+                                options_id_name[combined_option_id]['type'] != 'time' and
+                                options_id_name[combined_option_id]['type'] != 'datetime'
+                            %}
+                                {% if loop.index0 != 0 %}
+                                    {{ ' - ' }}
+                                {% endif %}
+
+                                {{ options_id_name[combined_option_id]['name'] }}:
+
+                                {% if combined_option_value_id is not iterable %}
+                                    {% set combined_option_value_id = [combined_option_value_id] %}
+                                {% endif %}
+
+                                {% set first_option_value = true %}
+
+                                {% for option_value_id, option in options_and_values[combined_option_id]['values'] %}
+                                    {% if(option_value_id in combined_option_value_id) %}
+                                        {% if first_option_value != true %}
+                                            {{ ', ' }}
+                                        {% else %}
+                                            {% set first_option_value = false %}
+                                        {% endif %}
+                                        {{ option['name'] }}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </span>
+                </a>
+            </h4>
+
+            <div class="combination-buttons">
+                <button type="button" onclick="copyRow(this)" data-toggle="tooltip" rel="tooltip" title=""
+                        class="btn btn-success" data-original-title="Copy">
+                    <i class="fa fa-copy"></i>
+                </button>
+                <button type="button" onclick="removeRow(this)" data-toggle="tooltip" rel="tooltip" title=""
+                        class="btn btn-danger" data-original-title="Remove">
+                    <i class="fa fa-minus-circle"></i>
+                </button>
+                <a data-toggle="collapse" href="#combined_option_{{ option_combination_row }}"
+                   class="btn btn-primary">
+                    <i class="fa fa-chevron-down"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="panel-collapse collapse {{ open_row ? 'in' : '' }}" id="combined_option_{{ option_combination_row }}">
+            <div class="panel-body">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab-comb-data-{{ option_combination_row }}" data-toggle="tab"
+                                          aria-expanded="true">{{ text_data }}</a></li>
+
+                    {% if config_opt_comb_discount %}
+                        <li><a href="#tab-comb-discounts-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ text_discounts }}</a></li>
+                    {% endif %}
+
+                    {% if config_opt_comb_special %}
+                        <li><a href="#tab-comb-specials-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ text_specials }}</a></li>
+                    {% endif %}
+
+                    {% if config_opt_comb_image %}
+                        <li><a href="#tab-comb-images-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ text_images }}</a></li>
+                    {% endif %}
+
+                    {% if config_opt_comb_points %}
+                        <li><a href="#tab-comb-points-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ text_points }}</a></li>
+                    {% endif %}
+
+                    {% if config_opt_comb_reward_points %}
+                        <li><a href="#tab-comb-reward-points-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ text_reward_points }}</a></li>
+                    {% endif %}
+
+                    {% if config_opt_comb_seo_url %}
+                        <li><a href="#tab-comb-seo-{{ option_combination_row }}" data-toggle="tab"
+                               aria-expanded="true">{{ entry_seo }}</a></li>
+                    {% endif %}
+
+                </ul>
+                <div class="tab-content">
+
+                    <!-- Main Data -->
+                    <div class="tab-pane active" id="tab-comb-data-{{ option_combination_row }}">
+                        <div class="table-responsive">
+                            <table id="option-combination-table"
+                                   class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>{{ entry_options }}</th>
+
+                                    {% if config_opt_comb_model %}
+                                        <th>Model</th>
+                                    {% endif %}
+
+                                    {% if config_opt_comb_sku %}
+                                        <th>{{ entry_sku }}</th>
+                                    {% endif %}
+
+                                    {% if config_opt_comb_upc %}
+                                        <th>{{ entry_upc }}</th>
+                                    {% endif %}
+
+                                    <th>{{ entry_quantity }}</th>
+
+                                    <th>{{ entry_subtract_stock }}</th>
+
+                                    {% if config_opt_comb_price %}
+                                        <th>{{ entry_price }}</th>
+                                    {% endif %}
+
+                                    {% if config_opt_comb_weight %}
+                                        <th>{{ entry_weight }}</th>
+                                    {% endif %}
+
+                                    {% if config_opt_comb_dimensions %}
+                                        <th>{{ entry_dimensions }}</th>
+                                    {% endif %}
+
+                                    {% if config_opt_comb_extra %}
+                                        <th>{{ extra }}</th>
+                                    {% endif %}
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <!-- Options -->
+                                <td>
+                                    {% spaceless %}
+                                        <table class="table table-striped table-bordered table-hover combination-options"
+                                               data-option_id="{{ combined_option_id }}">
+
+                                            {% for combined_option_id,combined_option_value_id in combined_product_option['options'] %}
+                                                {% if combined_option_value_id is not iterable %}
+                                                    {% set multiple = false %}
+                                                    {% set combined_option_value_id = [combined_option_value_id] %}
+                                                {% else %}
+                                                    {% set multiple = true %}
+                                                {% endif %}
+                                                <tr>
+                                                    <td class="option" data-option_id="{{ combined_option_id }}">
+                                                        <a href="#" class="remove-option"><i class="fa fa-minus-circle" style="display: inline"></i></a>
+                                                        {{ options_id_name[combined_option_id]['name'] }}
+                                                        [{{ options_id_name[combined_option_id]['option_id'] }}]
+                                                        [{{ options_id_name[combined_option_id]['type'] }}]:
+                                                    </td>
+                                                    <td>
+                                                        {% if options_id_name[combined_option_id]['type'] != 'text' and
+                                                            options_id_name[combined_option_id]['type'] != 'textarea' and
+                                                            options_id_name[combined_option_id]['type'] != 'file' and
+                                                            options_id_name[combined_option_id]['type'] != 'date' and
+                                                            options_id_name[combined_option_id]['type'] != 'time' and
+                                                            options_id_name[combined_option_id]['type'] != 'datetime'
+                                                        %}
+                                                            <select class="js-select-combined-options form-control" {% if multiple %} multiple="multiple" {% endif %}
+                                                                    name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]{% if multiple %}[]{% endif %}"
+                                                                    autocomplete="off"
+                                                                    data-option-name="{{ options_id_name[combined_option_id]['name'] }}"
+                                                                    onchange="updateCombinationTitle($(this).closest('table').closest('.combination-row'));">
+                                                                {% for option_value_id, option in options_and_values[combined_option_id]['values'] %}
+                                                                    <option value="{{ option['option_value_id'] }}"
+                                                                            {% if(option_value_id in combined_option_value_id) %} selected {% endif %}
+                                                                            data-option-value-name="{{ option['name'] }}">
+                                                                        {{ option['name'] }}
+                                                                    </option>
+                                                                {% endfor %}
+                                                            </select>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'text' %}
+                                                            <input class="form-control" type="text" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" value="{{ combined_option_value_id[0] }}" placeholder="{{ entry_option_value }}" data-option-name="{{ options_id_name[combined_option_id]['name'] }}"/>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'textarea' %}
+                                                            <textarea class="form-control" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" rows="2" placeholder="{{ entry_option_value }} data-option-name="{{ options_id_name[combined_option_id]['name'] }}">{{ combined_option_value_id[0] }}</textarea>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'file' %}
+                                                            <input style="display:none;" class="form-control" type="text" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" value="{{ combined_option_value_id[0] }}" placeholder="{{ entry_option_value }}" data-option-name="{{ options_id_name[combined_option_id]['name'] }}"/>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'date' %}
+                                                            <div class="input-group date"><input class="form-control" type="text" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" value="{{ combined_option_value_id[0] }}" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" data-option-name="{{ options_id_name[combined_option_id]['name'] }}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'time' %}
+                                                            <div class="input-group time"><input class="form-control" type="text" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" value="{{ combined_option_value_id[0] }}" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" data-option-name="{{ options_id_name[combined_option_id]['name'] }}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>
+                                                        {% elseif options_id_name[combined_option_id]['type'] == 'datetime' %}
+                                                            <div class="input-group datetime"><input class="form-control" type="text" name="options_combinations[{{ option_combination_row }}][options][{{ combined_option_id }}]" value="{{ combined_option_value_id[0] }}" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" data-option-name="{{ options_id_name[combined_option_id]['name'] }}"/><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div>
+                                                        {% endif %}
+                                                    </td>
+                                                </tr>
+
+                                            {% endfor %}
+
+                                        </table>
+                                    {% endspaceless %}
+
+                                    <button onclick="addOptionInsideOptionCombination(this)" type="button" data-toggle="tooltip" title=""
+                                            class="btn btn-primary" data-original-title="Add Option"><i
+                                                class="fa fa-plus-circle"></i></button>
+                                </td>
+
+                                {% if config_opt_comb_model %}
+                                    <td class="text-right">
+                                        <input type="text"
+                                               name="options_combinations[{{ option_combination_row }}][model]"
+                                               value="{{ combined_product_option['model'] }}"
+                                               placeholder="{{ entry_model }}" class="form-control"/>
+                                    </td>
+                                {% endif %}
+
+                                {% if config_opt_comb_sku %}
+                                    <td class="text-right">
+                                        <input type="text"
+                                               name="options_combinations[{{ option_combination_row }}][sku]"
+                                               value="{{ combined_product_option['sku'] }}"
+                                               placeholder="{{ entry_sku }}"
+                                               class="form-control"/>
+                                    </td>
+                                {% endif %}
+
+                                {% if config_opt_comb_upc %}
+                                    <td class="text-right">
+                                        <input type="text"
+                                               name="options_combinations[{{ option_combination_row }}][upc]"
+                                               value="{{ combined_product_option['upc'] }}"
+                                               placeholder="{{ entry_upc }}"
+                                               class="form-control"/>
+                                    </td>
+                                {% endif %}
+
+                                <!-- Quantity -->
+                                <td class="text-right">
+                                    <input type="text"
+                                           name="options_combinations[{{ option_combination_row }}][quantity]"
+                                           value="{{ combined_product_option['quantity'] }}"
+                                           placeholder="{{ entry_quantity }}" class="form-control"/>
+                                </td>
+
+                                <td class="text-left">
+                                    <select name="options_combinations[{{ option_combination_row }}][subtract]"
+                                            class="form-control">
+                                        {% if(combined_product_option['subtract'] == '0') %}
+                                            <option value="1">{{ text_yes }}</option>
+                                            <option value="0" selected>{{ text_no }}</option>
+                                        {% else %}
+                                            <option value="1" selected>{{ text_yes }}</option>
+                                            <option value="0">{{ text_no }}</option>
+                                      `  {% endif %}
+                                    </select>
+                                </td>
+
+                                {% if config_opt_comb_price %}
+                                    {% include element_folder ~'option_price_element.twig' %}
+                                {% endif %}
+
+                                {% if config_opt_comb_weight %}
+                                    <td class="text-right">
+                                        <select name="options_combinations[{{ option_combination_row }}][weight_prefix]"
+                                                class="form-control">
+                                            {% if combined_product_option['weight_prefix'] == '=' %}
+                                                <option value="=" selected>=</option>
+                                                <option value="+">+</option>
+                                                <option value="-">-</option>
+                                            {% elseif combined_product_option['weight_prefix'] == '-' %}
+                                                <option value="=">=</option>
+                                                <option value="+">+</option>
+                                                <option value="-" selected>-</option>
+                                            {% else %}
+                                                <option value="=">=</option>
+                                                <option value="+" selected>+</option>
+                                                <option value="-">-</option>
+                                            {% endif %}
+                                        </select>
+                                        <input type="text"
+                                               name="options_combinations[{{ option_combination_row }}][weight]"
+                                               value="{{ combined_product_option['weight'] }}"
+                                               placeholder="{{ entry_weight }}" class="form-control"/>
+                                    </td>
+                                {% endif %}
+
+                                {% if config_opt_comb_dimensions %}
+                                    <td class="text-right">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <tbody>
+                                            <tr>
+                                                <td><i>{{ entry_length }}</i></td>
+                                                <td><input type="text" class="form-control"
+                                                           name="options_combinations[{{ option_combination_row }}][length]"
+                                                           value="{{ combined_product_option['length'] }}"
+                                                           placeholder="{{ entry_length }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i>{{ entry_width }}</i></td>
+                                                <td><input type="text" class="form-control"
+                                                           name="options_combinations[{{ option_combination_row }}][width]"
+                                                           value="{{ combined_product_option['width'] }}"
+                                                           placeholder="{{ entry_width }}"></td>
+                                            </tr>
+                                            <tr>
+                                                <td><i>{{ entry_height }}</i></td>
+                                                <td><input type="text" class="form-control"
+                                                           name="options_combinations[{{ option_combination_row }}][height]"
+                                                           value="{{ combined_product_option['height'] }}"
+                                                           placeholder="{{ entry_height }}"></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                {% endif %}
+
+                                {% if config_opt_comb_extra %}
+                                    <td class="text-right">
+                                        <input type="text"
+                                               name="options_combinations[{{ option_combination_row }}][extra_text]"
+                                               value="{{ combined_product_option['extra_text'] }}"
+                                               placeholder="{{ extra }}" class="form-control"/>
+                                    </td>
+                                {% endif %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    {% if config_opt_comb_discount %}
+                        <div class="tab-pane" id="tab-comb-discounts-{{ option_combination_row }}">
+                            {% include element_folder ~'option_discount_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                    {% if config_opt_comb_special %}
+                        <div class="tab-pane" id="tab-comb-specials-{{ option_combination_row }}">
+                            {% include element_folder ~'option_special_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                    {% if config_opt_comb_image %}
+                        <div class="tab-pane" id="tab-comb-images-{{ option_combination_row }}">
+                            {% include element_folder ~'option_image_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                    {% if config_opt_comb_points %}
+                        <div class="tab-pane" id="tab-comb-points-{{ option_combination_row }}">
+                            {% include element_folder ~'option_points_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                    {% if config_opt_comb_reward_points %}
+                        <div class="tab-pane" id="tab-comb-reward-points-{{ option_combination_row }}">
+                            {% include element_folder ~'option_reward_points_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                    {% if config_opt_comb_seo_url %}
+                        <div class="tab-pane" id="tab-comb-seo-{{ option_combination_row }}">
+                            {% include element_folder ~'option_seo_url_element.twig' %}
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

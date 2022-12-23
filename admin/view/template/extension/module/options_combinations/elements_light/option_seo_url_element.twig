@@ -1,0 +1,27 @@
+<table class="table table-bordered table-hover">
+    <thead>
+    <tr>
+        <td class="text-left">{{ entry_store }}</td>
+        <td class="text-left">{{ entry_keyword }}</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for store in stores %}
+        <tr>
+            <td class="text-left">{{ store.name }}</td>
+            <td class="text-left">
+                {% for language in languages %}
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <img src="language/{{ language.code }}/{{ language.code }}.png"
+                                 title="{{ language.name }}"/></span>
+                        <input type="text"
+                               name="options_combinations[{{ option_combination_row }}][seo_url][{{ store.store_id }}][{{ language.language_id }}]"
+                               value="{{ combined_product_option['seo_url'][store.store_id][language.language_id] }}"
+                               placeholder="{{ entry_keyword }}" class="form-control"/>
+                    </div>
+                {% endfor %}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

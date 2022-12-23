@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'POSTEN';
+
+// Text
+$_['text_extension']               = 'Extensions';
+$_['text_success']                 = 'Framgång: Du har ändrat UPS shipping!';
+$_['text_edit']                    = 'Redigera UPS-frakt';
+$_['text_regular_daily_pickup']    = 'Regelbunden daglig pickup';
+$_['text_daily_pickup']            = 'Daglig pickup';
+$_['text_customer_counter']        = 'Kundräknare';
+$_['text_one_time_pickup']         = 'One-time Pickup';
+$_['text_on_call_air_pickup']      = 'På Call Air Pickup';
+$_['text_letter_center']           = 'Letter Center';
+$_['text_air_service_center']      = 'Air Service Center';
+$_['text_suggested_retail_rates']  = 'Föreslagna detaljhandelspriser (UPS Store)';
+$_['text_package']                 = 'Paket';
+$_['text_ups_letter']              = 'UPS-brev';
+$_['text_ups_tube']                = 'UPS-röret';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'UPS 25kg låda';
+$_['text_ups_10kg_box']            = 'UPS 10kg låda';
+$_['text_us']                      = 'Amerikansk ursprung';
+$_['text_ca']                      = 'Kanada Ursprung';
+$_['text_eu']                      = 'Europeiska unionen Ursprung';
+$_['text_pr']                      = 'Puerto Rico Ursprung';
+$_['text_mx']                      = 'Mexiko Ursprung';
+$_['text_other']                   = 'Alla andra ursprung';
+$_['text_test']                    = 'Testa';
+$_['text_production']              = 'Produktion';
+$_['text_residential']             = 'Bostads';
+$_['text_commercial']              = 'Kommersiell';
+$_['text_next_day_air']            = 'UPS Next Day Air';
+$_['text_2nd_day_air']             = 'UPS Second Day Air';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'UPS Tre-dagars Välj';
+$_['text_next_day_air_saver']      = 'UPS Next Day Air Saver';
+$_['text_next_day_air_early_am']   = 'UPS Nästa Dag Luft Tidigt A.M.';
+$_['text_2nd_day_air_am']          = 'UPS andra dagen luft A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
+$_['text_standard']                = 'UPS-standard';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPS Expedited';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'UPS idag standard';
+$_['text_today_dedicated_courier'] = 'UPS idag Dedicated Courier';
+$_['text_today_intercity']         = 'UPS Today Intercity';
+$_['text_today_express']           = 'UPS Today Express';
+$_['text_today_express_saver']     = 'UPS Today Express Saver';
+
+// Entry
+$_['entry_key']                    = 'Åtkomstnyckel';
+$_['entry_username']               = 'Användarnamn';
+$_['entry_password']               = 'Lösenord';
+$_['entry_pickup']                 = 'Pickupmetod';
+$_['entry_packaging']              = 'Förpackningstyp';
+$_['entry_classification']         = 'Kodklassificeringskod';
+$_['entry_origin']                 = 'Frakt Originalkod';
+$_['entry_city']                   = 'Ursprungs Stad';
+$_['entry_state']                  = 'Ursprungsland /Provins';
+$_['entry_country']                = 'Ursprungsland';
+$_['entry_postcode']               = 'Ursprungs postnummer';
+$_['entry_test']                   = 'Övningsläge';
+$_['entry_quote_type']             = 'Citat Typ';
+$_['entry_service']                = 'tjänster';
+$_['entry_insurance']              = 'Aktivera försäkringar';
+$_['entry_display_weight']         = 'Visa leveransvikt';
+$_['entry_weight_class']           = 'Viktklass';
+$_['entry_length_class']           = 'Längd klass';
+$_['entry_dimension']              = 'Mått (L x B x H)';
+$_['entry_length']                 = 'Längd';
+$_['entry_height']                 = 'Höjd';
+$_['entry_width']                  = 'Bredd';
+$_['entry_tax_class']              = 'skatteklass';
+$_['entry_geo_zone']               = 'Geo Zone';
+$_['entry_status']                 = 'Status';
+$_['entry_sort_order']             = 'Sorteringsordning';
+$_['entry_debug']                  = 'Debugläge';
+
+// Help
+$_['help_key']                     = 'Ange den åtkomstnyckel för XML-hastighet som tilldelats dig av UPS.';
+$_['help_username']                = 'Ange ditt användarnamn för UPS Services-konto.';
+$_['help_password']                = 'Ange ditt lösenord för UPS Services-kontot.';
+$_['help_pickup']                  = 'Hur ger du paket till UPS (används endast när ursprung är USA) ?';
+$_['help_packaging']               = 'Vilken typ av förpackning använder du?';
+$_['help_classification']          = '01 - Om du fakturerar till ett UPS-konto och har en daglig UPS-hämtning, 03 - Om du inte har ett UPS-konto eller du fakturerar till ett UPS-konto men inte har en daglig hämtning, 04 - Om du skickar från ett försäljningsställ (används endast när ursprung är USA)';
+$_['help_origin']                  = 'Vilken ursprungspunkt ska användas (den här inställningen påverkar endast vad UPS-produktnamn visas för användaren)';
+$_['help_city']                    = 'Ange namnet på ursprungsorten.';
+$_['help_state']                   = 'Ange två bokstavskoden för ditt ursprungsland /provins.';
+$_['help_country']                 = 'Ange två bokstäverna för ditt ursprungsland.';
+$_['help_postcode']                = 'Ange ditt ursprungsnummer /postnummer.';
+$_['help_test']                    = 'Använd den här modulen i Test (YES) eller Produktionsläge (NO) ?';
+$_['help_quote_type']              = 'Citat för bostads- eller kommersiell leverans.';
+$_['help_service']                 = 'Välj de UPS-tjänster som erbjuds.';
+$_['help_insurance']               = 'Aktiverar försäkring med produkt total som värde';
+$_['help_display_weight']          = 'Vill du visa fraktvikt? (t ex Leveransvikt: 2,7674 kg)';
+$_['help_weight_class']            = 'Ange till kilo eller pund.';
+$_['help_length_class']            = 'Ställ in till centimeter eller tum.';
+$_['help_dimension']               = 'Detta antas vara din genomsnittliga förpackningsstorlek. Individuella objektdimensioner stöds inte just nu, så du måste ange genomsnittliga dimensioner som 5x5x5.';
+$_['help_debug']                   = 'Sparar skicka /recv-data till systemloggen';
+
+// Error
+$_['error_permission']             = 'Varning: Du har inte behörighet att ändra UPS (US) shipping!';
+$_['error_key']                    = 'Åtkomstnyckel Required!';
+$_['error_username']               = 'Användarnamn Required!';
+$_['error_password']               = 'Lösenord Required!';
+$_['error_city']                   = 'Ursprung City!';
+$_['error_state']                  = 'Ursprungsland /provinsen Required!';
+$_['error_country']                = 'Ursprungsland Required!';
+$_['error_dimension']              = 'Genomsnittliga dimensioner Required!';

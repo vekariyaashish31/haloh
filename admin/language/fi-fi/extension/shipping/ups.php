@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title']                = 'UPS';
+
+// Text
+$_['text_extension']               = 'laajennukset';
+$_['text_success']                 = 'Menestys: Olet muuttanut UPS-lähetystä!';
+$_['text_edit']                    = 'Muokkaa UPS-lähetystä';
+$_['text_regular_daily_pickup']    = 'Säännöllinen päivittäinen pickup';
+$_['text_daily_pickup']            = 'Daily Pickup';
+$_['text_customer_counter']        = 'Asiakaslaskuri';
+$_['text_one_time_pickup']         = 'One Time Pickup';
+$_['text_on_call_air_pickup']      = 'Puhallusilmapuhallus';
+$_['text_letter_center']           = 'Letter Center';
+$_['text_air_service_center']      = 'Ilmakeskus';
+$_['text_suggested_retail_rates']  = 'Ehdotetut vähittäishinnat (UPS Store)';
+$_['text_package']                 = 'Paketti';
+$_['text_ups_letter']              = 'UPS-kirje';
+$_['text_ups_tube']                = 'UPS-putki';
+$_['text_ups_pak']                 = 'UPS Pak';
+$_['text_ups_express_box']         = 'UPS Express Box';
+$_['text_ups_25kg_box']            = 'UPS 25kg laatikko';
+$_['text_ups_10kg_box']            = 'UPS 10kg laatikko';
+$_['text_us']                      = 'Yhdysvaltain alkuperä';
+$_['text_ca']                      = 'Kanadan alkuperä';
+$_['text_eu']                      = 'Euroopan unionin alkuperä';
+$_['text_pr']                      = 'Puerto Ricon alkuperä';
+$_['text_mx']                      = 'Meksikon alkuperä';
+$_['text_other']                   = 'Kaikki muut alkuperät';
+$_['text_test']                    = 'Testata';
+$_['text_production']              = 'tuotanto';
+$_['text_residential']             = 'asuin-';
+$_['text_commercial']              = 'kaupallinen';
+$_['text_next_day_air']            = 'UPS Next Day Air';
+$_['text_2nd_day_air']             = 'UPS toisen päivän ilma';
+$_['text_ground']                  = 'UPS Ground';
+$_['text_3_day_select']            = 'UPS: n kolmipäiväinen valinta';
+$_['text_next_day_air_saver']      = 'UPS Next Day Air Saver';
+$_['text_next_day_air_early_am']   = 'UPS Next Day Air Early A.M.';
+$_['text_2nd_day_air_am']          = 'UPS Second Day Air A.M.';
+$_['text_saver']                   = 'UPS Saver';
+$_['text_worldwide_express']       = 'UPS Worldwide Express';
+$_['text_worldwide_expedited']     = 'UPS Worldwide Expedited';
+$_['text_standard']                = 'UPS-standardi';
+$_['text_worldwide_express_plus']  = 'UPS Worldwide Express Plus';
+$_['text_express']                 = 'UPS Express';
+$_['text_expedited']               = 'UPS vauhditti';
+$_['text_express_early_am']        = 'UPS Express Early A.M.';
+$_['text_express_plus']            = 'UPS Express Plus';
+$_['text_today_standard']          = 'UPS Today Standard';
+$_['text_today_dedicated_courier'] = 'UPS tänään Dedicated Courier';
+$_['text_today_intercity']         = 'UPS tänään Intercity';
+$_['text_today_express']           = 'UPS Today Express';
+$_['text_today_express_saver']     = 'UPS Today Express Saver';
+
+// Entry
+$_['entry_key']                    = 'Avainkoodi';
+$_['entry_username']               = 'Käyttäjätunnus';
+$_['entry_password']               = 'Salasana';
+$_['entry_pickup']                 = 'Pickup-menetelmä';
+$_['entry_packaging']              = 'Pakkaustyyppi';
+$_['entry_classification']         = 'Asiakasluokituskoodi';
+$_['entry_origin']                 = 'Merenkulun alkuperä-koodi';
+$_['entry_city']                   = 'Alkuperämaa';
+$_['entry_state']                  = 'Alkuperämaa /maakunta';
+$_['entry_country']                = 'Alkuperämaa';
+$_['entry_postcode']               = 'Alkuperä Postinumero';
+$_['entry_test']                   = 'Testitila';
+$_['entry_quote_type']             = 'Lainaus tyyppi';
+$_['entry_service']                = 'Palvelut';
+$_['entry_insurance']              = 'Ota käyttöön vakuutus';
+$_['entry_display_weight']         = 'Näytä toimitus paino';
+$_['entry_weight_class']           = 'Painoluokka';
+$_['entry_length_class']           = 'Pituusluokka';
+$_['entry_dimension']              = 'Mitat (L x L x K)';
+$_['entry_length']                 = 'Pituus';
+$_['entry_height']                 = 'Korkeus';
+$_['entry_width']                  = 'Leveys';
+$_['entry_tax_class']              = 'Veroluokka';
+$_['entry_geo_zone']               = 'Geo Zone';
+$_['entry_status']                 = 'Status';
+$_['entry_sort_order']             = 'Lajittelujärjestys';
+$_['entry_debug']                  = 'Debug-tilassa';
+
+// Help
+$_['help_key']                     = 'Syötä UPS: lle määrittämät XML-nopeudet.';
+$_['help_username']                = 'Anna UPS-palvelutilisi käyttäjätunnus.';
+$_['help_password']                = 'Anna UPS-palvelutilisi salasana.';
+$_['help_pickup']                  = 'Miten annat paketteja UPS: lle (käytetään vain, kun alkuperä on Yhdysvalloissa) ?';
+$_['help_packaging']               = 'Minkälaisia ​​pakkauksia käytät?';
+$_['help_classification']          = '01 - Jos laskut UPS-tilille ja päivittäinen UPS-pickup, 03 - Jos sinulla ei ole UPS-tiliä tai laskut UPS-tilille, mutta sinulla ei ole päivittäistä noutoa, 04 - Jos lähetät vähittäismyyntipiste (käytetään vain silloin, kun alkuperä on Yhdysvalloissa)';
+$_['help_origin']                  = 'Mistä alkuperäisestä kohdasta tulisi käyttää (tämä asetus vaikuttaa vain siihen, mitä UPS-tuotenimiä näytetään käyttäjälle)';
+$_['help_city']                    = 'Anna alkuperäisen kaupungin nimi.';
+$_['help_state']                   = 'Syötä alkuperäisen valtion /maakunnan kaksikirjaiminen koodi.';
+$_['help_country']                 = 'Syötä alkuperäisen maan kaksikirjaiminen koodi.';
+$_['help_postcode']                = 'Anna alkuperäisen zip /postalcode.';
+$_['help_test']                    = 'Käytä tätä moduulia testissä (YES) tai tuotantotilassa (NO) ?';
+$_['help_quote_type']              = 'Asunto- tai kaupallinen toimitus.';
+$_['help_service']                 = 'Valitse tarjottavat UPS-palvelut.';
+$_['help_insurance']               = 'Ottaa käyttöön vakuutuksen, jonka arvo on koko tuotteen arvo';
+$_['help_display_weight']          = 'Haluatko näyttää kuljetuksen painon? (esim. Toimituksen paino: 2,77674 kg)';
+$_['help_weight_class']            = 'Aseta kiloihin tai kiloihin.';
+$_['help_length_class']            = 'Aseta senttimetri tai tuumaa.';
+$_['help_dimension']               = 'Tämän oletetaan olevan keskimääräinen pakkauslaatikon koko. Yksittäisten elementtien mittasuhteita ei tueta tällä hetkellä, joten sinun on annettava keskimääriä, kuten 5x5x5.';
+$_['help_debug']                   = 'Tallentaa lähetys /rekv-tiedot järjestelmän lokiin';
+
+// Error
+$_['error_permission']             = 'Varoitus: Sinulla ei ole oikeutta muuttaa UPS: n (US) shipping!';
+$_['error_key']                    = 'Access Key Required!';
+$_['error_username']               = 'Käyttäjänimi Vaaditaan!';
+$_['error_password']               = 'Salasana vaaditaan!';
+$_['error_city']                   = 'Alkuperä City!';
+$_['error_state']                  = 'Alkuperämaa /maakunta vaaditaan!';
+$_['error_country']                = 'Alkuperämaa vaaditaan!';
+$_['error_dimension']              = 'Keskimääräiset mitat vaaditaan!';

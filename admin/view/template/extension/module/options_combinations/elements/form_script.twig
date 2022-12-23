@@ -1,0 +1,320 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>
+    var option_combination_row = {{ option_combination_row }};
+
+    function addCombination(){
+
+        var html = '<tr id="combined_product_option_' + option_combination_row + '" data-row-id="'+option_combination_row+'">' +
+            '<td><input type="hidden" name="options_combinations['+option_combination_row+'][option_type]" value="" /><button onclick="addOptionInsideOptionCombination(this)" type="button" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Option"><i class="fa fa-plus-circle"></i></button></td>';
+        {% if config.module_options_combinations_model %}
+        html +='<td class="text-right"><input type="text" name="options_combinations[' + option_combination_row + '][model]" value="" placeholder="{{ entry_model }}" class="form-control" /></td>';
+        {% endif %}
+        {% if config.module_options_combinations_image %}
+        html +='<td>' +
+            '   <div id="option-images-'+option_combination_row+'"></div>' +
+            '<button onclick="addImageForOption(this);" type="button" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="Add Image">' +
+            '<i class="fa fa-plus-circle"></i>' +
+            '</button>' +
+            '</td>';
+        {% endif %}
+        html += '<td class="text-right"><input type="text" name="options_combinations[' + option_combination_row + '][quantity]" value="" placeholder="{{ entry_quantity }}" class="form-control" /></td>';
+        html += '  <td class="text-left"><select name="options_combinations[' + option_combination_row + '][subtract]" class="form-control">';
+        html += '    <option value="1">{{ text_yes }}</option>';
+        html += '    <option value="0">{{ text_no }}</option>';
+        html += '  </select></td>';
+        html += '  <td class="text-right"><select name="options_combinations[' + option_combination_row + '][price_prefix]" class="form-control">';
+        html += '    <option value="+">=</option>';
+        html += '    <option value="+">+</option>';
+        html += '    <option value="-">-</option>';
+        html += '  </select>';
+        html += '  <input type="text" name="options_combinations[' + option_combination_row + '][price]" value="" placeholder="{{ entry_price }}" class="form-control" /></td>';
+        html += '  <td class="text-right"><select name="options_combinations[' + option_combination_row + '][points_prefix]" class="form-control">';
+        html += '    <option value="+">=</option>';
+        html += '    <option value="+">+</option>';
+        html += '    <option value="-">-</option>';
+        html += '  </select>';
+        html += '  <input type="text" name="options_combinations[' + option_combination_row + '][points]" value="" placeholder="{{ entry_reward_points }}" class="form-control" /></td>';
+        html += '  <td class="text-right"><select name="options_combinations[' + option_combination_row + '][weight_prefix]" class="form-control">';
+        html += '    <option value="+">=</option>';
+        html += '    <option value="+">+</option>';
+        html += '    <option value="-">-</option>';
+        html += '  </select>';
+        html += '  <input type="text" name="options_combinations[' + option_combination_row + '][weight]" value="" placeholder="{{ entry_weight }}" class="form-control" /></td>';
+        {% if config.module_options_combinations_discount %}
+        html += '<td>' +
+            '<table class="table" id="option-discount-'+ option_combination_row +'">' +
+            '<thead>' +
+            '<tr>' +
+            '<td class="text-left">{{ entry_customer_group }}</td>' +
+            '<td class="text-right">{{ entry_quantity }}</td>' +
+            '<td class="text-right">{{ entry_priority }}</td>' +
+            '<td class="text-right">{{ entry_price }}</td>' +
+            '<td class="text-left">{{ entry_date_start }}</td>' +
+            '<td class="text-left">{{ entry_date_end }}</td>' +
+            '<td></td>' +
+            '</tr>' +
+            '</thead>' +
+            '<tbody></tbody>' +
+            '</table>' +
+            '<button type="button" onclick="addOptionDiscount(this);" data-toggle="tooltip" title="'+ option_combination_row +'" class="btn btn-primary">' +
+            '<i class="fa fa-plus-circle"></i>' +
+            '</button>' +
+            '</td>';
+        {% endif %}
+        {% if config.module_options_combinations_special %}
+        html += '<td>' +
+            '<table class="table" id="option-special-'+ option_combination_row +'">' +
+            '<thead>' +
+            '<tr>' +
+            '    <td class="text-left">{{ entry_customer_group }}</td>' +
+            '    <td class="text-right">{{ entry_priority }}</td>' +
+            '    <td class="text-right">{{ entry_price }}</td>' +
+            '    <td class="text-left">{{ entry_date_start }}</td>' +
+            '    <td class="text-left">{{ entry_date_end }}</td>' +
+            '    <td></td>' +
+            '</tr>' +
+            '</thead>' +
+            '<tbody></tbody>' +
+            '</table>' +
+            '<button type="button" onclick="addOptionSpecial(this);" data-toggle="tooltip" title="'+ option_combination_row +'" class="btn btn-primary">' +
+            '<i class="fa fa-plus-circle"></i>' +
+            '</button>' +
+            '</td>';
+        {% endif %}
+        html += '<td class="text-left">' +
+            '<button type="button" onclick="copyRow(this)" data-toggle="tooltip" rel="tooltip" title="Copy" class="btn btn-success">' +
+            '<i class="fa fa-copy"></i>' +
+            '</button>' +
+            '<button type="button" onclick="removeRow(this)" data-toggle="tooltip" rel="tooltip" title="{{ button_remove }}" class="btn btn-danger">' +
+            '<i class="fa fa-minus-circle"></i>' +
+            '</button>' +
+            '</td>';
+        html += '</tr>';
+
+        $('#option-combination-table>tbody').append(html);
+
+        option_combination_row++;
+    }
+
+    function addImageForOption(elem) {
+        var row = getRow(elem);
+        var new_image = getOptionImages(row);
+        if(new_image) {
+            $('#option-images-' + row).append(new_image);
+        }
+    }
+
+    function addOptionSelect(item, row) {
+        var html = '<div class="option" data-option_id="'+item.value+'">'+item.label+':';
+        if (item['option_value']) {
+            html += '<select class="js-select-combined-options" name="options_combinations[' + row + '][options][' + item.value + ']">';
+
+            $.each(item['option_value'], function (opt_indx, opt_value) {
+                html += '<option value="' + opt_value.option_value_id + '">' + opt_value.name + '</option>';
+            });
+            html += '<option value="0">remove</option>';
+            html += '</select>';
+        }
+        html += '</div>';
+
+        return html;
+    }
+
+    function getOptionImages(row) {
+
+        var option_images_count = $('.input-option-images-'+row).length;
+
+        return  '<div><a href="" data-toggle="image" class="img-thumbnail" id="thumb-image'+row+'-'+option_images_count+'">' +
+            '<img src="{{ options_thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" />' +
+            '</a>' +
+            '<input id="input-image'+row+'-'+option_images_count+'" class="input-option-images-'+row+'" type="hidden" name="options_combinations[' + row + '][images]['+option_images_count+']" value="" /></div>';
+
+    }
+
+    function fillRowByType(item, row) {
+        var html = '';
+        if (item['type'] == 'text') {
+            html += '	<div class="form-group">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-10"><input type="text" name="options_combinations[' + row + '][options]['+item['value']+']" value="" placeholder="{{ entry_option_value }}" id="input-value' + row + '" class="form-control" /></div>';
+            html += '	</div>';
+        }
+
+        if (item['type'] == 'textarea') {
+            html += '	<div class="form-group">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-10"><textarea name="options_combinations[' + row + '][options]['+item['value']+']" rows="5" placeholder="{{ entry_option_value }}" id="input-value' + row + '" class="form-control"></textarea></div>';
+            html += '	</div>';
+        }
+
+        if (item['type'] == 'file') {
+            html += '	<div class="form-group" style="display: none;">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-10"><input type="text" name="options_combinations[' + row + '][options]['+item['value']+']" value="" placeholder="{{ entry_option_value }}" id="input-value' + row + '" class="form-control" /></div>';
+            html += '	</div>';
+        }
+
+        if (item['type'] == 'date') {
+            html += '	<div class="form-group">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-3"><div class="input-group date"><input type="text" name="options_combinations[' + row + '][options]['+item['value']+']" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD" id="input-value' + row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+            html += '	</div>';
+        }
+
+        if (item['type'] == 'time') {
+            html += '	<div class="form-group">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-10"><div class="input-group time"><input type="text" name="options_combinations[' + row + '][options]['+item['value']+']" value="" placeholder="{{ entry_option_value }}" data-date-format="HH:mm" id="input-value' + row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+            html += '	</div>';
+        }
+
+        if (item['type'] == 'datetime') {
+            html += '	<div class="form-group">';
+            html += '	  <label class="col-sm-2 control-label" for="input-value' + row + '">{{ entry_option_value }}</label>';
+            html += '	  <div class="col-sm-10"><div class="input-group datetime"><input type="text" name="options_combinations[' + row + '][options]['+item['value']+']" value="" placeholder="{{ entry_option_value }}" data-date-format="YYYY-MM-DD HH:mm" id="input-value' + row + '" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></div>';
+            html += '	</div>';
+        }
+
+        return html;
+    }
+
+    function addOptionInsideOptionCombination(elem) {
+        var row = getRow(elem);
+        $('#select-option').remove();
+        var new_el = $('<input id="select-option">');
+        $(elem).before(new_el);
+
+        $('#select-option').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: 'index.php?route=catalog/option/autocomplete&user_token={{ user_token }}&filter_name=' + encodeURIComponent(request),
+                        dataType: 'json',
+                        success: function (json) {
+                            var result = []
+                            $.each(json,function(i,v){
+                                var a = $('#combined_product_option_'+row).find("div[data-option_id='" + v.option_id + "']");
+                                if(a.length == 0) {
+                                   result.push(v);
+                                }
+                            });
+                            if(result) {
+                                response($.map(result, function (item) {
+
+                                return {
+                                    category: item['category'],
+                                    label: item['name'],
+                                    value: item['option_id'],
+                                    type: item['type'],
+                                    option_value: item['option_value']
+                                }
+                            }));
+                        }
+                    })
+                },
+                'select': function (item) {
+
+                    if (item['type'] == 'select' || item['type'] == 'radio' || item['type'] == 'checkbox' || item['type'] == 'image') {
+                        var html = addOptionSelect(item, row);
+                        $('#select-option').replaceWith(html);
+                    } else {
+                        var tr = $('#select-option').closest('tr');
+                        tr.html('<td class="text-center">' +
+                            '<input type="hidden" name="options_combinations['+row+'][option_type]" value="'+item['type']+'" />'+item['label']+'</td>' +
+                            '<td colspan="{{ option_combination_columns + 2 }}">'+fillRowByType(item, row)+'</td>' +
+                            '<td><button type="button" onclick="$(this).tooltip(\'destroy\');$(\'#options_combinations_' + row +'\').remove();" data-toggle="tooltip" rel="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td></td>');
+                    }
+
+                }
+            }
+        )
+    }
+
+    function addOptionDiscount(elem) {
+        var row = getRow(elem);
+        var discount_row = $('table#option-discount-'+row+' tbody tr').length;
+
+        var html = '<tr id="discount_row_'+row+'_'+discount_row+'">' +
+            '<td><select name="options_combinations[' + row + '][option_discount]['+discount_row+'][customer]" class="form-control">';
+        {% for customer_group in customer_groups %}
+        html += '    <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name|escape }}</option>';
+        {% endfor %}
+        html += '  </select></td>';
+        html += '  <td><input type="text" name="options_combinations[' + row + '][option_discount][' + discount_row + '][quantity]" value="" placeholder="{{ entry_quantity }}" class="form-control" /></td>';
+        html += '  <td><input type="text" name="options_combinations[' + row + '][option_discount][' + discount_row + '][priority]" value="" placeholder="{{ entry_priority }}" class="form-control" /></td>';
+        html += '  <td><input type="text" name="options_combinations[' + row + '][option_discount][' + discount_row + '][price]" value="" placeholder="{{ entry_price }}" class="form-control" /></td>';
+        html += '  <td><div class="input-group date"><input type="text" name="options_combinations[' + row + '][option_discount][' + discount_row + '][date_start]" value="" placeholder="{{ entry_date_start }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
+        html += '  <td><div class="input-group date"><input type="text" name="options_combinations[' + row + '][option_discount][' + discount_row + '][date_end]" value="" placeholder="{{ entry_date_end }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
+        html += '  <td><button type="button" onclick="$(\'#discount_row_'+row+'_'+discount_row+'\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+        html += '</tr>';
+
+        $('table#option-discount-'+row+' tbody').append(html);
+    }
+
+    function addOptionSpecial(elem) {
+        var row = getRow(elem);
+        var special_row = $('table#option-special-'+row+' tbody tr').length;
+
+        var html = '<tr id="special_row_'+row+'_'+special_row+'">' +
+            '<td><select name="options_combinations[' + row + '][option_special]['+special_row+'][customer]" class="form-control">';
+        {% for customer_group in customer_groups %}
+        html += '    <option value="{{ customer_group.customer_group_id }}">{{ customer_group.name|escape }}</option>';
+        {% endfor %}
+        html += '  </select>';
+        html += '  <td><input type="text" name="options_combinations[' + row + '][option_special][' + special_row + '][priority]" value="" placeholder="{{ entry_priority }}" class="form-control" /></td>';
+        html += '  <td><input type="text" name="options_combinations[' + row + '][option_special][' + special_row + '][price]" value="" placeholder="{{ entry_price }}" class="form-control" /></td>';
+        html += '  <td><div class="input-group date"><input type="text" name="options_combinations[' + row + '][option_special][' + special_row + '][date_start]" value="" placeholder="{{ entry_date_start }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
+        html += '  <td><div class="input-group date"><input type="text" name="options_combinations[' + row + '][option_special][' + special_row + '][date_end]" value="" placeholder="{{ entry_date_end }}" data-date-format="YYYY-MM-DD" class="form-control" /><span class="input-group-btn"><button type="button" class="btn btn-default"><i class="fa fa-calendar"></i></button></span></div></td>';
+        html += '  <td><button type="button" onclick="$(\'#special_row_'+row+'_'+special_row+'\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
+        html += '</tr>';
+
+        $('#option-special-'+row+' tbody').append(html);
+    }
+
+    function getRow(elem) {
+        return $(elem).closest('tr').data('row-id');
+    }
+
+    function removeRow(elem) {
+        $(this).tooltip('destroy');
+        $('#combined_product_option_'+getRow(elem)).remove();
+    }
+
+    function copyRow(el) {
+        var tr = $(el).closest('tr');
+        var row = tr.data('row-id');
+        var tr_new = tr.clone().html();
+        option_combination_row += 1;
+        $('#option-combination-table>tbody').append(
+            '<tr id="combined_product_option_' + option_combination_row + '" data-row-id="'+option_combination_row+'">'+
+            replaceAll(tr_new,'options_combinations[' + row + ']','options_combinations[' + option_combination_row + ']')+
+            '</tr>');
+    }
+
+    function replaceAll(str, find, replace) {
+        var $r="";
+        while($r!=str){
+            $r = str;
+            str = str.replace(find, replace);
+        }
+        return str;
+    }
+
+
+    $('#option-combination-table').on('click','.js-select-combined-options',function(e){
+        e.preventDefault();
+        var option = $(this);
+        var option_block = option.parent('.option');
+        if(option.val() == 0 && option_block) {
+            option_block.remove();
+        }
+    });
+
+    $(document).ready(function() {
+        $('#option-select').select2({
+            width: 'resolve',
+        });
+        $('#tab-option').attr('style','overflow-x: scroll');
+    });
+
+</script>

@@ -1,0 +1,113 @@
+/* line 6, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* line 15, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector ul {
+    overflow: auto;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* line 25, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector li.group_title {
+    float: none;
+}
+
+
+/* line 30, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector li {
+    margin: 0px 12px 12px 0px;
+    float: left;
+}
+
+
+/* line 35, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector li .thumbnail {
+    padding: 1px;
+    border: 1px solid #DDD;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+/* line 42, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector li .thumbnail img {
+    -webkit-user-drag: none;
+}
+
+
+/* line 48, source/sass/image-picker.scss */
+
+ul.thumbnails.image_picker_selector li .thumbnail.selected {
+    border: 1px solid #08C;
+}
+
+ul.thumbnails.image_picker_selector li .thumbnail:hover {
+    cursor: pointer;
+}
+
+ul.thumbnails.image_picker_selector li div.thumbnail {
+    position: relative;
+}
+
+ul.thumbnails.image_picker_selector li div.thumbnail.disabled:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+    opacity: 0.75;
+}
+
+ul.thumbnails.image_picker_selector li div.thumbnail.disabled {
+    border-color: #ffffff;
+}
+
+div#options-combinations-container div.form-group>label span.option_name {
+    font-weight: bold;
+}
+
+.opt-bullets {
+    padding: 10px 20px 0px 20px;
+}
+
+li.opt-as-bullet {
+    margin: 0 5px 5px 0 !important;
+}
+
+div.thumbnail.opt-as-bullet {
+    margin-bottom: 5px !important;
+    text-align: center;
+}
+
+div#options-combinations-container div.form-group>label:before {
+    content: '* ';
+    color: #F00;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.tingle-modal {
+    z-index: 9999999999999 !important;
+}

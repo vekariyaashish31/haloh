@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'Négyzet';
+$_['heading_title_transaction']                         = 'Tranzakció megtekintése #%s';
+
+// Help
+$_['help_total']                                        = 'A fizetésnek teljesnek kell lennie, mielőtt a fizetési mód aktívvá válna.';
+$_['help_local_cron']                                   = 'Helyezze be ezt a parancsot a webszerver CRON lapjába. Állítsa be, hogy legalább naponta egyszer fusson.';
+$_['help_remote_cron']                                  = 'Ezzel az URL-lel CRON-feladatot állíthat be webalapú CRON szolgáltatással. Állítsa be, hogy legalább naponta egyszer fusson.';
+$_['help_recurring_status']                             = 'Engedélyezi a rendszeres visszatérő kifizetések engedélyezését. <br /> MEGJEGYZÉS: Be kell állítania a napi CRON feladatot is.';
+$_['help_cron_email']                                   = 'Az ismétlődő feladat összefoglalása a befejezés után e-mailre kerül.';
+$_['help_cron_email_status']                            = 'Engedélyezze, hogy minden CRON-feladat után összefoglalót kapjon.';
+$_['help_notify_recurring_success']                     = 'Értesítse ügyfeleit a sikeres, ismétlődő tranzakciókról.';
+$_['help_notify_recurring_fail']                        = 'Értesítse ügyfeleit a sikertelen ismétlődő tranzakciókról.';
+
+// Tab
+$_['tab_setting']                                       = 'Beállítások';
+$_['tab_transaction']                                   = 'tranzakciók';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'Ismétlődő kifizetések';
+
+// Text
+$_['text_access_token_expires_label']                   = 'Az elérési token lejár';
+$_['text_access_token_expires_placeholder']             = 'Nincs beállítva';
+$_['text_acknowledge_cron']                             = 'Megerősítem, hogy automatizált CRON feladatot állítottam be a fenti módszerek valamelyikével.';
+$_['text_admin_notifications']                          = 'Adminisztrációs értesítések';
+$_['text_authorize_label']                              = 'engedélyez';
+$_['text_canceled_success']                             = 'Siker: Ön sikeresen lemondta ezt a fizetést!';
+$_['text_capture']                                      = 'Elfog';
+$_['text_client_id_help']                               = 'Szerezd meg ezt az Alkalmazás kezelése oldalon a Térben';
+$_['text_client_id_label']                              = 'Négyes alkalmazásazonosító';
+$_['text_client_id_placeholder']                        = 'Négyes alkalmazásazonosító';
+$_['text_client_secret_help']                           = 'Szerezd meg ezt az Alkalmazás kezelése oldalon a Térben';
+$_['text_client_secret_label']                          = 'OAuth Application Secret';
+$_['text_client_secret_placeholder']                    = 'OAuth Application Secret';
+$_['text_confirm_action']                               = 'Biztos vagy benne, ?';
+$_['text_confirm_cancel']                               = 'Biztosan törölni szeretné az ismétlődő kifizetéseket?';
+$_['text_confirm_capture']                              = 'Ön a következő összeget veszi fel: <strong> %s </strong>. A folytatáshoz kattintson az OK gombra.';
+$_['text_confirm_refund']                               = 'Kérjük, adjon okot a visszatérítésre:';
+$_['text_confirm_void']                                 = 'A következő összeget érvényteleníti: <strong> %s </strong>. A folytatáshoz kattintson az OK gombra.';
+$_['text_connected']                                    = 'csatlakoztatva';
+$_['text_connected_info']                               = 'Ha újra szeretné váltani fiókjait, vagy manuálisan visszavonta ezt a bővítmény hozzáférését a Square App konzolból. A hozzáférési token manuális frissítése, ha az utolsó eladás vagy újracsatlakozás óta közel 45 nap volt.';
+$_['text_connection_section']                           = 'Négyzetes kapcsolat';
+$_['text_connection_success']                           = 'Sikeresen csatlakozik!';
+$_['text_cron_email']                                   = 'Tevékenység összefoglaló küldése e-mailben:';
+$_['text_cron_email_status']                            = 'E-mail összefoglaló küldése:';
+$_['text_customer_notifications']                       = 'Ügyfél értesítések';
+$_['text_debug_disabled']                               = 'Tiltva';
+$_['text_debug_enabled']                                = 'Bekapcsolt';
+$_['text_debug_help']                                   = 'Az API-kérelmek és válaszok az OpenCart hiba naplóba kerülnek. Ezt csak hibakeresési és fejlesztési célokra használhatja.';
+$_['text_debug_label']                                  = 'Hibakeresési naplózás';
+$_['text_delay_capture_help']                           = 'Engedélyezheti a tranzakciókat vagy a díjakat automatikusan';
+$_['text_delay_capture_label']                          = 'Tranzakció Típusa';
+$_['text_disabled_connect_help_text']                   = 'Az ügyfél azonosítója és titka kötelező mezők.';
+$_['text_edit_heading']                                 = 'Négyzet szerkesztése';
+$_['text_enable_sandbox_help']                          = 'A műveletek teszteléséhez engedélyezze a homokozó módot';
+$_['text_enable_sandbox_label']                         = 'A homokozó mód engedélyezése';
+$_['text_executables']                                  = 'CRON végrehajtási módszerek';
+$_['text_extension']                                    = 'Extensions';
+$_['text_extension_status']                             = 'Bővítmény állapota';
+$_['text_extension_status_disabled']                    = 'Tiltva';
+$_['text_extension_status_enabled']                     = 'Bekapcsolt';
+$_['text_extension_status_help']                        = 'A fizetési mód engedélyezése vagy letiltása';
+$_['text_insert_amount']                                = 'Kérjük, illessze be a visszatérítési összeget. Maximális: %s %-kor:';
+$_['text_loading']                                      = 'Adatok betöltése .. Kérjük, várjon ..';
+$_['text_loading_short']                                = 'Kérlek várj..';
+$_['text_local_cron']                                   = '#1-es módszer - CRON feladat:';
+$_['text_location_error']                               = 'Hiba történt a helyek és a token szinkronizálásakor: %s';
+$_['text_location_help']                                = 'Válassza ki a tranzakciókhoz használt konfigurált négyzet helyet. Lehetővé kell tennie a kártyafeldolgozási képességeket.';
+$_['text_location_label']                               = 'Elhelyezkedés';
+$_['text_manage']                                       = 'Hitelkártya tranzakció (négyzet)';
+$_['text_manage_tooltip']                               = 'Részletek megtekintése /Capture /Void /Refund';
+$_['text_merchant_info_section_heading']                = 'Mechant információk';
+$_['text_merchant_name_label']                          = 'Kereskedő Neve';
+$_['text_merchant_name_placeholder']                    = 'Nincs beállítva';
+$_['text_no_appropriate_locations_warning']             = 'Nincsenek helyek, amelyek képesek az online kártyák feldolgozására a négyzet számláján.';
+$_['text_no_location_selected_warning']                 = 'Nincs kijelölt hely.';
+$_['text_no_locations_label']                           = 'Nincs érvényes hely';
+$_['text_no_transactions']                              = 'Nincs tranzakció rögzítve.';
+$_['text_not_connected']                                = 'Nem kapcsolódik';
+$_['text_not_connected_info']                           = 'A gombra kattintva ezt a modult összekapcsolja a négyzet számlájával és aktiválhatja a szolgáltatást.';
+$_['text_notification_ssl']                             = 'Győződjön meg arról, hogy az SSL engedélyezve van a fizetési oldalon. Ellenkező esetben a bővítmény nem fog működni.';
+$_['text_notify_recurring_fail']                        = 'Az ismétlődő tranzakció sikertelen:';
+$_['text_notify_recurring_success']                     = 'Az ismétlődő tranzakció sikeres:';
+$_['text_ok']                                           = 'rendben';
+$_['text_order_history_cancel']                         = 'A rendszergazda visszavonta az ismétlődő kifizetéseket. A kártya többé nem kerül felszámolásra.';
+$_['text_payment_method_name_help']                     = 'Checkout fizetési mód neve';
+$_['text_payment_method_name_label']                    = 'Fizetési mód neve';
+$_['text_payment_method_name_placeholder']              = 'Hitel /bankkártya';
+$_['text_recurring_info']                               = 'Mindenképpen hozzon létre egy napi CRON feladatot az alábbi módszerek egyikével. A CRON munkák segítséget nyújtanak Önnek: <br /> <br /> &bull; Az API-hozzáférési token automatikus frissítése <br /> &bull; Az ismétlődő ügyletek feldolgozása';
+$_['text_recurring_status']                             = 'Az ismétlődő kifizetések állapota:';
+$_['text_redirect_uri_help']                            = 'Illessze be ezt a hivatkozást a Redirect URI mezőbe az Alkalmazás kezelése /oAuth alatt';
+$_['text_redirect_uri_label']                           = 'Négyszög OAuth átirányítási URL';
+$_['text_refresh_access_token_success']                 = 'Sikeresen frissítette a kapcsolatot a négyzet számlájára.';
+$_['text_refresh_token']                                = 'Újra hozza létre a tokenet';
+$_['text_refund']                                       = 'Visszatérítés';
+$_['text_refund_details']                               = 'Visszatérítési részleteket';
+$_['text_refunded_amount']                              = 'Visszatérítve: %s. A visszatérítés helyzete: %. A visszatérítés oka: %s';
+$_['text_refunds']                                      = 'Visszatérítések (%)';
+$_['text_remote_cron']                                  = '#2-es módszer - távoli CRON:';
+$_['text_sale_label']                                   = 'Eladás';
+$_['text_sandbox_access_token_help']                    = 'Szerezd meg ezt az Alkalmazás kezelése oldalon a Térben';
+$_['text_sandbox_access_token_label']                   = 'Sandbox Access Token';
+$_['text_sandbox_access_token_placeholder']             = 'Sandbox Access Token';
+$_['text_sandbox_client_id_help']                       = 'Szerezd meg ezt az Alkalmazás kezelése oldalon a Térben';
+$_['text_sandbox_client_id_label']                      = 'Sandbox alkalmazásazonosító';
+$_['text_sandbox_client_id_placeholder']                = 'Sandbox alkalmazásazonosító';
+$_['text_sandbox_disabled_label']                       = 'Tiltva';
+$_['text_sandbox_enabled']                              = 'A homokozó mód engedélyezve van! A tranzakciók jelennek meg, de nem kerül sor díjfizetésre.';
+$_['text_sandbox_enabled_label']                        = 'Bekapcsolt';
+$_['text_sandbox_section_heading']                      = 'Négyzetes homokszórás beállítások';
+$_['text_select_location']                              = 'Válasszon helyet';
+$_['text_settings_section_heading']                     = 'Négyzetes beállítások';
+$_['text_squareup']                                     = '<a cél="_BLANK" href="https://squareup.com"> <img src="view/image/payment/squareup.png" alt="Square" title="Square" stílus="border: 1px szilárd #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'Siker: Módosította a Négytávú fizetési modulot!';
+$_['text_success_capture']                              = 'A tranzakció sikeresen elfoglalt!';
+$_['text_success_refund']                               = 'A tranzakció sikeres visszatérítése!';
+$_['text_success_void']                                 = 'A tranzakció sikeresen megszűnt!';
+$_['text_token_expired']                                = 'A négyszögletes hozzáférési token lejárt! <a href="%s"> Kattintson ide </a> a megújításhoz.';
+$_['text_token_expiry_warning']                         = 'Térbeli hozzáférési tokenje %s lejár. <a href="%s"> Kattintson ide </a> a megújításhoz.';
+$_['text_token_revoked']                                = 'Térbeli hozzáférési tokenje lejárt, vagy visszavonták! <a href="%s"> Kattintson ide </a> a négyzet kiterjesztés újbóli engedélyezéséhez.';
+$_['text_transaction_statuses']                         = 'Tranzakciós állapotok';
+$_['text_view']                                         = 'Mutass többet';
+$_['text_void']                                         = 'Üres';
+$_['text_na']                                           = 'N /A';
+$_['text_no_reason_provided']                           = 'Oka nincs megadva.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'A kártyaügyletet engedélyezték, de még nem rögzítették.';
+$_['squareup_status_comment_captured']                  = 'A kártyaügyletet engedélyezték és később elfogták (azaz kitöltötték).';
+$_['squareup_status_comment_voided']                    = 'A kártyaügylet engedélyezett és később érvénytelen (azaz törölt).';
+$_['squareup_status_comment_failed']                    = 'A kártya tranzakció sikertelen.';
+
+// Entry
+$_['entry_total']                                       = 'Teljes';
+$_['entry_geo_zone']                                    = 'Geo zóna';
+$_['entry_sort_order']                                  = 'Sorrend';
+$_['entry_merchant']                                    = 'kereskedőazonosító';
+$_['entry_transaction_id']                              = 'Tranzakció azonosítója';
+$_['entry_order_id']                                    = 'Rendelés azonosító';
+$_['entry_partner_solution_id']                         = 'Partner megoldási azonosítója';
+$_['entry_type']                                        = 'Tranzakció Típusa';
+$_['entry_currency']                                    = 'Valuta';
+$_['entry_amount']                                      = 'Összeg';
+$_['entry_browser']                                     = 'Ügyfél felhasználói ügynök';
+$_['entry_ip']                                          = 'Ügyfél IP';
+$_['entry_date_created']                                = 'Létrehozás dátuma';
+$_['entry_billing_address_company']                     = 'Számlázó cég';
+$_['entry_billing_address_street']                      = 'Számlázási utca';
+$_['entry_billing_address_city']                        = 'Számlázási város';
+$_['entry_billing_address_postcode']                    = 'Számlázási ZIP';
+$_['entry_billing_address_province']                    = 'Számlázási tartomány /állam';
+$_['entry_billing_address_country']                     = 'Számlázási ország';
+$_['entry_status_authorized']                           = 'Felhatalmazott';
+$_['entry_status_captured']                             = 'elfogott';
+$_['entry_status_voided']                               = 'ürített';
+$_['entry_status_failed']                               = 'nem sikerült';
+$_['entry_setup_confirmation']                          = 'Beállítás megerősítése:';
+
+// Error
+$_['error_permission']                                  = '<strong> Figyelmeztetés: </strong> Önnek nincs engedélye a fizetés módosítására Square!';
+$_['error_permission_recurring']                        = '<strong> Figyelmeztetés: </strong> Nincs jogosultságod az ismétlődő kifizetések módosításához!';
+$_['error_transaction_missing']                         = 'Tranzakció nem található!';
+$_['error_no_ssl']                                      = '<strong> Figyelmeztetés: </strong> Az SSL nincs engedélyezve az admin panelen. Engedélyezze, hogy befejezze a konfigurációt.';
+$_['error_user_rejected_connect_attempt']               = 'A kapcsolódási kísérletet a felhasználó törölte.';
+$_['error_possible_xss']                                = 'Találtunk egy lehetséges cross-site támadást, és megszüntettük a kapcsolódási kísérletet. Ellenőrizze az alkalmazás azonosítóját és titkát, és próbálja meg újra az admin panelben található gombokat.';
+$_['error_invalid_email']                               = 'A megadott e-mail cím nem érvényes!';
+$_['error_cron_acknowledge']                            = 'Kérjük, erősítse meg, hogy CRON-munkát állított be.';
+$_['error_client_id']                                   = 'Az alkalmazás ügyfél-azonosítója kötelező mező';
+$_['error_client_secret']                               = 'Az alkalmazás ügyféltitkája kötelező mező';
+$_['error_sandbox_client_id']                           = 'A sandbox ügyfélazonosító kötelező mező, amikor a homokozó mód engedélyezve van';
+$_['error_sandbox_token']                               = 'A homokozó zseton egy kötelező mező, amikor engedélyezett a homokozó mód';
+$_['error_no_location_selected']                        = 'A helyszín kötelező mező';
+$_['error_refresh_access_token']                        = 'Hiba történt, amikor frissíteni próbálta a bővítmény kapcsolatát a négyzet számlájára. Ellenőrizze az alkalmazás hitelesítő adatait, és próbálja újra.';
+$_['error_form']                                        = 'Kérjük, ellenőrizze az űrlapot hiba esetén, és próbálja meg menteni az agian.';
+$_['error_token']                                       = 'Hiba történt a token frissítése közben: %s';
+$_['error_no_refund']                                   = 'A visszatérítés nem sikerült.';
+
+// Column
+$_['column_transaction_id']                             = 'Tranzakció azonosítója';
+$_['column_order_id']                                   = 'Rendelés azonosító';
+$_['column_customer']                                   = 'Vevő';
+$_['column_status']                                     = 'Állapot';
+$_['column_type']                                       = 'típus';
+$_['column_amount']                                     = 'Összeg';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'Létrehozás dátuma';
+$_['column_action']                                     = 'Akció';
+$_['column_refunds']                                    = 'A visszatérítések';
+$_['column_reason']                                     = 'Ok';
+$_['column_fee']                                        = 'Feldolgozási díj';
+
+// Button
+$_['button_void']                                       = 'Üres';
+$_['button_refund']                                     = 'Visszatérítés';
+$_['button_capture']                                    = 'Elfog';
+$_['button_connect']                                    = 'Csatlakozás';
+$_['button_reconnect']                                  = 'Kösse vissza';
+$_['button_refresh']                                    = 'A token frissítése';

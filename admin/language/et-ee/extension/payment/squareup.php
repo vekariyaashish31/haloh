@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'Ruut';
+$_['heading_title_transaction']                         = 'Vaata tehingut #%s';
+
+// Help
+$_['help_total']                                        = 'Tellimuse kogu tellimus peab jõudma enne selle makseviisi aktiveerimist.';
+$_['help_local_cron']                                   = 'Sisesta see käsk oma veebiserveri CRON vahekaardile. Määrake see vähemalt üks kord päevas.';
+$_['help_remote_cron']                                  = 'Kasutage seda URL-i CRON-ülesande seadistamiseks veebipõhise CRON-teenuse abil. Määrake see vähemalt üks kord päevas.';
+$_['help_recurring_status']                             = 'Luba perioodiliste korduvate maksete lubamiseks. <br /> MÄRKUS. Samuti peate seadistama igapäevase CRON-i ülesande.';
+$_['help_cron_email']                                   = 'Korduv ülesande kokkuvõte saadetakse sellele e-kirjale pärast valmimist.';
+$_['help_cron_email_status']                            = 'Võimaldab saada kokkuvõtet pärast iga CRON-i ülesannet.';
+$_['help_notify_recurring_success']                     = 'Teatage klientidele edukate korduvate tehingute kohta.';
+$_['help_notify_recurring_fail']                        = 'Teatage klientidele korduvate tehingute ebaõnnestumistest.';
+
+// Tab
+$_['tab_setting']                                       = 'Seaded';
+$_['tab_transaction']                                   = 'Tehingud';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'Korduvad maksed';
+
+// Text
+$_['text_access_token_expires_label']                   = 'Juurdepääsu märgis aegub';
+$_['text_access_token_expires_placeholder']             = 'Ei seadistanud';
+$_['text_acknowledge_cron']                             = 'Kinnitan, et olen seadnud automaatse CRON ülesande ühe eespool nimetatud meetodi abil.';
+$_['text_admin_notifications']                          = 'Admini märguanded';
+$_['text_authorize_label']                              = 'Volitatud';
+$_['text_canceled_success']                             = 'Edu: olete selle makse !-ga sujuvalt tühistanud';
+$_['text_capture']                                      = 'Lüüa';
+$_['text_client_id_help']                               = 'Hankige see ruut Manage Application lehel';
+$_['text_client_id_label']                              = 'Square Application ID';
+$_['text_client_id_placeholder']                        = 'Square Application ID';
+$_['text_client_secret_help']                           = 'Hankige see ruut Manage Application lehel';
+$_['text_client_secret_label']                          = 'OAuthi rakenduse saladus';
+$_['text_client_secret_placeholder']                    = 'OAuthi rakenduse saladus';
+$_['text_confirm_action']                               = 'Kas oled kindel?';
+$_['text_confirm_cancel']                               = 'Kas olete kindel, et soovite katkestada korduvaid makseid?';
+$_['text_confirm_capture']                              = 'Olete valmis koguma järgmist summat: <strong> %s </strong>. Jätkamiseks klõpsake nuppu OK.';
+$_['text_confirm_refund']                               = 'Esitage tagasimaksmise põhjus:';
+$_['text_confirm_void']                                 = 'Te olete tühistanud järgmise summa: <strong> %s </strong>. Jätkamiseks klõpsake nuppu OK.';
+$_['text_connected']                                    = 'Ühendatud';
+$_['text_connected_info']                               = 'Uuesti ühendamine, kui soovite kontosid vahetada või selle laienduse käsitsi tühistada Square App konsoolis. Juurdepääsukellani käsitsi värskendage, kui see on olnud viimase 45 päeva jooksul pärast viimast müüki või uuesti ühendatud.';
+$_['text_connection_section']                           = 'Square Connection';
+$_['text_connection_success']                           = 'Edukalt ühendatud!';
+$_['text_cron_email']                                   = 'Saada ülesande kokkuvõte sellele e-mailile:';
+$_['text_cron_email_status']                            = 'Saada e-kirja kokkuvõte:';
+$_['text_customer_notifications']                       = 'Kliendi teated';
+$_['text_debug_disabled']                               = 'Keelatud';
+$_['text_debug_enabled']                                = 'Lubatud';
+$_['text_debug_help']                                   = 'API-taotlused ja vastused logitakse sisse OpenCart vealiides. Kasutage seda ainult silumiseks ja arendamiseks.';
+$_['text_debug_label']                                  = 'Silumine metsaraie';
+$_['text_delay_capture_help']                           = 'Ainult lubada tehinguid või tasuda tasusid automaatselt';
+$_['text_delay_capture_label']                          = 'Tehingu tüüp';
+$_['text_disabled_connect_help_text']                   = 'Kliendi ID ja saladus on kohustuslikud väljad.';
+$_['text_edit_heading']                                 = 'Muuda väljak';
+$_['text_enable_sandbox_help']                          = 'Maksete testimiseks lubage liivakasti režiim';
+$_['text_enable_sandbox_label']                         = 'Liivakasti režiimi lubamine';
+$_['text_executables']                                  = 'CRONi täitmise meetodid';
+$_['text_extension']                                    = 'Laiendused';
+$_['text_extension_status']                             = 'Laiendamise olek';
+$_['text_extension_status_disabled']                    = 'Keelatud';
+$_['text_extension_status_enabled']                     = 'Lubatud';
+$_['text_extension_status_help']                        = 'Makseviisi lubamine või keelamine';
+$_['text_insert_amount']                                = 'Palun sisesta tagasimakse summa. Maksimum: %-st %-st:';
+$_['text_loading']                                      = 'Andmete laadimine .. palun oodake ..';
+$_['text_loading_short']                                = 'Palun oota..';
+$_['text_local_cron']                                   = 'Meetod #1 - CRON Ülesanne:';
+$_['text_location_error']                               = 'Kohtade ja märgi sünkroonimise proovimisel ilmnes viga: %';
+$_['text_location_help']                                = 'Valige, millist konfigureeritud Square\'i kohta tehinguteks kasutada. On vaja kaardi töötlemise võimalusi.';
+$_['text_location_label']                               = 'Asukoht';
+$_['text_manage']                                       = 'Krediitkaardi tehing (ruut)';
+$_['text_manage_tooltip']                               = 'Vaadake üksikasju /Pildista /Kehtetu /Tagasimaksega';
+$_['text_merchant_info_section_heading']                = 'Mechant Information';
+$_['text_merchant_name_label']                          = 'Kaupmehe nimi';
+$_['text_merchant_name_placeholder']                    = 'Ei seadistanud';
+$_['text_no_appropriate_locations_warning']             = 'Teie ruudukonto kontol ei ole ühtegi asukohta, mis suudaks veebikaardi töötlemise seadistusi.';
+$_['text_no_location_selected_warning']                 = 'Valitud asukohta pole.';
+$_['text_no_locations_label']                           = 'Pole ühtegi asukohta';
+$_['text_no_transactions']                              = 'Ühtegi tehingut pole veel logitud.';
+$_['text_not_connected']                                = 'Pole ühendatud';
+$_['text_not_connected_info']                           = 'Selle nupu klõpsamisel ühendate see moodul oma Square\'i kontoga ja aktiveerige teenus.';
+$_['text_notification_ssl']                             = 'Veenduge, et teie kassasse on SSL-i lubatud. Vastasel korral laiend ei tööta.';
+$_['text_notify_recurring_fail']                        = 'Korduva tehingu ebaõnnestus:';
+$_['text_notify_recurring_success']                     = 'Korduv tehing on edukas:';
+$_['text_ok']                                           = 'Okei';
+$_['text_order_history_cancel']                         = 'Administraator on teie korduvad maksed tühistanud. Teie kaarti ei võeta enam.';
+$_['text_payment_method_name_help']                     = 'Checkout makseviisi nimi';
+$_['text_payment_method_name_label']                    = 'Maksemeetodi nimi';
+$_['text_payment_method_name_placeholder']              = 'Krediit- /deebetkaart';
+$_['text_recurring_info']                               = 'Veenduge, et seadistage päevane CRON-ülesanne, kasutades üht allolevat meetodit. CRON töökohad aitavad teil: <br /> <br /> &bull; Teie API-juurdepääsukutse automaatne värskendamine <br /> &bull; Korrapäraste tehingute töötlemine';
+$_['text_recurring_status']                             = 'Korrapäraste maksete staatus:';
+$_['text_redirect_uri_help']                            = 'Kleebi see link rakenduses Manage Application /oAuth olevatesse väljale Redirect URI';
+$_['text_redirect_uri_label']                           = 'Square OAuth\'i ümbersuunamise URL';
+$_['text_refresh_access_token_success']                 = 'Ühendus Square Square\'i kontoga värskendati edukalt.';
+$_['text_refresh_token']                                = 'Loo luuk uuesti';
+$_['text_refund']                                       = 'Tagasimaksed';
+$_['text_refund_details']                               = 'Tagasimakse üksikasjad';
+$_['text_refunded_amount']                              = 'Tagastatud: % s. Toetuse staatus: %. Toetuse põhjus: %';
+$_['text_refunds']                                      = 'Toetused (%s)';
+$_['text_remote_cron']                                  = 'Meetod #2 - Remote CRON:';
+$_['text_sale_label']                                   = 'Müük';
+$_['text_sandbox_access_token_help']                    = 'Hankige see ruut Manage Application lehel';
+$_['text_sandbox_access_token_label']                   = 'Liivakasti juurdepääsukood';
+$_['text_sandbox_access_token_placeholder']             = 'Liivakasti juurdepääsukood';
+$_['text_sandbox_client_id_help']                       = 'Hankige see ruut Manage Application lehel';
+$_['text_sandbox_client_id_label']                      = 'Liivakasti rakenduse ID';
+$_['text_sandbox_client_id_placeholder']                = 'Liivakasti rakenduse ID';
+$_['text_sandbox_disabled_label']                       = 'Keelatud';
+$_['text_sandbox_enabled']                              = 'Liivakasti režiim on lubatud! Näib, et tehingud läbivad, kuid tasusid ei tehta.';
+$_['text_sandbox_enabled_label']                        = 'Lubatud';
+$_['text_sandbox_section_heading']                      = 'Square Sandbox seaded';
+$_['text_select_location']                              = 'Valige asukoht';
+$_['text_settings_section_heading']                     = 'Square Settings';
+$_['text_squareup']                                     = '<a sihtmärk="_BLANK" href="https://squareup.com"> <img src="view/image/payment/squareup.png" alt="Square" pealkiri="Square" stiil="border: 1px tahke #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'Edu: Te olete muutnud Square\'i maksete moodulit!';
+$_['text_success_capture']                              = 'Tehing edukalt tehtud !';
+$_['text_success_refund']                               = 'Tehing edukalt tagastati !';
+$_['text_success_void']                                 = 'Tehing edukalt tühistati!';
+$_['text_token_expired']                                = 'Teie Square\'i juurdepääsukood on aegunud! <a href="%s">. Kliki siia </a>, et seda uuendada kohe.';
+$_['text_token_expiry_warning']                         = 'Teie Square\'i juurdepääsukutse aegub aadressil %s. <a href="%s"> Vajuta siia </a> uuendada kohe.';
+$_['text_token_revoked']                                = 'Teie ruutu juurdepääsukood on aegunud või on tühistatud ! <a href="%s"> Klõpsake siia </a> Square laienduse uuesti lubamiseks.';
+$_['text_transaction_statuses']                         = 'Tehingu olekud';
+$_['text_view']                                         = 'Vaata veel';
+$_['text_void']                                         = 'Kehtetu';
+$_['text_na']                                           = 'Ei ole';
+$_['text_no_reason_provided']                           = 'Põhjus pole esitatud.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'Kaardi tehing on lubatud, kuid ei ole veel kinni püütud.';
+$_['squareup_status_comment_captured']                  = 'Kaardi tehing oli lubatud ja hiljem kinni püütud (st valmis).';
+$_['squareup_status_comment_voided']                    = 'Kaardi tehing on lubatud ja see on hiljem tühistatud (s.t tühistatud).';
+$_['squareup_status_comment_failed']                    = 'Kaardi tehing ebaõnnestus.';
+
+// Entry
+$_['entry_total']                                       = 'Kokku';
+$_['entry_geo_zone']                                    = 'Geo tsoon';
+$_['entry_sort_order']                                  = 'Sorteeri järjestus';
+$_['entry_merchant']                                    = 'Kaupmehe ID';
+$_['entry_transaction_id']                              = 'Tehingu ID';
+$_['entry_order_id']                                    = 'Tellimuse ID';
+$_['entry_partner_solution_id']                         = 'Partneri lahenduse ID';
+$_['entry_type']                                        = 'Tehingu tüüp';
+$_['entry_currency']                                    = 'Valuuta';
+$_['entry_amount']                                      = 'Summa';
+$_['entry_browser']                                     = 'Kliendi kasutajaagent';
+$_['entry_ip']                                          = 'Kliendi IP-aadress';
+$_['entry_date_created']                                = 'Loomise kuupäev';
+$_['entry_billing_address_company']                     = 'Arveldusfirma';
+$_['entry_billing_address_street']                      = 'Arveldus tänav';
+$_['entry_billing_address_city']                        = 'Arveldamine linn';
+$_['entry_billing_address_postcode']                    = 'Arveldusaadress';
+$_['entry_billing_address_province']                    = 'Arvelduse provints /riik';
+$_['entry_billing_address_country']                     = 'Arveldusriik';
+$_['entry_status_authorized']                           = 'Volitatud';
+$_['entry_status_captured']                             = 'Pildistatud';
+$_['entry_status_voided']                               = 'Loobus';
+$_['entry_status_failed']                               = 'Ebaõnnestus';
+$_['entry_setup_confirmation']                          = 'Seadistuste kinnitamine:';
+
+// Error
+$_['error_permission']                                  = '<strong> Hoiatus: </strong> Teil ei ole luba makse muuta Square!';
+$_['error_permission_recurring']                        = '<strong> Hoiatus: </strong> Teil pole luba korduvate maksete muutmiseks!';
+$_['error_transaction_missing']                         = 'Tehingut ei leitud!';
+$_['error_no_ssl']                                      = '<strong> Hoiatus: </strong> SSL-i pole teie administratiivpaneelil lubatud. Palun lubage see oma konfiguratsiooni lõpetada.';
+$_['error_user_rejected_connect_attempt']               = 'Kasutaja katkestab ühendus katse.';
+$_['error_possible_xss']                                = 'Me tuvastasime võimaliku ristumiskoha ründe ja lõpetasime teie ühenduse katse. Palun kinnitage oma rakenduse ID ja salajane ja proovige uuesti administraatori paneeli nuppudega.';
+$_['error_invalid_email']                               = 'Esitatud e-posti aadress ei kehti!';
+$_['error_cron_acknowledge']                            = 'Kinnitage, et olete seadistanud CRON-i töö.';
+$_['error_client_id']                                   = 'Rakenduse kliendi ID on kohustuslik väli';
+$_['error_client_secret']                               = 'Rakenduskliendi salasõna on kohustuslik väli';
+$_['error_sandbox_client_id']                           = 'Liivakasti kliendi ID on kohustuslik väli, kui liivakasti režiim on lubatud';
+$_['error_sandbox_token']                               = 'Liivakasti loendus on kohustuslik väli, kui liivakasti režiim on lubatud';
+$_['error_no_location_selected']                        = 'Asukoht on kohustuslik väli';
+$_['error_refresh_access_token']                        = 'Laienduse ühenduse värskendamisel Square\'i kontoga ilmnes tõrge. Kinnitage oma rakendusvolitused ja proovige uuesti.';
+$_['error_form']                                        = 'Palun kontrollige vigade vormi ja proovige salvestada.';
+$_['error_token']                                       = 'Tokonit värskendades ilmnes viga: %s';
+$_['error_no_refund']                                   = 'Tagasimaksmine ebaõnnestus.';
+
+// Column
+$_['column_transaction_id']                             = 'Tehingu ID';
+$_['column_order_id']                                   = 'Tellimuse ID';
+$_['column_customer']                                   = 'Klient';
+$_['column_status']                                     = 'Olek';
+$_['column_type']                                       = 'Tüüp';
+$_['column_amount']                                     = 'Summa';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'Loomise kuupäev';
+$_['column_action']                                     = 'Tegevus';
+$_['column_refunds']                                    = 'Toetused';
+$_['column_reason']                                     = 'Põhjus';
+$_['column_fee']                                        = 'Menetlustasu';
+
+// Button
+$_['button_void']                                       = 'Kehtetu';
+$_['button_refund']                                     = 'Tagasimaksed';
+$_['button_capture']                                    = 'Lüüa';
+$_['button_connect']                                    = 'Ühenda';
+$_['button_reconnect']                                  = 'Uuesti ühendamine';
+$_['button_refresh']                                    = 'Värskenda tokenit';

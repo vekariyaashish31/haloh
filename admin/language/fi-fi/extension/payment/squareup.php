@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title']                                     = 'Neliö';
+$_['heading_title_transaction']                         = 'Näytä tapahtuma #%s';
+
+// Help
+$_['help_total']                                        = 'Kassan kokonaismäärä tilauksen on saavuttava ennen tämän maksutavan aktivointia.';
+$_['help_local_cron']                                   = 'Lisää tämä komento web-palvelimesi CRON-välilehteen. Aseta se toimimaan vähintään kerran päivässä.';
+$_['help_remote_cron']                                  = 'Käytä tätä URL-osoitetta CRON-tehtävän määrittämiseen web-pohjaisen CRON-palvelun kautta. Aseta se toimimaan vähintään kerran päivässä.';
+$_['help_recurring_status']                             = 'Salli tilapäisten toistuvien maksujen salliminen. <br /> HUOMAA: Sinun on myös asetettava päivittäinen CRON-tehtävä.';
+$_['help_cron_email']                                   = 'Yhteenveto toistuvasta tehtävästä lähetetään tähän sähköpostiviestiin suorittamisen jälkeen.';
+$_['help_cron_email_status']                            = 'Voit ottaa yhteenvedon jokaisen CRON-tehtävän jälkeen.';
+$_['help_notify_recurring_success']                     = 'Ilmoita asiakkaille onnistuneista toistuvista liiketoimista.';
+$_['help_notify_recurring_fail']                        = 'Ilmoita asiakkaille epäonnistuneista toistuvista liiketoimista.';
+
+// Tab
+$_['tab_setting']                                       = 'asetukset';
+$_['tab_transaction']                                   = 'liiketoimet';
+$_['tab_cron']                                          = 'CRON';
+$_['tab_recurring']                                     = 'Toistuvat maksut';
+
+// Text
+$_['text_access_token_expires_label']                   = 'Pääsykoodi vanhentuu';
+$_['text_access_token_expires_placeholder']             = 'Ei asetuksia';
+$_['text_acknowledge_cron']                             = 'Vahvistan, että olen asettanut automaattisen CRON-tehtävän käyttämällä yhtä yllä mainituista menetelmistä.';
+$_['text_admin_notifications']                          = 'Järjestelmänvalvojan ilmoitukset';
+$_['text_authorize_label']                              = 'valtuuttaa';
+$_['text_canceled_success']                             = 'Menestys: Olet peruuttanut tämän maksun! onnistuneesti';
+$_['text_capture']                                      = 'Kaapata';
+$_['text_client_id_help']                               = 'Hanki tämä kohdasta Hallinnoi sovellus -sivua';
+$_['text_client_id_label']                              = 'Square Application ID';
+$_['text_client_id_placeholder']                        = 'Square Application ID';
+$_['text_client_secret_help']                           = 'Hanki tämä kohdasta Hallinnoi sovellus -sivua';
+$_['text_client_secret_label']                          = 'OAuth Application Secret';
+$_['text_client_secret_placeholder']                    = 'OAuth Application Secret';
+$_['text_confirm_action']                               = 'Oletko varma?';
+$_['text_confirm_cancel']                               = 'Haluatko varmasti peruuttaa toistuvat maksut?';
+$_['text_confirm_capture']                              = 'Olette saaneet seuraavan määrän: <strong> %s </strong>. Jatka valitsemalla OK.';
+$_['text_confirm_refund']                               = 'Ilmoita palautuksen syy:';
+$_['text_confirm_void']                                 = 'Olet poistamassa seuraavan määrän: <strong> %s </strong>. Jatka valitsemalla OK.';
+$_['text_connected']                                    = 'kytketty';
+$_['text_connected_info']                               = 'Yhdistä uudelleen, jos haluat vaihtaa tilit tai poistaa tämän laajennuksen käyttöoikeuden Square App -konsolista käsin. Päivitä käyttöoikeustunniste manuaalisesti, jos se on ollut lähellä 45 päivää viimeisen myynnin tai uudelleenliittämisen jälkeen.';
+$_['text_connection_section']                           = 'Neliyhteys';
+$_['text_connection_success']                           = 'Suoritettiin onnistuneesti!';
+$_['text_cron_email']                                   = 'Lähetä tehtävän yhteenveto tähän sähköpostiviestiin:';
+$_['text_cron_email_status']                            = 'Lähetä sähköpostiviestin yhteenveto:';
+$_['text_customer_notifications']                       = 'Asiakkaan ilmoitukset';
+$_['text_debug_disabled']                               = 'Liikuntarajoitteinen';
+$_['text_debug_enabled']                                = 'käytössä';
+$_['text_debug_help']                                   = 'API-pyynnöt ja vastaukset kirjataan OpenCart-lokitiedostoon. Käytä tätä vain virheenkorjaus- ja kehitystarkoituksiin.';
+$_['text_debug_label']                                  = 'Debug-lokin kirjaaminen';
+$_['text_delay_capture_help']                           = 'Hyväksy vain liiketoimet tai suorita maksuja automaattisesti';
+$_['text_delay_capture_label']                          = 'Maksutavan tyyppi';
+$_['text_disabled_connect_help_text']                   = 'Asiakkaan tunnus ja salaisuus ovat pakollisia kenttiä.';
+$_['text_edit_heading']                                 = 'Muokkaa neliötä';
+$_['text_enable_sandbox_help']                          = 'Ota sandbox-tila käyttöön tapahtumien testauksessa';
+$_['text_enable_sandbox_label']                         = 'Ota hiekkamoodit käyttöön';
+$_['text_executables']                                  = 'CRON-toteutusmenetelmät';
+$_['text_extension']                                    = 'laajennukset';
+$_['text_extension_status']                             = 'Laajennuksen tila';
+$_['text_extension_status_disabled']                    = 'Liikuntarajoitteinen';
+$_['text_extension_status_enabled']                     = 'käytössä';
+$_['text_extension_status_help']                        = 'Ota käyttöön tai poista maksutapa';
+$_['text_insert_amount']                                = 'Anna hyvitysmäärä. Suurin: %s vuonna %s:';
+$_['text_loading']                                      = 'Ladataan tietoja .. Odota hetki ..';
+$_['text_loading_short']                                = 'Odota..';
+$_['text_local_cron']                                   = 'Menetelmä #1 - CRON Tehtävä:';
+$_['text_location_error']                               = 'Virhe yritettäessä synkronoida sijainteja ja tunnusta: %s';
+$_['text_location_help']                                = 'Valitse, mikä asetettu neliösijainti on käytettävä transaktioissa. On oltava käytössä kortin käsittelyominaisuudet.';
+$_['text_location_label']                               = 'Sijainti';
+$_['text_manage']                                       = 'Luottokorttitapahtuma (neliö)';
+$_['text_manage_tooltip']                               = 'Katso lisätietoja /Capture /Void /Refund';
+$_['text_merchant_info_section_heading']                = 'Mechant Information';
+$_['text_merchant_name_label']                          = 'Kauppiaan nimi';
+$_['text_merchant_name_placeholder']                    = 'Ei asetuksia';
+$_['text_no_appropriate_locations_warning']             = 'Sinulla ei ole sijainteja, jotka pystyvät suorittamaan verkkokorttien käsittelyasetuksia Square-tililläsi.';
+$_['text_no_location_selected_warning']                 = 'Valittua sijaintia ei ole.';
+$_['text_no_locations_label']                           = 'Ei voimassa olevia sijainteja';
+$_['text_no_transactions']                              = 'Transaktioita ei ole vielä kirjattu.';
+$_['text_not_connected']                                = 'Ei yhteyttä';
+$_['text_not_connected_info']                           = 'Napsauttamalla tätä painiketta voit liittää tämän moduulin nelikenttään ja aktivoida palvelun.';
+$_['text_notification_ssl']                             = 'Varmista, että sinulla on SSL käytössä kassalla. Muutoin laajennus ei toimi.';
+$_['text_notify_recurring_fail']                        = 'Toistuva transaktio epäonnistui:';
+$_['text_notify_recurring_success']                     = 'Toistuva tapahtuma onnistui:';
+$_['text_ok']                                           = 'kunnossa';
+$_['text_order_history_cancel']                         = 'Järjestelmänvalvoja on peruuttanut toistuvat maksut. Sinun korttia ei enää veloiteta.';
+$_['text_payment_method_name_help']                     = 'Checkout-maksutavan nimi';
+$_['text_payment_method_name_label']                    = 'Maksutavan nimi';
+$_['text_payment_method_name_placeholder']              = 'Luottokortti';
+$_['text_recurring_info']                               = 'Varmista, että asetat päivittäisen CRON-tehtävän jollakin seuraavista tavoista. CRON-työpaikat auttavat sinua: <br /> <br /> &bull; Automaattinen päivitys API-käyttöoikeuskoodisi <br /> &bull; Toistuvien liiketoimien käsittely';
+$_['text_recurring_status']                             = 'Toistuvien maksujen tila:';
+$_['text_redirect_uri_help']                            = 'Liitä tämä linkki Uudelleenohjaus URI -kenttään Hallitse sovellus /oAuth';
+$_['text_redirect_uri_label']                           = 'Neliö OAuth-uudelleenohjaus-URL';
+$_['text_refresh_access_token_success']                 = 'Yritit onnistuneesti yhteyttä Square-tiliisi.';
+$_['text_refresh_token']                                = 'Luo token uudelleen';
+$_['text_refund']                                       = 'Maksun palautus';
+$_['text_refund_details']                               = 'Palautuksen yksityiskohdat';
+$_['text_refunded_amount']                              = 'Palautettu: %s. Tuen tila: %s. Tuen perustelut: %s';
+$_['text_refunds']                                      = 'Hyvitykset (%s)';
+$_['text_remote_cron']                                  = 'Menetelmä #2 - Remote CRON:';
+$_['text_sale_label']                                   = 'myynti';
+$_['text_sandbox_access_token_help']                    = 'Hanki tämä kohdasta Hallinnoi sovellus -sivua';
+$_['text_sandbox_access_token_label']                   = 'Sandbox Access Token';
+$_['text_sandbox_access_token_placeholder']             = 'Sandbox Access Token';
+$_['text_sandbox_client_id_help']                       = 'Hanki tämä kohdasta Hallinnoi sovellus -sivua';
+$_['text_sandbox_client_id_label']                      = 'Sandbox-sovelluksen tunnus';
+$_['text_sandbox_client_id_placeholder']                = 'Sandbox-sovelluksen tunnus';
+$_['text_sandbox_disabled_label']                       = 'Liikuntarajoitteinen';
+$_['text_sandbox_enabled']                              = 'Sandbox-tila on käytössä ! Transaktiot näyttävät käyn läpi, mutta mitään maksuja ei suoriteta.';
+$_['text_sandbox_enabled_label']                        = 'käytössä';
+$_['text_sandbox_section_heading']                      = 'Neliön hiekkalaatikon asetukset';
+$_['text_select_location']                              = 'Valitse sijainti';
+$_['text_settings_section_heading']                     = 'Neliöasetukset';
+$_['text_squareup']                                     = '<a target="_BLANK" href="https://squareup.com"> <fi sr src="view/image/payment/squareup.png" alt="Square" title="Square" style="border: 1px solid #EEEEEE; "/> </a>';
+$_['text_success']                                      = 'Menestys: Olet muuttanut Neliöhaku-moduuli!';
+$_['text_success_capture']                              = 'Tapahtuma onnistuneesti otettu!';
+$_['text_success_refund']                               = 'Tapahtuma onnistui palauttamaan!';
+$_['text_success_void']                                 = 'Tapahtuma onnistui onnistuneesti!';
+$_['text_token_expired']                                = 'Sinun neliöyhteyden käyttöoikeus on vanhentunut! <a href="%s"> Napsauttamalla tätä </a> voit uudistaa sen nyt.';
+$_['text_token_expiry_warning']                         = 'Neliöyhteyden tunnuksesi vanhenee %s. <a href="%s"> Napsauttamalla tätä </a> voit uudistaa sen nyt.';
+$_['text_token_revoked']                                = 'Sinun neliöyhteyden käyttöoikeus on vanhentunut tai se on peruutettu! <a href="%s"> Napsauta tästä </a> uudelleenlupaaaksesi Neliölaajennuksen.';
+$_['text_transaction_statuses']                         = 'Tapahtumatapahtumat';
+$_['text_view']                                         = 'Katso lisää';
+$_['text_void']                                         = 'mitätön';
+$_['text_na']                                           = 'N /A';
+$_['text_no_reason_provided']                           = 'Syytä ei ole annettu.';
+
+// Statuses
+$_['squareup_status_comment_authorized']                = 'Korttitoimi on hyväksytty, mutta sitä ei ole vielä otettu.';
+$_['squareup_status_comment_captured']                  = 'Korttimuotoinen tapahtuma hyväksyttiin ja saatiin myöhemmin (eli täytetty).';
+$_['squareup_status_comment_voided']                    = 'Korttitoimi hyväksyttiin ja sen jälkeen peruutettiin (eli peruutettiin).';
+$_['squareup_status_comment_failed']                    = 'Korttitoimi epäonnistui.';
+
+// Entry
+$_['entry_total']                                       = 'Kaikki yhteensä';
+$_['entry_geo_zone']                                    = 'Geo Zone';
+$_['entry_sort_order']                                  = 'Lajittelujärjestys';
+$_['entry_merchant']                                    = 'Kauppiastunnus';
+$_['entry_transaction_id']                              = 'Tapahtumistunnus';
+$_['entry_order_id']                                    = 'tilausnumero';
+$_['entry_partner_solution_id']                         = 'Partner-ratkaisun tunnus';
+$_['entry_type']                                        = 'Maksutavan tyyppi';
+$_['entry_currency']                                    = 'valuutta';
+$_['entry_amount']                                      = 'Määrä';
+$_['entry_browser']                                     = 'Asiakasasiakas';
+$_['entry_ip']                                          = 'Asiakas IP';
+$_['entry_date_created']                                = 'Päivämäärä luotu';
+$_['entry_billing_address_company']                     = 'Laskutusyhtiö';
+$_['entry_billing_address_street']                      = 'Laskutuskatu';
+$_['entry_billing_address_city']                        = 'Laskutuskaupunki';
+$_['entry_billing_address_postcode']                    = 'Laskutuksen ZIP';
+$_['entry_billing_address_province']                    = 'Laskutusmaakunta /valtio';
+$_['entry_billing_address_country']                     = 'Laskutusmaa';
+$_['entry_status_authorized']                           = 'valtuutettu';
+$_['entry_status_captured']                             = 'Captured';
+$_['entry_status_voided']                               = 'silöityjen';
+$_['entry_status_failed']                               = 'epäonnistui';
+$_['entry_setup_confirmation']                          = 'Asennuksen vahvistus:';
+
+// Error
+$_['error_permission']                                  = '<strong> Varoitus: </strong> Sinulla ei ole lupaa muuttaa maksua. Square!';
+$_['error_permission_recurring']                        = '<strong> Varoitus: </strong> Sinulla ei ole lupaa muuttaa toistuvien maksujen!';
+$_['error_transaction_missing']                         = 'Tapahtumaa ei löydy!';
+$_['error_no_ssl']                                      = '<strong> Varoitus: </strong> SSL ei ole käytössä admin-paneelissa. Salli sen lopettaa kokoonpano.';
+$_['error_user_rejected_connect_attempt']               = 'Käyttäjä peruutti yhteysyrityksen.';
+$_['error_possible_xss']                                = 'Havaitsimme mahdollisen cross-site-hyökkäyksen ja olemme päättäneet yhteysyrityksestämme. Vahvista sovelluksen tunnus ja salaisuus ja yritä uudelleen hallintapaneelin painikkeiden avulla.';
+$_['error_invalid_email']                               = 'Tarjottu sähköpostiosoite ei ole voimassa!';
+$_['error_cron_acknowledge']                            = 'Vahvista, että olet määrittänyt CRON-työn.';
+$_['error_client_id']                                   = 'Sovelluksen asiakastunnus on pakollinen kenttä';
+$_['error_client_secret']                               = 'App-asiakkaiden salaisuus on pakollinen kenttä';
+$_['error_sandbox_client_id']                           = 'Sandbox-asiakastunnus on pakollinen kenttä, kun sandbox-tila on käytössä';
+$_['error_sandbox_token']                               = 'Hiekkalaatikkomerkki on pakollinen kenttä, kun sandbox-tila on käytössä';
+$_['error_no_location_selected']                        = 'Sijainti on pakollinen kenttä';
+$_['error_refresh_access_token']                        = 'Virhe yritettäessä päivittää laajennuksen yhteys Square -tiliisi. Vahvista hakemuksesi käyttöoikeudet ja yritä uudelleen.';
+$_['error_form']                                        = 'Tarkista lomake virheistä ja yritä säästää.';
+$_['error_token']                                       = 'Virhe tapahtui virkistettäessä tunnusta: %s';
+$_['error_no_refund']                                   = 'Palautus epäonnistui.';
+
+// Column
+$_['column_transaction_id']                             = 'Tapahtumistunnus';
+$_['column_order_id']                                   = 'tilausnumero';
+$_['column_customer']                                   = 'asiakas';
+$_['column_status']                                     = 'Status';
+$_['column_type']                                       = 'Tyyppi';
+$_['column_amount']                                     = 'Määrä';
+$_['column_ip']                                         = 'IP';
+$_['column_date_created']                               = 'Päivämäärä luotu';
+$_['column_action']                                     = 'Toiminta';
+$_['column_refunds']                                    = 'palautukset';
+$_['column_reason']                                     = 'Syy';
+$_['column_fee']                                        = 'Käsittelymaksu';
+
+// Button
+$_['button_void']                                       = 'mitätön';
+$_['button_refund']                                     = 'Maksun palautus';
+$_['button_capture']                                    = 'Kaapata';
+$_['button_connect']                                    = 'Kytkeä';
+$_['button_reconnect']                                  = 'Kytke';
+$_['button_refresh']                                    = 'Päivitä merkki';

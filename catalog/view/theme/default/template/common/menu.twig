@@ -1,0 +1,371 @@
+<div class="hidden-xs allcate">
+  {% if categories %}
+  <div class="cateti" data-target="#all-menu" data-toggle="collapse">
+    <h3>
+      <i class="fa fa-bars"></i>
+      <span class="cate-ti">
+        {{ all_cate }}
+      </span>
+    </h3>
+  </div>
+  <div class="cate-menu collapse" id="all-menu">
+    <nav id="menu" class="navbar">
+      <div class="navbar-header">
+        <span id="category" class="visible-xs">
+          {{ text_category }}
+        </span>
+        <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav">
+          {% for category in categories %}
+          {% if category.children %}
+          <li class="dropdown moremenu">
+            <a href="{{ category.href }}" class="dropdown-toggle header-menu" data-toggle="dropdown">
+              {# <svg width="13px" height="13px"><use xlink:href="#cart" /></svg> #}{# <img src="{{ category.thumb_menu }}" alt="{{ category.name }}">  #}
+              {{ category.name }}<i class="fa fa-angle-down enangle"> </i>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-inner">
+                {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                <ul class="list-unstyled">
+                  {% for child in children %}
+                  <li class="dropdown-submenu">
+                    <a href="{{ child.href }}" class="submenu-title">
+                      {{ child.name }}
+                    </a>
+                    {% if child.grand_childs %}
+                    <ul class="list-unstyled grand-child">
+                      {% for grand_child in child.grand_childs %}
+                      <li>
+                        <a href="{{ grand_child.href }}">
+                          {{ grand_child.name }}
+                        </a>
+                      </li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endfor %}
+              </div>
+              <!-- <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> -->
+            </div>
+          </li>
+          {% else %}
+          <li class="moremenu">
+            <a href="{{ category.href }}">{# <img src="{{ category.thumb_menu }}" alt="{{ category.name }}"> #}{{ category.name }}
+            </a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+  {% endif %}
+</div>
+<div class="hidden-md hidden-lg hidden-sm">
+  {% if categories %}
+  <nav id="menu" class="navbar">
+    <div class="navbar-header">
+      <!-- <span id="category" class="visible-xs">{{ text_category }}</span> -->
+      <button type="button" class="btn btn-navbar" onclick="openNav()" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+    <div id="mySidenav" class="sidenav" style="background: #EEEEEE;">
+      <div style="padding: 12px 15px;" class="text-center">
+        <span style="float:left;">
+          {% if logo %}
+          <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>
+          {% else %}
+          <h1 style="font-size: 22px;"><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+        </span>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+          <i style="font-size: 20px;" class="fa fa-close"></i>
+        </a>
+      </div>
+      <div class="container">
+        {#<div class="row">
+          <div class="col-12 text-center">
+            <div id="logo" style="float: left;">
+              {% if logo %}
+              <a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>
+              {% else %}
+              <h1 style="font-size: 22px;"><a href="{{ home }}">{{ name }}</a></h1>
+              {% endif %}
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <i class="fa fa-close"></i>
+              </a>
+            </div>
+          </div>
+        </div>#}
+        <div class="row">
+          <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 rpart text-center">
+            <!-- Custom Search -->
+            <li id="search" class="header-btns desktop-search inline-block">
+              <div class="my-search" style="min-width: 100% !important;">
+                <div class="input-group">
+                  <input type="text" name="side_search" style="background: #fff;" value="" placeholder="Search" class="form-control input-lg insp-search">
+                  <span class="input-group-btn">
+                    <button style="border-radius: 0;padding: 9px 16px;background: #ff7b30;fill:#fff;" type="button" class="btn btn-default btn-lg"><svg width="20px" height="24px">
+                        <use xlink:href="#hsearch"></use>
+                      </svg></button>
+                    <a href="javascript:" onclick="pageRedirect()" class="btn btn-default btn-lg china-search-button" id="china_search_button" title="Import from China"><img src="catalog/view/theme/default/image/china_flag.png" width="30"></a>
+                  </span>
+                </div>
+              </div>
+              <div class="insp-search">
+                <div class="insp-search-loader" style="display: none;">
+                  <div class="loaders"></div>
+                </div>
+                <div class="insp-search-result">
+                </div>
+              </div>
+            </li>
+            <!-- Custom Search -->
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 12px 17px;">
+          <ul class="nav navbar-nav bb-1">
+            {% for category in categories %}
+              {% if category.children %}
+                <li class="dropdown">
+                  <a href="{{ category.href }}" class="dropdown-toggle header-menu" data-toggle="dropdown">
+                    {{ category.name }}
+                    <i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-inner">
+                      {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                        <ul class="list-unstyled">
+                          {% for child in children %}
+                            <!--3rd level-->
+                            <li class="dropdown-submenu">
+                              <a href="{{ child.href }}" class="submenu-title">
+                                {{ child.name }}
+                              </a>
+                              {% if child.grand_childs %}
+                                <ul class="list-unstyled grand-child">
+                                  {% for grand_child in child.grand_childs %}
+                                    <li>
+                                      <a href="{{ grand_child.href }}">
+                                        {{ grand_child.name }}
+                                      </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          <!--3rd level over-->
+                          {% endfor %}
+                        </ul>
+                      {% endfor %}
+                    </div>
+                    <a href="{{ category.href }}" class="see-all">
+                      {{ text_all }}
+                      {{ category.name }}
+                    </a>
+                  </div>
+                </li>
+              {% else %}
+                <li>
+                  <a href="{{ category.href }}">
+                    {{ category.name }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="row text-dark pr-1">
+          <div class="col-xs-6 text-center"><a href="{{ hcom }}" title="{{ text_hcom }}"><i style="font-size: 18px;" class="fa fa-check-square-o" aria-hidden="true"></i><div>{{ text_hcom }}</div></a></div>
+          <div class="col-xs-6 text-center"><a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}"><i style="font-size: 18px;" class="fa fa-heart" aria-hidden="true"></i><div>{{ text_wishlist }}</div></a></div>
+        </div>
+        {#
+        <div class="row text-dark mt-2 pr-1">
+          <div class="col-xs-6 text-center"><i class="fa fa-language" aria-hidden="true"></i><div class="">Languages</div></div>
+          <div class="col-xs-6 text-center"><i class="fa fa-usd" aria-hidden="true"></i><div class="">Currency</div></div>
+        </div>
+        #}
+    </div>
+    {# <div id="mySidenav" class="sidenav">
+        <div class="close-nav">
+          <span class="categories">
+            Category
+          </span>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fa fa-close"></i>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            {% for category in categories %}
+              {% if category.children %}
+                <li class="dropdown">
+                  <a href="{{ category.href }}" class="dropdown-toggle header-menu" data-toggle="dropdown">
+                    {{ category.name }}
+                    <i class="fa fa-angle-down pull-right"></i>
+                  </a>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-inner">
+                      {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+                        <ul class="list-unstyled">
+                          {% for child in children %}
+                            <!--3rd level-->
+                            <li class="dropdown-submenu">
+                              <a href="{{ child.href }}" class="submenu-title">
+                                {{ child.name }}
+                              </a>
+                              {% if child.grand_childs %}
+                                <ul class="list-unstyled grand-child">
+                                  {% for grand_child in child.grand_childs %}
+                                    <li>
+                                      <a href="{{ grand_child.href }}">
+                                        {{ grand_child.name }}
+                                      </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          <!--3rd level over-->
+                          {% endfor %}
+                        </ul>
+                      {% endfor %}
+                    </div>
+                    <a href="{{ category.href }}" class="see-all">
+                      {{ text_all }}
+                      {{ category.name }}
+                    </a>
+                  </div>
+                </li>
+              {% else %}
+                <li>
+                  <a href="{{ category.href }}">
+                    {{ category.name }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div> #}
+  </nav>
+  {% endif %}
+</div>
+<style>
+  #menu .navbar-nav > li{
+    border-bottom: 1px solid #ddd;
+  }
+  .text-dark{
+    color: #343a40!important;
+  }
+  .mt-2{
+    margin-top: 2rem;
+  }
+  .pr-1{
+    padding-right: 1rem;
+  }
+</style>
+<script type="text/javascript">
+  function headermenu() {
+    if (jQuery(window).width() < 992) {
+      jQuery('ul.nav li.dropdown a.header-menu').attr("data-toggle", "dropdown");
+    } else {
+      jQuery('ul.nav li.dropdown a.header-menu').attr("data-toggle", "");
+    }
+  }
+  $(document).ready(function() {
+    headermenu();
+  });
+  jQuery(window).resize(function() {
+    headermenu();
+  });
+  jQuery(window).scroll(function() {
+    headermenu();
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (jQuery(window).width() >= 1200) {
+      var count_block = $('.moremenu').length;
+      var number_blocks = 8;
+      if (count_block < number_blocks) {
+        return false;
+      } else {
+        $('.moremenu').each(function(i, n) {
+          $('moremenu').addClass(i);
+          if (i == number_blocks) {
+            $(this).append('<li class="view_morechomeapp"><a class="dropdown-item">More Categories</a></li>');
+          }
+          if (i > number_blocks) {
+            $(this).addClass('morecate').hide();
+          }
+        });
+        $('.view_morechomeapp').click(function() {
+          $(this).toggleClass('active');
+          $('.morecate').slideToggle();
+        });
+      }
+    }
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (($(window).width() >= 991) && ($(window).width() <= 1199)) {
+      var count_block = $('.moremenu').length;
+      var number_blocks = 6;
+      if (count_block < number_blocks) {
+        return false;
+      } else {
+        $('.moremenu').each(function(i, n) {
+          $('moremenu').addClass(i);
+          if (i == number_blocks) {
+            $(this).append('<li class="view_morechomeapp"><a class="dropdown-item">More Categories</a></li>');
+          }
+          if (i > number_blocks) {
+            $(this).addClass('morecate').hide();
+          }
+        });
+        $('.view_morechomeapp').click(function() {
+          $(this).toggleClass('active');
+          $('.morecate').slideToggle();
+        });
+      }
+    }
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    if (($(window).width() >= 768) && ($(window).width() <= 991)) {
+      var count_block = $('.moremenu').length;
+      var number_blocks = 5;
+      if (count_block < number_blocks) {
+        return false;
+      } else {
+        $('.moremenu').each(function(i, n) {
+          $('moremenu').addClass(i);
+          if (i == number_blocks) {
+            $(this).append('<li class="view_morechomeapp"><a class="dropdown-item">More Categories</a></li>');
+          }
+          if (i > number_blocks) {
+            $(this).addClass('morecate').hide();
+          }
+        });
+        $('.view_morechomeapp').click(function() {
+          $(this).toggleClass('active');
+          $('.morecate').slideToggle();
+        });
+      }
+    }
+  });
+</script>
